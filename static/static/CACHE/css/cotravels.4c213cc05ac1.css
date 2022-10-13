@@ -1,0 +1,6 @@
+/* line 1, static/scss/cotravels.scss */
+.card-section {
+  min-height: 169px !important; }
+  /* line 5, static/scss/cotravels.scss */
+  .card-section .cards-list li > p {
+    margin: 0; }

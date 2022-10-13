@@ -1,0 +1,26 @@
+@import "base";
+@import "header";
+
+body > section {
+	display: flex;
+	justify-content: center;
+	max-width: 75%;
+	min-height: calc(100% - 331px);
+	margin: auto;
+	background: none;
+	box-shadow: none;
+	svg {
+		height: 500px;
+		width: 500px;
+	}
+	.contact-content {
+		a {
+			text-decoration: none;
+			color: #1168d8;
+		}
+	}
+}
+
+h1 {
+	font-size: 40px;
+}

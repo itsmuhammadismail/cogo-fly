@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/home.scss' %}">
+{% endblock %}
+
+{% block js %}
+    <!--<script defer type="text/javascript" src={% static 'js/home.js' %}></script>-->
+{% endblock %}
+
+{% block body %}
+    {% include 'header.html' %}
+    <p>This is the home page.</p>
+    <p>Hello {{ user.first_name }}.</p>
+    <a href={% url 'profile' user.id %}>View my profile</a>
+    <a href={% url 'profile_edit' %}>Modify my profile</a>
+    <a href={% url 'account' %}>My account</a>
+    <a href={% url 'contacts' %}>My contacts</a>
+    <a href={% url 'favourites' %}>My favourites</a>
+    <a href={% url 'trips' %}>My trips</a>
+    <a href={% url 'cotravellers' %}>My Cotravelers</a>
+    <a href={% url 'seed-feed' %}>Seed-feed</a>
+{% endblock %}%}

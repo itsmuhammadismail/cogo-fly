@@ -1,0 +1,47 @@
+{% load static %} {% load svg %} {% load i18n %} {% load compress %}
+
+<section class="bg-white shadow-lg rounded-[0.813rem] w-[24rem] p-0">
+  <div class="card-header flex justify-between border-b py-4 px-6">
+    <div class="flex gap-[1rem]">
+      <img src="{% static 'img/svg/card-logo.svg' %}" />
+      <h3>Gary Vance</h3>
+    </div>
+    <div class="flex gap-[1rem]">
+      <img src="{% static 'img/svg/card-right-bin.svg' %}" />
+      <img src="{% static 'img/svg/card-right-disable.svg' %}" />
+      <img src="{% static 'img/svg/card-right-user.svg' %}" />
+    </div>
+  </div>
+  <div class="card-body flex justify-evenly py-4 px-3">
+    <img src="{% static 'img/svg/avatar.svg' %}" />
+    <div class="card-para">
+      <div class="flex gap-[0.7rem]">
+        <img src="{% static 'img/svg/location-pin.svg' %}" />
+        <p>Live in New Yourk</p>
+      </div>
+      <div class="flex gap-[0.7rem]">
+        <img src="{% static 'img/svg/retry.svg' %}" />
+        <p>Born in America</p>
+      </div>
+      <div class="flex gap-[0.7rem]">
+        <img src="{% static 'img/svg/home.svg' %}" />
+        <p>Last Travel Istambul</p>
+      </div>
+      <div class="flex gap-[0.7rem]">
+        <img src="{% static 'img/svg/map-pin.svg' %}" />
+        <p>New Travel Dubai</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer flex justify-between border-b py-4 px-6">
+    <div class="flex gap-[1rem]">
+      <img src="{% static 'img/svg/heart.svg' %}" />
+      <img src="{% static 'img/svg/star.svg' %}" />
+
+      <img src="{% static 'img/svg/message.svg' %}" />
+    </div>
+    <div>
+      <img src="{% static 'img/svg/share.svg' %}" />
+    </div>
+  </div>
+</section>

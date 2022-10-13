@@ -1,0 +1,366 @@
+@import "base";
+@import "popup";
+@import "header";
+
+section {
+	padding-top: 5px;
+}
+
+.profile-view{
+	position: fixed;
+	bottom: 0;
+	z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10 10 10 calc(50% - 617.5px);
+    width: 100%;
+	a{
+		font-weight: bold;
+		color: white;
+	}
+}
+
+.profile {
+	display: grid;
+	grid-gap: 15px;
+	grid-template-areas:
+		"profile-top profile-top"
+		"about future-trips"
+		"album past-trips"
+		"contacts contacts";
+	grid-template-columns: 420px 820px;
+	margin: auto auto 25px;
+	width: 1255px;
+	position: relative;
+	h2 {
+		margin-top: 10px;
+	}
+
+	.profile-top {
+		grid-area: profile-top;
+		padding: 0;
+		width: 100%;
+		height: 200px;
+		position: relative;
+		margin: auto auto 25px;
+		.banner {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			filter: brightness(0.8);
+		}
+		.profile-pic-bg {
+			background: white;
+			width: 160px;
+			height: 160px;
+			border-radius: 50%;
+			position: absolute;
+			display: flex;
+			bottom: -17%;
+			left: 12px;
+			box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+			.profile-picture {
+				object-fit: cover;
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				margin: auto;
+				display: block;
+			}
+		}
+		p {
+			position: absolute;
+			bottom: -30px;
+			left: 200px;
+			font-size: 40px;
+			color: white;
+			max-width: 65%;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	}
+
+	.about-me {
+		grid-area: about;
+		.practical-info {
+			width: 100%;
+			.flag {
+				margin-right: 5px;
+				position: relative;
+				max-width: calc(100% - 55px);
+				svg {
+					position: absolute;
+					right: -60px;
+					top: 50%;
+					margin-top: -20px;
+					width: 55px;
+					flex-shrink: 0;
+					box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+				}
+			}
+			.sex {
+				svg {
+					width: 15px;
+					height: 15px;
+					margin-left: 5px;
+				}
+			}
+		}
+		hr {
+			margin: 0 10px;
+			&:nth-last-child(1) {
+				display: none;
+			}
+			&:nth-last-child(2) {
+				display: none;
+			}
+		}
+		.description {
+			span {
+				svg {
+					height: 20px;
+					width: 20px;
+				}
+				&:last-of-type {
+					float: right;
+					transform: scaleX(-1) scaleY(-1);
+				}
+			}
+			p {
+				text-align: center;
+				margin: 0;
+			}
+		}
+	}
+
+	.album {
+		grid-area: album;
+		.album-pictures {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			grid-gap: 10px;
+			grid-template-rows: 50% 50%;
+			height: 250px;
+			img {
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+				border-radius: 10px;
+			}
+		}
+	}
+
+	.contacts {
+		grid-area: contacts;
+		.contacts-container{
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.simple-card {
+			margin: 10px 12px;
+		}
+	}
+
+	.future-trips, .past-trips {
+		grid-area: future-trips;
+		/*h2 {
+			margin-left: 5px;
+		}*/
+		ul {
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+			/*.card {
+				margin: 0;
+			}*/
+		}
+	}
+
+	.future-trips{
+		grid-area: future-trips;
+	}
+
+	.past-trips{
+		grid-area: past-trips;
+	}
+
+	.profile-actions {
+		position: absolute;
+		right: 15px;
+		top: 145px;
+		padding: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: white;
+		border-radius: 5px;
+		> a button,
+		> button {
+			border: none;
+			padding: 0;
+			background: transparent;
+			height: fit-content;
+			margin: 0 5px;
+		}
+		svg {
+			width: 30px;
+			height: 30px;
+		}
+		.like-fav {
+			display: flex;
+			button {
+				border: none;
+				padding: 0;
+				background: transparent;
+				height: fit-content;
+				margin: 0 5px;
+			}
+			svg {
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
+}
+
+.popup{
+	.popup-content{
+		form{
+			textarea{
+				margin: 10 0 0 0;
+			}
+			input{
+				&:last-of-type{
+					margin-top: 18px;
+				}
+			}
+			> button[name="removecontact"]{
+				color: rgb(100, 100, 100);
+				border-color: rgb(100, 100, 100);
+			}
+		}
+	}
+}
+
+@media all and (max-width: 1300px) {
+	.profile-view{
+		padding-left: calc(50% - 405px);
+	}
+	.profile {
+		width: 830px;
+		grid-template-columns: 420px 430px;
+		.profile-top{
+			p{
+				max-width: 55%;
+			}
+		}
+		.contacts{
+			.contacts-container{
+				.simple-card{
+					margin: 10 16;
+				}
+			}
+		}
+	}
+}
+
+@media all and (max-width: 1000px){
+	.profile-view{
+		padding-left: 35px;
+	}
+	.profile{
+		grid-template-areas: "profile-top"
+							"about"
+							"album"
+							"contacts"
+							"future-trips"
+							"past-trips";
+		grid-template-columns: auto;
+		width: 95%;
+		.profile-top{
+			p{
+				max-width: 48%;
+			}
+		}
+		.contacts{
+			.contacts-container{
+				flex-direction: column;
+				.simple-card{
+					margin: 10 auto;
+				}
+			}
+		}		
+	}
+}
+
+@media all and (max-width: 863px){
+	.profile{
+		.future-trips, .past-trips{
+			>ul{
+				.card{
+					margin: 5 auto;
+				}
+			}
+		}
+	}
+}
+ 
+@media all and (max-width: 800px){
+	.profile{
+		.profile-top{
+			.profile-actions{
+				top: 10px;
+			}
+			p{
+				max-width: 66%;
+			}
+		}
+	}
+}
+
+@media all and (max-width: 600px){
+	.profile-view{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 10;
+	}
+	.profile{
+		width: 100%;
+		.profile-top{
+			margin: auto auto 80px;
+			.profile-pic-bg{
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			p{
+				text-align: center;
+				width: 100%;
+				max-width: 100%;
+				left: auto;
+				color: black;
+				bottom: -100px;
+			}
+		}
+		section{
+			padding: 5;
+			border-radius: 0;
+			h2{
+				margin: 10px;
+			}
+			p{
+				margin: 10px;
+			}
+		}
+		.about-me{
+			.practical-info{
+				.flag{
+					svg{
+						right: -40px;
+					}
+				}
+			}
+		}
+	}
+}

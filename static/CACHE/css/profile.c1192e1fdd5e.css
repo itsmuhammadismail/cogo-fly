@@ -1,0 +1,586 @@
+/* line 1, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px; }
+
+/* line 9, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 17, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 18, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 27, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 30, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 38, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 41, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 44, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 60, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 63, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 71, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 75, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 83, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 85, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 92, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 98, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 104, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 111, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 119, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 123, static/scss/base.scss */
+  form img[src="/static/scss?f1c78b7497e1"] {
+    visibility: hidden; }
+
+/* line 128, static/scss/base.scss */
+button,
+input
+.button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 145, static/scss/base.scss */
+  button:hover,
+  input
+.button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 151, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 166, static/scss/base.scss */
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 169, static/scss/base.scss */
+  button:disabled:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 1, static/scss/popup.scss */
+.popup {
+  display: none;
+  position: fixed;
+  padding: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  z-index: 90;
+  box-shadow: 0 0 0 1000000px rgba(0, 0, 0, 0.4);
+  border-radius: 5px; }
+  /* line 12, static/scss/popup.scss */
+  .popup.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+  /* line 18, static/scss/popup.scss */
+  .popup .popup-title {
+    font-size: 30px;
+    display: flex;
+    justify-content: center; }
+  /* line 23, static/scss/popup.scss */
+  .popup form {
+    height: initial;
+    display: block; }
+    /* line 26, static/scss/popup.scss */
+    .popup form > button {
+      border-color: red;
+      color: red;
+      width: 100%; }
+  /* line 32, static/scss/popup.scss */
+  .popup #id_picture {
+    visibility: hidden;
+    position: absolute; }
+  /* line 36, static/scss/popup.scss */
+  .popup .popup-buttons {
+    display: flex; }
+    /* line 39, static/scss/popup.scss */
+    .popup .popup-buttons button:first-of-type {
+      margin-right: 5px;
+      color: red;
+      border: solid 1px red !important; }
+    /* line 44, static/scss/popup.scss */
+    .popup .popup-buttons button:last-of-type {
+      margin-left: 5px;
+      color: green;
+      border: solid 1px green !important; }
+
+@media all and (max-height: 600px) {
+  /* line 54, static/scss/popup.scss */
+  .popup {
+    padding: 10px 20px; }
+    /* line 56, static/scss/popup.scss */
+    .popup .popup-title {
+      font-size: 20px;
+      margin: 10px 0; } }
+
+/* line 1, static/scss/header.scss */
+header {
+  background-color: #1168d8;
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0; }
+  /* line 8, static/scss/header.scss */
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    /* line 12, static/scss/header.scss */
+    header nav h1 {
+      margin: 0; }
+      /* line 14, static/scss/header.scss */
+      header nav h1 img {
+        padding: 10px;
+        height: 75px;
+        box-sizing: border-box; }
+    /* line 20, static/scss/header.scss */
+    header nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      height: 75px; }
+      /* line 25, static/scss/header.scss */
+      header nav ul a {
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center; }
+      /* line 36, static/scss/header.scss */
+      header nav ul .profile-toggle {
+        color: white; }
+        /* line 39, static/scss/header.scss */
+        header nav ul .profile-toggle > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          /* line 43, static/scss/header.scss */
+          header nav ul .profile-toggle > div:hover {
+            cursor: pointer; }
+      /* line 48, static/scss/header.scss */
+      header nav ul li {
+        list-style: none;
+        margin: 0 5px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px; }
+      /* line 58, static/scss/header.scss */
+      header nav ul p {
+        margin: 0 5px; }
+      /* line 61, static/scss/header.scss */
+      header nav ul svg {
+        width: 25px;
+        height: 25px;
+        filter: invert(1); }
+      /* line 67, static/scss/header.scss */
+      header nav ul .logout > span:hover {
+        cursor: pointer; }
+      /* line 70, static/scss/header.scss */
+      header nav ul .logout .show-logout-modal {
+        display: flex !important; }
+      /* line 73, static/scss/header.scss */
+      header nav ul .logout .logout-modal {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center; }
+        /* line 83, static/scss/header.scss */
+        header nav ul .logout .logout-modal > div {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          padding: 0 20px;
+          border-radius: 5px; }
+          /* line 90, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > p {
+            margin: 20 0 10; }
+          /* line 93, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div .logout-buttons {
+            display: flex;
+            justify-content: center; }
+            /* line 96, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons button {
+              margin: 0; }
+            /* line 99, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons > a {
+              margin: 10 5 20 0;
+              width: auto; }
+            /* line 103, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons > button {
+              margin: 10 0 20 5;
+              color: red;
+              border-color: red; }
+          /* line 109, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > span {
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            color: grey; }
+            /* line 114, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div > span:hover {
+              cursor: pointer; }
+
+/* line 125, static/scss/header.scss */
+.sub-header {
+  position: fixed;
+  z-index: 100;
+  top: 125px;
+  right: 0px;
+  padding: 0;
+  border-radius: 5px 5px 0 5px; }
+
+/* line 134, static/scss/header.scss */
+.profile-dropdown {
+  padding: 0;
+  width: 300px;
+  text-align: center;
+  position: absolute;
+  right: -1000px;
+  top: 80px;
+  opacity: 0;
+  /*transition: right 0.4s;*/
+  color: black; }
+  /* line 144, static/scss/header.scss */
+  .profile-dropdown .banner {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 40px; }
+  /* line 151, static/scss/header.scss */
+  .profile-dropdown .profile-pic-bg {
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    top: 40px;
+    left: 100px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+    /* line 161, static/scss/header.scss */
+    .profile-dropdown .profile-pic-bg .profile-picture {
+      object-fit: cover;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: auto;
+      display: block; }
+  /* line 170, static/scss/header.scss */
+  .profile-dropdown > span {
+    color: white;
+    font-weight: bold;
+    top: 5px;
+    right: 7px;
+    position: absolute; }
+    /* line 176, static/scss/header.scss */
+    .profile-dropdown > span:hover {
+      cursor: pointer; }
+  /* line 180, static/scss/header.scss */
+  .profile-dropdown p {
+    margin: 5px 0;
+    padding-bottom: 5px;
+    /*border-bottom: solid 1px rgba(192, 191, 191, 0.5);*/ }
+  /* line 185, static/scss/header.scss */
+  .profile-dropdown ul {
+    padding: 0 20px;
+    margin: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto; }
+    /* line 191, static/scss/header.scss */
+    .profile-dropdown ul a {
+      text-decoration: none;
+      color: black;
+      flex-direction: row; }
+    /* line 196, static/scss/header.scss */
+    .profile-dropdown ul li {
+      margin: 5px 0; }
+      /* line 198, static/scss/header.scss */
+      .profile-dropdown ul li svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        filter: invert(0); }
+
+/* line 208, static/scss/header.scss */
+.show-profile-dropdown {
+  opacity: 1;
+  right: 5px;
+  /*transition: right 0.4s;*/ }
+
+/* line 214, static/scss/header.scss */
+.pusher {
+  height: 100px; }
+
+@media all and (max-height: 600px) {
+  /* line 221, static/scss/header.scss */
+  header nav ul {
+    margin: 0 10px; } }
+
+/* line 5, static/scss/profile.scss */
+.profile {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-areas: "profile-top profile-top" "about trips" "album trips" "contacts trips";
+  grid-template-columns: 420px 820px;
+  margin: auto auto 25px;
+  width: 1230px;
+  position: relative; }
+  /* line 17, static/scss/profile.scss */
+  .profile textarea {
+    font-family: "Lato", sans-serif; }
+  /* line 21, static/scss/profile.scss */
+  .profile .profile-top {
+    grid-area: profile-top;
+    padding: 0;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    margin: auto auto 25px; }
+    /* line 28, static/scss/profile.scss */
+    .profile .profile-top .banner {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.8); }
+    /* line 34, static/scss/profile.scss */
+    .profile .profile-top .profile-pic-bg {
+      background: white;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      position: absolute;
+      display: flex;
+      bottom: -17%;
+      left: 12px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+      /* line 44, static/scss/profile.scss */
+      .profile .profile-top .profile-pic-bg .profile-picture {
+        object-fit: cover;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        display: block; }
+    /* line 53, static/scss/profile.scss */
+    .profile .profile-top p {
+      position: absolute;
+      bottom: -30px;
+      left: 200px;
+      font-size: 40px;
+      color: white; }
+  /* line 62, static/scss/profile.scss */
+  .profile .about-me {
+    grid-area: about; }
+    /* line 64, static/scss/profile.scss */
+    .profile .about-me .practical-info {
+      width: 100%; }
+      /* line 66, static/scss/profile.scss */
+      .profile .about-me .practical-info .flag {
+        margin-right: 5px;
+        position: relative;
+        max-width: calc(100% - 55px); }
+        /* line 70, static/scss/profile.scss */
+        .profile .about-me .practical-info .flag svg {
+          position: absolute;
+          right: -60px;
+          top: -50%;
+          width: 55px;
+          flex-shrink: 0;
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+    /* line 80, static/scss/profile.scss */
+    .profile .about-me hr {
+      margin: 0 10px; }
+    /* line 85, static/scss/profile.scss */
+    .profile .about-me .description span svg {
+      height: 20px;
+      width: 20px; }
+    /* line 89, static/scss/profile.scss */
+    .profile .about-me .description span:last-of-type {
+      float: right;
+      transform: scaleX(-1) scaleY(-1); }
+    /* line 94, static/scss/profile.scss */
+    .profile .about-me .description p {
+      text-align: center;
+      margin: 0; }
+  /* line 101, static/scss/profile.scss */
+  .profile .album {
+    grid-area: album; }
+    /* line 103, static/scss/profile.scss */
+    .profile .album .album-pictures {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 10px;
+      grid-template-rows: 50% 50%;
+      height: 250px; }
+      /* line 109, static/scss/profile.scss */
+      .profile .album .album-pictures img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px; }
+  /* line 118, static/scss/profile.scss */
+  .profile .contacts {
+    grid-area: contacts; }
+    /* line 120, static/scss/profile.scss */
+    .profile .contacts .simple-card {
+      margin: 10px auto; }
+  /* line 125, static/scss/profile.scss */
+  .profile .trips {
+    grid-area: trips; }
+    /* line 127, static/scss/profile.scss */
+    .profile .trips ul {
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap; }
+  /* line 134, static/scss/profile.scss */
+  .profile .like-fav {
+    position: absolute;
+    right: 5px;
+    top: 205px;
+    display: flex; }
+    /* line 139, static/scss/profile.scss */
+    .profile .like-fav button {
+      border: none;
+      padding: 0;
+      background: transparent;
+      height: fit-content;
+      margin: 0 5px; }
+    /* line 146, static/scss/profile.scss */
+    .profile .like-fav svg {
+      width: 30px;
+      height: 30px; }
+  /* line 152, static/scss/profile.scss */
+  .profile > button,
+  .profile > a {
+    position: absolute;
+    margin: 10px 5px;
+    right: 0px;
+    top: 145px; }
+
+@media all and (max-width: 1300px) {
+  /* line 162, static/scss/profile.scss */
+  .profile {
+    width: 830px;
+    grid-template-columns: 420px 430px; } }

@@ -1,0 +1,34 @@
+/* line 3, static/scss/album-widget.scss */
+.album-widget span img {
+  height: 125px !important;
+  width: 125px !important; }
+  /* line 6, static/scss/album-widget.scss */
+  .album-widget span img:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    height: 125px;
+    width: 125px;
+    background: url("/static/svg/icons/add-image.f39fed5dbc94.svg?894952b71d02") center no-repeat, url("/static/img/white.75db99b125fe.png?4b7f1cfde928");
+    background-size: 75px 75px, 125px 125px; }
+  /* line 16, static/scss/album-widget.scss */
+  .album-widget span img:hover {
+    cursor: pointer; }
+
+/* line 20, static/scss/album-widget.scss */
+.album-widget span p {
+  display: none; }
+
+/* line 24, static/scss/album-widget.scss */
+.album-widget div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  z-index: 50; }
+  /* line 30, static/scss/album-widget.scss */
+  .album-widget div:hover {
+    cursor: pointer; }
+  /* line 33, static/scss/album-widget.scss */
+  .album-widget div svg {
+    width: 30px; }

@@ -1,0 +1,667 @@
+/* line 1, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px; }
+
+/* line 9, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 17, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 18, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 27, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 30, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 38, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 41, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 44, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 60, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 63, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 71, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 75, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 83, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 85, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 92, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 98, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 104, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 111, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 119, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 123, static/scss/base.scss */
+  form img[src="/static/scss?5146bc78b063"] {
+    visibility: hidden; }
+
+/* line 128, static/scss/base.scss */
+button,
+input .button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 143, static/scss/base.scss */
+  button:hover,
+  input .button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 149, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 164, static/scss/base.scss */
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 167, static/scss/base.scss */
+  button:disabled:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 1, static/scss/header.scss */
+header {
+  background-color: #1168d8;
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0; }
+  /* line 8, static/scss/header.scss */
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    /* line 12, static/scss/header.scss */
+    header nav h1 {
+      margin: 0; }
+      /* line 14, static/scss/header.scss */
+      header nav h1 img {
+        padding: 10px;
+        height: 75px;
+        box-sizing: border-box; }
+    /* line 20, static/scss/header.scss */
+    header nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      height: 75px; }
+      /* line 25, static/scss/header.scss */
+      header nav ul a {
+        position: relative;
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center; }
+      /* line 37, static/scss/header.scss */
+      header nav ul .profile-toggle {
+        color: white; }
+        /* line 40, static/scss/header.scss */
+        header nav ul .profile-toggle > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          /* line 44, static/scss/header.scss */
+          header nav ul .profile-toggle > div:hover {
+            cursor: pointer; }
+      /* line 49, static/scss/header.scss */
+      header nav ul li {
+        list-style: none;
+        margin: 0 5px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px; }
+      /* line 60, static/scss/header.scss */
+      header nav ul .nav-button svg {
+        display: none; }
+      /* line 64, static/scss/header.scss */
+      header nav ul p {
+        margin: 0 5px; }
+      /* line 67, static/scss/header.scss */
+      header nav ul svg {
+        width: 25px;
+        height: 25px;
+        filter: invert(1); }
+      /* line 73, static/scss/header.scss */
+      header nav ul .logout > span:hover {
+        cursor: pointer; }
+      /* line 76, static/scss/header.scss */
+      header nav ul .logout .show-logout-modal {
+        display: flex !important; }
+      /* line 79, static/scss/header.scss */
+      header nav ul .logout .logout-modal {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center; }
+        /* line 89, static/scss/header.scss */
+        header nav ul .logout .logout-modal > div {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          padding: 0 20px;
+          border-radius: 5px; }
+          /* line 96, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > p {
+            margin: 20 0 10; }
+          /* line 99, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div .logout-buttons {
+            display: flex;
+            justify-content: center; }
+            /* line 102, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons button {
+              margin: 0; }
+            /* line 105, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons > a {
+              margin: 10 5 20 0;
+              width: auto; }
+            /* line 109, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons > button {
+              margin: 10 0 20 5;
+              color: red;
+              border-color: red; }
+          /* line 115, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > span {
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            color: grey; }
+            /* line 120, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div > span:hover {
+              cursor: pointer; }
+    /* line 128, static/scss/header.scss */
+    header nav #nav-hamburger {
+      display: none;
+      height: 60px;
+      width: 45px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      cursor: pointer; }
+      /* line 136, static/scss/header.scss */
+      header nav #nav-hamburger span {
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background: white;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out; }
+        /* line 147, static/scss/header.scss */
+        header nav #nav-hamburger span:nth-child(1) {
+          top: 30%; }
+        /* line 150, static/scss/header.scss */
+        header nav #nav-hamburger span:nth-child(2), header nav #nav-hamburger span:nth-child(3) {
+          top: 50%; }
+        /* line 154, static/scss/header.scss */
+        header nav #nav-hamburger span:nth-child(4) {
+          top: 70%; }
+    /* line 161, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(1) {
+      top: 30%;
+      width: 0%;
+      left: 50%; }
+    /* line 166, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(2) {
+      transform: rotate(45deg); }
+    /* line 169, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(3) {
+      transform: rotate(-45deg); }
+    /* line 172, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(4) {
+      top: 70%;
+      width: 0%;
+      left: 50%; }
+
+/* line 182, static/scss/header.scss */
+.sub-header {
+  position: fixed;
+  z-index: 100;
+  top: 125px;
+  right: 0px;
+  padding: 0;
+  border-radius: 5px 5px 0 5px; }
+
+/* line 191, static/scss/header.scss */
+.profile-dropdown {
+  padding: 0;
+  width: 300px;
+  text-align: center;
+  position: absolute;
+  right: -1000px;
+  top: 80px;
+  opacity: 0;
+  z-index: 100;
+  /*transition: right 0.4s;*/
+  color: black; }
+  /* line 202, static/scss/header.scss */
+  .profile-dropdown .banner {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 40px; }
+  /* line 209, static/scss/header.scss */
+  .profile-dropdown .profile-pic-bg {
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    top: 40px;
+    left: 100px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+    /* line 219, static/scss/header.scss */
+    .profile-dropdown .profile-pic-bg .profile-picture {
+      object-fit: cover;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: auto;
+      display: block; }
+  /* line 228, static/scss/header.scss */
+  .profile-dropdown > span {
+    color: white;
+    font-weight: bold;
+    top: 5px;
+    right: 7px;
+    position: absolute; }
+    /* line 234, static/scss/header.scss */
+    .profile-dropdown > span:hover {
+      cursor: pointer; }
+  /* line 238, static/scss/header.scss */
+  .profile-dropdown p {
+    margin: 5px 0;
+    padding-bottom: 5px;
+    /*border-bottom: solid 1px rgba(192, 191, 191, 0.5);*/ }
+  /* line 243, static/scss/header.scss */
+  .profile-dropdown ul {
+    padding: 0 20px;
+    margin: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto; }
+    /* line 249, static/scss/header.scss */
+    .profile-dropdown ul a {
+      text-decoration: none;
+      color: black;
+      flex-direction: row; }
+    /* line 254, static/scss/header.scss */
+    .profile-dropdown ul li {
+      margin: 5px 0; }
+      /* line 256, static/scss/header.scss */
+      .profile-dropdown ul li svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        filter: invert(0); }
+
+/* line 266, static/scss/header.scss */
+.show-profile-dropdown {
+  opacity: 1;
+  right: 5px;
+  /*transition: right 0.4s;*/ }
+
+/* line 272, static/scss/header.scss */
+.pusher {
+  height: 100px; }
+
+@media all and (max-width: 965px) {
+  /* line 278, static/scss/header.scss */
+  header nav {
+    position: relative; }
+    /* line 280, static/scss/header.scss */
+    header nav .logo {
+      position: absolute;
+      left: 0;
+      top: 0; }
+    /* line 286, static/scss/header.scss */
+    header nav ul li {
+      display: none; }
+    /* line 290, static/scss/header.scss */
+    header nav ul.open-menu {
+      width: 100%;
+      margin: auto;
+      margin-top: 75px;
+      justify-content: center; }
+      /* line 295, static/scss/header.scss */
+      header nav ul.open-menu li {
+        float: none;
+        display: flex;
+        text-align: left; }
+    /* line 301, static/scss/header.scss */
+    header nav #nav-hamburger {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      margin: 7.5px 15px 0 0; } }
+
+@media all and (max-width: 750px) {
+  /* line 315, static/scss/header.scss */
+  header nav ul.open-menu {
+    justify-content: center; }
+    /* line 317, static/scss/header.scss */
+    header nav ul.open-menu > li {
+      margin: 0 10px; }
+      /* line 321, static/scss/header.scss */
+      header nav ul.open-menu > li > a .nav-link-text,
+      header nav ul.open-menu > li > div .nav-link-text {
+        display: none; }
+      /* line 324, static/scss/header.scss */
+      header nav ul.open-menu > li > a svg,
+      header nav ul.open-menu > li > div svg {
+        height: 35px;
+        width: 35px;
+        flex-shrink: 0; }
+  /* line 334, static/scss/header.scss */
+  .notification {
+    right: -10px !important; } }
+
+@media all and (max-width: 600px) {
+  /* line 342, static/scss/header.scss */
+  header nav ul.open-menu {
+    flex-wrap: wrap;
+    height: max-content; }
+    /* line 345, static/scss/header.scss */
+    header nav ul.open-menu li {
+      margin: 15px; }
+    /* line 349, static/scss/header.scss */
+    header nav ul.open-menu .nav-button button {
+      display: none; }
+    /* line 352, static/scss/header.scss */
+    header nav ul.open-menu .nav-button svg {
+      display: block; }
+  /* line 359, static/scss/header.scss */
+  .notification {
+    top: -10px !important; } }
+
+/* line 1, static/scss/post.scss */
+.post {
+  margin-top: 20px;
+  padding: 0; }
+  /* line 5, static/scss/post.scss */
+  .post .post-top {
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px rgba(192, 191, 191, 0.5); }
+    /* line 9, static/scss/post.scss */
+    .post .post-top img {
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      margin: 10px;
+      object-fit: cover; }
+    /* line 18, static/scss/post.scss */
+    .post .post-top .poster-info p:first-of-type {
+      margin-bottom: 0; }
+    /* line 21, static/scss/post.scss */
+    .post .post-top .poster-info p:nth-of-type(2) {
+      margin-top: 0; }
+  /* line 29, static/scss/post.scss */
+  .post .post-content p {
+    padding: 0 20px; }
+  /* line 32, static/scss/post.scss */
+  .post .post-content img {
+    width: 100%;
+    object-fit: cover; }
+  /* line 38, static/scss/post.scss */
+  .post .post-bottom {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px; }
+    /* line 43, static/scss/post.scss */
+    .post .post-bottom span,
+    .post .post-bottom button {
+      color: black;
+      font-weight: normal;
+      text-transform: none;
+      font-size: 15px;
+      border: solid 1px transparent;
+      border-radius: 10px;
+      background-color: rgba(192, 191, 191, 0.2);
+      padding: 5px;
+      width: 110px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 10px;
+      transition: 0.4s; }
+      /* line 59, static/scss/post.scss */
+      .post .post-bottom span:hover,
+      .post .post-bottom button:hover {
+        cursor: pointer;
+        background-color: rgba(192, 191, 191, 0.5);
+        transition: 0.4s; }
+      /* line 64, static/scss/post.scss */
+      .post .post-bottom span svg,
+      .post .post-bottom button svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px; }
+
+/* line 5, static/scss/seed-feed.scss */
+.seed-feed {
+  display: grid;
+  grid-gap: 25px;
+  grid-template-areas: "left-section newsfeed right-section";
+  grid-template-columns: min-content auto min-content;
+  margin: auto;
+  width: 95%;
+  max-width: 1500px; }
+
+/* line 15, static/scss/seed-feed.scss */
+.newsfeed {
+  grid-area: newsfeed; }
+  /* line 17, static/scss/seed-feed.scss */
+  .newsfeed .express-yourself {
+    padding: 0; }
+    /* line 19, static/scss/seed-feed.scss */
+    .newsfeed .express-yourself form {
+      width: 100%; }
+    /* line 22, static/scss/seed-feed.scss */
+    .newsfeed .express-yourself .express-top {
+      padding: 5px 20px;
+      background-color: rgba(192, 191, 191, 0.2); }
+      /* line 25, static/scss/seed-feed.scss */
+      .newsfeed .express-yourself .express-top p {
+        margin: 0; }
+    /* line 29, static/scss/seed-feed.scss */
+    .newsfeed .express-yourself .express-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: solid 1px rgba(192, 191, 191, 0.5); }
+      /* line 34, static/scss/seed-feed.scss */
+      .newsfeed .express-yourself .express-content img {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        margin: 10px;
+        object-fit: cover; }
+      /* line 41, static/scss/seed-feed.scss */
+      .newsfeed .express-yourself .express-content textarea {
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        border: none !important; }
+      /* line 47, static/scss/seed-feed.scss */
+      .newsfeed .express-yourself .express-content button {
+        margin-right: 10px; }
+    /* line 51, static/scss/seed-feed.scss */
+    .newsfeed .express-yourself .express-bottom {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      padding: 10px; }
+      /* line 56, static/scss/seed-feed.scss */
+      .newsfeed .express-yourself .express-bottom ul {
+        list-style: none;
+        padding: 0;
+        margin: 0; }
+        /* line 61, static/scss/seed-feed.scss */
+        .newsfeed .express-yourself .express-bottom ul .album-widget > span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+          background-color: rgba(192, 191, 191, 0.2);
+          padding: 0 5px;
+          transition: background-color 0.4s; }
+          /* line 69, static/scss/seed-feed.scss */
+          .newsfeed .express-yourself .express-bottom ul .album-widget > span:hover {
+            transition: background-color 0.4s;
+            cursor: pointer;
+            background-color: rgba(192, 191, 191, 0.5); }
+          /* line 74, static/scss/seed-feed.scss */
+          .newsfeed .express-yourself .express-bottom ul .album-widget > span img {
+            height: 125px !important;
+            width: 125px !important; }
+          /* line 78, static/scss/seed-feed.scss */
+          .newsfeed .express-yourself .express-bottom ul .album-widget > span svg {
+            height: 40px;
+            width: 40px; }
+          /* line 82, static/scss/seed-feed.scss */
+          .newsfeed .express-yourself .express-bottom ul .album-widget > span p {
+            display: block;
+            margin-left: 5px; }
+
+/* line 93, static/scss/seed-feed.scss */
+.left-section,
+.right-section {
+  height: 400px;
+  width: 300px;
+  padding: 0;
+  position: sticky;
+  top: 100px; }
+
+/* line 102, static/scss/seed-feed.scss */
+.left-section {
+  grid-area: left-section; }
+
+/* line 106, static/scss/seed-feed.scss */
+.right-section {
+  grid-area: right-section; }
+
+@media all and (max-height: 600px) {
+  /* line 111, static/scss/seed-feed.scss */
+  .left-section {
+    width: 200px; } }

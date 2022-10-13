@@ -1,0 +1,320 @@
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %}
+{% load humanize %}
+
+{% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/header.scss' %}">
+{% endcompress %}
+
+<div class="fixed w-full bg-white z-[1000] shadow-lg">
+    <header class="w-[100%] h-[5.125rem] max-w-[80rem] mx-auto">
+        <nav class="flex justify-around md:justify-between items-center  md:gap-[unset] gap-[3rem] py-[1rem]">
+            <div class="logo flex items-center">
+                <a href="/"> <img src="{% static 'img/svg/logo.svg' %}" alt="CoGoFly" class="w-[173.99px]" /> </a>
+            </div>
+            <div>
+                <ul class="gap-[2rem] items-center justify-center md:flex hidden text-[#AEAEAE]" >
+                    <li> <a href={% url 'covid' %} target="_blank" rel="noopener noreferrer">COVID-19</a></li>
+                    <li><a href="{% url 'howitworks' %}" target="_blank" rel="noopener noreferrer">How it works?</a></li>
+                    <li>
+                        <a class="text-[#AEAEAE]"><img src="{% static 'img/svg/flag.svg' %}" alt="CoGoFly" class="w-[38px] h-[26px]" /></a>
+                    </li>
+                    <li> <a  href={% url 'login' %} class="text-[#1877F2] leading-[22px] font-[700]"> Log in</a
+              >
+            </li>
+            <li>
+              <button
+                class="rounded-[30px] bg-[#1877F2] text-white w-[90px] h-[36px]"
+              >
+              <a  href={% url 'signup' %}>
+                Sign Up
+            </a>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- responsive -->
+        
+        <!-- <div class="fixed h-[100vh] w-full z-[100] bg-[#1E1E1E] flex flex-col items-center z-[100] top-[0] hidden " id="menu-open">
+            <div class="logo flex items-center  w-full  justify-around py-[1rem] gap-[3rem] shadow-lg">
+                <a href="/"> <img src="{% static 'img/svg/logo.svg' %}" alt="CoGoFly" class="w-[173.99px]" /> </a>
+                <img src="{% static 'img/svg/Cross-Icon.svg' %}" alt="CoGoFly" class="pr-[1rem] h-[2.063rem] w-[2.063rem] rounded-[50%]" onclick="hamburgerClose()" /> 
+            </div>
+            <hr class="w-full hr-line">
+            <ul class="gap-[2rem] items-center justify-start md:flex w-full my-[2rem] ml-[4.75rem] text-[#AEAEAE] " id="menu">
+
+                <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out ">
+                    <a class="  text-white text-[22px]"><img src="{% static 'img/svg/flag.svg' %}" alt="CoGoFly" class="w-[38px] h-[26px]" /></a>
+                </li>
+                <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"> <a href={% url 'covid' %} target="_blank" rel="noopener noreferrer" class=" text-white text-[22px]">COVID-19</a></li>
+                <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "><a href="{% url 'howitworks' %}" target="_blank" rel="noopener noreferrer" class="  text-white text-[22px]">How it works?</a></li>
+                <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "> <a  href={% url 'login' %} class="  text-white text-[22px] leading-[22px]"> Log in</a
+          >
+        </li>
+        <li class="flex justify-start items-center m-[0.625rem] focus:ring-2 focus:ring-indigo-200 text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" >
+          <button
+            class="rounded-[30px] bg-[#1877F2] text-white w-[90px] h-[36px]"
+          >
+          <a  href={% url 'signup' %}>
+            Sign Up
+        </a>
+          </button>
+        </li>
+              </ul>
+        </div> -->
+        <!-- responsive -->
+
+
+        
+        <!-- drawer -->
+        <div id="mySidenav" class="sidenav  h-[100vh] w-full bg-[#1E1E1E] flex flex-col items-center md:hidden top-[0]">
+             <div class="logo flex items-center flex-row w-full  justify-around py-[1rem] gap-[3rem] shadow-lg">
+                <a href="/"> <img src="{% static 'img/svg/logo.svg' %}" alt="CoGoFly" class="w-[173.99px]" /> </a>
+                
+                <img src="{% static 'img/svg/Cross-Icon.svg' %}" alt="CoGoFly" class="pr-[1rem] h-[2.063rem] w-[2.063rem] rounded-[50%]" onclick="closeNav()"/>
+            </div>
+            <hr class="w-full hr-line">
+            <ul class="gap-[2rem] items-center justify-start md:flex w-full my-[2rem] text-[#AEAEAE] ">
+                    <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "><a class="text-white text-[22px]"><img src="{% static 'img/svg/flag.svg' %}" alt="CoGoFly" class="w-[38px] h-[26px]" /></a></li>
+            <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "><a href={% url 'covid' %} target="_blank" rel="noopener noreferrer" class=" text-white text-[22px]">COVID-19</a></li>
+            <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "><a href="{% url 'howitworks' %}" target="_blank" rel="noopener noreferrer" class="  text-white text-[22px]">How it works?</a></li>
+            <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "><a  href={% url 'login' %} class="  text-white text-[22px] leading-[22px]"> Log in</a></li>
+            <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-2 leading-8 transition-colors duration-200 ease-in-out "> <button class="rounded-[30px] bg-[#1877F2] text-white w-[140px] h-[56px]"> <a  href={% url 'signup' %}>Sign Up</a> </button></li>
+            </ul>
+            
+            
+                
+          </div>
+          
+        <!-- drawer -->
+        <button class="md:hidden block hamburger transition-transform left-0 top-0 -translate-x-full" id="burger" >
+          <img
+            src="{% static 'img/svg/menu-1.svg' %}"
+            alt="CoGoFly"
+            class="w-[2rem] h-[3rem]"
+            onClick="openNav();"
+          />
+        </button>
+
+      </nav>
+    </header>
+  </div>
+<!-- 
+<header>
+    <script type="text/javascript" src="{% static 'js/header.js' %}"></script>
+    
+    <nav>
+        <h1 class="logo">
+        {% if user.is_authenticated %}
+            <a href="/home"><img src="{% static 'img/logo-CoGoFly-blanc.png' %}" alt="CoGoFly"/></a>
+        {% else %}
+            <a href="/"><img src="{% static 'img/logo-CoGoFly-blanc.png' %}" alt="CoGoFly"/></a>
+        {% endif %}
+        </h1>
+        <ul id="nav-links" class="nav-links">
+             <li>
+                <a href="{% url 'ukraine' %}" target="_blank" rel="noopener noreferrer">
+                    <img src="{% static "img/ukraine.jpg" %}" width="100%" height="50%">           
+                </a>
+            </li>  -->
+            <li>
+                <a href="{% url 'covid' %}"target="_blank" rel="noopener noreferrer">
+                    {% svg 'icons/mask' %}
+                    <p class="nav-link-text">{% trans 'COVID-19' %}</p>                
+                </a>
+            </li>          
+            <li>
+                <a href="{% url 'howitworks' %}" target="_blank" rel="noopener noreferrer">
+                    {% svg 'icons/question-mark-filled' %}
+                    <p class="nav-link-text">{% trans 'How it works?' %}</p>                
+                </a>
+            </li>        
+            <li class="nav-button">
+                <a href="{% url 'search' %}">
+                    <button>{% trans "Search" %}</button>
+                    {% svg 'icons/search-filled' %}
+                    <p class="nav-link-text">{% trans 'Search' %}</p>
+                </a>
+            </li>        
+            <li class="nav-button">
+                <a href="{% url 'trip_add' %}">
+                    <button>{% trans "Add Trip" %}</button>
+                    {% svg 'icons/add-trip-filled' %}
+                    {% if request.session.trip %}
+                    <span class="notification">
+                        +
+                    </span>
+                    {% endif %}
+                    <p class="nav-link-text">{% trans 'Add trip' %}</p>
+                </a>
+            </li>
+            {% if request.user.is_authenticated %}
+            <li>
+                <a href="{% url 'favourites' %}">
+                    {% svg 'icons/star-filled' %}
+                    <p class="nav-link-text">{% trans 'Favorites' %}</p>
+                </a>            
+            </li>
+            <li>
+                <a href={% url 'messages' %}>
+                    {% svg 'icons/comment-filled' %}
+                    {% if unread_messages %}<p class="notification">{{ unread_messages }}</p>{% endif %}
+                    <p class="nav-link-text">{% trans "Messages" %}</p>
+                </a>
+            </li>
+            <li>
+                <a href={% url 'requests' %}>
+                    {% svg 'icons/add-user-filled' %}
+                    {% if trip_requests or contact_requests %}<p class="notification">{{ trip_requests|add:contact_requests }}</p>{% endif %}
+                    <p class="nav-link-text">{% trans 'Requests' %}</p>
+                </a>
+            </li>        
+            <li>
+                <span id="notifications" class="notifications" onclick="toggleHeaderDropdown('notification-panel')">
+                    {% svg 'icons/notification-filled' %}
+                    {% if notifications %}<p class="notification">{{ notifications }}</p>{% endif %}
+                    <p class="nav-link-text">{% trans 'Notifications' %}</p>
+                </span>
+                <div id="notification-panel" class="notification-panel dropdown">               
+                    <span onclick="toggleHeaderDropdown('notification-panel')">X</span>
+                    <h4>{% trans "Notifications" %}</h4>
+                    <hr>
+                    <p>{% trans "Your profile has been viewed" %} {{ request.user.visits.count }} {% trans "times" %}</p>          
+                    <hr>
+                    <ul class="notification-feed">
+                        {% for notification in request.user.notifications.all %}
+                        <li {% if not notification.read %} class="unread-notification" {% endif %}>
+                            <a href="{{ notification.get_absolute_url }}">
+                                <img src={% if notification.user.profile.picture %}{{ notification.user.profile.picture.url }}{% else %}{% static 'img/default-profile.png' %}{% endif %} alt="cogofly_profile-picture" class="profile-picture">
+                                <div class="notification-info">
+                                    <p><strong>{{ notification }}</strong></p>
+                                    <p class="preview">{{ notification.target|truncatechars:100 }}</p>
+                                    <p class="notification-time">{{ notification.updated|naturaltime }}</p>
+                                </div>
+                            </a>
+                            <span class="unread-notification-bubble"></span>
+                        </li>
+                        <hr>
+                        {% endfor %}
+                    </ul>   
+                </div>
+            </li>              
+            <li class="profile-toggle">
+                <div onclick="toggleHeaderDropdown('profile-dropdown')">
+                    {% svg 'icons/user-filled' %}
+                    <p class="nav-link-text">{% trans "My account" %}</p>                
+                </div>
+                <section id="profile-dropdown" class="profile-dropdown dropdown">
+                    <a href="{% url 'change-profile-photos' %}">
+                        <img src={% if request.user.profile.cover %}{{ request.user.profile.cover.url }}{% else %}{% static 'img/default-cover.jpeg' %}{% endif %} class="banner">
+                    </a>
+                    <div class="profile-pic-bg">
+                        <a href="{% url 'change-profile-photo' %}">                            
+                            <img src={% if request.user.profile.picture %}{{ request.user.profile.picture.url }}{% else %}{% static 'img/default-profile.png' %}{% endif %} alt="cogofly_profile-picture" class="profile-picture">
+                        </a>
+                        </div>
+                    <p><strong>{{ request.user.first_name }} {{ request.user.last_name }}</strong></p>
+                    <span onclick="toggleHeaderDropdown('profile-dropdown')">X</span>
+                    <ul class="profile-links">
+                        <li><a href={% url 'profile' request.user.id %}>{% svg 'icons/user' %}{% trans 'My profile' %}</a></li>            
+                        <li><a href={% url 'trips' %}>{% svg 'icons/briefcase' %}{% trans 'My trips' %}</a></li>
+                        <li><a href={% url 'cotravels' %}>{% svg 'icons/friend' %}{% trans 'My cotravels' %}</a></li>       
+                        <li><a href={% url 'contacts' %}>{% svg 'icons/card' %}{% trans 'My contacts' %}</a></li>
+                        <li><a href={% url 'account' %}>{% svg 'icons/settings' %}{% trans 'Parameters' %}</a></li>
+                        <li><a href={% url 'invite' %}>{% svg 'icons/mail' %}{% trans 'Invite friends' %}</a></li>
+                        <li id="contact-us-header"><a href="{% url 'contact_us' %}#remarks">{% svg 'icons/contact' %}{% trans 'Contact us' %}</a></li>        
+                        <li id="testimony-header"><a href="{% url 'contact_us' %}#testimony">{% svg 'icons/contact' %}{% trans 'Leave a testimony' %}</a></li>                                                                                                          
+                    </ul>
+                </section>                
+            </li>
+            <li class="logout">
+                <span onclick="toggleLogoutModal()">{% svg 'icons/logout-filled' %}</span>
+                <div class="logout-modal">
+                    <div>
+                        <p>{% trans "Are you sure you want to logout ?" %}</p>
+                        <div class="logout-buttons">
+                            <a href="/logout"><button>{% trans "Logout" %}</button></a>
+                            <button onclick="toggleLogoutModal()">{% trans "Cancel" %}</button>                    
+                        </div>
+                        <span onclick="toggleLogoutModal()">X</span>
+                    </div>
+                </div>                   
+            </li>
+            {% endif %} 
+        </ul>
+        <div id="nav-hamburger" class="hamburger" onclick="toggleHamburger()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>                
+        </div>        
+    </nav> 
+</header>  
+ <!-- <header class="bg-[#1877F1]">
+            <nav id="nav-links" class="nav-links h-[82px] flex justify-between container mx-auto">
+
+                <h1 class="logo flex flex-1 justify-center">
+                    <a href="/">
+                        <img src="{% static 'img/svg/logo.svg' %}" alt="CoGoFly" class="w-[173.99px]"/>
+                    </a>
+                </h1>
+
+                <ul class="flex flex-1 justify-between">
+                    <li class="logo" style="text-align: right;">
+                        <div class="logo">
+                            <a href="{% url 'ukraine' %}" target="_blank" rel="noopener noreferrer">
+                                <img src="{% static 'img/ukraine.jpg' %}" style ="width: auto; height: 60px;" alt="ukraine">           
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{% url 'covid' %}" target="_blank" rel="noopener noreferrer">
+                            <p class="nav-link-text">{% trans 'Home' %}</p>                
+                        </a>
+                    </li>          
+                    <li>
+                        <a href="{% url 'howitworks' %}" target="_blank" rel="noopener noreferrer">
+                            <p class="nav-link-text">{% trans 'Blog' %}</p>                
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'howitworks' %}" target="_blank" rel="noopener noreferrer">
+                            <p class="nav-link-text">{% trans 'About Us' %}</p>                
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'howitworks' %}" target="_blank" rel="noopener noreferrer">
+                            <p class="nav-link-text">{% trans 'Contact' %}</p>                
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'howitworks' %}" target="_blank" rel="noopener noreferrer">
+                            <p class="nav-link-text">{% trans 'How it works?' %}</p>                
+                        </a>
+                    </li>
+                </ul>
+                <ul class="flex-1 flex justify-center">
+                    <li>
+                        <a href="{% url 'login' %}">
+                            <p class="nav-link-text">{% trans 'Log in' %}</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'signup' %}" class="rounded border border-white">
+                            <p class="nav-link-text">{% trans 'Sign up' %}</p>
+                        </a>
+                        <p>{% blocktrans %} <strong>Sign up for free</strong> if you want to take advantage of all CoGoFly’s features.{% endblocktrans %}</p>
+                </li>
+                </ul>
+                <button class="hamburger" id="menu-toggle">
+                    <span></span>
+                </button>
+                </div>
+                <button id="scrollup" title="{% trans 'Scroll to top' %}">▲</button>
+            </nav>
+        </header> -->
+
+<div class="pusher"></div>

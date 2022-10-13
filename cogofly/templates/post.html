@@ -1,0 +1,175 @@
+{% load static %}
+{% load svg %}
+{% load i18n %}
+{% load compress %}
+{% load humanize %}
+
+{% compress css %}  
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/post.scss' %}">
+{% endcompress %}
+
+ 
+<section class="post">
+
+    <a style="visibility: hidden;
+    display: block;
+    top: -100px;
+    position: relative;"
+    id="{{ post.id }}"></a>
+
+    <div class="post-top">
+        <img src="{{ post.user.profile.picture_url }}" alt="" class="profile-picture">    
+        <div class="poster-info">
+            <p><strong>{{ post.user.first_name }} {{ post.user.last_name }}</strong></p>
+            {% if post.user.trips.next %}
+            <p class="next-travel" title="{% trans 'Next travel: ' %}{{ post.user.trips.next.destination.name }}">
+                {% trans 'Next travel: ' %}
+                <strong class="next-travel-text">{{ post.user.trips.next.destination.name }}</strong>
+                {% svg 'flags/'|add:post.user.trips.next.destination.country.code2|lower %}
+            </p> 
+            {% else %}
+            <p>{% trans 'No travels done.' %}</p>
+            {% endif %}
+            {% if post.user == request.user %}  
+            <div class="delete-post">
+                <button class="delete" onclick="$(this).parent().parent().parent().next().toggleClass('show-delete-post-form')">{% svg "icons/delete" %}</button>     
+            </div> 
+            {% endif %}
+        </div>
+    </div>
+
+    <form class="delete-post-form" method="post" action="{% url 'post' post.id %}">
+        {% csrf_token %}
+        <button type="submit" title="{% trans 'Delete post' %}" name="delete">{% trans "Are you sure you want to delete ?" %}</button>
+        <span onclick="$(this).parent().toggleClass('show-delete-post-form')">{% trans "Cancel" %}</span>
+    </form>           
+
+    <div class="post-content">
+        <p>{{ post.text|urlize }}</p>
+        {% if post.pictures.all %}
+        <div class="carousel {% if not post.pictures.all.1 %}hide-arrows{% endif %}">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    {% for picture in post.pictures.all %}
+                    <li class="splide__slide" style="margin:0">
+                        <img src="{{ picture.picture.url }}" alt="">                    
+                    </li>
+                    {% endfor %}                                                                                                                                    
+                </ul>    
+            </div>    
+        </div>    
+        {% endif %}
+        {% if post.shared_object %}
+            {% if post.content_type.model == 'trip' %}
+                {% include "trip-card.html" with trip=post.shared_object is_favorite=post.shared_object_is_favorite is_liked=post.shared_object_is_liked %}
+            {% elif post.content_type.model == 'profile' %}
+                {% include "simple-card.html" with contact=post.shared_object.user is_favorite=post.shared_object_is_favorite is_liked=post.shared_object_is_liked %}
+            {% elif post.content_type.model == 'post' %}
+                {% with post.shared_object as shared_post %}
+                {# to design #}
+                <div class="shared-post">
+                    <div class="shared-post-user">
+                        <img src="{{ shared_post.user.profile.picture_url }}" alt="Cogofly profile picture" class="profile-picture">    
+                        <div class="shared-post-user-info">
+                            <p><strong>{{ shared_post.user.first_name }} {{ shared_post.user.last_name }}</strong></p>
+                            <p>{{ shared_post.published|naturaltime }}</p>
+                        </div>                    
+                    </div>
+                    <p class="shared-post-text">{{ shared_post.text }}</p>
+                    {% if shared_post.pictures.all %}
+                    <div class="carousel">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                {% for picture in shared_post.pictures.all %}
+                                <li class="splide__slide">
+                                    <img src="{{ picture.picture.url }}" alt="Cogofly profile picture">
+                                </li>
+                                {% endfor %}                                                                                                                                    
+                            </ul>    
+                        </div>    
+                    </div>    
+                    {% endif %}                    
+                    <a href="{{ shared_post.get_absolute_url }}">{% trans "See full post" %}</a>                
+                </div>
+              {% endwith %}
+            {% endif %}
+        {% endif %}
+        <div class="post-stats">
+            <p>{{ post.published|naturaltime }}</p>
+            <span class="number-likes">{{ post.nb_likes }}{% svg 'icons/like' %}</span>
+            <span onclick="
+                $(this).parent().parent().next().find('.comments').toggleClass('comments-toggled');
+            " class="number-comments">{{ post.nb_comments }}{% svg 'icons/comment' %}</span>
+        </div>
+    </div>
+
+    <div class="post-bottom">
+        <hr>
+        <div class="post-bottom-like-share">
+            <form method="POST" action="{% url 'post' post.id %}">
+                {% csrf_token %}    
+                {% if post.is_liked %}
+                <button type="submit" title="{% trans 'Unlike' %}" name="unlike" class="if-desktop">{% svg 'icons/like' %} {% trans "Unlike" %}</button>
+                <button type="submit" title="{% trans 'Unlike' %}" name="unlike" class="if-mobile">{% svg 'icons/like' %}</button>
+                {% else %}
+                <button title="{% trans 'Like' %}" type="submit" name="like" class="if-desktop">{% svg 'icons/like-white' %} {% trans "Like" %}</button>
+                <button title="{% trans 'Like' %}" type="submit" name="like" class="if-mobile">{% svg 'icons/like-white' %}</button>
+                {% endif %}
+            </form>        
+            <span onclick="$(this).parent().next().toggleClass('comments-toggled');" class="if-desktop">{% svg 'icons/comment' %}{% trans 'Comment' %}</span>    
+            <span onclick="$(this).parent().next().toggleClass('comments-toggled');" class="if-mobile">{% svg 'icons/comment' %}</span>         
+            {% include 'popup.html' with icon='icons/next' action='share' form=shareform text=_('Share your post') url=post.get_absolute_url %}
+        </div>
+        <ul class="comments {% if post.comments.first %}comments-toggled{% endif %}">
+            <hr>
+
+            {% if post.comments.all|length > 1 %}
+            <p class="all-comments-toggle" onclick="$(this).hide().siblings('li').show()">{% trans "Show all comments" %}</p>
+            {% endif %}
+
+            {% for comment in post.comments.all reversed %}
+            <li {% if not forloop.last %}style="display: none;"{% endif %}>
+                <img src="{{ comment.user.profile.picture_url }}" alt="Cogofly profile picture" class="profile-picture">    
+                <div class="comment-content">
+                    <div>
+                        <p><b>{{ comment.user.get_full_name }}</b></p>
+                        <p>{{ comment.published|naturaltime }}</p>
+                        <p>{{ comment.text }}<p>                    
+                    </div>
+                    <form method="post" action="{% url 'comment' comment.id %}">
+                        {% csrf_token %}
+                        {% if comment.is_liked %}
+                        <button class="like-comment" type="submit" title="{% trans 'Unlike' %}" name="unlike">
+                            <span class="span-liked">{{ comment.nb_likes}}</span>                        
+                            {% svg 'icons/like' %}
+                        </button>
+                        {% else %}
+                        <button class="like-comment" title="{% trans 'Like' %}" type="submit" name="like">
+                            <span>{{ comment.nb_likes }}</span>                        
+                            {% svg 'icons/like-white' %}
+                        </button>
+                        {% endif %}                        
+                        {% if comment.user == request.user %}
+                        <span class="delete-comment" title="{% trans 'Delete' %}" onclick="$(this).next().toggleClass('show-delete-comment-popup')">{% svg 'icons/delete' %}</span>
+                        <div class="delete-comment-popup">
+                            <button name="delete" class="delete if-desktop" type="submit" name="delete">{% trans "Are you sure you want to delete ?" %}</button>
+                            <button name="delete" class="delete if-mobile" type="submit" name="delete">{% trans "Delete ?" %}</button>
+                            <span onclick="$(this).parent().toggleClass('show-delete-comment-popup')">{% trans "Cancel" %}</span>                        
+                        </div>
+                        {% endif %}                        
+                    </form>
+                </div>
+            </li>
+            {% endfor %}               
+
+            <form method='POST' action="{% url 'post' post.id %}" class="comment-form">
+                <img src="{{ user.profile.picture_url }}" alt="Cogofly profile picture" class="profile-picture">
+                {% csrf_token %}
+                {{ comment_form.text }}
+                <button name='comment' class="if-desktop">{% trans 'Add comment' %}</button>
+                <button name='comment' class="if-mobile">{% svg 'icons/paper-plane-green' %}</button>
+            </form>
+        </ul>
+    </div>
+
+</section>

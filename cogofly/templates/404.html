@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/404.scss' %}">
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+
+<section>
+    <h1>404</h1>
+    {% svg "illustrations/aircraft" %}
+    <p>{% trans "This page was not found." %}</p>
+    <button id="previous" onclick="history.go(-1)">{% trans "Back to previous page" %}</button>
+</section>
+
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

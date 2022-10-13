@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/auth.scss' %}">
+{% endblock %}
+
+{% block body %}
+
+<h1><a href="/"><img src="{% static 'img/logo-CoGoFly-blanc.png' %}" alt="Cogofly"></a></h1>
+<div class="bg-image"></div>
+{% block main_panel %}{% endblock %}
+
+{% endblock %}

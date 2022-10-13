@@ -1,0 +1,1784 @@
+/* line 1, static/scss/footer.scss */
+footer {
+  background-color: #141414;
+  padding: 20px 20px;
+  text-align: center;
+  overflow: hidden; }
+  /* line 6, static/scss/footer.scss */
+  footer hr {
+    border-color: #bababa9f; }
+  /* line 9, static/scss/footer.scss */
+  footer ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0;
+    /*&:nth-of-type(2) {
+			li {
+				&:first-of-type {
+					margin-top: 0;
+					display: flex;
+					align-items: center;
+					p {
+						margin: 0;
+					}
+				}
+			}
+		}*/ }
+    /* line 14, static/scss/footer.scss */
+    footer ul li {
+      list-style: none;
+      margin: 5px 20px; }
+      /* line 17, static/scss/footer.scss */
+      footer ul li a {
+        color: #bababa;
+        font-size: 20px;
+        text-decoration: none; }
+        /* line 21, static/scss/footer.scss */
+        footer ul li a:hover {
+          cursor: pointer;
+          color: #d6d6d6;
+          transition: color 0.2s; }
+      /* line 27, static/scss/footer.scss */
+      footer ul li svg {
+        width: 40px;
+        height: 40px; }
+  /* line 45, static/scss/footer.scss */
+  footer .footer-sm {
+    display: flex;
+    align-items: center; }
+    /* line 48, static/scss/footer.scss */
+    footer .footer-sm > p {
+      white-space: nowrap; }
+    /* line 51, static/scss/footer.scss */
+    footer .footer-sm ul {
+      width: 100%; }
+  /* line 55, static/scss/footer.scss */
+  footer p {
+    color: #bababa;
+    font-size: 20px; }
+  /* line 59, static/scss/footer.scss */
+  footer .contact-us-log-in {
+    position: relative; }
+    /* line 61, static/scss/footer.scss */
+    footer .contact-us-log-in span {
+      width: max-content;
+      position: absolute;
+      display: none;
+      top: 45px;
+      right: -110%;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: white;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 1000; }
+    /* line 75, static/scss/footer.scss */
+    footer .contact-us-log-in:hover a {
+      cursor: default; }
+    /* line 78, static/scss/footer.scss */
+    footer .contact-us-log-in:hover span {
+      display: block; }
+
+@media all and (max-width: 1065px) {
+  /* line 88, static/scss/footer.scss */
+  footer .footer-links li {
+    flex: 1 1 20%; }
+  /* line 92, static/scss/footer.scss */
+  footer .footer-sm {
+    display: block; } }
+
+@media all and (max-width: 860px) {
+  /* line 101, static/scss/footer.scss */
+  footer .footer-links li {
+    flex: 1 1 50%; }
+  /* line 107, static/scss/footer.scss */
+  footer .footer-sm ul li {
+    flex: 1 1 12%; } }
+
+@media all and (max-width: 550px) {
+  /* line 119, static/scss/footer.scss */
+  footer .footer-sm ul li {
+    flex: 1 1 30%; } }
+
+/* line 3, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  min-height: 100%;
+  height: 100%; }
+  /* line 11, static/scss/base.scss */
+  body > ul.messages {
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    z-index: 10000;
+    width: 30%;
+    /*min-height: 20%;*/
+    background-color: #292929;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px; }
+    /* line 22, static/scss/base.scss */
+    body > ul.messages > span {
+      color: white;
+      font-weight: bold;
+      position: absolute;
+      top: 5px;
+      right: 10px; }
+      /* line 28, static/scss/base.scss */
+      body > ul.messages > span:hover {
+        cursor: pointer; }
+    /* line 32, static/scss/base.scss */
+    body > ul.messages li {
+      list-style: none;
+      color: white; }
+      /* line 35, static/scss/base.scss */
+      body > ul.messages li > * {
+        color: white; }
+    /* line 39, static/scss/base.scss */
+    body > ul.messages hr {
+      border: solid 1px rgba(255, 255, 255, 0.5); }
+
+/* line 45, static/scss/base.scss */
+.map {
+  width: 100%;
+  box-sizing: border-box; }
+  /* line 48, static/scss/base.scss */
+  .map > div > div {
+    height: 100% !important;
+    padding-bottom: 0 !important; }
+
+/* line 54, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 61, static/scss/base.scss */
+.cards-content,
+.content {
+  box-sizing: border-box;
+  min-height: calc(100vh - 334px); }
+
+/* line 68, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 69, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 75, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 78, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 86, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 89, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 92, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 108, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 111, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 119, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 123, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 131, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 133, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 140, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 146, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 152, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 159, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 167, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 171, static/scss/base.scss */
+  form img[src="/static/scss?a987b3b77f4e"] {
+    visibility: hidden; }
+
+/* line 176, static/scss/base.scss */
+button,
+input .button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 191, static/scss/base.scss */
+  button:hover,
+  input .button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 197, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 212, static/scss/base.scss */
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 215, static/scss/base.scss */
+  button:disabled:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 220, static/scss/base.scss */
+.active-filter {
+  background-color: #1168d8;
+  color: white; }
+
+/* line 225, static/scss/base.scss */
+.bottom-pusher {
+  height: 1;
+  margin-top: 20px; }
+
+@media all and (max-width: 1065px) {
+  /* line 231, static/scss/base.scss */
+  .cards-content,
+  .content {
+    min-height: calc(100vh - 392px); } }
+
+@media all and (max-width: 600px) {
+  /* line 238, static/scss/base.scss */
+  body > ul.messages {
+    width: 96%;
+    right: 0%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0; } }
+
+/* line 1, static/scss/header.scss */
+header {
+  background-color: #1168d8;
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0; }
+  /* line 8, static/scss/header.scss */
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    /* line 12, static/scss/header.scss */
+    header nav h1 {
+      margin: 0; }
+      /* line 14, static/scss/header.scss */
+      header nav h1 img {
+        padding: 10px;
+        height: 75px;
+        box-sizing: border-box; }
+    /* line 20, static/scss/header.scss */
+    header nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      height: 75px; }
+      /* line 25, static/scss/header.scss */
+      header nav ul li {
+        list-style: none;
+        margin: 0 5px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px; }
+        /* line 34, static/scss/header.scss */
+        header nav ul li a,
+        header nav ul li > span {
+          position: relative;
+          text-decoration: none;
+          color: white;
+          text-align: center;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center; }
+        /* line 48, static/scss/header.scss */
+        header nav ul li .notifications:hover {
+          cursor: pointer; }
+      /* line 53, static/scss/header.scss */
+      header nav ul .profile-toggle {
+        color: white; }
+        /* line 56, static/scss/header.scss */
+        header nav ul .profile-toggle > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          /* line 60, static/scss/header.scss */
+          header nav ul .profile-toggle > div:hover {
+            cursor: pointer; }
+      /* line 66, static/scss/header.scss */
+      header nav ul .nav-button svg, header nav ul .nav-button p {
+        display: none; }
+      /* line 69, static/scss/header.scss */
+      header nav ul .nav-button .notification {
+        display: block;
+        right: -9px; }
+      /* line 74, static/scss/header.scss */
+      header nav ul p {
+        margin: 0 5px; }
+      /* line 77, static/scss/header.scss */
+      header nav ul svg {
+        width: 25px;
+        height: 25px;
+        filter: invert(1); }
+      /* line 83, static/scss/header.scss */
+      header nav ul .logout > span:hover {
+        cursor: pointer; }
+      /* line 86, static/scss/header.scss */
+      header nav ul .logout .show-logout-modal {
+        display: flex !important; }
+      /* line 89, static/scss/header.scss */
+      header nav ul .logout .logout-modal {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 100000;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center; }
+        /* line 100, static/scss/header.scss */
+        header nav ul .logout .logout-modal > div {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          padding: 0 20px;
+          border-radius: 5px; }
+          /* line 107, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > p {
+            margin: 20 0 10; }
+          /* line 110, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div .logout-buttons {
+            display: flex;
+            justify-content: center; }
+            /* line 113, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons button {
+              margin: 0;
+              height: min-content; }
+            /* line 117, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons > a {
+              margin: 10 5 20 0;
+              width: auto;
+              height: min-content; }
+            /* line 122, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons > button {
+              margin: 10 0 20 5;
+              color: red;
+              border-color: red; }
+          /* line 128, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > span {
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            color: grey; }
+            /* line 133, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div > span:hover {
+              cursor: pointer; }
+    /* line 141, static/scss/header.scss */
+    header nav #nav-hamburger {
+      display: none;
+      height: 60px;
+      width: 45px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      cursor: pointer; }
+      /* line 149, static/scss/header.scss */
+      header nav #nav-hamburger span {
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background: white;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out; }
+        /* line 160, static/scss/header.scss */
+        header nav #nav-hamburger span:nth-child(1) {
+          top: 30%; }
+        /* line 163, static/scss/header.scss */
+        header nav #nav-hamburger span:nth-child(2), header nav #nav-hamburger span:nth-child(3) {
+          top: 50%; }
+        /* line 167, static/scss/header.scss */
+        header nav #nav-hamburger span:nth-child(4) {
+          top: 70%; }
+    /* line 174, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(1) {
+      top: 30%;
+      width: 0%;
+      left: 50%; }
+    /* line 179, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(2) {
+      transform: rotate(45deg); }
+    /* line 182, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(3) {
+      transform: rotate(-45deg); }
+    /* line 185, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(4) {
+      top: 70%;
+      width: 0%;
+      left: 50%; }
+
+/* line 195, static/scss/header.scss */
+.notification-panel {
+  position: absolute;
+  max-height: 400px;
+  width: 300px;
+  overflow-y: auto;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  right: -1000px;
+  top: 80px;
+  opacity: 0; }
+  /* line 207, static/scss/header.scss */
+  .notification-panel > span {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: grey;
+    font-weight: bold; }
+    /* line 213, static/scss/header.scss */
+    .notification-panel > span:hover {
+      cursor: pointer; }
+  /* line 217, static/scss/header.scss */
+  .notification-panel > p {
+    margin: 5px 0 5px 5px; }
+  /* line 220, static/scss/header.scss */
+  .notification-panel h4 {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0 5px; }
+  /* line 225, static/scss/header.scss */
+  .notification-panel hr {
+    margin: 0; }
+  /* line 228, static/scss/header.scss */
+  .notification-panel .notification-feed {
+    padding: 0;
+    flex-direction: column;
+    height: max-content; }
+    /* line 232, static/scss/header.scss */
+    .notification-panel .notification-feed li {
+      position: relative;
+      list-style: none;
+      padding: 10px;
+      margin: 0;
+      border-radius: 0;
+      transition: background-color 0.4s; }
+      /* line 239, static/scss/header.scss */
+      .notification-panel .notification-feed li:hover {
+        background-color: gainsboro;
+        transition: background-color 0.4s; }
+      /* line 243, static/scss/header.scss */
+      .notification-panel .notification-feed li a {
+        text-decoration: none;
+        color: inherit;
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: start;
+        width: 100%; }
+        /* line 250, static/scss/header.scss */
+        .notification-panel .notification-feed li a img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-right: 10px; }
+        /* line 256, static/scss/header.scss */
+        .notification-panel .notification-feed li a .notification-info {
+          width: calc(100% - 60px); }
+          /* line 258, static/scss/header.scss */
+          .notification-panel .notification-feed li a .notification-info p {
+            width: 100%; }
+          /* line 261, static/scss/header.scss */
+          .notification-panel .notification-feed li a .notification-info .preview {
+            font-size: 12.5px;
+            color: grey;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden; }
+          /* line 268, static/scss/header.scss */
+          .notification-panel .notification-feed li a .notification-info .notification-time {
+            font-style: oblique; }
+      /* line 273, static/scss/header.scss */
+      .notification-panel .notification-feed li .unread-notification-bubble {
+        display: none; }
+    /* line 277, static/scss/header.scss */
+    .notification-panel .notification-feed .unread-notification {
+      background-color: #1167d80e;
+      align-items: flex-start; }
+      /* line 280, static/scss/header.scss */
+      .notification-panel .notification-feed .unread-notification a {
+        width: 90%; }
+      /* line 283, static/scss/header.scss */
+      .notification-panel .notification-feed .unread-notification .unread-notification-bubble {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 40%;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: #1168d8; }
+    /* line 294, static/scss/header.scss */
+    .notification-panel .notification-feed hr {
+      width: 99%;
+      margin: 0; }
+
+/* line 301, static/scss/header.scss */
+.profile-dropdown {
+  padding: 0;
+  width: 300px;
+  text-align: center;
+  position: absolute;
+  right: -1000px;
+  top: 80px;
+  opacity: 0;
+  z-index: 100;
+  /*transition: right 0.4s;*/
+  color: black; }
+  /* line 312, static/scss/header.scss */
+  .profile-dropdown .banner {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 40px; }
+  /* line 319, static/scss/header.scss */
+  .profile-dropdown .profile-pic-bg {
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+    /* line 330, static/scss/header.scss */
+    .profile-dropdown .profile-pic-bg .profile-picture {
+      object-fit: cover;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: auto;
+      display: block; }
+  /* line 339, static/scss/header.scss */
+  .profile-dropdown > span {
+    color: white;
+    font-weight: bold;
+    top: 5px;
+    right: 7px;
+    position: absolute; }
+    /* line 345, static/scss/header.scss */
+    .profile-dropdown > span:hover {
+      cursor: pointer; }
+  /* line 349, static/scss/header.scss */
+  .profile-dropdown p {
+    margin: 5px 0;
+    padding-bottom: 5px;
+    /*border-bottom: solid 1px rgba(192, 191, 191, 0.5);*/ }
+  /* line 354, static/scss/header.scss */
+  .profile-dropdown ul {
+    padding: 0 20px;
+    margin: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto; }
+    /* line 360, static/scss/header.scss */
+    .profile-dropdown ul a {
+      text-decoration: none;
+      color: black;
+      flex-direction: row; }
+    /* line 365, static/scss/header.scss */
+    .profile-dropdown ul li {
+      margin: 5px 0; }
+      /* line 367, static/scss/header.scss */
+      .profile-dropdown ul li svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        filter: invert(0); }
+
+/* line 377, static/scss/header.scss */
+.show-dropdown {
+  opacity: 1;
+  right: 5px;
+  /*transition: right 0.4s;*/ }
+
+/* line 383, static/scss/header.scss */
+.pusher {
+  height: 75px; }
+
+@media all and (max-width: 1095px) {
+  /* line 389, static/scss/header.scss */
+  header nav {
+    position: relative; }
+    /* line 391, static/scss/header.scss */
+    header nav .logo {
+      position: absolute;
+      left: 0;
+      top: 0; }
+    /* line 397, static/scss/header.scss */
+    header nav ul li {
+      display: none; }
+    /* line 401, static/scss/header.scss */
+    header nav ul.open-menu {
+      width: 100%;
+      margin: auto;
+      margin-top: 75px;
+      justify-content: center; }
+      /* line 406, static/scss/header.scss */
+      header nav ul.open-menu li {
+        float: none;
+        display: flex;
+        text-align: left; }
+    /* line 412, static/scss/header.scss */
+    header nav #nav-hamburger {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      margin: 7.5px 15px 0 0; }
+  /* line 420, static/scss/header.scss */
+  header .show-dropdown {
+    top: 100%; } }
+
+@media all and (max-width: 890px) {
+  /* line 429, static/scss/header.scss */
+  header nav ul.open-menu {
+    height: max-content;
+    flex-wrap: wrap; }
+    /* line 432, static/scss/header.scss */
+    header nav ul.open-menu > li {
+      margin: 10px;
+      flex: 1 1 160px;
+      height: auto; }
+      /* line 438, static/scss/header.scss */
+      header nav ul.open-menu > li > a svg,
+      header nav ul.open-menu > li > div svg, header nav ul.open-menu > li > span svg {
+        height: 35px;
+        width: 35px;
+        flex-shrink: 0; }
+    /* line 446, static/scss/header.scss */
+    header nav ul.open-menu .nav-button button {
+      display: none; }
+    /* line 449, static/scss/header.scss */
+    header nav ul.open-menu .nav-button svg, header nav ul.open-menu .nav-button p {
+      display: block; }
+  /* line 456, static/scss/header.scss */
+  header .profile-dropdown .profile-links {
+    flex-direction: row;
+    flex-wrap: wrap; }
+    /* line 459, static/scss/header.scss */
+    header .profile-dropdown .profile-links > li {
+      flex: 1 1 150px;
+      margin: 5px 10px; }
+      /* line 462, static/scss/header.scss */
+      header .profile-dropdown .profile-links > li a {
+        flex-direction: row;
+        min-width: 105px;
+        min-height: 30px;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+  /* line 472, static/scss/header.scss */
+  header .profile-dropdown > span {
+    font-size: 30px; }
+  /* line 476, static/scss/header.scss */
+  header .show-dropdown {
+    top: 0;
+    width: 75%;
+    right: 50%;
+    transform: translateX(53%);
+    box-shadow: 20px 20px 0px 2000px rgba(0, 0, 0, 0.2); }
+  /* line 484, static/scss/header.scss */
+  .notification {
+    right: 30% !important;
+    top: -10px !important; } }
+
+@media all and (max-width: 600px) {
+  /* line 495, static/scss/header.scss */
+  header nav ul.open-menu li {
+    margin: 15px; } }
+
+@media all and (max-width: 506px) {
+  /* line 506, static/scss/header.scss */
+  header .profile-dropdown .profile-pic-bg {
+    top: 6%; } }
+
+@media all and (max-width: 400px) {
+  /* line 517, static/scss/header.scss */
+  header nav ul.open-menu li {
+    flex: 1 1 80px; }
+  /* line 523, static/scss/header.scss */
+  .notification {
+    right: 15% !important; } }
+
+/* line 1, static/scss/post.scss */
+.post {
+  margin-top: 20px;
+  padding: 0;
+  position: relative; }
+  /* line 5, static/scss/post.scss */
+  .post .post-top {
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px rgba(192, 191, 191, 0.5); }
+    /* line 9, static/scss/post.scss */
+    .post .post-top .poster-info {
+      width: 100%; }
+      /* line 12, static/scss/post.scss */
+      .post .post-top .poster-info p:first-of-type {
+        margin-bottom: 0; }
+      /* line 15, static/scss/post.scss */
+      .post .post-top .poster-info p:nth-of-type(2) {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        max-width: 85%; }
+        /* line 21, static/scss/post.scss */
+        .post .post-top .poster-info p:nth-of-type(2) > * {
+          margin: 0 5; }
+        /* line 24, static/scss/post.scss */
+        .post .post-top .poster-info p:nth-of-type(2) svg {
+          width: 20px; }
+        /* line 27, static/scss/post.scss */
+        .post .post-top .poster-info p:nth-of-type(2) strong {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden; }
+      /* line 34, static/scss/post.scss */
+      .post .post-top .poster-info .delete-post {
+        position: absolute;
+        top: 20px;
+        right: 10px; }
+        /* line 38, static/scss/post.scss */
+        .post .post-top .poster-info .delete-post > button {
+          border: none;
+          margin: 0;
+          padding: 0; }
+          /* line 42, static/scss/post.scss */
+          .post .post-top .poster-info .delete-post > button svg {
+            width: 30px;
+            height: 30px; }
+  /* line 51, static/scss/post.scss */
+  .post .delete-post-form {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    height: max-content;
+    width: max-content;
+    z-index: 100;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    /* line 67, static/scss/post.scss */
+    .post .delete-post-form button {
+      padding: 10 16;
+      margin: 0;
+      color: red;
+      border-color: red; }
+    /* line 73, static/scss/post.scss */
+    .post .delete-post-form span {
+      width: 89%;
+      transition: 0.4s;
+      border: solid 1px #1168d8;
+      background-color: white;
+      color: #1168d8;
+      border-radius: 5px;
+      margin: 5px 0;
+      padding: 10px 16px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer; }
+      /* line 88, static/scss/post.scss */
+      .post .delete-post-form span:hover {
+        transition: 0.4s;
+        filter: brightness(1.1); }
+  /* line 94, static/scss/post.scss */
+  .post .show-delete-post-form {
+    display: flex; }
+  /* line 99, static/scss/post.scss */
+  .post .profile-picture {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    object-fit: cover; }
+  /* line 108, static/scss/post.scss */
+  .post .post-content > p {
+    padding: 0 20px;
+    overflow-wrap: anywhere; }
+  /* line 112, static/scss/post.scss */
+  .post .post-content hr {
+    margin: 10px; }
+  /* line 115, static/scss/post.scss */
+  .post .post-content .card, .post .post-content .simple-card {
+    margin: auto; }
+  /* line 118, static/scss/post.scss */
+  .post .post-content .post-stats {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    /* line 122, static/scss/post.scss */
+    .post .post-content .post-stats > p {
+      color: grey;
+      font-size: 12px;
+      margin: 0;
+      padding: 0 10px 0 0; }
+    /* line 128, static/scss/post.scss */
+    .post .post-content .post-stats span {
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      border-bottom: solid 1px transparent; }
+      /* line 135, static/scss/post.scss */
+      .post .post-content .post-stats span:first-of-type {
+        color: #f30051; }
+      /* line 138, static/scss/post.scss */
+      .post .post-content .post-stats span:last-of-type {
+        color: #1fbf66; }
+        /* line 140, static/scss/post.scss */
+        .post .post-content .post-stats span:last-of-type:hover {
+          cursor: pointer;
+          border-bottom: solid 1px #1fbf66; }
+      /* line 145, static/scss/post.scss */
+      .post .post-content .post-stats span svg {
+        height: 15px;
+        width: 15px;
+        margin-left: 2px; }
+  /* line 152, static/scss/post.scss */
+  .post .post-content .shared-post {
+    margin: 10 15 15 15;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+    /* line 157, static/scss/post.scss */
+    .post .post-content .shared-post .shared-post-user {
+      display: flex;
+      align-items: center;
+      border-bottom: solid 1px rgba(192, 191, 191, 0.5); }
+      /* line 161, static/scss/post.scss */
+      .post .post-content .shared-post .shared-post-user .profile-picture {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        margin: 10px;
+        object-fit: cover; }
+      /* line 170, static/scss/post.scss */
+      .post .post-content .shared-post .shared-post-user .shared-post-user-info p:first-of-type {
+        margin-bottom: 0; }
+      /* line 173, static/scss/post.scss */
+      .post .post-content .shared-post .shared-post-user .shared-post-user-info p:nth-of-type(2) {
+        margin-top: 0;
+        color: grey;
+        font-size: 12px; }
+    /* line 182, static/scss/post.scss */
+    .post .post-content .shared-post .shared-post-text {
+      padding: 0 20;
+      overflow-wrap: anywhere; }
+    /* line 186, static/scss/post.scss */
+    .post .post-content .shared-post > a {
+      margin: 5 10px;
+      text-decoration: none;
+      color: #1168d8;
+      display: flex;
+      justify-content: flex-end; }
+  /* line 197, static/scss/post.scss */
+  .post .post-bottom hr {
+    margin: 5px 10px; }
+  /* line 200, static/scss/post.scss */
+  .post .post-bottom .post-bottom-like-share {
+    display: flex;
+    /*justify-content: left;*/
+    align-items: center;
+    padding: 5px 0; }
+    /* line 205, static/scss/post.scss */
+    .post .post-bottom .post-bottom-like-share > form, .post .post-bottom .post-bottom-like-share > span, .post .post-bottom .post-bottom-like-share > button {
+      width: 100%; }
+    /* line 208, static/scss/post.scss */
+    .post .post-bottom .post-bottom-like-share > form {
+      margin: 0 20px 0 0; }
+      /* line 210, static/scss/post.scss */
+      .post .post-bottom .post-bottom-like-share > form button {
+        width: 100%;
+        color: black;
+        font-weight: normal;
+        text-transform: none;
+        font-size: 15px;
+        border: solid 1px transparent;
+        border-radius: 10px;
+        background-color: rgba(192, 191, 191, 0.2);
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+        transition: 0.4s; }
+        /* line 225, static/scss/post.scss */
+        .post .post-bottom .post-bottom-like-share > form button:hover {
+          cursor: pointer;
+          background-color: rgba(192, 191, 191, 0.5);
+          transition: 0.4s; }
+        /* line 230, static/scss/post.scss */
+        .post .post-bottom .post-bottom-like-share > form button svg {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px; }
+    /* line 237, static/scss/post.scss */
+    .post .post-bottom .post-bottom-like-share > span,
+    .post .post-bottom .post-bottom-like-share > button {
+      color: black;
+      font-weight: normal;
+      text-transform: none;
+      font-size: 15px;
+      border: solid 1px transparent;
+      border-radius: 10px;
+      background-color: rgba(192, 191, 191, 0.2);
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 10px;
+      transition: 0.4s; }
+      /* line 252, static/scss/post.scss */
+      .post .post-bottom .post-bottom-like-share > span:hover,
+      .post .post-bottom .post-bottom-like-share > button:hover {
+        cursor: pointer;
+        background-color: rgba(192, 191, 191, 0.5);
+        transition: 0.4s; }
+      /* line 257, static/scss/post.scss */
+      .post .post-bottom .post-bottom-like-share > span svg,
+      .post .post-bottom .post-bottom-like-share > button svg {
+        width: 20px;
+        height: 20px; }
+    /* line 263, static/scss/post.scss */
+    .post .post-bottom .post-bottom-like-share > span svg {
+      margin-right: 10px; }
+  /* line 269, static/scss/post.scss */
+  .post .post-bottom .comments {
+    display: none;
+    padding: 0;
+    margin-top: 0; }
+    /* line 273, static/scss/post.scss */
+    .post .post-bottom .comments hr {
+      margin: 5px 10px; }
+    /* line 276, static/scss/post.scss */
+    .post .post-bottom .comments form {
+      margin: 0px;
+      display: flex;
+      align-items: center; }
+      /* line 280, static/scss/post.scss */
+      .post .post-bottom .comments form textarea {
+        margin: 10px 0;
+        padding: 10px;
+        width: calc(100% - 20px);
+        border: solid 1px #aaa !important;
+        height: 40px; }
+      /* line 287, static/scss/post.scss */
+      .post .post-bottom .comments form > button {
+        height: 40px;
+        margin: 5px; }
+    /* line 292, static/scss/post.scss */
+    .post .post-bottom .comments li {
+      list-style: none;
+      margin: 0 0 0 10px;
+      display: flex;
+      overflow-wrap: anywhere; }
+      /* line 297, static/scss/post.scss */
+      .post .post-bottom .comments li img {
+        margin: 5 10 10 0; }
+      /* line 300, static/scss/post.scss */
+      .post .post-bottom .comments li .comment-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column; }
+        /* line 304, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content > div {
+          width: 100%; }
+        /* line 307, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content p {
+          margin: 5 10 5 0; }
+          /* line 309, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content p:first-of-type {
+            margin-bottom: 0; }
+          /* line 312, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content p:nth-of-type(2) {
+            margin-top: 0;
+            font-size: 12px;
+            color: grey; }
+        /* line 318, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content > form {
+          width: min-content;
+          display: flex; }
+          /* line 321, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content > form > button, .post .post-bottom .comments li .comment-content > form > span {
+            padding: 0;
+            margin: 0;
+            background: none;
+            height: min-content;
+            border: none; }
+            /* line 328, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form > button:first-of-type, .post .post-bottom .comments li .comment-content > form > span:first-of-type {
+              margin-right: 5; }
+            /* line 331, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form > button:hover, .post .post-bottom .comments li .comment-content > form > span:hover {
+              cursor: pointer; }
+            /* line 334, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form > button .span-liked, .post .post-bottom .comments li .comment-content > form > span .span-liked {
+              color: #f30051; }
+            /* line 337, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form > button svg, .post .post-bottom .comments li .comment-content > form > span svg {
+              margin: 0;
+              width: 15px; }
+          /* line 342, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content > form .delete-comment-popup {
+            display: none; }
+            /* line 344, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form .delete-comment-popup > * {
+              font-size: 10px;
+              margin: 0; }
+            /* line 348, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form .delete-comment-popup button {
+              color: red;
+              border-color: red;
+              margin-right: 5px;
+              padding: 3 5; }
+              /* line 353, static/scss/post.scss */
+              .post .post-bottom .comments li .comment-content > form .delete-comment-popup button.if-mobile {
+                display: none; }
+            /* line 357, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form .delete-comment-popup span {
+              transition: 0.4s;
+              border: solid 1px #1168d8;
+              background-color: white;
+              color: #1168d8;
+              border-radius: 5px;
+              padding: 3 5;
+              text-align: center;
+              font-weight: bold;
+              text-transform: uppercase;
+              white-space: nowrap;
+              text-decoration: none;
+              cursor: pointer; }
+              /* line 370, static/scss/post.scss */
+              .post .post-bottom .comments li .comment-content > form .delete-comment-popup span:hover {
+                transition: 0.4s;
+                filter: brightness(1.1); }
+          /* line 376, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content > form .show-delete-comment-popup {
+            display: flex; }
+    /* line 382, static/scss/post.scss */
+    .post .post-bottom .comments .all-comments-toggle {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1167d817;
+      padding: 10px;
+      transition: background-color 0.4s; }
+      /* line 390, static/scss/post.scss */
+      .post .post-bottom .comments .all-comments-toggle:hover {
+        transition: background-color 0.4s;
+        background-color: #1167d830;
+        cursor: pointer; }
+    /* line 396, static/scss/post.scss */
+    .post .post-bottom .comments .hidden {
+      display: none; }
+  /* line 400, static/scss/post.scss */
+  .post .post-bottom .comments-toggled {
+    display: block; }
+
+/* line 407, static/scss/post.scss */
+.carousel {
+  margin: 10px; }
+  /* line 409, static/scss/post.scss */
+  .carousel .splide__arrows {
+    /*
+		.splide__arrow--prev{
+			left: 2em;
+		}
+		.splide__arrow--next{
+			right: 2em;
+		}*/ }
+    /* line 410, static/scss/post.scss */
+    .carousel .splide__arrows > * {
+      top: 55%; }
+  /* line 422, static/scss/post.scss */
+  .carousel .splide__track .splide__list .splide__slide {
+    height: 300px !important; }
+  /* line 428, static/scss/post.scss */
+  .carousel.hide-arrows .splide__arrows {
+    display: none; }
+
+/* line 433, static/scss/post.scss */
+.splide__pagination {
+  display: none; }
+
+/*
+.splide__list, .splide__slide{
+	width: initial !important;
+}*/
+/* line 441, static/scss/post.scss */
+.splide__slide {
+  height: 500px;
+  width: 33%; }
+
+/* line 449, static/scss/post.scss */
+.popup .popup-content form textarea {
+  margin: 10 0 0 0; }
+
+/* line 453, static/scss/post.scss */
+.popup .popup-content form input:last-of-type {
+  margin-top: 18px; }
+
+@media all and (max-width: 525px) {
+  /* line 464, static/scss/post.scss */
+  .post .post-top .poster-info {
+    width: 70%; }
+    /* line 466, static/scss/post.scss */
+    .post .post-top .poster-info svg {
+      width: 80px; }
+  /* line 475, static/scss/post.scss */
+  .post .post-bottom .comments li .comment-content > form {
+    width: 100%; }
+    /* line 477, static/scss/post.scss */
+    .post .post-bottom .comments li .comment-content > form .delete-comment-popup {
+      width: 100%;
+      flex-direction: column; }
+      /* line 480, static/scss/post.scss */
+      .post .post-bottom .comments li .comment-content > form .delete-comment-popup button {
+        margin: 0 2.5 2.5 0; }
+        /* line 482, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content > form .delete-comment-popup button.if-desktop {
+          display: none; }
+        /* line 485, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content > form .delete-comment-popup button.if-mobile {
+          display: block; }
+      /* line 489, static/scss/post.scss */
+      .post .post-bottom .comments li .comment-content > form .delete-comment-popup span {
+        margin: 2.5 2.5 0 0; } }
+
+/* line 5, static/scss/seed-feed.scss */
+.seed-feed {
+  display: grid;
+  grid-gap: 25px;
+  grid-template-areas: "last newsfeed ads";
+  grid-template-columns: min-content 850px min-content;
+  margin: auto;
+  width: min-content;
+  max-width: 1500px;
+  min-height: calc(100% - 341px); }
+
+/* line 16, static/scss/seed-feed.scss */
+.newsfeed {
+  grid-area: newsfeed;
+  margin-top: 25px; }
+  /* line 19, static/scss/seed-feed.scss */
+  .newsfeed .progress-bar {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px; }
+    /* line 23, static/scss/seed-feed.scss */
+    .newsfeed .progress-bar p {
+      margin: 5 0; }
+      /* line 25, static/scss/seed-feed.scss */
+      .newsfeed .progress-bar p a {
+        text-decoration: none;
+        color: #1168d8;
+        margin-left: 5px; }
+    /* line 31, static/scss/seed-feed.scss */
+    .newsfeed .progress-bar form {
+      margin: 0 5px; }
+      /* line 33, static/scss/seed-feed.scss */
+      .newsfeed .progress-bar form button {
+        width: 100%; }
+    /* line 37, static/scss/seed-feed.scss */
+    .newsfeed .progress-bar progress {
+      width: 100%;
+      height: 30px; }
+    /* line 41, static/scss/seed-feed.scss */
+    .newsfeed .progress-bar .progress-bar-buttons {
+      display: flex;
+      margin: 10px 0; }
+      /* line 44, static/scss/seed-feed.scss */
+      .newsfeed .progress-bar .progress-bar-buttons button {
+        margin: 0 5px;
+        padding: 0;
+        height: 35px;
+        width: 100%;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        /* line 53, static/scss/seed-feed.scss */
+        .newsfeed .progress-bar .progress-bar-buttons button svg {
+          filter: invert(49%) sepia(81%) saturate(7494%) hue-rotate(206deg) brightness(93%) contrast(87%);
+          margin-right: 5px;
+          height: 15px;
+          width: 15px; }
+        /* line 60, static/scss/seed-feed.scss */
+        .newsfeed .progress-bar .progress-bar-buttons button p {
+          margin: 0; }
+          /* line 62, static/scss/seed-feed.scss */
+          .newsfeed .progress-bar .progress-bar-buttons button p#show-less {
+            display: none; }
+        /* line 66, static/scss/seed-feed.scss */
+        .newsfeed .progress-bar .progress-bar-buttons button .show {
+          display: block; }
+        /* line 69, static/scss/seed-feed.scss */
+        .newsfeed .progress-bar .progress-bar-buttons button .hide {
+          display: none; }
+      /* line 74, static/scss/seed-feed.scss */
+      .newsfeed .progress-bar .progress-bar-buttons .expanded svg {
+        transform: scaleY(-1); }
+    /* line 79, static/scss/seed-feed.scss */
+    .newsfeed .progress-bar #missing-info {
+      display: none; }
+      /* line 81, static/scss/seed-feed.scss */
+      .newsfeed .progress-bar #missing-info ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0; }
+        /* line 86, static/scss/seed-feed.scss */
+        .newsfeed .progress-bar #missing-info ul p {
+          margin: 0; }
+        /* line 89, static/scss/seed-feed.scss */
+        .newsfeed .progress-bar #missing-info ul li {
+          margin: 5px 0 5px 20px;
+          list-style: none;
+          width: max-content;
+          flex: 1 1 160px; }
+    /* line 97, static/scss/seed-feed.scss */
+    .newsfeed .progress-bar .show {
+      display: block !important; }
+  /* line 101, static/scss/seed-feed.scss */
+  .newsfeed .express-yourself {
+    padding: 0; }
+    /* line 103, static/scss/seed-feed.scss */
+    .newsfeed .express-yourself form {
+      width: 100%; }
+    /* line 106, static/scss/seed-feed.scss */
+    .newsfeed .express-yourself .express-top {
+      padding: 5px 20px;
+      background-color: rgba(192, 191, 191, 0.2); }
+      /* line 109, static/scss/seed-feed.scss */
+      .newsfeed .express-yourself .express-top p {
+        margin: 0; }
+    /* line 113, static/scss/seed-feed.scss */
+    .newsfeed .express-yourself .express-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: solid 1px rgba(192, 191, 191, 0.5); }
+      /* line 118, static/scss/seed-feed.scss */
+      .newsfeed .express-yourself .express-content img {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        margin: 10px;
+        object-fit: cover; }
+      /* line 125, static/scss/seed-feed.scss */
+      .newsfeed .express-yourself .express-content textarea {
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        border: none !important; }
+    /* line 132, static/scss/seed-feed.scss */
+    .newsfeed .express-yourself .express-bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      /*align-items: center;*/ }
+      /* line 138, static/scss/seed-feed.scss */
+      .newsfeed .express-yourself .express-bottom ul {
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        border-bottom: solid 1px rgba(192, 191, 191, 0.5); }
+        /* line 146, static/scss/seed-feed.scss */
+        .newsfeed .express-yourself .express-bottom ul .album-widget {
+          margin: 5; }
+          /* line 149, static/scss/seed-feed.scss */
+          .newsfeed .express-yourself .express-bottom ul .album-widget input:nth-of-type(2) {
+            width: 0; }
+          /* line 153, static/scss/seed-feed.scss */
+          .newsfeed .express-yourself .express-bottom ul .album-widget > span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            background-color: rgba(192, 191, 191, 0.2);
+            padding: 0 5px;
+            transition: background-color 0.4s; }
+            /* line 161, static/scss/seed-feed.scss */
+            .newsfeed .express-yourself .express-bottom ul .album-widget > span:hover {
+              transition: background-color 0.4s;
+              cursor: pointer;
+              background-color: rgba(192, 191, 191, 0.5); }
+            /* line 166, static/scss/seed-feed.scss */
+            .newsfeed .express-yourself .express-bottom ul .album-widget > span img {
+              height: calc(730px / 5) !important;
+              width: calc(730px / 5) !important; }
+            /* line 170, static/scss/seed-feed.scss */
+            .newsfeed .express-yourself .express-bottom ul .album-widget > span svg {
+              height: 40px;
+              width: 40px; }
+            /* line 174, static/scss/seed-feed.scss */
+            .newsfeed .express-yourself .express-bottom ul .album-widget > span p {
+              display: block;
+              margin-left: 5px; }
+      /* line 181, static/scss/seed-feed.scss */
+      .newsfeed .express-yourself .express-bottom button {
+        margin: 10 10 10 15;
+        width: 120px;
+        height: 45px;
+        align-self: flex-end; }
+  /* line 189, static/scss/seed-feed.scss */
+  .newsfeed .page-load {
+    width: 100%;
+    text-decoration: none;
+    color: #1168d8; }
+    /* line 193, static/scss/seed-feed.scss */
+    .newsfeed .page-load p {
+      display: flex;
+      justify-content: center;
+      padding: 10 0;
+      background-color: #1167d810;
+      transition: background-color 0.4s; }
+      /* line 199, static/scss/seed-feed.scss */
+      .newsfeed .page-load p:hover {
+        background-color: #1167d82a;
+        transition: background-color 0.4s; }
+
+/* line 207, static/scss/seed-feed.scss */
+.last,
+.ads {
+  width: 300px;
+  padding: 0;
+  position: sticky;
+  top: 100px; }
+
+/* line 215, static/scss/seed-feed.scss */
+.last {
+  height: 500px;
+  grid-area: last;
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 25Px; }
+  /* line 223, static/scss/seed-feed.scss */
+  .last .last-searches,
+  .last .last-added-trips {
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    height: calc(50% - 36px); }
+  /* line 230, static/scss/seed-feed.scss */
+  .last .last-added-trips {
+    margin: 0 0 20px; }
+  /* line 233, static/scss/seed-feed.scss */
+  .last h2 {
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    font-weight: normal;
+    background-color: #1168d8;
+    color: white; }
+  /* line 241, static/scss/seed-feed.scss */
+  .last ul {
+    padding: 0;
+    margin: 0;
+    height: calc(100% - 47px);
+    overflow-y: scroll; }
+    /* line 246, static/scss/seed-feed.scss */
+    .last ul li {
+      list-style: none;
+      padding: 10px;
+      transition: background-color 0.4s; }
+      /* line 250, static/scss/seed-feed.scss */
+      .last ul li:hover {
+        background-color: gainsboro;
+        transition: background-color 0.4s; }
+      /* line 254, static/scss/seed-feed.scss */
+      .last ul li a {
+        text-decoration: none;
+        display: flex;
+        color: inherit; }
+        /* line 258, static/scss/seed-feed.scss */
+        .last ul li a img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-right: 10px; }
+        /* line 264, static/scss/seed-feed.scss */
+        .last ul li a .trip-info,
+        .last ul li a .search-info {
+          width: calc(100% - 60px); }
+          /* line 267, static/scss/seed-feed.scss */
+          .last ul li a .trip-info p,
+          .last ul li a .search-info p {
+            margin: 0;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden; }
+            /* line 272, static/scss/seed-feed.scss */
+            .last ul li a .trip-info p:first-of-type,
+            .last ul li a .search-info p:first-of-type {
+              font-weight: bold; }
+            /* line 275, static/scss/seed-feed.scss */
+            .last ul li a .trip-info p:last-of-type,
+            .last ul li a .search-info p:last-of-type {
+              font-style: oblique; }
+    /* line 282, static/scss/seed-feed.scss */
+    .last ul hr {
+      margin: 0; }
+
+/* line 288, static/scss/seed-feed.scss */
+.ads {
+  grid-area: ads;
+  margin-top: 25px; }
+  /* line 291, static/scss/seed-feed.scss */
+  .ads ul {
+    padding: 0;
+    margin: 0; }
+    /* line 294, static/scss/seed-feed.scss */
+    .ads ul li {
+      list-style: none;
+      padding: 10px;
+      transition: background-color 0.4s;
+      border-radius: 5px;
+      border-radius: 5px;
+      background-color: white;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+      /* line 302, static/scss/seed-feed.scss */
+      .ads ul li:first-of-type {
+        margin: 0 0 10; }
+      /* line 305, static/scss/seed-feed.scss */
+      .ads ul li:not(:first-of-type) {
+        margin: 10 0; }
+      /* line 308, static/scss/seed-feed.scss */
+      .ads ul li:hover {
+        cursor: pointer; }
+      /* line 312, static/scss/seed-feed.scss */
+      .ads ul li:not(:last-of-type):hover {
+        background-color: #f1f1f1;
+        transition: background-color 0.4s; }
+      /* line 317, static/scss/seed-feed.scss */
+      .ads ul li:last-of-type {
+        transition: color 0.4s, border-color 0.4s; }
+        /* line 319, static/scss/seed-feed.scss */
+        .ads ul li:last-of-type a {
+          color: gray;
+          transition: color 0.4s;
+          display: flex;
+          flex-direction: column; }
+          /* line 325, static/scss/seed-feed.scss */
+          .ads ul li:last-of-type a p:first-of-type {
+            margin: 0; }
+          /* line 328, static/scss/seed-feed.scss */
+          .ads ul li:last-of-type a p:last-of-type {
+            margin-bottom: 0; }
+          /* line 332, static/scss/seed-feed.scss */
+          .ads ul li:last-of-type a svg {
+            width: 40%;
+            height: auto;
+            align-self: center;
+            filter: contrast(0.1);
+            transition: filter 0.4s; }
+        /* line 340, static/scss/seed-feed.scss */
+        .ads ul li:last-of-type:hover {
+          transition: color 0.4s, border-color 0.4s; }
+          /* line 342, static/scss/seed-feed.scss */
+          .ads ul li:last-of-type:hover a {
+            color: black;
+            transition: color 0.4s; }
+            /* line 345, static/scss/seed-feed.scss */
+            .ads ul li:last-of-type:hover a svg {
+              filter: contrast(1);
+              transition: filter 0.4s; }
+      /* line 354, static/scss/seed-feed.scss */
+      .ads ul li a {
+        text-decoration: none;
+        color: black; }
+        /* line 357, static/scss/seed-feed.scss */
+        .ads ul li a img {
+          width: 100%; }
+        /* line 361, static/scss/seed-feed.scss */
+        .ads ul li a p:first-of-type {
+          text-align: center; }
+      /* line 367, static/scss/seed-feed.scss */
+      .ads ul li > p:first-of-type {
+        margin-top: 0; }
+    /* line 372, static/scss/seed-feed.scss */
+    .ads ul hr {
+      width: 95%; }
+
+/* line 378, static/scss/seed-feed.scss */
+.welcome {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1aa3ff;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 10px; }
+  /* line 388, static/scss/seed-feed.scss */
+  .welcome p {
+    text-align: center; }
+  /* line 391, static/scss/seed-feed.scss */
+  .welcome a {
+    text-decoration: none;
+    color: white; }
+  /* line 395, static/scss/seed-feed.scss */
+  .welcome form {
+    margin: 0; }
+
+/* line 400, static/scss/seed-feed.scss */
+footer {
+  margin-top: 50px; }
+
+@media all and (max-width: 1590px) {
+  /* line 405, static/scss/seed-feed.scss */
+  .seed-feed {
+    grid-template-columns: min-content 650px min-content; }
+    /* line 407, static/scss/seed-feed.scss */
+    .seed-feed .newsfeed .express-yourself .express-bottom ul .album-widget > span img {
+      width: calc(550px / 4) !important;
+      height: calc(550px / 4) !important; } }
+
+@media all and (max-width: 1320px) {
+  /* line 415, static/scss/seed-feed.scss */
+  .seed-feed {
+    grid-template-columns: min-content 460px min-content; }
+    /* line 417, static/scss/seed-feed.scss */
+    .seed-feed .newsfeed .express-yourself .express-bottom ul .album-widget > span img {
+      width: calc(360px / 4) !important;
+      height: calc(360px / 4) !important; } }
+
+@media all and (max-width: 1150px) {
+  /* line 426, static/scss/seed-feed.scss */
+  .seed-feed {
+    grid-template-areas: "last ads" "last newsfeed";
+    grid-template-columns: min-content 500px;
+    grid-template-rows: auto auto; }
+    /* line 431, static/scss/seed-feed.scss */
+    .seed-feed .newsfeed .express-yourself .express-bottom ul .album-widget > span img {
+      width: calc(420px / 3) !important;
+      height: calc(420px / 3) !important; }
+  /* line 436, static/scss/seed-feed.scss */
+  .ads {
+    height: max-content;
+    width: initial;
+    position: initial; }
+    /* line 440, static/scss/seed-feed.scss */
+    .ads ul li > a {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      /* line 444, static/scss/seed-feed.scss */
+      .ads ul li > a .ad-text {
+        margin-left: 10px; }
+      /* line 447, static/scss/seed-feed.scss */
+      .ads ul li > a img {
+        width: 35%; }
+  /* line 452, static/scss/seed-feed.scss */
+  .newsfeed {
+    margin-top: 0; } }
+
+@media all and (max-width: 1065px) {
+  /* line 458, static/scss/seed-feed.scss */
+  .seed-feed {
+    min-height: calc(100vh - 323px); } }
+
+@media all and (max-width: 850px) {
+  /* line 464, static/scss/seed-feed.scss */
+  .seed-feed {
+    grid-template-columns: min-content 450px; }
+    /* line 466, static/scss/seed-feed.scss */
+    .seed-feed .newsfeed .express-yourself .express-bottom ul .album-widget > span img {
+      width: calc(370px / 3) !important;
+      height: calc(370px / 3) !important; } }
+
+@media all and (max-width: 800px) {
+  /* line 474, static/scss/seed-feed.scss */
+  .seed-feed {
+    grid-template-areas: "last" "ads" "newsfeed";
+    grid-template-columns: 500px;
+    grid-template-rows: 350px auto auto; }
+    /* line 480, static/scss/seed-feed.scss */
+    .seed-feed .newsfeed .express-yourself .express-bottom ul .album-widget > span img {
+      width: calc(420px / 3) !important;
+      height: calc(420px / 3) !important; }
+  /* line 485, static/scss/seed-feed.scss */
+  .last {
+    width: 500px;
+    position: initial;
+    margin: 25 auto 0;
+    height: initial;
+    display: flex; }
+    /* line 491, static/scss/seed-feed.scss */
+    .last .last-added-trips, .last .last-searches {
+      margin: 0 5px;
+      height: 325px;
+      width: 48%; }
+  /* line 497, static/scss/seed-feed.scss */
+  .ads {
+    margin-top: 0; }
+  /* line 500, static/scss/seed-feed.scss */
+  .splide__slide {
+    height: 300px !important;
+    width: 33%; } }
+
+@media all and (max-width: 600px) {
+  /* line 507, static/scss/seed-feed.scss */
+  .last {
+    flex-direction: column; }
+    /* line 509, static/scss/seed-feed.scss */
+    .last .last-added-trips, .last .last-searches {
+      width: 100%;
+      height: 162.5px;
+      margin: 5px 0; } }
+
+@media all and (max-width: 525px) {
+  /* line 518, static/scss/seed-feed.scss */
+  .seed-feed {
+    grid-template-columns: 300px; }
+    /* line 520, static/scss/seed-feed.scss */
+    .seed-feed .newsfeed .express-yourself .express-bottom ul .album-widget > span img {
+      width: 120px !important;
+      height: 120px !important; }
+  /* line 525, static/scss/seed-feed.scss */
+  .last {
+    width: 300px; } }
+
+/*
+@media all and (max-width:450px){
+	.seed-feed{
+		margin: 0;
+		width: 100%;
+		section{
+			border-radius: 0;
+		}
+	}
+	
+}*/

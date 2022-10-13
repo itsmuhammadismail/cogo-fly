@@ -1,0 +1,54 @@
+{% load static %}
+{% load svg %}
+{% load i18n %}
+{% load compress %} 
+
+{% compress css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/request-card.scss' %}">
+{% endcompress %}
+
+<div class="request-card">
+    <div class="card-top">
+        <!--Texte et svg à changer selon la requête-->
+        {% if request.type == 'contact' %}
+        {% svg 'icons/friend-filled' %}
+        <p>{% trans "Contact request" %}</p>
+        {% else %}
+        {% svg 'icons/friend-filled' %}
+        <p>{% trans "Cotravel request" %}</p>
+        {% endif %}
+    </div>
+
+    <div class="card-content">
+        <img src={% if request.user.profile.picture %}{{ request.user.profile.picture.url }}{% else %}{% static 'img/default-profile.png' %}{% endif %} alt="">
+        <div class="sender-info">
+            <p class="name"><strong>{{ request.user.get_full_name }}</strong> 
+                {% if not request.trip %}
+                {% trans "wants to be friend with you." %}
+                {% else %}
+                {% trans "wants to be part of your" %} <a href={% url 'trip' request.trip.id %}>{% trans "trip to " %} {{  request.trip.destination.name }}.</a>
+                <strong>{{ request.accepted }}/{{ request.trip.members.count }} {% trans "members have accepted." %}</strong>
+                {% endif %}
+            </p>
+            {% if request.message %}
+            <p class="message" title="{{ request.message }}">"{{ request.message }}"</p>            
+            {% else %}
+            <p class="message">{% trans "No message." %}</p>            
+            {% endif %}
+        </div>    
+    </div>
+
+    <div class="request-actions">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="request_id" value={{ request.id }}>
+            {% if user in request.confirmations.all %}
+            <button disabled class="accept" type="submit" name="action" value="accept">{% svg "icons/tick" %}{% trans 'Accepted' %}</button>
+            {% else %}
+            <button class="decline" type="submit" name="action" value="decline">{% svg "icons/error" %}{% trans 'Decline' %}</button>
+            <button class="accept" type="submit" name="action" value="accept">{% svg "icons/tick" %}{% trans 'Accept' %}</button>
+            {% endif %}
+        </form>        
+    </div>    
+
+</div>

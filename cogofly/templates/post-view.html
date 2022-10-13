@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load svg %}
+{% load i18n %}
+{% load compress %}
+{% load humanize %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/base.scss' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/post-view.scss' %}">
+    <link rel="stylesheet" href="{% static 'css/splide.min.css' %}">
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src={% static 'js/splide.min.js' %}></script>
+<script>
+    window.onload = function() {
+        var elms = document.getElementsByClassName( 'carousel' );
+        for ( var i = 0, len = elms.length; i < len; i++ ) {
+            new Splide(elms[i], {               
+            'cover': true,    
+            perPage: 1,
+            'arrowPath': 'm15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z',   
+            }).mount();
+        }
+    }
+</script>
+{% endblock js %}
+
+
+
+{% block body %}
+{% include "header.html" %}
+{% include 'post.html' %}
+{% endblock %}

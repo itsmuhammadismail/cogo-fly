@@ -1,0 +1,368 @@
+/* line 1, static/scss/trip-card.scss */
+.card {
+  background-color: white;
+  height: 235px;
+  width: 380px;
+  margin: 5px;
+  display: flex;
+  position: relative;
+  font-family: "Roboto Mono", monospace; }
+  /* line 10, static/scss/trip-card.scss */
+  .card .card-left {
+    border: solid black 1px;
+    border-right: 0;
+    border-radius: 20px 0 0 20px;
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+    /* line 19, static/scss/trip-card.scss */
+    .card .card-left .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      /* line 23, static/scss/trip-card.scss */
+      .card .card-left .card-top img {
+        filter: brightness(0);
+        width: 125px; }
+      /* line 27, static/scss/trip-card.scss */
+      .card .card-left .card-top > span {
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 22px;
+        min-width: 50px;
+        background-color: #4d99e7;
+        color: white;
+        border-radius: 20px; }
+        /* line 37, static/scss/trip-card.scss */
+        .card .card-left .card-top > span svg {
+          height: 15px;
+          width: 15px; }
+      /* line 42, static/scss/trip-card.scss */
+      .card .card-left .card-top a {
+        color: black;
+        text-decoration: none;
+        font-family: "Lato", sans-serif;
+        font-size: 9px;
+        display: flex;
+        align-self: center;
+        align-items: center;
+        border-radius: 5px;
+        border: solid 1px black;
+        padding: 5px 20px; }
+    /* line 55, static/scss/trip-card.scss */
+    .card .card-left .trip-info {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0; }
+      /* line 60, static/scss/trip-card.scss */
+      .card .card-left .trip-info li {
+        list-style: none;
+        margin: 5px;
+        width: 100%; }
+        /* line 64, static/scss/trip-card.scss */
+        .card .card-left .trip-info li:first-of-type {
+          margin: 5 5 0 0; }
+          /* line 66, static/scss/trip-card.scss */
+          .card .card-left .trip-info li:first-of-type p:last-of-type {
+            width: 245px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; }
+        /* line 73, static/scss/trip-card.scss */
+        .card .card-left .trip-info li:last-of-type {
+          display: flex;
+          margin-left: 0; }
+          /* line 76, static/scss/trip-card.scss */
+          .card .card-left .trip-info li:last-of-type div {
+            width: 50%; }
+            /* line 78, static/scss/trip-card.scss */
+            .card .card-left .trip-info li:last-of-type div p:last-of-type {
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis; }
+        /* line 85, static/scss/trip-card.scss */
+        .card .card-left .trip-info li p {
+          font-size: 10px;
+          margin: 0; }
+    /* line 91, static/scss/trip-card.scss */
+    .card .card-left .trip-photos {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      margin: 0;
+      position: relative; }
+      /* line 97, static/scss/trip-card.scss */
+      .card .card-left .trip-photos > p {
+        position: absolute;
+        z-index: 100;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        font-family: "Lato", sans-serif; }
+      /* line 109, static/scss/trip-card.scss */
+      .card .card-left .trip-photos li {
+        list-style: none;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 60px;
+        position: relative; }
+        /* line 119, static/scss/trip-card.scss */
+        .card .card-left .trip-photos li img {
+          position: absolute;
+          width: 82px;
+          height: 60px;
+          left: 0;
+          z-index: 1;
+          border-radius: 10px;
+          /*&:before {
+						content: " ";
+						display: block;
+						position: absolute;
+						width: 82px;
+						height: 60px;
+						background: url(/static/img/cogofly_logo_v2.png?4b7f1cfde928) no-repeat,
+							url(/static/img/white.png?4b7f1cfde928);
+						background-size: 70px 30px, 70px 60px;
+						background-position: center, center;
+						z-index: 10;
+					}*/ }
+    /* line 142, static/scss/trip-card.scss */
+    .card .card-left .comment p {
+      font-size: 10px;
+      margin: 5px 0 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+    /* line 149, static/scss/trip-card.scss */
+    .card .card-left .comment .comment-text {
+      display: flex;
+      padding: 5px;
+      height: 30px;
+      border: solid 1px black;
+      border-radius: 5px; }
+      /* line 155, static/scss/trip-card.scss */
+      .card .card-left .comment .comment-text p {
+        font-size: 9px; }
+  /* line 162, static/scss/trip-card.scss */
+  .card::before {
+    content: "";
+    background-color: white;
+    border: solid black 1px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: 0;
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    right: 25%;
+    top: 0; }
+  /* line 175, static/scss/trip-card.scss */
+  .card::after {
+    content: "";
+    background-color: white;
+    border: solid black 1px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 0;
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    right: 25%;
+    bottom: 0; }
+  /* line 188, static/scss/trip-card.scss */
+  .card .card-right {
+    background: url("/static/img/clouds.jpg?4b7f1cfde928") center no-repeat;
+    background-size: cover;
+    border: solid black 1px;
+    border-left: 0;
+    width: 30%;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    /* line 198, static/scss/trip-card.scss */
+    .card .card-right p {
+      font-size: 18px;
+      margin-bottom: 0;
+      color: white;
+      text-align: center; }
+    /* line 204, static/scss/trip-card.scss */
+    .card .card-right hr {
+      width: 100%;
+      border-color: white; }
+      /* line 207, static/scss/trip-card.scss */
+      .card .card-right hr:first-of-type {
+        margin-bottom: 0; }
+      /* line 210, static/scss/trip-card.scss */
+      .card .card-right hr:last-of-type {
+        margin-top: 0; }
+    /* line 214, static/scss/trip-card.scss */
+    .card .card-right .card-buttons {
+      height: 60%;
+      width: 105px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%; }
+      /* line 217, static/scss/trip-card.scss */
+      .card .card-right .card-buttons form {
+        display: contents; }
+      /* line 225, static/scss/trip-card.scss */
+      .card .card-right .card-buttons button {
+        border: none;
+        padding: 0;
+        background: transparent;
+        height: fit-content;
+        margin: 5px 0; }
+      /* line 232, static/scss/trip-card.scss */
+      .card .card-right .card-buttons svg {
+        height: 25px;
+        width: 25px; }
+      /* line 237, static/scss/trip-card.scss */
+      .card .card-right .card-buttons .share button:focus {
+        outline: 0; }
+      /* line 240, static/scss/trip-card.scss */
+      .card .card-right .card-buttons .share .share-popup {
+        display: none;
+        padding: 0px;
+        margin: 0;
+        position: absolute;
+        right: -12%;
+        top: 23%;
+        z-index: 2;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        width: max-content; }
+        /* line 252, static/scss/trip-card.scss */
+        .card .card-right .card-buttons .share .share-popup li {
+          list-style: none;
+          font-family: "Lato", sans-serif;
+          font-size: initial;
+          display: flex;
+          align-items: center; }
+          /* line 258, static/scss/trip-card.scss */
+          .card .card-right .card-buttons .share .share-popup li:hover {
+            cursor: pointer;
+            background-color: #dbdbdb; }
+          /* line 262, static/scss/trip-card.scss */
+          .card .card-right .card-buttons .share .share-popup li > * {
+            padding: 10px; }
+          /* line 266, static/scss/trip-card.scss */
+          .card .card-right .card-buttons .share .share-popup li svg {
+            width: 20px;
+            height: 20px;
+            /*margin-right: 5px;*/ }
+          /* line 271, static/scss/trip-card.scss */
+          .card .card-right .card-buttons .share .share-popup li > a {
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center; }
+      /* line 279, static/scss/trip-card.scss */
+      .card .card-right .card-buttons .share .share-popup-open {
+        display: flex; }
+    /* line 284, static/scss/trip-card.scss */
+    .card .card-right .creator-info {
+      font-family: "Lato", sans-serif;
+      font-size: 17px;
+      color: #1168d8;
+      text-align: center;
+      margin: 0 0 5px; }
+    /* line 291, static/scss/trip-card.scss */
+    .card .card-right > span {
+      height: 60px; }
+
+@media all and (max-width: 405px) {
+  /* line 299, static/scss/trip-card.scss */
+  .card-and-actions .card {
+    width: 275px !important; }
+  /* line 303, static/scss/trip-card.scss */
+  .card-and-actions .card .card-left {
+    padding: 10 8; }
+    /* line 306, static/scss/trip-card.scss */
+    .card-and-actions .card .card-left .card-top > img {
+      width: 90px; }
+    /* line 309, static/scss/trip-card.scss */
+    .card-and-actions .card .card-left .card-top > span {
+      min-width: 35px; }
+    /* line 312, static/scss/trip-card.scss */
+    .card-and-actions .card .card-left .card-top > a {
+      padding: 5 10; }
+    /* line 320, static/scss/trip-card.scss */
+    .card-and-actions .card .card-left .trip-info li:first-of-type p:last-of-type {
+      width: 165px; }
+    /* line 329, static/scss/trip-card.scss */
+    .card-and-actions .card .card-left .trip-photos li {
+      width: 45%; }
+      /* line 330, static/scss/trip-card.scss */
+      .card-and-actions .card .card-left .trip-photos li:last-of-type {
+        display: none; }
+      /* line 334, static/scss/trip-card.scss */
+      .card-and-actions .card .card-left .trip-photos li img {
+        width: 100%; }
+        /* line 336, static/scss/trip-card.scss */
+        .card-and-actions .card .card-left .trip-photos li img::before {
+          width: 100%; }
+    /* line 343, static/scss/trip-card.scss */
+    .card-and-actions .card .card-left .comment > p {
+      display: none; }
+  /* line 349, static/scss/trip-card.scss */
+  .card-and-actions .card .card-right .creator-info {
+    font-size: 13px; }
+  /* line 353, static/scss/trip-card.scss */
+  .card-and-actions .card::before, .card-and-actions .card::after {
+    right: 26%; }
+  /* line 358, static/scss/trip-card.scss */
+  .card {
+    width: 275px !important; }
+    /* line 360, static/scss/trip-card.scss */
+    .card .card-left {
+      padding: 10 8; }
+      /* line 363, static/scss/trip-card.scss */
+      .card .card-left .card-top > img {
+        width: 90px; }
+      /* line 366, static/scss/trip-card.scss */
+      .card .card-left .card-top > span {
+        min-width: 35px; }
+      /* line 369, static/scss/trip-card.scss */
+      .card .card-left .card-top > a {
+        padding: 5 10; }
+      /* line 377, static/scss/trip-card.scss */
+      .card .card-left .trip-info li:first-of-type p:last-of-type {
+        width: 165px; }
+      /* line 386, static/scss/trip-card.scss */
+      .card .card-left .trip-photos li {
+        width: 45%; }
+        /* line 387, static/scss/trip-card.scss */
+        .card .card-left .trip-photos li:last-of-type {
+          display: none; }
+        /* line 391, static/scss/trip-card.scss */
+        .card .card-left .trip-photos li img {
+          width: 100%; }
+          /* line 393, static/scss/trip-card.scss */
+          .card .card-left .trip-photos li img::before {
+            width: 100%; }
+      /* line 400, static/scss/trip-card.scss */
+      .card .card-left .comment > p {
+        display: none; }
+    /* line 406, static/scss/trip-card.scss */
+    .card .card-right .creator-info {
+      font-size: 13px; }
+    /* line 410, static/scss/trip-card.scss */
+    .card::before, .card::after {
+      right: 26%; } }

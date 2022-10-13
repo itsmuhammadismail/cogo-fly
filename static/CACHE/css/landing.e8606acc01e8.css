@@ -1,0 +1,711 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* line 7, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+* {
+  font-family: "Nunito Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+/* line 16, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.hero-bg {
+  background-image: url("/static/img/svg/BK-1.png?165108720395");
+  background-size: cover;
+  text-align: center; }
+
+/* line 21, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.sec-img-1 {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 45px -15px rgba(0, 0, 0, 0.25);
+  border-radius: 25px 25px 0px 0px; }
+
+/* line 27, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.overlay-div {
+  background: rgba(240, 135, 26, 0.45);
+  mix-blend-mode: multiply;
+  border-radius: 20px; }
+
+/* the popup window */
+/* line 2, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-window,
+.cc-revoke {
+  position: fixed;
+  overflow: hidden;
+  box-sizing: border-box;
+  /* exclude padding when dealing with width */
+  font-family: Helvetica, Calibri, Arial, sans-serif;
+  font-size: 16px;
+  /* by setting the base font here, we can size the rest of the popup using CSS `em` */
+  line-height: 1.5em;
+  display: flex;
+  flex-wrap: nowrap;
+  /* the following are random unjustified styles - just because - should probably be removed */
+  z-index: 9998; }
+
+/* line 19, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-revoke {
+  z-index: 9999;
+  display: none; }
+
+/* line 24, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-window.cc-static {
+  position: static; }
+
+/* 2 basic types of window - floating / banner */
+/* line 29, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-window.cc-floating {
+  padding: 2em;
+  max-width: 24em;
+  /* 1em == 16px therefore 24em == 384px */
+  flex-direction: column; }
+
+/* line 34, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-window.cc-banner {
+  padding: 1em 1.8em;
+  width: 100%;
+  flex-direction: row; }
+
+/* line 40, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-revoke {
+  padding: 0.5em; }
+
+/* line 43, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-revoke:hover {
+  text-decoration: underline; }
+
+/* line 47, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-header {
+  font-size: 18px;
+  font-weight: bold; }
+
+/* clickable things */
+/* line 53, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-btn,
+.cc-link,
+.cc-close,
+.cc-revoke {
+  cursor: pointer; }
+
+/* line 60, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-link {
+  opacity: 0.8;
+  display: inline-block;
+  padding: 0.2em;
+  text-decoration: underline; }
+
+/* line 66, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-link:hover {
+  opacity: 1; }
+
+/* line 69, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-link:active,
+.cc-link:visited {
+  color: initial; }
+
+/* line 74, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-btn {
+  display: block;
+  padding: 0.4em 0.8em;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-width: 2px;
+  border-style: solid;
+  text-align: center;
+  white-space: nowrap; }
+
+/* line 85, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-highlight .cc-btn:first-child {
+  background-color: transparent;
+  border-color: transparent; }
+
+/* line 90, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-highlight .cc-btn:first-child:hover,
+.cc-highlight .cc-btn:first-child:focus {
+  background-color: transparent;
+  text-decoration: underline; }
+
+/* line 96, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-close {
+  display: block;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  font-size: 1.6em;
+  opacity: 0.9;
+  /* seeing as this contains text and not an image, the element taller than it is wide (because it is text) */
+  /*  - we want it to be a square, because it's acting as an icon */
+  /*  - setting the line height normalizes the height */
+  line-height: 0.75; }
+
+/* line 109, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-close:hover,
+.cc-close:focus {
+  opacity: 1; }
+
+/* This file should contain styles that modifies the popup layout. */
+/* By layout, we mean the physical position of the elements on the popup window, and the margin / padding around those elements. */
+/* line 116, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-revoke.cc-top {
+  top: 0;
+  left: 3em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em; }
+
+/* line 122, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-revoke.cc-bottom {
+  bottom: 0;
+  left: 3em;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em; }
+
+/* line 128, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-revoke.cc-left {
+  left: 3em;
+  right: unset; }
+
+/* line 132, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-revoke.cc-right {
+  right: 3em;
+  left: unset; }
+
+/**************************************** FLOATING ****************************************/
+/* these classes position the floating element */
+/* line 140, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-top {
+  top: 1em; }
+
+/* line 143, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-left {
+  left: 1em; }
+
+/* line 146, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-right {
+  right: 1em; }
+
+/* line 149, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-bottom {
+  bottom: 1em; }
+
+/* links that are direct decendants should be displayed as block */
+/* line 154, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-floating > .cc-link {
+  margin-bottom: 1em; }
+
+/* line 158, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-floating .cc-message {
+  display: block;
+  margin-bottom: 1em; }
+
+/* line 163, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-window.cc-floating .cc-compliance {
+  flex: 1 0 auto; }
+
+/**************************************** BANNER ****************************************/
+/* line 169, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-window.cc-banner {
+  align-items: center; }
+
+/* line 173, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-banner.cc-top {
+  left: 0;
+  right: 0;
+  top: 0; }
+
+/* line 178, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-banner.cc-bottom {
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+/* line 184, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-banner .cc-message {
+  display: block;
+  flex: 1 1 auto;
+  max-width: 100%;
+  margin-right: 1em; }
+
+/* COMPLIANCE BOX */
+/* line 193, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-compliance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+/* line 198, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-floating .cc-compliance > .cc-btn {
+  flex: 1; }
+
+/* line 202, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-btn + .cc-btn {
+  margin-left: 0.5em; }
+
+/* Categories Layout */
+/* line 207, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-window.cc-type-categories {
+  display: inline-flex;
+  flex-direction: column;
+  overflow: visible; }
+  /* line 211, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window.cc-type-categories .form {
+    text-align: right; }
+  /* line 214, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window.cc-type-categories .cc-btn {
+    margin: 0; }
+    /* line 216, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+    .cc-window.cc-type-categories .cc-btn.cc-save {
+      margin: 0;
+      display: inline-block; }
+
+/* line 222, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-categories {
+  display: inline-flex; }
+  /* line 224, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-categories .cc-category {
+    display: flex;
+    max-width: 100%;
+    margin: 0 2px;
+    position: relative; }
+  /* line 230, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-categories .cc-btn {
+    border-right: none;
+    outline: none;
+    text-transform: capitalize; }
+    /* line 234, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+    .cc-categories .cc-btn input[type="checkbox"] {
+      float: left;
+      height: 26px;
+      width: calc(100% - 22px);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 2px;
+      cursor: pointer; }
+    /* line 244, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+    .cc-categories .cc-btn:not(.cc-info):not(.cc-save) {
+      padding-left: 26px; }
+  /* line 248, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-categories .cc-info {
+    border-left: none;
+    border-right: 2px solid lightgrey;
+    padding: 4px;
+    font-variant: all-small-caps; }
+    /* line 253, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+    .cc-categories .cc-info:focus + .cc-tooltip {
+      display: block; }
+  /* line 257, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-categories .cc-tooltip {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    width: 190px;
+    bottom: 46px;
+    padding: 8px;
+    border: thin solid lightgrey;
+    box-shadow: 1px 1px 4px rgba(150, 150, 150, 0.7); }
+    /* line 266, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+    .cc-categories .cc-tooltip:after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg);
+      position: absolute;
+      bottom: -7px;
+      left: 10px;
+      box-shadow: 2px 1px 1px rgba(200, 200, 200, 0.5); }
+    /* line 276, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+    .cc-categories .cc-tooltip p {
+      margin: 0; }
+
+/* line 281, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-window {
+  opacity: 1;
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -ms-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease; }
+
+/* line 291, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-window.cc-invisible {
+  opacity: 0; }
+
+/* only animate ifhas class 'cc-animate' */
+/* line 296, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-animate.cc-revoke {
+  -webkit-transition: transform 1s ease;
+  -moz-transition: transform 1s ease;
+  -ms-transition: transform 1s ease;
+  -o-transition: transform 1s ease;
+  transition: transform 1s ease; }
+
+/* line 303, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-animate.cc-revoke.cc-top {
+  transform: translateY(-2em); }
+
+/* line 306, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-animate.cc-revoke.cc-bottom {
+  transform: translateY(2em); }
+
+/* line 309, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-animate.cc-revoke.cc-active.cc-top {
+  transform: translateY(0); }
+
+/* line 312, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-animate.cc-revoke.cc-active.cc-bottom {
+  transform: translateY(0); }
+
+/* line 315, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-revoke:hover {
+  transform: translateY(0); }
+
+/* line 319, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+.cc-grower {
+  /* Initially we don't want any height, and we want the contents to be hidden */
+  max-height: 0;
+  overflow: hidden;
+  /* Set our transitions up. */
+  -webkit-transition: max-height 1s;
+  -moz-transition: max-height 1s;
+  -ms-transition: max-height 1s;
+  -o-transition: max-height 1s;
+  transition: max-height 1s; }
+
+@media print {
+  /* line 332, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window,
+  .cc-revoke {
+    display: none; } }
+
+@media screen and (max-width: 900px) {
+  /* line 339, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-btn {
+    white-space: normal; } }
+
+/* dimensions for 'iPhone6 Plus' and lower */
+@media screen and (max-width: 414px) and (orientation: portrait), screen and (max-width: 736px) and (orientation: landscape) {
+  /* line 348, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window.cc-top {
+    top: 0; }
+  /* line 351, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window.cc-bottom {
+    bottom: 0; }
+  /* line 354, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window.cc-banner, .cc-window.cc-floating, .cc-window.cc-right, .cc-window.cc-left {
+    left: 0;
+    right: 0; }
+  /* line 362, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window.cc-banner {
+    flex-direction: column;
+    align-items: unset; }
+    /* line 365, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+    .cc-window.cc-banner .cc-compliance {
+      flex: 1 1 auto; }
+    /* line 368, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+    .cc-window.cc-banner .cc-message {
+      margin-right: 0;
+      margin-bottom: 1em; }
+  /* line 373, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window.cc-floating {
+    max-width: none; }
+  /* line 376, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window.cc-type-categories {
+    flex-direction: column; }
+  /* line 379, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window .cc-message {
+    margin-bottom: 1em; }
+  /* line 382, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window .cc-categories {
+    flex-direction: column;
+    width: 100%;
+    margin-right: 8px; }
+  /* line 387, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window .cc-category {
+    margin: 4px 0; }
+    /* line 389, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+    .cc-window .cc-category .cc-btn:not(.cc-info) {
+      width: calc(100% - 16px);
+      min-width: 140px; } }
+
+@media screen and (max-width: 854px) {
+  /* line 397, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window.cc-type-categories .cc-btn.cc-save {
+    margin: 8px 0; } }
+
+@media screen and (max-width: 790px) {
+  /* line 403, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-window.cc-type-categories .cc-categories {
+    display: flex;
+    flex-direction: column; }
+  /* line 407, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-categories .cc-category {
+    margin: 4px 0; }
+  /* line 410, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .form {
+    width: 100%;
+    max-width: 350px; }
+  /* line 414, d:/cogoflydjango/cogo-fly/static/scss/cookieconsent.scss */
+  .cc-btn:not(.cc-info):not(.cc-save) {
+    width: calc(100% - 16px); } }
+
+/* line 1, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+footer {
+  background-color: #141414;
+  padding: 20px 20px;
+  text-align: center;
+  overflow: hidden; }
+  /* line 6, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer hr {
+    border-color: #bababa9f; }
+  /* line 9, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0;
+    /*&:nth-of-type(2) {
+			li {
+				&:first-of-type {
+					margin-top: 0;
+					display: flex;
+					align-items: center;
+					p {
+						margin: 0;
+					}
+				}
+			}
+		}*/ }
+    /* line 14, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer ul li {
+      list-style: none;
+      margin: 5px 20px; }
+      /* line 17, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+      footer ul li a {
+        color: #bababa;
+        font-size: 20px;
+        text-decoration: none; }
+        /* line 21, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+        footer ul li a:hover {
+          cursor: pointer;
+          color: #d6d6d6;
+          transition: color 0.2s; }
+      /* line 27, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+      footer ul li svg, footer ul li img {
+        width: 40px;
+        height: 40px; }
+  /* line 45, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-sm {
+    display: flex;
+    align-items: center; }
+    /* line 48, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .footer-sm > p {
+      white-space: nowrap; }
+    /* line 51, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .footer-sm ul {
+      width: 100%; }
+  /* line 55, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer p {
+    color: #bababa;
+    font-size: 20px; }
+  /* line 59, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .contact-us-log-in {
+    position: relative; }
+    /* line 61, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .contact-us-log-in span {
+      width: max-content;
+      position: absolute;
+      display: none;
+      top: 45px;
+      right: -110%;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: white;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 1000; }
+    /* line 75, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .contact-us-log-in:hover a {
+      cursor: default; }
+    /* line 78, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .contact-us-log-in:hover span {
+      display: block; }
+
+@media all and (max-width: 1065px) {
+  /* line 88, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-links li {
+    flex: 1 1 20%; }
+  /* line 92, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-sm {
+    display: block; } }
+
+@media all and (max-width: 860px) {
+  /* line 101, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-links li {
+    flex: 1 1 50%; }
+  /* line 107, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-sm ul li {
+    flex: 1 1 12%; } }
+
+@media all and (max-width: 550px) {
+  /* line 119, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-sm ul li {
+    flex: 1 1 30%; } }
+
+/* line 97, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+ul {
+  padding: 0; }
+  /* line 99, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  ul li {
+    list-style: none;
+    padding: 0; }
+
+/* line 192, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.modal {
+  position: fixed;
+  margin-left: auto;
+  top: 150%;
+  left: 50%;
+  width: 70%;
+  padding: 40px;
+  border-radius: 5px;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  transition: top 0.3s ease, filter 0.3 ease;
+  z-index: 2;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4); }
+  /* line 205, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  .modal.open {
+    top: 50%; }
+
+/* line 210, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.is-blurred {
+  filter: blur(2px);
+  transition: filter 0.3 ease; }
+
+/* line 215, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+#lang-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  /* line 220, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  #lang-modal p {
+    font-size: 40px;
+    color: black;
+    padding: 0;
+    margin: 0; }
+  /* line 226, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  #lang-modal ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    justify-content: center; }
+    /* line 231, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+    #lang-modal ul li {
+      list-style: none;
+      margin-top: 20px;
+      padding: 10px; }
+      /* line 235, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+      #lang-modal ul li:first-of-type {
+        margin-left: 0; }
+      /* line 238, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+      #lang-modal ul li a {
+        color: black;
+        font-size: 20px; }
+  /* line 244, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  #lang-modal svg {
+    height: 30px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    vertical-align: middle; }
+  /* line 249, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  #lang-modal button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 40px; }
+  /* line 255, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  #lang-modal.open {
+    top: 50%; }
+
+/* line 260, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+#scrollup {
+  position: fixed;
+  right: 20px;
+  bottom: -100px;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  transition: bottom 0.5s ease; }
+  /* line 268, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  #scrollup.visible {
+    bottom: 20px; }
+
+/* line 331, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+section {
+  position: relative;
+  text-align: center;
+  min-height: 65vh;
+  padding: 3em;
+  box-sizing: border-box;
+  overflow: hidden; }
+  /* line 338, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  section > * {
+    margin: 2rem; }
+  /* line 341, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  section h2 {
+    font-size: 2.5em; }
+  /* line 344, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  section > p {
+    font-size: 1.5em; }
+  /* line 349, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  section:first-of-type p,
+  section :nth-of-type(2) p {
+    margin: 20px 5; }
+
+/* line 532, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.result-section {
+  background-color: #ececec; }
+  /* line 534, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  .result-section form {
+    display: flex;
+    background-color: white;
+    padding: 1em;
+    max-width: 1200px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4); }
+    /* line 541, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+    .result-section form p {
+      font-size: 15px;
+      margin: 0; }
+    /* line 545, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+    .result-section form input {
+      flex: 1;
+      text-align: center;
+      font-family: "Lato", sans-serif;
+      border: none;
+      border-right: solid 1px #b9b9b9;
+      outline: transparent;
+      font-size: 15px;
+      /* &:focus {
+        border-radius: 20px;
+        border: solid 1px rgb(185, 185, 185);
+      } */ }
+      /* line 557, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+      .result-section form input:last-of-type {
+        border-right: none; }
+
+/* line 635, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.carousel .splide__track .splide__list li .slide-content .name p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+/* line 667, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.show-carousel {
+  display: block; }
+
+@media all and (max-width: 300px) {
+  /* line 1288, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  header nav h1 a img {
+    height: 5rem; } }

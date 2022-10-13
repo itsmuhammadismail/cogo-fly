@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/messages.scss' %}">
+{% endblock %}
+
+{% block js %}
+    {{ form.media }}
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+<div class="content" style="border-radius: 5%;">
+
+    <div class="side">
+        <div class="actions">
+            <div class="search">
+                {% svg 'icons/search-filled' %}
+                <textarea type="text" placeholder="{% trans 'Search names' %}" oninput="$('.contacts').children().each((_, el) => this.value.toLowerCase().split(/\W+/).every(word => $(el).find('.name').text().toLowerCase().includes(word)) ? $(el).show() : $(el).hide())"></textarea>
+            </div>
+            {# {% include 'popup.html' with text="Write new message" icon="icons/write" show_form=False %} #}
+        </div>
+        <hr>
+        <ul class="contacts">
+            {% for convo in convos reversed %}
+            <li class="contact{% if convo.unread %} unread{% endif %} {% if convo.users.all.1.profile.picture_url %}group-message{% endif %}">
+                <a href="{% url 'messages' convo.id %}">
+                    {% if convo.trip%}
+                        {% if convo.trip.pictures.all.0.picture %}
+                            <img src="{{ convo.trip.pictures.all.0.picture.url }}" alt="cogofly-trip_picture">  
+                        {% else %}
+                            <img src="{{ convo.users.all.0.profile.picture_url }}" alt="cogofly-trip_picture" onerror="this.onerror=null;this.src='{% static "img/cogofly_logo_v2-cropped.png" %}';"> 
+                        {% endif %}
+                        {% if convo.users.all.1.profile.picture_url %}
+                            <img src="{{ convo.users.all.1.profile.picture_url }}" alt="cogofly-trip_picture" onerror="this.onerror=null;this.src='{% static "img/cogofly_logo_v2-cropped.png" %}';">                         
+                        {% endif %}
+                    {% else %}
+                        {% if convo.users.all.0.profile.picture_url %}
+                            <img loading="lazy" src="{{ convo.users.all.0.profile.picture_url }}" alt="cogofly-trip_picture">
+                            {% for user in convo.users.all %}
+                                <span class="online-status">
+                                    {% if request.user.on_line %}
+                                        <img src="{% static 'img/green_button.png' %}" alt="online-status" style="width:20px; height:20px;">
+                                    {% else %}
+                                        <img src="{% static 'img/red_button.png' %}" alt="online-status" style="width:20px; height:20px;">
+                                    {% endif %}
+                                </span>
+                            {% endfor %}
+                        {% endif %}                    
+                    {% endif %}
+                    <div class="chat-info">
+                        <p class="name">
+                            <strong>{% if convo.trip %}{% trans "Trip to" %} {{ convo.trip.destination.name }}{% else %}{{ convo.users.all|join:", " }}{% endif %}</strong>
+                        </p>            
+                        <p>{{ convo.messages.all.0.text }}</p>                                             
+                    </div>
+                    {% if convo.trip and convo.users.all|length|add:1 > 1 %}
+                    <span class="number-users">{{ convo.users.all|length|add:1}} {% trans "members" %}</span>
+                    {% endif %}    
+                    {% if convo.trip and convo.users.all|length|add:1 == 1 %}
+                    <span class="number-users unique-member">{{ convo.users.all|length|add:1}} {% trans "member" %}</span>                    
+                    {% endif %}                     
+                </a>
+                <!--<span class="unread-bubble"></span>-->              
+            </li>
+            {% empty %}
+            <p class="no-convo">{% trans "No conversations" %}</p>
+            {% endfor %}     
+        </ul>
+    </div>
+
+    {% if convo %}
+
+    <div class="chat-top">
+        <div class="chat-top-pics">
+            {% if convo.trip and convo.trip.pictures.all.0.picture %}
+                <img src="{{ convo.trip.pictures.all.0.picture.url }}" alt="cogofly-trip_picture">  
+            {% else %}
+                {% for user in convo.users.all %}
+                    <img src="{{ user.profile.picture_url }}" alt="cogofly-trip_picture" onerror="this.onerror=null;this.src='{% static "img/cogofly_logo_v2-cropped.png" %}';">          
+                    <span class="online-status">
+                        {% if request.user.on_line %}
+                            <img src="{% static 'img/green_button.png' %}" alt="online-status" style="width:20px; height:20px;">
+                        {% else %}
+                            <img src="{% static 'img/red_button.png' %}" alt="online-status" style="width:20px; height:20px;">
+                        {% endif %}
+                    </span>
+                {% endfor %}
+            {% endif %}        
+        </div>
+        <p class="name" title="{% if convo.users.all %}{{ convo.users.all|join:', ' }}{% else %}{% trans 'No other members yet' %}{% endif %}">
+            <strong>
+            {% if convo.trip %}
+            <a href="{% url 'trip' convo.trip.id %}" target='_blank'>
+                {% trans "Trip to" %} {{ convo.trip.destination.name }} ({% if convo.users.all %}{{ convo.users.all|join:", " }}{% else %}{% trans "No other members yet" %}{% endif %})
+            </a>
+            {% else %}
+            <a href="{% url 'profile' user.profile.id %}" target='_blank'>
+                {{ convo.users.all|join:", " }}
+            </a>
+            {% endif %}
+            </strong>
+        </p>
+        <hr>
+    </div>
+
+    <div class="messages-content">
+        <ul class="messages">
+            {% if chats.has_next %}
+                <a href="?page={{ chats.next_page_number }}">{% trans "Load previous messages" %}</a>
+                <!--<script>
+                    $(".messages-content").css('height', '94%')
+                </script>-->
+            {% endif %}
+
+            {% for message in chats reversed %}
+            <li class="message {% if message.user == user %}receiver{% else %}sender{% endif %}">
+                <p class="chat">
+                    {{ message }}
+                </p>
+                <p class="messageinfo">{{ message.user.get_full_name }} - {{ message.created|date:"SHORT_DATETIME_FORMAT" }}</p>
+            </li>
+            {% empty %}
+            {% if convo.trip %}{% trans "Here is your trip’s conversation, you can exchange with the cotravelers you are planning to go with" %}{% else %}{% trans "No message in this conversation." %}{% endif %}
+            {% endfor %}
+
+            {% if chats.has_previous %}
+               <!-- <script>
+                    $(".messages-content").css('height', '94%')
+                </script>  -->          
+                <a href="?page={{ chats.previous_page_number }}">{% trans "Load next messages" %}</a>
+                <a href="?page=1">{% trans "Go to last messages" %}</a>
+            {% endif %}    
+        </ul>
+        <form class="chatbox" method="POST">
+            {% csrf_token %}
+            {{ form.text }}
+            <button type="submit" onClick="window.location.reload();">{% svg 'icons/paper-plane' %}</button>
+        </form>
+    
+    </div>
+    {% else %}
+
+    <div class="chat-top">
+        <hr>
+    </div>
+    <div class="messages-content">
+        <ul class="messages no-messages">
+            <li>{% trans "Select a conversation on the left or create one." %}</li>
+        </ul>
+        <form class="chatbox no-chatbox" method="POST">
+            <input disabled type="text" name="" id="">
+            <button disabled>{% svg 'icons/paper-plane' %}</button>
+        </form>     
+    </div>   
+    
+    {% endif %}
+</div>
+
+{% endblock %}

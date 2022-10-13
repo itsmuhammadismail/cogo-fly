@@ -1,0 +1,96 @@
+{% load static %} {% load svg %} {% load i18n %} {% load compress %}
+<!-- Hello -->
+{% load svg %} {% load i18n %} {% load compress %} {% compress css %}
+<link
+  rel="stylesheet"
+  type="text/x-scss"
+  href="{% static 'css/search.css' %}"
+/>
+{% endcompress %}
+
+<section class="bg-white shadow-lg rounded-[0.813rem] w-[24rem] p-0">
+  <div class="card-header flex justify-between border-b py-4 px-6">
+    <div class="flex gap-[1rem]">
+      <!-- <img src="{% static 'img/svg/card-logo.svg' %}" /> -->
+      <img
+        src="{% if contact.profile.sex %}{% static 'img/svg/male.svg' %}{% else %}{% static 'img/svg/card-logo.svg' %}
+        {% endif %}"
+      />
+      <h3>
+        {% if contact == request.user %}{% trans "You" %}{% else %}
+        {{contact.first_name }} {{ contact.last_name }}{% endif %}
+      </h3>
+    </div>
+    <div class="flex gap-[1rem]">
+      <a
+        title="Delete"
+        href="{% url 'profile' contact.id %}?action=removecontact"
+        ><img src="{% static 'img/svg/card-right-bin.svg' %}"
+      /></a>
+      <img src="{% static 'img/svg/card-right-disable.svg' %}" />
+      <a title={% trans "Add to contacts" %} href="{% url 'profile' contact.id %}?action=sendrequest">
+        <img src="{% static 'img/svg/card-right-user.svg' %}"
+      /></a>
+    </div>
+  </div>
+  <div class="card-body flex justify-evenly py-4 px-3">
+    
+    <div class="overflow-hidden w-[6rem] h-[6rem] rounded-full">
+      <a title="See profile" target="_blank" rel="noopener noreferrer" href="{% url 'profile' contact.id %}">
+      <img src="{{ contact.profile.picture_url }}" /></a>
+    </div>
+    <div class="card-para">
+      <div class="flex gap-[0.7rem]">
+        <img src="{% static 'img/svg/location-pin.svg' %}" />
+        <p>Live in {{ contact.profile.place.name }}</p>
+      </div>
+      <div class="flex gap-[0.7rem]">
+        <img src="{% static 'img/svg/retry.svg' %}" />
+        <p>Born in {{ contact.profile.birthplace.name }}</p>
+      </div>
+      <div class="flex gap-[0.7rem]">
+        <img src="{% static 'img/svg/home.svg' %}" />
+        <p>Last Travel {{ trip.destination.name }}</p>
+      </div>
+      <div class="flex gap-[0.7rem]">
+        <img src="{% static 'img/svg/map-pin.svg' %}" />
+        <p>New Travel {{ trip.destination.name }}</p>
+      </div>
+    </div>
+  </div>
+  <form method="POST" action="{% url 'profile' contact.id %}" class="w-full">
+    {% csrf_token %}
+  <div class="card-footer flex justify-between border-b py-4 px-6">
+    <div class="flex gap-[1rem]">
+      <img src="{% static 'img/svg/heart.svg' %}" />
+      {% if is_favorite or contact.is_favorite %}
+      <button
+        title="{% trans 'Remove from favorites' %}"
+        type="submit"
+        name="unfav"
+        class="border-[none !important]"
+        style="border: none; height: fit-content !important"
+      >
+        <img src="{% static 'img/svg/star.svg' %}" />
+      </button>
+      {% else %}
+      <button
+        title="{% trans 'Add to favorites' %}"
+        type="submit"
+        name="fav"
+        class="border-[none !important]"
+        style="border: none; height: fit-content !important"
+      >
+        <img src="{% static 'img/svg/star.svg' %}" />
+      </button>
+      {% endif %}
+      <button title="{% trans "Send message" %}" type="submit" name="sendmessage" style="border: none; height: fit-content !important"><img src="{% static 'img/svg/message.svg' %}" /></button>
+      
+      <button title="{% trans "Send message" %}" type="submit" name="sendmessage" style="border: none; height: fit-content !important"><img src="{% static 'img/svg/message.svg' %}" /></button>
+    </div>
+    <div>
+      <img src="{% static 'img/svg/share.svg' %}" />
+    </div>
+  </div>
+</form>
+</section>

@@ -1,0 +1,343 @@
+{% extends "base.html" %} {% load static %} {% load i18n %} {% load svg %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock %} {% block js %}
+<!--<script defer type="text/javascript" src="{% static 'js/landing.js' %}"></script>-->{{ form.media }}
+
+
+<script>
+const getCountry = (destination, id) => {
+	console.log(destination.split(',')[2]);
+	const trip = document.getElementById(id);
+	trip.innerHTML = destination.split(',')[2];
+}
+</script>
+
+<script>
+    function hamburger(){
+     let menu = document.querySelector("#menu-open");
+     menu.classList.remove("hidden");
+     menu.classList.add("block");
+    }
+    
+    function hamburgerClose(){
+    let menu = document.querySelector("#menu-open");
+    menu.classList.remove("block");
+    menu.classList.add("hidden");
+    }   
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+ {% endblock %} {% block body %}
+
+<body id='page'>
+	<!-- Header -->
+
+	{% include "header.html" %}
+       <!-- Hero -->
+       <section class="flex justify-center w-full pt-[7.5rem]">
+        <div
+          class="hero-bg w-[100%] md:w-[80rem] h-[25.688rem] md:h-[29.688rem] rounded-[30px] md:rounded-[70px] flex flex-col items-center"
+        >
+          <h1
+            class="md:text-[38px] text-[1.813rem] text-white leading-[unset] md:leading-[52px] font-[900] pt-[2.5rem] pb-[1rem] md:py-[unset] md:py-[0.25rem] md:pt-[2rem] w-[20rem] md:w-[unset] text-center"
+          >
+          {% trans 'Alone, we think…' %}{% trans 'Together, we travel!' %}
+          </h1>
+          <p
+            class="text-white mx-auto flex items-center justify-center text-center text-[16px] text-white leading-[1.50rem] font-[700] w-[22rem] md:w-[50rem] pt-[unset] md:pt-[0.75rem]"
+          >
+            Use search to find international CoTravellers to go away with. 
+          </p>
+          <p
+          class="text-white mx-auto flex items-center justify-center text-center text-[16px] text-white leading-[1.50rem] font-[700] w-[22rem] md:w-[50rem]"
+        >
+          Feel
+          free to add Trips and share your boarding card around in order to be
+          found by CoTravellers
+        </p>
+        </div>
+      </section>
+      <form action="{% url 'search' %}" onsubmit='$(this).find(":input").filter(function(){ return !this.value; }).attr("disabled", "disabled");return true;'
+        class="shadow-div pb-[2.813rem] md:pb-[5.813rem] flex flex-col md:flex-row justify-center items-center gap-[3rem] mx-[2rem] md:mx-auto p-[3rem] rounded-[2rem] lg:w-[64.813rem]  md:h-[11.938rem] mt-[-6rem] bg-white relative z-[100]"
+      >
+        <div
+          class="flex flex-col flex-1 gap-[1rem] text-[#313131] md:mt-[2rem] md:w-[unset] w-[15rem]"
+        >
+          <div class="flex flex-col md:flex-row gap-[1rem]">
+            <label
+              for=""
+              class="flex items-center leading-[1.364rem] text-[#313131] text-[1rem] font-[700]"
+              >Destination</label
+            >
+           
+			{{ form.destination }} 
+          </div>
+          <div class="flex flex-col md:flex-row gap-[1rem]">
+            <div class="flex flex-col md:flex-row flex-1 gap-[1rem] md:items-center w-[15rem] items-start">
+              <label
+                for=""
+                class="leading-[1.364rem] text-[#313131] text-[1rem] font-[700] text-left"
+                >Date of departure</label
+              >
+             
+			  {{ form.start }} 
+            </div>
+            <div class="flex flex-1 gap-[1rem] flex-col md:flex-row md:items-center w-[15rem] items-start">
+              <label
+                for=""
+                
+                class="leading-[1.364rem] text-[#313131] text-[1rem] font-[700] "
+                >Return Date</label
+              >
+             
+			  {{ form.end }}
+            </div>
+          </div>
+        </div>
+
+        <div class="flex w-full md:w-[unset] md:mt-[2rem]">
+          <button
+            class="bg-[#1877F1] w-full md:w-[92px] h-[56px] md:h-[66px] rounded-[30px] md:rounded-[50px] flex justify-center items-center" 
+            ><img src="{% static 'img/svg/search-icon.svg' %}"
+          /></button></div>
+		</form>
+				<!-- Hero -->
+				<div class="bg-[#F3F8FF] h-[33rem] md:h-[37.938rem]">
+					<section class="max-w-[80rem] mx-auto min:h-[576px] flex justify-center flex-col text-center w-full  my-[2rem] md:my-[5rem] relative">
+						<h1 class="font-[800] text-[1.5rem] md:text-[2.5rem] leading-[3.41rem] text-[#313131] pt-[2.563rem] md:pt-[4.563rem] pb-[1.056rem]">
+                   {% trans 'Last searched cities/countries' %}
+                  </h1>
+						<div class="flex justify-center gap-[1rem] md:flex-row flex-col items-center pb-[1.5rem] md:pb-[4.5rem]">
+							<div class="pt-[1rem] md:pt-[3rem] relative">
+								<div class="swiper mySwiper w-[90vw] md:w-[80rem] md:h-[30rem] ">
+									<div class="swiper-wrapper"> {% for search in last_searches_with_cities %}
+										<div class="swiper-slide  h-[24.688rem] w-[16.643rem] ">
+											<div class="shadow rounded-[25px]"> {% if search..destination.picture_urls.mobile == " " or search.destination.picture_urls.mobile is None %} <img class="rounded w-full h-[15.378rem] rounded-t-[25px]" src="{% static 'img/about-us-name.jpg' %}" alt="cogofly-about-us"> {% else %} <img class="rounded w-full h-[15.378rem] rounded-t-[25px]" src="{{ search.destination.picture_urls.mobile }}" alt="cogofly-about-us"> {% endif %}
+												<div class="bg-white h-[5rem] flex justify-center flex-col items-center rounded-b-[25px]">
+													<p class="leading-relaxed text-base">{{ search.destination }}</p>
+												</div>
+											</div>
+										</div> {% endfor %} </div>
+									
+									<div class="swiper-pagination"></div>
+								</div>
+								<div class="swiper-button-next"></div>
+									<div class="swiper-button-prev"></div>
+							</div>
+						</div>
+					</section>
+				</div>
+				<!-- Last Search Cities -->
+			
+				<!-- Video Section -->
+				<section class="text-center ">
+					<h1 class="font-[800] md:text-[2.5rem] text-[1.5rem] leading-[2.41rem] text-[#313131] pt-[4.563rem] pb-[0.313rem]">
+          Concept
+        </h1>
+					<p class="font-[800] text-[1.25rem] leading-[1.705rem] text-[#1877F1] md:px-[unset] px-[2rem]"> A new concept is born to avoid travelling alone </p>
+					<div class="flex justify-center pb-[3rem] pt-[1rem] md:pt-[3rem]">
+						<video class="m-[0] rounded-[30px] md:max-w-[62rem] w-full max-w-[22rem] " src="{% static 'vid/cogofly-genesis.mp4' %}" controls></video>
+					</div>
+				</section>
+				<!-- Video Section -->
+				<!-- Video Grid -->
+				<section class="max-w-[22rem] md:max-w-[80rem] mx-auto flex justify-around  md:mt-[3.25rem] concept-section min-h-[37.938rem] md:min-h-[unset] ">
+					<ul class="flex gap-[2rem] text-white w-full flex md:flex-row flex-col w-full pb-[3rem] md:pb-[unset]">
+						<li class="content-li flex-1 w-full min-h-[346px]  rounded-[20px] text-center flex items-center  justify-center">
+							<p class="content-heading text-[20px] max-w-[20rem]"><strong>{% trans "Don’t be fazed by travelling any more" %}</strong></p>
+							<p class="content-hidden max-w-[20rem]">{% trans "Don’t be fazed by travelling any more, whether you want to go away for the weekend or just on a day out, and give your dreams a boost." %}</p>
+						</li>
+						<li class="content-li flex-1 w-full min-h-[346px]  rounded-[20px] text-center flex items-center  justify-center">
+							<p class="content-heading text-[20px] max-w-[20rem]"><strong>{% trans "Find someone you can trust" %}</strong></p>
+							<p class="content-hidden  max-w-[20rem]">{% trans "Find someone you can trust, close to home or abroad, and plan together your trips... you'll also be able to plan and share weekends and outings." %}</p>
+						</li>
+						<li class="content-li flex-1 w-full min-h-[346px]  rounded-[20px] text-center flex items-center  justify-center">
+							<p class="content-heading text-[20px] max-w-[20rem]"><strong>{% trans "Discover a new way to get away" %}</strong></p>
+							<p class="content-hidden max-w-[20rem]" >{% trans "Discover a new way to get away which is financially advantageous, safe, and really practical" %}</p>
+						</li>
+					</ul>
+				</section>
+				<!-- Video Grid -->
+                <div class="bg-[#F3F8FF] md:h-[37.938rem] md:h-[35rem] h-[32rem]">
+					<section class="max-w-[80rem] mx-auto min:h-[576px] flex justify-center flex-col text-center w-full  my-[2rem] md:my-[5rem] relative">
+						<h1 class="font-[800] text-[1.5rem] md:text-[2.5rem] leading-[3.41rem] text-[#313131] pt-[2.563rem] md:pt-[4.563rem] pb-[1.056rem]">
+              {% trans 'Last added trips' %}
+              </h1>
+						<div class="flex justify-center gap-[1rem] md:flex-row flex-col items-center pb-[1.5rem] md:pb-[4.5rem]">
+							<div class="pt-[1rem] md:pt-[3rem] relative">
+								<div class="swiper mySwiper w-[90vw] md:w-[80rem] md:h-[30rem] ">
+									<div class="swiper-wrapper">  {% for trip in trips.last_added|slice:':21' %}
+										<div class="swiper-slide  h-[24.688rem] w-[16.643rem] ">
+											<div class="shadow rounded-[25px]">{% if trip.destination.picture_urls.mobile  == " " or trip.destination.picture_urls.mobile is None %} <img class="rounded w-full h-[12rem] rounded-t-[25px]" src="{% static 'img/about-us-name.jpg' %}" alt="cogofly-about-us-name"> {% else %}  <img class="rounded w-full h-[12rem] rounded-t-[25px]" src="{{ trip.destination.picture_urls.mobile }}" alt="cogofly-trip-destination"> {% endif %}
+                        <div class="slide-content bg-white h-[7rem] flex justify-center flex-col items-center rounded-b-[25px]">
+                          <div class="name  pt-[1rem]">
+                              <p title="{{ trip.destination }} text-[0.50rem] font-[700]" >{{ trip.destination }}</p>                            
+                          </div>
+                          <div class="slide-details bg-white h-[3rem] flex justify-center items-center rounded-b-[25px] gap-[0.5rem] ">
+							<img src="{% static 'img/svg/picker.svg' %}" /> <p class="text-[#7D7D7D] text-[0.75rem]">{{ trip.start }} - {{ trip.end }}</p>
+                          </div>                                
+                      </div>
+											</div>
+										</div> {% endfor %} </div>
+									
+									<div class="swiper-pagination"></div>
+								</div>
+								<div class="swiper-button-next"></div>
+									<div class="swiper-button-prev"></div>
+							</div>
+						</div>
+					</section>
+				</div>
+				<!-- Community -->
+				<section class="max-w-[80rem] mx-auto min-h-[35.938rem] flex justify-around items-center md:flex-row flex-col gap-[3rem] py-[4rem] md:py-[5.25rem]"> <img src="{% static 'img/svg/Community.png' %}" class="flex-1 p-[1rem] md:p-[unset]" />
+					<div class="w-[18rem] md:w-[40rem] ">
+						<h1 class="font-[800] md:text-[2.5rem] text-[1.5rem] leading-[3.41rem] text-[#313131] md:text-left text-center">
+            Community
+          </h1>
+						<p class="font-[800] text-[1.25rem] leading-[1.705rem] text-[#1877F1]"> The Genesis of CoTravellers </p>
+						<div class="flex justify-center items-center gap-[1rem]"> <img src="{% static 'img/svg/icon-1.svg' %}" class="w-[6.875rem] md:w-[4.875rem] " />
+							<p class="py-[1rem] font-[600] text-[1.125rem] leading-[1.625rem] text-[#AEAEAE]"> Connect with persons from the 4 corners of the world, share their experiences and expand your network. </p>
+						</div>
+						<div class="flex justify-center items-center gap-[1.5rem]"> <img src="{% static 'img/svg/icon-2.svg' %}" class="w-[6.875rem]  md:w-[4.875rem]" />
+							<p class="py-[1rem] font-[600] text-[1.125rem] leading-[1.625rem] text-[#AEAEAE]"> Find cotravellers, with potentially the same socio-professional criteria and areas of interest, in order to organise your trips in the best possible conditions. </p>
+						</div>
+						<div class="flex justify-center items-center gap-[1rem]"> <img src="{% static 'img/svg/icon-3.svg' %}" class="w-[5rem] md:w-[4rem]" />
+							<div>
+								<p class="py-[1rem] font-[600] text-[1.125rem] leading-[1.625rem] text-[#AEAEAE]"> Think Together, think Co, and take off to share your trips, weekends, and others outings! </p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- Community -->
+				<section class="flex justify-center flex-col text-center w-full bg-[#F3F8FF] relative">
+					<h1 class="font-[800] text-[1.5rem] md:text-[2.5rem] leading-[2.41rem] text-[#313131] pt-[4.5rem] md:pt-[4.563rem] pb-[0.056rem]">
+           {% trans 'CoTravels' %}
+           </h1>
+					<p class="font-[800] text-[1.25rem] leading-[1.705rem] text-[#1877F1] md:px-[unset] px-[2rem]"> Travelling is great but doing it with 2, or more travellers, is really better…isn’t it? </p>
+					<div class="flex justify-center gap-[1rem] md:flex-row flex-col items-center">
+						<div class="w-full h-[547px] md:h-[465px] pt-[3rem] relative">
+							<div class="swiper mySwiper w-[90vw] md:w-screen">
+								<div class="swiper-wrapper"> {% for trip in trips.cotravels.past %}
+									<div class="swiper-slide  w-[16.313rem]">
+										<div class="shadow rounded-[40px] relative"> {% if trip.destination.picture_urls.mobile == " " or trip.destination.picture_urls.mobile == 'None' %} <img class="rounded w-full md:h-[22.875rem] rounded-[2.5rem]" src="{% static 'img/about-us-name.jpg' %}" alt="cogofly-about-us"> {% else %} <img class="rounded w-full md:h-[22.875rem] rounded-[2.5rem]" src="{{ trip.destination.picture_urls.mobile }}" alt="cogofly-about-us"> {% endif %}
+											<div class="bg-white h-[3rem] flex justify-center flex-col items-center rounded-[25px]  absolute w-[8rem] h-[3rem] left-[1rem] bottom-[1rem]">
+												<p id="trip-p-{{forloop.counter}}" class="leading-relaxed font-[700] text-[0.95rem] text-[1.5rem]"></p>
+												<script>
+												getCountry('{{ trip.destination }}', 'trip-p-{{forloop.counter}}')
+												</script>
+											</div>
+										</div>
+									</div> {% endfor %} </div>
+								
+								<div class="swiper-pagination"></div>
+							</div>
+							
+						</div>
+					</div>
+				</section>
+				
+				<!-- observation -->
+				<!-- observation -->
+				<section class="flex md:py-[unset] min-h-[35.938rem]  py-[2rem]  flex-col text-center w-full min-h-[40rem] mb-[3rem] md:mb-[4.506rem] mt-[unset]">
+					<h1 class="font-[800] text-[1.5rem] md:text-[2.5rem] leading-[2.41rem] text-[#313131] pt-[2.563rem] md:pt-[4.563rem] pb-[0.056rem]">
+				Observations
+				</h1>
+					<p class="font-[800] text-[1.25rem] leading-[1.705rem] text-[#1877F1] px-[2rem]"> You prefer to stay alone? CoGoFly has been also done for you! </p>
+					<div class="max-w-[80rem]  mx-auto flex justify-center gap-[3rem] md:flex-row flex-col items-center pt-[3rem]">
+						<div class="h-[22.25rem] flex-1 w-[23rem] md:w-full md:h-[19.25rem] rounded-t-[3rem]  ">
+							<div class="shadow  rounded-[1rem] md:rounded-[3rem] overflow-hidden"> <img class=" w-full" src="{% static 'img/svg/sec-img-1.svg' %}" alt="content" />
+								<div class="bg-white h-[7rem] px-[1rem] flex justify-center flex-col items-center  ">
+									<p class="text-[#6C757D] text-[0.875rem] leading-[1.25rem]"> Too many people travel alone and remain so for the duration of their trips. </p>
+								</div>
+							</div>
+						</div>
+						<div class="h-[22.25rem] flex-1 w-[23rem] md:w-full md:h-[19.25rem] rounded-[3rem]">
+							<div class="shadow rounded-[1rem] md:rounded-[3rem] overflow-hidden"> <img class=" w-full" src="{% static 'img/svg/sec-img-1.svg' %}" alt="content" />
+								<div class="bg-white h-[7rem] px-[1rem] flex justify-center flex-col items-center  rounded-[3rem]">
+									<p class="text-[#6C757D] text-[0.875rem] leading-[1.25rem]"> Divorces, friends changing their minds, expatriate reintegration and, quite simply, solitude, are often the root-cause of such situation... </p>
+								</div>
+							</div>
+						</div>
+						<div class="h-[22.25rem] flex-1 w-[23rem] md:w-full md:h-[19.25rem] rounded-[3rem]">
+							<div class="shadow  rounded-[1rem] md:rounded-[3rem] overflow-hidden"> <img class=" w-full" src="{% static 'img/svg/sec-img-1.svg' %}" alt="content" />
+								<div class="bg-white h-[7rem] px-[1rem] flex justify-center flex-col items-center  rounded-[3rem]">
+									<p class="text-[#6C757D] text-[0.875rem] leading-[1.25rem]"> Held back by shyness? Don't know anyone to join groups? Lacking motivation?...Plan ahead and step into the unknown together! </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- observation -->
+				<!-- advantages -->
+				<section class="flex justify-center flex-col text-center w-full bg-[#F3F8FF] min:h-[37rem]">
+					<h1 class="font-[800] text-[1.5rem] md:text-[2.5rem] leading-[2.41rem] text-[#313131] pt-[4.563rem] md:pt-[4.563rem] pb-[0.056rem]">
+     Advantages
+   </h1>
+					<p class="font-[800] text-[1.25rem] leading-[1.705rem] text-[#1877F1] md:px-[unset] md:px-[0.75rem] px-[2rem]"> Combine handy tips, fun projects and get away stress-free </p>
+				
+				</section>
+				<section class="w-full  mx-auto flex justify-center  min:h-[35.938rem] concept-section bg-[#F3F8FF] py-[3rem]">
+					<ul class="max-w-[80rem] w-full flex justify-center items-center gap-[2rem] text-white flex justify-center pb-[3rem] md:flex-row flex-col">
+						<li class="content-li flex-1 w-[23rem] md:w-full min-h-[346px] rounded-[20px] text-center flex items-center  justify-center p-[1rem]">
+							<p class="content-heading text-[32px] leading-[2.813rem] font-[800]"><strong>{% trans "Peace of Mind" %}</strong></p>
+							<p class="content-hidden leading-[1.25rem] text-[0.875rem] font-[400]">{% trans "Trips out, at any time, in complete confidence.No more last-minute rushing around. Plan ahead in order to make the most of your stay.Break down language barriers." %}</p>
+						</li>
+						<li class="content-li flex-1 w-[23rem] md:w-full  min-h-[346px] rounded-[20px] text-center flex items-center  justify-center p-[1rem]">
+							<p class="content-heading text-[32px] leading-[2.813rem] font-[800]"><strong>{% trans "Financial" %}</strong></p>
+							<p class="content-hidden leading-[1.25rem] text-[0.875rem] font-[400]">{% trans "Share accommodation costs (think about the fees for a double room...).Share others expenses (taxi, car hire, fuel, tolls...).More attractive prices for shows, concerts, excursions..." %}</p>
+						</li>
+						<li class="content-li flex-1 w-[23rem] md:w-full min-h-[346px] rounded-[20px] text-center flex items-center  justify-center p-[1rem]">
+							<p class="content-heading text-[32px] leading-[2.813rem] font-[800]"><strong>{% trans "Practical" %}</strong></p>
+							<p class="content-hidden leading-[1.25rem] text-[0.875rem] font-[400]">{% trans "Join up easily with groups on turnkey trips and excursions or to take part in diverse activities.Additional activities: sport, excursions, local and regional sightseeing...Find a willing and reliable travel companion…and who knows, maybe a new friend!" %}</p>
+						</li>
+					</ul>
+				</section>
+				<!-- advantages -->
+				</main>
+				<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+				<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+				<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+				<script>
+				var swiper = new Swiper('.mySwiper', {
+					//spaceBetween: 30,
+					slidesPerView: 4,
+					// Responsive breakpoints
+					breakpoints: {
+						// when window width is >= 320px
+						320: {
+							slidesPerView: 1,
+							 spaceBetween: 20
+						},
+						// when window width is >= 480px
+						480: {
+							slidesPerView: 2,
+							spaceBetween: 30
+						},
+						// when window width is >= 640px
+						640: {
+							slidesPerView: 4,
+							spaceBetween: 30
+						}
+					},
+					centeredSlides: false,
+					autoplay: {
+						delay: 2500,
+						disableOnInteraction: false,
+					},
+					//  pagination: {
+					//    el: '.swiper-pagination',
+					//    clickable: true,
+					//  },
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+				});
+
+				function openNav() {
+						document.getElementById("mySidenav").style.width = "100%";
+						}
+
+						function closeNav() {
+						document.getElementById("mySidenav").style.width = "0";
+						}
+				</script>
+</body> {% endblock %} {% block footer %}{% include 'footer.html' %}{% endblock %}

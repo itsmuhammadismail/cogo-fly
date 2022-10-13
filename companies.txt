@@ -1,0 +1,411 @@
+85C Bakery Cafe
+3M
+7-Eleven
+4F
+21st Century Fox
+Ajinomoto
+ABN AMRO
+Accenture
+AccorHotels
+Acer Inc.
+Activision Blizzard
+Acumen
+Adidas
+Aldi
+Aditi Technologies
+Aditya Birla Group
+Advanced Micro Devices
+Aegon
+AEON
+Ahold Delhaize
+Asics
+Airbus
+Aitken Spence
+AkzoNobel
+Alcatel-Lucent
+Alfa Laval
+All Nippon Airways
+Alliance Global Group Inc.
+Allianz
+Alibaba Group
+Almarai
+Alstom
+Altice
+Altria Group
+Amazon
+American Airlines
+American International Group
+Andritz AG
+Aon
+Apollo Tyres
+Applebee's
+Apple
+Arcor
+Assicurazioni Generali
+Aston Martin
+Asus
+AT&amp;T
+Atari
+Avast
+Avianca
+AXA
+Axiata Group
+Axis Bank Ltd
+BP
+Bacardi
+Banco Bilbao Vizcaya Argentaria
+Banco Santander
+Bank of India
+Bank of Ireland
+Bank of Montreal
+Barclays
+Barilla
+Barrick Gold Corporation
+BASF
+Baskin-Robbins
+Bata
+Baidu
+Bayer
+Becton Dickinson
+Beko
+Benetton Group
+Ben &amp; Jerry's
+Best Buy
+Bharti Airtel
+Bharti Enterprises
+Bihl
+Billabong
+Billabong
+Black &amp; Decker
+Bliss Point Group (Business Consulting)
+BMW
+BBK Electronics
+BBC
+BNP Paribas
+Bose Corporation
+Boeing
+Bombardier Inc.
+Bouygues
+BRAC
+Braun
+Bridgestone
+British Airways
+British Petroleum
+Burberry
+BT Group
+Burger King
+ByteDance
+BYD
+Cadbury
+Capcom
+Canon Inc
+Capgemini
+Casio
+Capital One
+Cargill
+Cargolux
+Caribbean Airlines
+Carlsberg Group
+Caterpillar Inc.
+Celestica
+Chatime
+Chupa Chups
+China Mobile
+Changhong
+Chanel
+Chiquita Brands International
+Chevron
+China Merchants Bank
+CIMC
+Cisco Systems
+Citigroup
+The Coca-Cola Company
+The Coffee Bean &amp; Tea Leaf
+Cognizant Technology Solutions
+Colgate-Palmolive Company
+Comac
+Concentrix
+ConocoPhillips
+Costco
+Coty inc
+Creative Labs
+Crédit Agricole
+Crocs
+Credit Suisse
+Cummins
+Cyient
+D-Link
+Dabur
+Daikin
+Daimler AG
+Daihatsu
+Danone
+Decathlon
+Dell
+Deloitte
+Delta Air Lines
+Deutsche Bank
+Deutsche Telekom
+Diageo
+Dimension Data
+Disney
+Dow Chemical
+Dole Food Company
+Domino's Pizza
+Dude Perfect
+Dunkin' Donuts
+Durex
+DXC Technology
+Dyson
+EBay
+easyJet
+EDF
+Electrolux
+Electronic Arts
+Electronic Data Systems
+Embraer
+EMI
+Emerson Electric
+Enel
+Eni
+Epson
+Ericsson
+Estée Lauder Companies
+Etisalat
+Eva Air
+Evergreen Marine
+ExxonMobil
+Ezaki Glico
+EY
+Facebook, Inc.
+Faber-Castell
+Fast Retailing
+FCA Italy
+FBT
+FedEx Express
+Ferrero
+Fila
+Fiat Automobiles
+Ficosa
+FIS
+Fossil Group
+Foxconn
+Ford Motor Company
+FPT Group
+France Télécom
+Fujifilm
+Fujitsu
+Future Group
+First Vita Plus Marketing Corp
+Gap Inc.
+Garmin
+Gazprom
+General Electric
+Gree Electric
+Groupe PSA
+General Mills
+General Motors
+Generali
+Geeknet
+Gerdau
+Giant Bicycles
+Gibson
+Globe Telecom
+Gucci
+GungHo Online Entertainment
+Guinness
+Guess
+Gillette
+Glaxo Smith Kline
+Geely
+Goodyear Tire and Rubber Company
+Google
+GoDaddy
+GoPro
+Harley-Davidson
+Hermès
+Haier
+Harrods
+Häagen-Dazs
+Haribo
+Hard Rock Cafe
+Halliburton
+Hankook Tire
+House Foods
+Hartwall
+H&amp;M
+Hasbro
+Hasee
+HCL Technologies
+Hearst Corporation
+Heineken
+Henkel
+Hewlett Packard Enterprise
+Hilti
+Hindustan Computers Limited
+Hitachi
+Holden
+Honda
+Honeywell
+HP Inc
+HSBC
+HTC
+Huayi Brothers
+Huawei
+Hutchison Whampoa Limited
+Hytera
+Hyundai Motor Company
+IBM
+ICAP
+Icelandair
+ICICI Bank
+Intracom
+IKEA
+Illinois Tool Works
+Indesit
+Indeed
+Infosys
+ING Group
+Ingersoll Rand
+Instagram
+Indofood
+Intel Corporation
+Intesa Sanpaolo
+Isuzu
+Jelly Belly
+Jeep
+Jack Daniel's
+Jawa Moto
+Japan Airlines
+Jim Beam
+Johannus
+JBS S.A.
+The J.M. Smucker Company
+Jardine Matheson
+JG Summit Holdings
+Johnnie Walker
+Johnson &amp; Johnson
+Jollibee Foods Corporation
+JPMorgan Chase &amp; Co.
+JVCKenwood
+JXD
+KBC Bank
+Kawasaki
+Kappa
+Kellogg's
+Kenya Airways
+KFC
+Kia Motors
+Kikkoman
+Kirin Company
+Kimberly-Clark
+Kingston Technology
+Knorr
+Komatsu Limited
+Konami
+Korg
+Keumyoung Group
+KPMG
+Kraft Foods
+Kraft Heinz
+Krispy Kreme
+Lactalis
+Lacoste
+Lagardère
+Larsen &amp; Toubro
+Levi Strauss &amp; Co.
+Lear
+Lindt &amp; Sprüngli
+Lenovo
+Leonardo
+Leoni AG
+Lexmark
+LG Electronics
+Lego
+Linde
+Lionbridge
+LiuGong
+Lockheed Martin
+L'Oréal
+Lotte Group
+Lukoil
+Lupin
+Luxgen
+Luxottica
+LyondellBasell Industries
+MG Cars
+Maggi
+Mahindra Group
+Mars, Incorporated
+Maton
+Marriott
+Marshall Amplification
+Martini &amp; Rossi
+Maersk
+Mama Sita's Holding Company
+Mamee Double-Decker
+Mattel
+Maxxis
+McCain Foods
+McDonald's
+MediaTek
+Meiji Holdings
+Meizu
+Mercedes-AMG
+Mercedes-Benz
+Michelin
+Micro-Star International
+Micromax Informatics
+Microsoft
+Mizuno Corporation
+Millipore Corporation
+Mindgeek
+Miniso
+Mindtree
+Mitsubishi Electric
+Mobil
+Morinaga &amp; Company
+Monsanto Company
+Mustek
+Nagarro
+Nando's
+Namco Bandai Holdings
+New Balance
+Nestlé
+NEC
+NetApp Inc.
+Nike, Inc.
+Nivea
+Nikon
+Nintendo
+Nissan
+Nokia
+Norsk Hydro
+Novartis
+Olympus Corporation
+Oknoplast
+Ooredoo
+Otobi
+OfficeMax
+Oracle Corporation
+Orange S.A.
+Pandora
+Panasonic Corporation
+Parrot
+Puma
+Parmalat
+Paper Mate
+Pepper Lunch
+PepsiCo
+Perficient
+Petronas
+Pernod Ricard
+Penguin Random House
+Petrovietnam
+Pfizer
+Philips
+Ping An Bank
+Ping An Insurance
+Pioneer Corporation
+Pirelli
+Pilot

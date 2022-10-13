@@ -1,0 +1,41 @@
+/* line 3, d:/cogoflydjango/cogo-fly/static/scss/album-widget.scss */
+.album-widget span img {
+  height: 125px !important;
+  width: 125px !important;
+  display: none;
+  /*&:before {
+				content: " ";
+				display: block;
+				position: absolute;
+				height: 125px;
+				width: 125px;
+				background: url(/static/svg/icons/add-image.svg?c59488871410) center no-repeat,
+					url(/static/img/white.png?6d0d76272650);
+				background-size: 75px 75px, 125px 125px;
+			}*/ }
+  /* line 17, d:/cogoflydjango/cogo-fly/static/scss/album-widget.scss */
+  .album-widget span img:hover {
+    cursor: pointer; }
+
+/* line 21, d:/cogoflydjango/cogo-fly/static/scss/album-widget.scss */
+.album-widget span svg {
+  height: 75px;
+  width: 75px; }
+
+/* line 25, d:/cogoflydjango/cogo-fly/static/scss/album-widget.scss */
+.album-widget span p {
+  display: none; }
+
+/* line 29, d:/cogoflydjango/cogo-fly/static/scss/album-widget.scss */
+.album-widget div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  z-index: 50; }
+  /* line 35, d:/cogoflydjango/cogo-fly/static/scss/album-widget.scss */
+  .album-widget div:hover {
+    cursor: pointer; }
+  /* line 38, d:/cogoflydjango/cogo-fly/static/scss/album-widget.scss */
+  .album-widget div svg {
+    width: 30px; }

@@ -1,0 +1,28 @@
+{
+  "name": "cogofly-website",
+  "version": "2.0.0",
+  "description": "## Development",
+  "dependencies": {
+    "npm": "^6.14.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.0",
+    "postcss-cli": "^7.1.1"
+  },
+  "scripts": {
+    "start": "venv/bin/python manage.py runserver",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean-cache": "find . -type f -name '*.py[co]' -delete -o -type d -name '__pycache__' -exec rm -rf {} + -o -type d -name 'CACHE' -exec rm -rf {} +",
+    "deploy-file": "func() { scp $1 cogofly-website-v2-stg@cogofly-vps2.cust.mc-media.com:cogofly-website-v2.webapp.staging/apps/main/; }; func",
+    "deploy-folder": "func() { scp -r $1/* cogofly-website-v2-stg@cogofly-vps2.cust.mc-media.com:cogofly-website-v2.webapp.staging/apps/main/$1; }; func",
+    "deploy-all": "scp -r $(cat upload.txt) cogofly-website-v2-stg@cogofly-vps2.cust.mc-media.com:cogofly-website-v2.webapp.staging/apps/main/",
+    "ssh-server": "ssh cogofly-website-v2-stg@cogofly-vps2.cust.mc-media.com",
+    "setenv": "python3 -m venv venv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.mc-media.com:cogofly/cogofly-website-v2.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

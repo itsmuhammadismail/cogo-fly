@@ -1,0 +1,184 @@
+/* line 1, static/scss/simple-card.scss */
+.simple-card {
+  margin: 0;
+  width: 380px;
+  font-size: 15px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+  /* line 9, static/scss/simple-card.scss */
+  .simple-card .card-top {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 100%), url("/static/img/clouds.jpg?4b7f1cfde928") left no-repeat;
+    background-size: cover;
+    color: white;
+    border-radius: 5px 5px 0 0; }
+    /* line 23, static/scss/simple-card.scss */
+    .simple-card .card-top > p {
+      border: solid 1px #1168d8;
+      background-color: white;
+      color: #1168d8;
+      border-radius: 5px;
+      margin: 0;
+      height: 50%;
+      display: flex;
+      align-self: center;
+      align-items: center;
+      padding: 0 5px; }
+    /* line 35, static/scss/simple-card.scss */
+    .simple-card .card-top svg {
+      width: 25px;
+      height: 25px; }
+    /* line 39, static/scss/simple-card.scss */
+    .simple-card .card-top ul {
+      display: flex;
+      align-items: center;
+      padding: 0; }
+      /* line 43, static/scss/simple-card.scss */
+      .simple-card .card-top ul.identity {
+        margin: 15 0 15 5;
+        width: 88%; }
+        /* line 46, static/scss/simple-card.scss */
+        .simple-card .card-top ul.identity svg {
+          filter: invert(1);
+          width: 20px;
+          height: 20px; }
+        /* line 52, static/scss/simple-card.scss */
+        .simple-card .card-top ul.identity li:last-of-type {
+          width: 88%; }
+      /* line 57, static/scss/simple-card.scss */
+      .simple-card .card-top ul:nth-of-type(2) {
+        margin: 15 5 15 0; }
+      /* line 60, static/scss/simple-card.scss */
+      .simple-card .card-top ul li {
+        list-style: none;
+        margin: 0 5px; }
+        /* line 63, static/scss/simple-card.scss */
+        .simple-card .card-top ul li p {
+          margin: 0;
+          font-size: 18px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden; }
+  /* line 75, static/scss/simple-card.scss */
+  .simple-card .card-content {
+    padding: 5px;
+    display: flex;
+    align-items: center; }
+    /* line 80, static/scss/simple-card.scss */
+    .simple-card .card-content img {
+      object-fit: cover;
+      width: 100px;
+      height: 150px;
+      border-radius: 5px;
+      margin-left: 5px; }
+    /* line 87, static/scss/simple-card.scss */
+    .simple-card .card-content ul {
+      padding-left: 10px;
+      margin: 0; }
+      /* line 90, static/scss/simple-card.scss */
+      .simple-card .card-content ul li {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        width: 240px;
+        /*
+				&:nth-of-type(3),
+				&:nth-of-type(4) {
+					p {
+						&:last-of-type {
+							margin-left: 20px;
+						}
+					}
+				}
+				*/ }
+        /* line 95, static/scss/simple-card.scss */
+        .simple-card .card-content ul li p {
+          margin: 3px 0;
+          font-size: 15px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          position: relative;
+          /*&:hover {
+						white-space: normal;
+					}*/ }
+          /* line 105, static/scss/simple-card.scss */
+          .simple-card .card-content ul li p svg {
+            width: 15px;
+            height: 15px; }
+          /* line 109, static/scss/simple-card.scss */
+          .simple-card .card-content ul li p .info svg {
+            width: 15px;
+            height: 15px; }
+  /* line 128, static/scss/simple-card.scss */
+  .simple-card hr {
+    margin: 0 auto 5px;
+    width: 95%;
+    border: none;
+    height: 0.5px;
+    background-color: rgba(180, 180, 180, 0.5); }
+  /* line 137, static/scss/simple-card.scss */
+  .simple-card .card-bottom .links {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0; }
+    /* line 142, static/scss/simple-card.scss */
+    .simple-card .card-bottom .links li {
+      margin: 0;
+      list-style: none; }
+      /* line 145, static/scss/simple-card.scss */
+      .simple-card .card-bottom .links li:hover {
+        cursor: pointer; }
+    /* line 149, static/scss/simple-card.scss */
+    .simple-card .card-bottom .links button {
+      border: none;
+      padding: 0;
+      background: transparent;
+      margin: 0; }
+    /* line 155, static/scss/simple-card.scss */
+    .simple-card .card-bottom .links svg {
+      width: 20px;
+      height: 20px; }
+    /* line 160, static/scss/simple-card.scss */
+    .simple-card .card-bottom .links form {
+      display: contents; }
+
+/* line 170, static/scss/simple-card.scss */
+.popup .popup-content form textarea {
+  margin: 10 0 0 0; }
+
+/* line 174, static/scss/simple-card.scss */
+.popup .popup-content form input:last-of-type {
+  margin-top: 18px; }
+
+/* line 178, static/scss/simple-card.scss */
+.popup .popup-content form > button {
+  border: solid 1px !important;
+  height: auto !important;
+  line-height: initial;
+  padding: 10 16 !important; }
+
+@media all and (max-width: 405px) {
+  /* line 190, static/scss/simple-card.scss */
+  .simple-card {
+    width: 275px !important; }
+    /* line 193, static/scss/simple-card.scss */
+    .simple-card .card-top ul.identity {
+      width: 80%; }
+      /* line 196, static/scss/simple-card.scss */
+      .simple-card .card-top ul.identity li:last-of-type {
+        width: 80%; }
+    /* line 203, static/scss/simple-card.scss */
+    .simple-card .card-content img {
+      width: 75px; }
+    /* line 206, static/scss/simple-card.scss */
+    .simple-card .card-content > ul {
+      padding-left: 5px; }
+      /* line 208, static/scss/simple-card.scss */
+      .simple-card .card-content > ul li {
+        width: 170px; } }

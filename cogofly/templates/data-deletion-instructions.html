@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/data-deletion-instructions.scss' %}">
+{% endblock %}
+
+
+{% block body %}
+{% include "header.html" %}
+
+<section>
+    <div class="content">
+        <h2>{% trans "Data deletion instructions" %}</h2>
+        <p>{% blocktrans %}To delete data related to your Facebook account, please go to your <a href="/account">account</a> and click on "Disconnect from Facebook"{% endblocktrans %}</p>
+    </div>
+ </section>
+
+{% endblock %}

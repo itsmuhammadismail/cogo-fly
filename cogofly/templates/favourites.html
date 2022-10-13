@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %}
+
+{% block title%}My Favourites{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/favourites.scss' %}">
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+
+<div class="cards-content">
+
+    <section class="filters">
+        <h2>{% trans 'My Favourites' %}</h2>
+        <hr>
+        <div class="filter-by">
+            <form>
+            <div class="filter-buttons">
+                <button 
+                type="submit" 
+                name="type" 
+                value="following"
+                class="{% if "?type=following" in request.get_full_path %}active-filter{% endif %}">
+                    {% trans 'Travelers I follow' %}
+                </button>                      
+                <button 
+                type="submit" 
+                name="type" 
+                value="followers"
+                class="{% if "?type=followers" in request.get_full_path %}active-filter{% endif %}">
+                    {% trans 'Travelers who follow me' %}
+                </button>    
+                <button 
+                type="submit" 
+                name="type" 
+                value="trip-following"
+                class="{% if "?type=trip-following" in request.get_full_path %}active-filter{% endif %}">
+                    {% trans 'Trips I follow' %}
+                </button>                      
+                <button 
+                type="submit" 
+                name="type" 
+                value="trip-followers"
+                class="{% if "?type=trip-followers" in request.get_full_path %}active-filter{% endif %}">
+                    {% trans 'Travelers who follow my trips' %}
+                </button>                      
+            </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="card-section">
+        {% for fav in favorites %}
+            {% if fav.first_name %}
+            {% include "simple-card.html" with contact=fav %}
+            {% else %}
+            {% include "trip-card.html" with trip=fav %}
+            {% endif %}
+        {% empty %}
+            <p>{% trans 'No results.'%}</p>
+        {% endfor %}
+    </section>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

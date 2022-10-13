@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/messages.scss' %}">
+{% endblock %}
+
+{% block js %}
+    {{ form.media }}
+    <script>
+        const wordShorter = (id, sentence) => {
+            const item = document.querySelector(`#${id}`);
+            item.innerHTML = sentence.substr(0,40) + '...';
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+<body class="bg-[#F3F3F3]">
+{% include "header.html" %}
+<div class="p-[2rem] pt-[6rem] w-full h-[100vh] ">
+    <div class="shadow-lg w-full h-full bg-white rounded-lg flex overflow-hidden">
+        <!-- Sidebar -->
+        <div class="min-w-[10rem] max-w-[20rem] border-r">
+            <div class="p-4 border-b">
+                <div class="flex gap-2 px-4 py-2 border rounded-lg">
+                    <img src="{% static 'img/svg/search.svg' %}" alt="">
+                    <input class="focus:outline-none" type="text" placeholder="{% trans 'Search names' %}" oninput="$('.contacts').children().each((_, el) => this.value.toLowerCase().split(/\W+/).every(word => $(el).find('.name').text().toLowerCase().includes(word)) ? $(el).show() : $(el).hide())"></input>
+                </div>
+            </div>
+            {% for convo in convos reversed %}
+            <div class="contacts">
+            <a href="{% url 'messages' convo.id %}" class="flex items-center gap-4 p-4 border-b">
+               <div class="relative w-[4rem] h-[4rem]">
+                {% if convo.trip %}
+                {% else %}
+                {% if convo.users.all.0.profile.picture_url %}
+                <div class="overflow-hidden rounded-full w-[4rem] h-[4rem]">
+                    <img src="{{ convo.users.all.0.profile.picture_url }}" alt="" class="object-cover">
+                </div>
+                {% for user in convo.users.all %}
+                <div class="{% if request.user.on_line %} bg-[#52DD4F] {% else %} bg-[#FF3131] {% endif %} w-4 h-4 rounded-full absolute right-0 bottom-0 border border-2"></div>
+                {% endfor %}
+                {% endif %}    
+                {% endif %}
+               </div>
+               <div class="">
+                <p class="font-bold name">{% if convo.trip %}{% trans "Trip to" %} {{ convo.trip.destination.name }}{% else %}{{ convo.users.all|join:", " }}{% endif %}</p>
+                <p class="text-sm text-[#848484]" id="id-{{ convo.id }}">
+                    <script>
+                        wordShorter("id-{{ convo.id }}", "{{ convo.messages.all.0.text }}");
+                    </script>
+                    <!-- {{ convo.messages.all.0.text }} -->
+                </p>
+            </div>
+            </a>
+        </div>
+            {% endfor %}  
+     
+          
+        </div>
+
+        <!-- Chat -->
+        <div class="flex-1 flex flex-col">
+            <div class="p-[2rem] flex-1 overflow-auto">
+                <ul class="messages">
+                    {% if chats.has_next %}
+                        <a href="?page={{ chats.next_page_number }}">{% trans "Load previous messages" %}</a>
+                        <!--<script>
+                            $(".messages-content").css('height', '94%')
+                        </script>-->
+                    {% endif %}
+        
+                    {% for message in chats reversed %}
+                    <li class="message {% if message.user == user %}receiver{% else %}sender{% endif %}">
+                        {% if message.user != user %}
+                        <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-4">
+                          <div class="overflow-hidden rounded-full w-[4rem] h-[4rem]">
+                              <img src="{{ convo.users.all.0.profile.picture_url }}" alt="" class="object-cover">
+                          </div>
+                          <p class="font-bold name">{% if convo.trip %}{% trans "Trip to" %} {{ convo.trip.destination.name }}{% else %}{{ convo.users.all|join:", " }}{% endif %}</p>
+                        </div>
+                        <p class="messageinfo">{{ message.created|date:"SHORT_DATETIME_FORMAT" }}</p>
+                    </div>
+                    {% else %}
+                    <p class="messageinfo">{{ message.created|date:"SHORT_DATETIME_FORMAT" }}</p>
+                    {% endif %}
+                        <p class=" chat" style="{% if message.user != user %} margin-left: 5rem; margin-top: -1rem {% endif %}">
+                            {{ message }}
+                        </p>
+                    </li>
+                    {% empty %}
+                    {% if convo.trip %}{% trans "Here is your trip’s conversation, you can exchange with the cotravelers you are planning to go with" %}{% else %}{% trans "No message in this conversation." %}{% endif %}
+                    {% endfor %}
+        
+                    {% if chats.has_previous %}
+                       <!-- <script>
+                            $(".messages-content").css('height', '94%')
+                        </script>  -->          
+                        <a href="?page={{ chats.previous_page_number }}">{% trans "Load next messages" %}</a>
+                        <a href="?page=1">{% trans "Go to last messages" %}</a>
+                    {% endif %}    
+                </ul>
+            </div>
+            <form method="POST" class="m-[unset]">
+                <div class="border-t bg-[#FAFAFA] p-[1rem] flex gap-4 message-text-input">
+                {% csrf_token %}
+                {{ form.text }}
+                <button class="bg-[#1877F2] w-[8rem] h-[2.5rem] text-white rounded-lg" type="submit" 
+                onClick="window.location.reload();">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}

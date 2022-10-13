@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/trip-edit.scss' %}">
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/trip-edit.js' %}"></script>
+    <script>
+    add_form = function() {
+        var form_idx = $('#id_cogofly-picture-content_type-object_id-TOTAL_FORMS').val();
+        $('#form-set').append($('#empty_form').html().replace(/__prefix__/g, form_idx));
+        $('#id_cogofly-picture-content_type-object_id-TOTAL_FORMS').val(parseInt(form_idx) + 1);
+    };
+    </script>
+    {{ form.media }}
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+        appId            : '600914307472316',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v9.0'
+        });
+    };
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+<div class="content">
+    <section>
+        {% if preview %}
+            <p>{% trans "Your boarding card (BC) is ready !" %}</p>
+            {% include 'trip-card.html' %}
+            <div class="preview-button">
+                {% if user.is_authenticated %}
+                <a href="{% url 'trips' %}">
+                    <button class="save">
+                        {% svg "icons/save" %}{% trans 'Save' %}
+                    </button>
+                </a>
+                <a href="{% url 'trip_edit' trip.id %}" class="share">
+                    <button>
+                        {% svg "icons/pencil" %}{% trans "Modify" %}
+                    </button>
+                </a>
+                <div class="delete-form">
+                    <button class="delete" onclick="showDeleteForm()">{% svg "icons/delete" %}{% trans "Delete" %}</button>          
+                    <form id="delete-form" method="POST" action="{% url 'trip' trip.id %}">
+                        {% csrf_token %}
+                        <button name="delete" class="delete">{% trans "Are you sure you want to delete ?" %}</button>
+                        <span onclick="showDeleteForm()">{% trans "Cancel" %}</span>
+                    </form>                               
+                </div>  
+                {% else %}
+                <a href="#">
+                    <button class="save" onclick="showSaveMessage()">
+                        {% svg "icons/save" %}{% trans 'Save' %}
+                    </button>                
+                </a>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" name='load'>{% svg "icons/pencil" %}{% trans "Modify" %}</button>
+                </form>
+                <a href="/">
+                    <button class="delete delete-not-auth">
+                        {% svg "icons/delete" %}{% trans "Delete" %}
+                    </button> 
+                    <span class="delete-redirect">{% trans "You will be redirected to the home page" %}</span>              
+                </a>
+                {% endif %}                                    
+            </div>
+
+            {% if not user.is_authenticated %}
+            <p id="save-message" class="hide">{% trans "You must log in, or sign up, if you want to save your Trip Card." %}</p>
+            <p id="modify-message" class="hide">{% trans "You must log in, or sign up, if you want to modify your Trip Card." %}</p>
+            <p id="delete-message" class="hide">{% trans "You must log in, or sign up, if you want to delete your Trip Card." %}</p>
+            <ul class="redirect-links">
+                <li><a href={% url 'signup' %}><button>{% trans 'Sign up' %}</button></a></li>
+                <li><a href={% url 'login' %}><button>{% trans 'Login' %}</button></a></li>
+                <li><a href="/"><button>{% trans "Home page" %}</button></a></li>            
+            </ul>
+            {#<p>{% trans "Even if you don't want to become a member, you are able to share it around you, on all social networks." %}</p>#}
+            {% endif %} 
+        {% else %}
+            {% if request.session.trip %}
+            <form method="post">
+                {% csrf_token %}
+                {% trans "You have an unsaved trip" %} :
+                <button type="submit" name='load'>{% trans "Click here to load it" %}</button>
+                <button type="submit" name='forget'>{% trans "Forget" %}</button>
+            </form>
+            {% endif %}
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+
+                {{ form.destination.label_tag }}
+                {{ form.destination }}
+
+                {{ form.start.label_tag }}
+                {{ form.start }}
+
+                {{ form.end.label_tag }}
+                {{ form.end }}
+                {{ form.end.errors }}
+
+                {{ form.departure.label_tag }}
+                {{ form.departure }}
+
+                {{ form.comment.label_tag }}
+                {{ form.comment }}
+
+                {% if user.is_authenticated %}
+                <label>{% trans 'Pictures' %} :</label>
+                <ul>
+                    <li>
+                        <p>{% trans "Upload a picture of a place you would like to see if adding a future trip" %}</p>
+                    </li>
+                    <li>
+                        <p>{% trans "Upload a picture of a place you have seen if adding a past trip" %}</p>
+                    </li>                    
+                </ul>
+                <div class="album-list">
+                    {{ albumform.management_form }}
+                    <ul id="form-set">
+                        {% for form in albumform %}
+                            {% include 'widgets/album_widget_sf.html' with form=form %}
+                        {% endfor %}
+                        <div id="empty_form" style="display: none">
+                            {% include 'widgets/album_widget_sf.html' with form=albumform.empty_form %}
+                        </div>
+                    </ul>
+                </div>
+                {% endif %}
+                <button type="submit" name="preview">{% trans "Next" %}</button>
+            </form>
+            <a href="{% url 'home' %}" class="back-home"><button class="cancel">{% trans "Cancel" %}</button></a>                
+        {% endif %}
+    </section>    
+</div>
+<div class="bottom-pusher"></div>
+{% endblock %}

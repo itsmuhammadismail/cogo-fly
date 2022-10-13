@@ -1,0 +1,42 @@
+{% extends 'email-base.html' %}
+{% load i18n %}
+{% load humanize %}
+
+{% block hero %}{% trans "Notifications" %}{% endblock %}
+
+{% block content %}
+<tr>
+<td align="center" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 24px; line-height: 24px;font-weight:bold">
+    <p style="margin: 0;">{% trans "You have:" %}</p>
+</td>
+</tr>
+<tr>
+<td align="left" bgcolor="#ffffff" style="padding: 5px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: center;">
+          <tr>
+    <p>><a href="https://www.cogofly.com/login" target="_blank" style="margin: 0; color: #1168d8">{{ unread_messages }}</a> {% trans "unread messages" %}</p>
+</td>
+</tr>
+<tr>
+<td align="left" bgcolor="#ffffff" style="padding: 5px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: center;">
+    <p>><a href="https://www.cogofly.com/login" target="_blank" style="margin: 0; color: #1168d8">{{ trip_requests|add:contact_requests }}</a> {% trans "pending requests" %}</p>
+</td>
+</tr>
+<tr>
+<td align="left" bgcolor="#ffffff" style="padding: 5px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: center;">
+    <p>><a href="https://www.cogofly.com/login" target="_blank" style="margin: 0; color: #1168d8">{{ notifications}}</a>{% trans "unseen notifications" %}</p>
+    <ul>
+        {% for notification in user.notifications.all %}
+        <li>
+            <p>>{{ notification }}</p>
+            <p class="notification-time">>{{ notification.updated|naturaltime }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</td>
+</tr>  
+
+{% endblock %}
+
+{% block footer %}
+<p style="margin: 0;"><a href="https://www.cogofly.com/login">{% trans "You received this email because you are signed up at CoGoFly.Go tu your acconut here, and find your CoGoFriend! " %}</a></p>
+{% endblock footer %}

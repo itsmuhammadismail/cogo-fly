@@ -1,0 +1,147 @@
+/* line 1, static/scss/profile-edit.scss */
+.messages {
+  position: fixed;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  left: 20px; }
+  /* line 8, static/scss/profile-edit.scss */
+  .messages li {
+    list-style: none; }
+
+/* line 13, static/scss/profile-edit.scss */
+section {
+  margin: 10px; }
+  /* line 15, static/scss/profile-edit.scss */
+  section h2,
+  section h3 {
+    text-align: center; }
+
+/* line 21, static/scss/profile-edit.scss */
+form {
+  width: 40%;
+  display: block; }
+  /* line 24, static/scss/profile-edit.scss */
+  form .select2 {
+    width: 100% !important; }
+  /* line 28, static/scss/profile-edit.scss */
+  form .my-info .tab-titles {
+    display: flex;
+    justify-content: space-evenly; }
+    /* line 31, static/scss/profile-edit.scss */
+    form .my-info .tab-titles p {
+      border-bottom: solid 2px transparent;
+      padding-bottom: 2px; }
+      /* line 34, static/scss/profile-edit.scss */
+      form .my-info .tab-titles p:hover {
+        cursor: pointer; }
+    /* line 38, static/scss/profile-edit.scss */
+    form .my-info .tab-titles .active-tab {
+      color: #1168d8;
+      border-bottom: solid 2px #1168d8;
+      font-weight: bold; }
+  /* line 46, static/scss/profile-edit.scss */
+  form > input {
+    width: calc(100% - 15px);
+    margin: 5 auto !important;
+    transition: 0.4s;
+    border: solid 1px #14750b;
+    background-color: white;
+    color: #14750b;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer; }
+    /* line 60, static/scss/profile-edit.scss */
+    form > input:hover {
+      transition: 0.4s;
+      filter: brightness(1.1); }
+  /* line 65, static/scss/profile-edit.scss */
+  form svg {
+    height: 30px;
+    width: 30px; }
+
+/* line 71, static/scss/profile-edit.scss */
+.picture,
+.cover,
+.album {
+  width: max-content;
+  margin: 5px auto;
+  text-align: center; }
+
+/* line 79, static/scss/profile-edit.scss */
+.picture-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  /* line 85, static/scss/profile-edit.scss */
+  .picture-widget div img {
+    width: 200px !important;
+    height: 200px !important; }
+    /* line 88, static/scss/profile-edit.scss */
+    .picture-widget div img:before {
+      content: " ";
+      display: block;
+      position: absolute;
+      height: 200px;
+      width: 200px;
+      background-image: url(/static/img/default-cover.jpeg?4b7f1cfde928);
+      background-position: center;
+      background-size: cover; }
+    /* line 99, static/scss/profile-edit.scss */
+    .picture-widget div img:hover {
+      cursor: pointer; }
+  /* line 103, static/scss/profile-edit.scss */
+  .picture-widget div button {
+    padding: 8px 10;
+    font-size: 10px;
+    top: 8px !important;
+    right: 8px !important; }
+
+/* line 112, static/scss/profile-edit.scss */
+.profile-cover {
+  display: flex; }
+
+/* line 119, static/scss/profile-edit.scss */
+.picture div img:before {
+  background-image: url(/static/img/default-profile.png?4b7f1cfde928); }
+
+/* line 127, static/scss/profile-edit.scss */
+.album ul {
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px; }
+  /* line 132, static/scss/profile-edit.scss */
+  .album ul li {
+    list-style: none; }
+
+/* line 138, static/scss/profile-edit.scss */
+.cancel {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  padding: 10px 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  width: calc(100% - 15px);
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: center; }
+  /* line 149, static/scss/profile-edit.scss */
+  .cancel:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+  /* line 157, static/scss/profile-edit.scss */
+  .cancel a {
+    text-decoration: none;
+    color: #1168d8; }

@@ -1,0 +1,131 @@
+/* line 1, static/scss/simple-card.scss */
+.simple-card {
+  margin: 0;
+  width: 380px;
+  font-size: 15px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+  /* line 9, static/scss/simple-card.scss */
+  .simple-card .card-top {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 100%), url("/static/img/clouds.jpg?4b7f1cfde928") left no-repeat;
+    background-size: cover;
+    color: white;
+    border-radius: 5px 5px 0 0; }
+    /* line 23, static/scss/simple-card.scss */
+    .simple-card .card-top > p {
+      border: solid 1px #1168d8;
+      background-color: white;
+      color: #1168d8;
+      border-radius: 5px;
+      margin: 0;
+      height: 50%;
+      display: flex;
+      align-self: center;
+      align-items: center;
+      padding: 0 5px; }
+    /* line 35, static/scss/simple-card.scss */
+    .simple-card .card-top svg {
+      width: 25px;
+      height: 25px; }
+    /* line 39, static/scss/simple-card.scss */
+    .simple-card .card-top ul {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 15px; }
+      /* line 44, static/scss/simple-card.scss */
+      .simple-card .card-top ul li {
+        list-style: none;
+        margin: 0 5px; }
+        /* line 47, static/scss/simple-card.scss */
+        .simple-card .card-top ul li p {
+          margin: 0;
+          font-size: 18px; }
+      /* line 53, static/scss/simple-card.scss */
+      .simple-card .card-top ul:first-of-type svg {
+        filter: invert(1);
+        width: 20px;
+        height: 20px; }
+  /* line 62, static/scss/simple-card.scss */
+  .simple-card .card-content {
+    padding: 5px;
+    display: flex;
+    align-items: center; }
+    /* line 67, static/scss/simple-card.scss */
+    .simple-card .card-content img {
+      object-fit: cover;
+      width: 100px;
+      height: 140px;
+      border-radius: 5px; }
+    /* line 74, static/scss/simple-card.scss */
+    .simple-card .card-content ul {
+      padding-left: 0px;
+      margin: 0; }
+      /* line 77, static/scss/simple-card.scss */
+      .simple-card .card-content ul li {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        width: 240px;
+        /*
+				&:nth-of-type(3),
+				&:nth-of-type(4) {
+					p {
+						&:last-of-type {
+							margin-left: 20px;
+						}
+					}
+				}
+				*/ }
+        /* line 82, static/scss/simple-card.scss */
+        .simple-card .card-content ul li p {
+          margin: 3px 0;
+          font-size: 15px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis; }
+          /* line 88, static/scss/simple-card.scss */
+          .simple-card .card-content ul li p:hover {
+            white-space: normal; }
+          /* line 91, static/scss/simple-card.scss */
+          .simple-card .card-content ul li p svg {
+            width: 15px;
+            height: 15px; }
+  /* line 110, static/scss/simple-card.scss */
+  .simple-card hr {
+    margin: 0 auto 5px;
+    width: 95%;
+    border: none;
+    height: 0.5px;
+    background-color: rgba(180, 180, 180, 0.5); }
+  /* line 119, static/scss/simple-card.scss */
+  .simple-card .card-bottom .links {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0; }
+    /* line 124, static/scss/simple-card.scss */
+    .simple-card .card-bottom .links li {
+      margin: 0;
+      list-style: none; }
+    /* line 128, static/scss/simple-card.scss */
+    .simple-card .card-bottom .links button {
+      border: none;
+      padding: 0;
+      background: transparent;
+      margin: 0; }
+    /* line 134, static/scss/simple-card.scss */
+    .simple-card .card-bottom .links svg {
+      width: 20px;
+      height: 20px; }
+    /* line 138, static/scss/simple-card.scss */
+    .simple-card .card-bottom .links:hover {
+      cursor: pointer; }
+    /* line 141, static/scss/simple-card.scss */
+    .simple-card .card-bottom .links form {
+      display: contents; }

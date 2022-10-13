@@ -1,0 +1,195 @@
+@import "base";
+@import "header";
+
+body {
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	height: 100%;
+}
+
+h1 {
+	text-align: center;
+}
+
+.signup-forms {
+	width: 500px;
+	margin: auto;
+	z-index: 5;
+}
+
+.progressbar-container {
+	height: 50px;
+	margin: 10px 0;
+	.progressbar {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		counter-reset: step;
+		li {
+			list-style-type: none;
+			margin: auto;
+			width: 33%;
+			float: left;
+			font-size: 20px;
+			font-weight: bold;
+			color: limegreen;
+			position: relative;
+			&:hover {
+				cursor: pointer;
+			}
+			&:before {
+				width: 40px;
+				height: 40px;
+				margin: auto;
+				content: counter(step);
+				counter-increment: step;
+				line-height: 40px;
+				border: 2px solid limegreen;
+				display: block;
+				text-align: center;
+				border-radius: 50%;
+				background-color: white;
+			}
+			&:after {
+				width: 100%;
+				height: 2px;
+				content: "";
+				position: absolute;
+				background-color: limegreen;
+				top: 50%;
+				right: 50%;
+				z-index: -1;
+			}
+			&:first-child:after {
+				content: none;
+			}
+			&.active ~ * {
+				color: lightslategrey;
+				&:before {
+					border-color: lightslategrey;
+				}
+				+ li:after {
+					background-color: lightslategrey;
+				}
+			}
+		}
+	}
+}
+
+form {
+	height: 320px;
+	width: 500px;
+	overflow: hidden;
+	position: relative;
+	.moving {
+		width: 500px;
+		position: absolute;
+		left: 0;
+		transition: left 0.5s;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		> div {
+			width: 100%;
+			display: none !important;
+			transition: opacity 0.5s;
+			&.visible {
+				display: block !important;
+				.select2{
+					width: 100% !important;
+				}
+			}
+			&#picture {
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				img {
+					width: 250px !important;
+					height: 250px !important;
+					overflow: hidden;
+				}
+				.picture-widget {
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+					img {
+						margin: 5px 0;
+						&:before {
+							content: " ";
+							display: block;
+							position: absolute;
+							height: 250px;
+							width: 250px;
+							background-image: url(../img/default-profile.png);
+							background-position: center;
+						}
+					}
+					div {
+						button {
+							top: 15px !important;
+							right: 15px !important;
+						}
+					}
+					button {
+						margin: 12.5px 0 5px;
+					}
+				}
+			}
+		}
+	}
+}
+
+button {
+	transition: none !important;
+	&.back{
+		background-color: rgb(182, 182, 182);
+		border-color: rgb(182, 182, 182);
+		color: black;
+	}
+	&.next, &.save {
+		float: right;
+		background-color: #1168d8;
+		border-color: #1168d8;
+		color: white
+	}
+	&.save{
+		display: none;
+
+	}
+}
+
+.hide-nav-buttons {
+	display: none;
+}
+
+.show-nav-buttons {
+	display: block;
+}
+
+
+
+@media all and (max-height:610px){
+	body{
+		background-color: white;
+	}
+	section{
+		box-shadow: none;
+		margin: 50px auto auto !important;
+	}
+	/*.save{
+		margin-right: 25%;
+	}*/
+}
+
+@media all and (max-width: 550px){
+	.signup-forms{
+		width: 90%;
+		form{
+			width: 100%;
+			.moving{
+				width: 100%;
+			}
+		}
+	}
+}

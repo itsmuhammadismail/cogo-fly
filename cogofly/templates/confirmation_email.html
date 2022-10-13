@@ -1,0 +1,64 @@
+{% extends 'email-base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block preheader %}
+{% trans "Confirm your registration at CoGoFly" %}
+{% endblock %}
+
+{% block hero %}
+{% trans "Confirm your email address" %}
+{% endblock %}
+
+{% block content %}
+<tr>
+  <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: center;">
+    <p style="margin: 0;">
+      {% blocktrans with name=user.first_name %}
+      Hi {{ name }}, 
+      <br>
+      we sincerely hope that you will appreciate this new and innovative international social network for which the operative word is "sharing". 
+      <br> 
+     Confirm your email address by clicking here: 
+      {% endblocktrans %}
+    </p>
+  </td>
+</tr>
+
+<tr>
+  <td align="left" bgcolor="#ffffff">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td align="center" bgcolor="#ffffff" style="padding: 12px;">
+          <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td align="center" bgcolor="#1168d8" style="border-radius: 6px;">
+                <a href="https://www.cogofly.com/{% url 'activate' uidb64=uid token=token %}" target="_blank" style="display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;">
+                  <!--{% trans "Confirm email" %}-->
+                  <img 
+                  src="https://www.cogofly.com/static/img/logo-CoGoFly-blanc.png" 
+                  alt="Click here"
+                  style="height: 20px;">
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+<tr>
+  <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: center;">
+    <p style="margin: 0;">{% trans "If that doesn't work, copy and paste the following link in your browser:"%}</p>
+    <p style="margin: 0;"><a href="https://www.cogofly.com/{% url 'activate' uidb64=uid token=token %}" target="_blank">{% autoescape off %}https://{{ domain }}{% url 'activate' uidb64=uid token=token %}{% endautoescape %}</a></p>
+  </td>
+</tr>
+
+{% endblock %}
+
+{% block footer %}
+<p style="margin: 0;">{% trans "You received this email because you are signed up at CoGoFly. If you are not a member, sign up here for free." %}</p>
+{% endblock footer %}

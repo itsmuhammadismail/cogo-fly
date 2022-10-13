@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Poppins:wght@100&display=swap");
+/* line 3, d:/cogoflydjango/cogo-fly/static/css/search.css */
+* {
+  padding: 0;
+  margin: 0; }
+
+/* line 8, d:/cogoflydjango/cogo-fly/static/css/search.css */
+body {
+  font-family: "Poppins", sans-serif; }
+
+/* line 12, d:/cogoflydjango/cogo-fly/static/css/search.css */
+.card-section-title p#default-tab,
+.card-section-title p.unclickable {
+  background: #1877f2 !important;
+  border-radius: 60px !important;
+  height: 39px !important;
+  width: 178px !important;
+  color: white !important;
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 900 !important; }
+
+/* line 25, d:/cogoflydjango/cogo-fly/static/css/search.css */
+.card-section-title p#default-tab {
+  background: #1877f2 !important; }
+
+/* line 28, d:/cogoflydjango/cogo-fly/static/css/search.css */
+.card-section-title p.unclickable {
+  background: #e4e6eb !important;
+  color: #555555 !important;
+  width: 240px !important;
+  font-weight: 900 !important; }
+
+/* line 35, d:/cogoflydjango/cogo-fly/static/css/search.css */
+.filters {
+  margin-right: 0 !important; }
+
+/* line 38, d:/cogoflydjango/cogo-fly/static/css/search.css */
+.search-content {
+  margin-left: 0 !important; }
+
+/* line 42, d:/cogoflydjango/cogo-fly/static/css/search.css */
+.card-header.flex.justify-between.border-b.py-4.px-6 {
+  color: #000000 !important;
+  font-weight: 900 !important;
+  font-size: 15px !important;
+  line-height: 22px !important; }
+
+/* line 49, d:/cogoflydjango/cogo-fly/static/css/search.css */
+.card-para .flex.gap-\[0\.7rem\] {
+  color: #848484 !important;
+  font-weight: 900 !important;
+  font-size: 13px !important;
+  line-height: 19.5px !important; }
+
+/* line 55, d:/cogoflydjango/cogo-fly/static/css/search.css */
+.card-footer.flex.justify-between.border-b.py-4.px-6 {
+  border-top: 1px solid #e5e7eb !important; }
+
+/* line 58, d:/cogoflydjango/cogo-fly/static/css/search.css */
+h2.font-\[900\].text-\[1\.25rem\].leading-\[1\.875rem\].text-\[\#313131\] {
+  color: #313131 !important;
+  font-weight: 900 !important;
+  line-height: 30px !important;
+  font-size: 20px !important; }
+
+/* .select2-container--default, .select2-selection--single {
+  background-color: #f0f0f0 !important;
+  border: 1px solid #f0f0f0 !important;
+  border-radius: 0.5rem !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  line-height: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-content: center !important;
+}
+.select2, */
+/* line 80, d:/cogoflydjango/cogo-fly/static/css/search.css */
+.select2-container,
+.select2-container--default,
+.select2-container--focus {
+  border: 1px solid #f0f0f0 !important; }
+
+/* line 86, d:/cogoflydjango/cogo-fly/static/css/search.css */
+label.advanced-label {
+  background: #e4e6eb !important;
+  color: #555555 !important;
+  line-height: 17.73px !important;
+  font-weight: 600 !important;
+  width: 300px !important;
+  text-align: center !important;
+  font-size: 13px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-evenly !important;
+  border: 1px solid #e4e6eb !important; }
+
+/* line 99, d:/cogoflydjango/cogo-fly/static/css/search.css */
+label {
+  font-family: "Poppins" !important;
+  font-style: normal !important;
+  font-weight: 900 !important;
+  font-size: 15px !important;
+  line-height: 20.46px !important;
+  display: flex !important;
+  align-items: center !important;
+  color: #7e7d7d !important;
+  text-transform: capitalize !important; }
+
+/* line 111, d:/cogoflydjango/cogo-fly/static/css/search.css */
+input#id_start,
+input#id_end,
+span.select2-selection.select2-selection--single {
+  background: #f0f0f0 !important;
+  border-radius: 2px !important;
+  width: 305px !important;
+  height: 41px !important;
+  margin-top: 0px !important; }
+
+/* line 121, d:/cogoflydjango/cogo-fly/static/css/search.css */
+label.advanced-label {
+  background: #e4e6eb !important;
+  color: #555555 !important;
+  line-height: 17.73px !important;
+  font-weight: 600 !important;
+  width: 306px !important;
+  text-align: center !important;
+  font-size: 13px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-evenly !important;
+  border: 1px solid #e4e6eb !important; }
+
+/* line 135, d:/cogoflydjango/cogo-fly/static/css/search.css */
+button {
+  font-weight: 900 !important;
+  width: 19.063rem !important;
+  height: 41px !important; }
+
+/* line 141, d:/cogoflydjango/cogo-fly/static/css/search.css */
+.filters .filter-by button[type="submit"] {
+  background-color: #1168d8 !important;
+  color: white !important;
+  margin-top: 12px !important; }
+
+/* line 147, d:/cogoflydjango/cogo-fly/static/css/search.css */
+.filters .filter-by button[type="submit"] {
+  background-color: #1168d8 !important;
+  color: white !important;
+  margin-top: 12px !important; }
+
+/* line 153, d:/cogoflydjango/cogo-fly/static/css/search.css */
+label.advanced-label.mb-\[0\.938rem.\!important\] {
+  margin-bottom: 12px !important;
+  padding: 12px !important;
+  background: #e4e6eb !important; }
+
+/* line 159, d:/cogoflydjango/cogo-fly/static/css/search.css */
+.advanced-filters {
+  background: #e4e6eb !important;
+  border: 1px solid #e4e6eb !important;
+  color: #555555 !important;
+  font-weight: 600 !important;
+  line-height: 17.73px !important;
+  font-size: 13px !important; }
+
+@media (max-width: 674px) {
+  /* line 170, d:/cogoflydjango/cogo-fly/static/css/search.css */
+  span.select2-selection.select2-selection--single {
+    width: 100% !important; } }
+
+@media screen and (max-width: 647px) {
+  /* line 176, d:/cogoflydjango/cogo-fly/static/css/search.css */
+  span.select2-selection.select2-selection--single {
+    width: 100% !important; } }

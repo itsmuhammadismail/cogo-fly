@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/contacts.scss' %}">
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/nouislider.js' %}"></script>
+    {{ form.media }}
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+<div class="cards-content">
+    <section class="filters">
+        <h2>{% trans 'My contacts' %} ({{ user.contacts.count }})</h2>
+        <hr>
+        <form>
+        <div class="my-contacts">
+            <button 
+            type="submit" 
+            name="sex" 
+            value="all"
+            class="{% if "?sex=all" in request.get_full_path %}active-filter{% endif %}">
+                {% trans "All" %} ({{ user.contacts.count }})
+            </button>
+            <button 
+            type="submit"
+            name="sex" 
+            value="0"
+            class="{% if "?sex=0" in request.get_full_path %}active-filter{% endif %}">
+                {% trans "Women" %} ({{ counts.0|default:0 }})
+            </button>
+            <button 
+            type="submit" 
+            name="sex" 
+            value="1"
+            class="{% if "?sex=1" in request.get_full_path %}active-filter{% endif %}">
+                {% trans "Men" %} ({{ counts.1|default:0 }}) 
+            </button>
+            <button 
+            type="submit" 
+            name="sex" 
+            value="2"
+            class="{% if "?sex=2" in request.get_full_path %}active-filter{% endif %}">
+                {% trans "Other" %} ({{ counts.2 |default:0 }}) 
+            </button>
+            {#<button type="submit">{% trans "Apply filters" %}</button>#}
+        </div>
+        </form>
+    </section>
+
+    <section class="card-section">
+        {#<h2>Insert filter name here</h2>#}
+        {% for contact in contacts %}
+            <div>{% include "simple-card.html" %}</div>
+        {% empty %}
+            <p>{% trans 'No results' %}</p>
+        {% endfor %}
+    </section>
+
+</div>
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

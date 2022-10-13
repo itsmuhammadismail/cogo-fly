@@ -1,0 +1,53 @@
+{% extends "base_auth.html" %}
+{% load static %}
+{% load svg %}
+{% load i18n %}
+
+{% block title%}Sign up{% endblock %}
+
+{% block main_panel %}
+<div class="signup">
+    <div class="signup-form">
+        <script src="{% url 'javascript-catalog' %}"></script>
+        <script async type="text/javascript" src="{% static 'django_password_strength/js/password_strength.js' %}"></script>
+        <script async type="text/javascript" src="{% static 'django_password_strength/js/zxcvbn.js' %}"></script>
+        <form method="post">
+            {% csrf_token %}
+            <h2>{% trans "Sign Up" %}</h2>            
+            <h4 style="text-align: center;">{% trans "In one click with:" %}</h>
+            <div class="social-signup">
+                <a href="{% url 'social:begin' 'facebook' %}" class="facebook-signup">{% svg 'social/facebook' %}</a>
+                <!--<a href="{% url 'social:begin' 'instagram' %}" class="instagram-signup">{% svg 'social/instagram' %}</a>-->
+                <a href="{% url 'social:begin' 'google-oauth2' %}" class="google-signup">{% svg 'social/google' %}</a>                    
+                <a href="{% url 'social:begin' 'linkedin-oauth2' %}" class="linkedin-signup">{% svg 'social/linkedin' %}</a>
+                <a href="{% url 'social:begin' 'twitter' %}" class="twitter-signup">{% svg 'social/twitter' %}</a> 
+            </div>
+            <p>{% trans "Or fill in the form:" %}</p>
+
+            <div class="name">
+                <div class="first-name">                              
+                    {{ form.first_name.label_tag }}
+                    {{ form.first_name }}                                    
+                </div>
+                <div class="last-name">                              
+                    {{ form.last_name.label_tag }}
+                    {{ form.last_name }}                                      
+                </div>
+            <div>                           
+                {{ form.email.label_tag }}
+                {{ form.email }}                        
+                {{ form.password2.label_tag }}
+                {{ form.password2 }}
+                {{ form.password2.errors }}
+                {{ form.email.errors }} 
+                {{ form.first_name.errors }}
+                {{ form.last_name.errors }}      
+                {{ form.captcha }}
+            </div>
+            </div>
+            <button type="submit">{% trans 'Go' %}</button>
+        </form>
+        <p>{% trans 'Already have an account ?' %} <a href="{% url 'login' %}">{%trans 'Login here' %}</a></p>
+        </div>
+</div> 
+{% endblock %}

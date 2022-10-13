@@ -1,0 +1,47 @@
+@import "base";
+@import "header";
+
+body > section {
+	max-width: 75%;
+	background: none;
+	box-shadow: none;
+	margin: 20px auto;
+	padding: 0;
+}
+
+hr {
+	width: 75%;
+}
+
+.testimonies-introduction {
+	h1 {
+		font-size: 40px;
+		text-align: center;
+	}
+}
+
+.testimony-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	> * {
+		margin: 0 5px;
+	} /*
+	img {
+		width: 40%;
+		box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+		border-radius: 5px;
+	}*/
+	h2 {
+		margin-bottom: 10px;
+	}
+	p {
+		text-align: justify;
+	}
+}
+
+@media all and (max-width: 800px){
+	body > section{
+		max-width: 95%;
+	}
+}

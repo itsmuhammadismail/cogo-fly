@@ -1,0 +1,143 @@
+<!-- {% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %}
+{% load humanize %}
+
+{% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/header.scss' %}">
+{% endcompress %}
+
+<header>
+    <script type="text/javascript" src="{% static 'js/header.js' %}"></script>
+    <nav>
+        <h1 class="logo">
+        {% if user.is_authenticated %}
+            <a href="/home"><img src="{% static 'img/logo-CoGoFly-blanc.png' %}" alt="CoGoFly"/></a>
+        {% else %}
+            <a href="/"><img src="{% static 'img/logo-CoGoFly-blanc.png' %}" alt="CoGoFly"/></a>
+        {% endif %}
+        </h1>
+        <ul id="nav-links" class="nav-links">
+            <li>
+                <a href="{% url 'ukraine' %}" target="_blank" rel="noopener noreferrer">
+                <img src="{% static "img/ukraine.jpg" %}" width="100%" height="50%">           
+                </a>
+            </li> 
+            <li>
+                <a href="{% url 'covid' %}"target="_blank" rel="noopener noreferrer">
+                    {% svg 'icons/mask' %}
+                    <p class="nav-link-text">{% trans 'COVID-19' %}</p>                
+                </a>
+            </li>          
+            <li>
+                <a href="{% url 'howitworks' %}" target="_blank" rel="noopener noreferrer">
+                    {% svg 'icons/question-mark-filled' %}
+                    <p class="nav-link-text">{% trans 'How it works?' %}</p>                
+                </a>
+            </li>  
+
+            {% if request.user.is_authenticated %}
+            <li>
+                <a href="{% url 'favourites' %}">
+                    {% svg 'icons/star-filled' %}
+                    <p class="nav-link-text">{% trans 'Favorites' %}</p>
+                </a>            
+            </li>
+            <li>
+                <a href={% url 'messages' %}>
+                    {% svg 'icons/comment-filled' %}
+                    {% if unread_messages %}<p class="notification">{{ unread_messages }}</p>{% endif %}
+                    <p class="nav-link-text">{% trans "Messages" %}</p>
+                </a>
+            </li>
+            <li>
+                <a href={% url 'requests' %}>
+                    {% svg 'icons/add-user-filled' %}
+                    {% if trip_requests or contact_requests %}<p class="notification">{{ trip_requests|add:contact_requests }}</p>{% endif %}
+                    <p class="nav-link-text">{% trans 'Requests' %}</p>
+                </a>
+            </li>        
+            <li>
+                <span id="notifications" class="notifications" onclick="toggleHeaderDropdown('notification-panel')">
+                    {% svg 'icons/notification-filled' %}
+                    {% if notifications %}<p class="notification">{{ notifications }}</p>{% endif %}
+                    <p class="nav-link-text">{% trans 'Notifications' %}</p>
+                </span>
+                <div id="notification-panel" class="notification-panel dropdown">               
+                    <span onclick="toggleHeaderDropdown('notification-panel')">X</span>
+                    <h4>{% trans "Notifications" %}</h4>
+                    <hr>
+                    <p>{% trans "Your profile has been viewed" %} {{ request.user.visits.count }} {% trans "times" %}</p>          
+                    <hr>
+                    <ul class="notification-feed">
+                        {% for notification in request.user.notifications.all %}
+                        <li {% if not notification.read %} class="unread-notification" {% endif %}>
+                            <a href="{{ notification.get_absolute_url }}">
+                                <img src={% if notification.user.profile.picture %}{{ notification.user.profile.picture.url }}{% else %}{% static 'img/default-profile.png' %}{% endif %} alt="cogofly_profile-picture" class="profile-picture">
+                                <div class="notification-info">
+                                    <p><strong>{{ notification }}</strong></p>
+                                    <p class="preview">{{ notification.target|truncatechars:100 }}</p>
+                                    <p class="notification-time">{{ notification.updated|naturaltime }}</p>
+                                </div>
+                            </a>
+                            <span class="unread-notification-bubble"></span>
+                        </li>
+                        <hr>
+                        {% endfor %}
+                    </ul>   
+                </div>
+            </li>              
+            <li class="profile-toggle">
+                <div onclick="toggleHeaderDropdown('profile-dropdown')">
+                    {% svg 'icons/user-filled' %}
+                    <p class="nav-link-text">{% trans "My account" %}</p>                
+                </div>
+                <section id="profile-dropdown" class="profile-dropdown dropdown">
+                    <a href="{% url 'change-profile-photos' %}">
+                        <img src={% if request.user.profile.cover %}{{ request.user.profile.cover.url }}{% else %}{% static 'img/default-cover.jpeg' %}{% endif %} class="banner">
+                    </a>
+                    <div class="profile-pic-bg">
+                        <a href="{% url 'change-profile-photo' %}">    
+                            <img src={% if request.user.profile.picture %}{{ request.user.profile.picture.url }}{% else %}{% static 'img/default-profile.png' %}{% endif %} alt="cogofly_profile-picture" class="profile-picture">
+                        </a>
+                        </div>
+                    <p><strong>{{ request.user.first_name }} {{ request.user.last_name }}</strong></p>
+                    <span onclick="toggleHeaderDropdown('profile-dropdown')">X</span>
+                    <ul class="profile-links">
+                        <li><a href={% url 'profile' request.user.id %}>{% svg 'icons/user' %}{% trans 'My profile' %}</a></li>            
+                        <li><a href={% url 'trips' %}>{% svg 'icons/briefcase' %}{% trans 'My trips' %}</a></li>
+                        <li><a href={% url 'cotravels' %}>{% svg 'icons/friend' %}{% trans 'My cotravels' %}</a></li>       
+                        <li><a href={% url 'contacts' %}>{% svg 'icons/card' %}{% trans 'My contacts' %}</a></li>
+                        <li><a href={% url 'account' %}>{% svg 'icons/settings' %}{% trans 'Parameters' %}</a></li>
+                        <li><a href={% url 'invite' %}>{% svg 'icons/mail' %}{% trans 'Invite friends' %}</a></li>
+                        <li id="contact-us-header"><a href="{% url 'contact_us' %}#remarks">{% svg 'icons/contact' %}{% trans 'Contact us' %}</a></li>        
+                        <li id="testimony-header"><a href="{% url 'contact_us' %}#testimony">{% svg 'icons/contact' %}{% trans 'Leave a testimony' %}</a></li>                                                                                                          
+                    </ul>
+                </section>                
+            </li>
+            <li class="logout">
+                <span onclick="toggleLogoutModal()">{% svg 'icons/logout-filled' %}</span>
+                <div class="logout-modal">
+                    <div>
+                        <p>{% trans "Are you sure you want to logout ?" %}</p>
+                        <div class="logout-buttons">
+                            <a href="/logout"><button>{% trans "Logout" %}</button></a>
+                            <button onclick="toggleLogoutModal()">{% trans "Cancel" %}</button>                    
+                        </div>
+                        <span onclick="toggleLogoutModal()">X</span>
+                    </div>
+                </div>                   
+            </li>
+            {% endif %} 
+        </ul>
+        <div id="nav-hamburger" class="hamburger" onclick="toggleHamburger()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>                
+        </div>        
+    </nav> 
+</header> 
+
+<div class="pusher"></div> -->

@@ -1,0 +1,62 @@
+@import "base";
+
+.content {
+	width: 60%;
+	margin: 25px auto 25px;
+	h2 {
+		text-align: center;
+	}
+	.contact-toggles {
+		padding: 0;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		li {
+			list-style: none;
+			margin: 0 5px;
+			border-bottom: solid 2px transparent;
+			transition: border-bottom 0.4s;
+			&:hover {
+				cursor: pointer;
+				border-bottom: solid 2px black;
+				transition: border-bottom 0.4s;
+			}
+		}
+		.active {
+			font-weight: bold;
+			color: #1168d8;
+			border-bottom: solid 2px #1168d8;
+		}
+	}
+	.contact-message,
+	.testimony {
+		display: none;
+		width: 100%;
+		> * {
+			width: 100%;
+		}
+		form{
+			button{
+				width: 100%;
+			}
+			textarea {
+				font-family: "Lato", sans-serif;
+				resize: none;
+				height: 300px;
+				padding: 5px;
+				margin: 5px 0 15px;
+			}
+		}
+	}
+	.cancel {
+		border-color: red;
+		color: red;
+		width: 100%;
+	}
+}
+
+@media all and (max-width: 800px){
+	.content{
+		width: 95%;
+	}
+}

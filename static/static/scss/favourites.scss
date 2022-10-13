@@ -1,0 +1,23 @@
+@import "base";
+@import "card-pages";
+@import "simple-card";
+
+h2 {
+	font-size: 20px;
+}
+
+.cards-content {
+	.card-section {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		height: min-content;
+		width: 1220px;
+		max-width: 1220px;
+		box-sizing: border-box;
+		min-height: 194px;
+		.card, .simple-card {
+			margin: 10px;
+		}
+	}
+}

@@ -1,0 +1,49 @@
+{% load i18n %}
+{% load svg %}
+{% load static %}
+{% load compress %}
+
+{% compress css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/album-widget.scss' %}">
+{% endcompress %}
+<li class="album-widget" style="position: relative; display: inline-block">
+    {{ form.id }}
+    <input
+        style="visibility: hidden; position: absolute" 
+        onchange="
+            const input = $(this)
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    input.next().children('.album-widget-image').attr('src', e.target.result).css('display','block');
+                    input.next().children('.album-widget-image-placeholder').css('display', 'none');             
+                    input.next().next().val('');                          
+                    input.next().next().next().show();
+                    input.next().children('.album-widget-prompt').css('display','none');
+                }
+                reader.readAsDataURL(this.files[0]);
+                add_form(input)
+            }
+            " 
+        type="file" 
+        name="{{ form.prefix|add:'-picture' }}"
+        {% if form.picture.value != None %} value="{{ form.picture.value|stringformat:'s' }}" {% endif %}
+        accept="image/*"
+    >
+    <span onclick="$(this).prev().click()" >
+        <span class="album-widget-image-placeholder" {% if form.picture.value %}style="display:none" {% endif %}>{% svg "icons/add-image" %}</span>
+        <img class="album-widget-image" {% if form.picture.value %}style="display:block" {% endif %} src="{{ form.picture.value.url }}" alt="">
+        <p class="album-widget-prompt">{% trans "Add photo" %}</p>
+    </span>
+    <input type="hidden" name="{{ form.prefix|add:'-DELETE' }}" {% if not form.picture.value %} value="true"{% endif %}>
+    <div id="album-widget-error"
+        style="{% if not form.picture.value %}; display:none{% endif %}"
+        onclick="
+        $(this).hide().prev().val('true');
+        $(this).prev().prev().children('.album-widget-image').attr('src', null);
+        $(this).prev().prev().children('.album-widget-image').css('display','none');
+        $(this).prev().prev().children('.album-widget-prompt').css('display','block');
+        $(this).prev().prev().children('.album-widget-image-placeholder').css('display', 'block');      
+        "
+    >{% svg 'icons/error' %}</div>
+</li>

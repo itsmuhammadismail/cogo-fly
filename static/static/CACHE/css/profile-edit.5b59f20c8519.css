@@ -1,0 +1,111 @@
+/* line 1, static/scss/profile-edit.scss */
+.messages {
+  position: fixed;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  left: 20px; }
+  /* line 8, static/scss/profile-edit.scss */
+  .messages li {
+    list-style: none; }
+
+/* line 13, static/scss/profile-edit.scss */
+section {
+  margin: 10px; }
+  /* line 15, static/scss/profile-edit.scss */
+  section h2 {
+    text-align: center; }
+
+/* line 20, static/scss/profile-edit.scss */
+form {
+  width: 40%;
+  display: block; }
+  /* line 23, static/scss/profile-edit.scss */
+  form .select2 {
+    width: 100% !important; }
+  /* line 27, static/scss/profile-edit.scss */
+  form > input {
+    width: calc(100% - 15px);
+    margin: 5 auto !important; }
+
+/* line 33, static/scss/profile-edit.scss */
+.picture,
+.cover,
+.album {
+  width: fit-content;
+  margin: 5px auto;
+  text-align: center; }
+
+/* line 41, static/scss/profile-edit.scss */
+.picture-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  /* line 48, static/scss/profile-edit.scss */
+  .picture-widget div img:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-image: url(/static/img/default-cover.jpeg?4b7f1cfde928);
+    background-position: center;
+    background-size: cover; }
+  /* line 59, static/scss/profile-edit.scss */
+  .picture-widget div img:hover {
+    cursor: pointer; }
+  /* line 63, static/scss/profile-edit.scss */
+  .picture-widget div button {
+    height: fit-content;
+    width: fit-content;
+    padding: 8px 10;
+    font-size: 10px;
+    top: 8px !important;
+    right: 8px !important; }
+  /* line 72, static/scss/profile-edit.scss */
+  .picture-widget button {
+    margin-left: 5px; }
+
+/* line 80, static/scss/profile-edit.scss */
+.picture div img:before {
+  background-image: url(/static/img/default-profile.png?4b7f1cfde928); }
+
+/* line 89, static/scss/profile-edit.scss */
+.album-widget img:before {
+  content: url(/static/svg/icons/upload.svg?4b7f1cfde928);
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: white; }
+
+/* line 96, static/scss/profile-edit.scss */
+.album-widget img:hover {
+  cursor: pointer; }
+
+/* line 100, static/scss/profile-edit.scss */
+.album-widget button {
+  height: fit-content;
+  width: fit-content;
+  padding: 8px 10;
+  font-size: 10px;
+  top: 8px !important;
+  right: 8px !important; }
+
+/* line 111, static/scss/profile-edit.scss */
+.album ul {
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px; }
+  /* line 116, static/scss/profile-edit.scss */
+  .album ul li {
+    list-style: none; }
+
+/* line 122, static/scss/profile-edit.scss */
+.cancel {
+  width: calc(40% - 15px);
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: center; }

@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %} 
+
+{% block title%}My profile{% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/account.scss' %}">
+{% endblock %}
+
+{% block js %}
+    <script defer type="text/javascript" src="{%static 'js/account.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+
+<div class="content">
+
+    <section class="title">
+        <h2>{% trans 'Parameters' %}</h2> 
+    </section>
+
+    <section class="change-mail">
+        <h3>{% trans "Change your email" %}</h3>
+        <p>{% trans 'Current email:' %} <strong>{{ user.email }}</strong></p>
+        <p>{% trans 'Enter a new email adress:' %} </p>
+        <form method="POST">
+            {% csrf_token %}
+            {{ email_form }}
+            <div class="email-buttons">
+                <input type="submit" name="changeemail" value="{% trans 'Save changes' %}">
+                <button type="submit" name="cancelemail">{% trans "Cancel" %}</button>            
+            </div>
+            <p>
+            {% if user.profile.email %}
+                {% trans "An email is waiting for confirmation : " %}
+                <b>{{ user.profile.email }}</b>
+            {% endif %}</p>
+        </form>    
+    </section>
+
+    <section class="social-login">
+        <h3>{% trans "Connect your social accounts to CoGoFly" %}</h3>
+        <div class="social-login-content">
+            <div class="facebook-login">
+                <h4>{% svg 'social/facebook' %}</h4>
+                {% if facebook_login %}
+                    <p>{% trans 'Connected as' %} <a href="https://facebook.com/profile.php?id={{ facebook_login.extra_data.id }}/" target="_blank">{{ facebook_login.extra_data.name }}</a></p>
+                    {% if can_disconnect %}
+                    <form method="post" action="{% url 'social:disconnect' 'facebook' %}?next={{ request.path }}">
+                        {% csrf_token %}
+                        <button type="submit">{%trans 'Disconnect from Facebook' %}</button>
+                    </form>
+                    {% else %}
+                    <button type="button" disabled>{% trans 'Disconnect from Facebook' %}</button>
+                    <p style="color: red">{% trans 'You must' %} <a href="{% url 'account' %}">{% trans 'define a password' %}</a> {% trans 'for your account before disconnecting from Facebook.' %}</p>
+                    {% endif %}
+                {% else %}
+                    <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">{% trans 'Connect to' %} Facebook</a>
+                {% endif %}                        
+            </div>
+            <div class="linkedin-login">
+                <h4>{% svg 'social/linkedin' %}</h4>
+                {% if linkedin_login %}
+                    <p>{% trans 'Connected as' %} <a href="https://linkedin.com/profile.php?id={{ linkedin_login.extra_data.id }}/" target="_blank">{{ linkedin_login.extra_data.id }}</a></p>
+                    {% if can_disconnect %}
+                    <form method="post" action="{% url 'social:disconnect' 'linkedin-oauth2' %}?next={{ request.path }}">
+                        {% csrf_token %}
+                        <button type="submit">{% trans 'Disconnect from LinkedIn' %}</button>
+                    </form>
+                    {% else %}
+                    <button type="button" disabled>{% trans 'Disconnect from LinkedIn' %}</button>
+                    <p style="color: red">{% trans 'You must' %} <a href="{% url 'account' %}">{% trans 'define a password' %}</a> {% trans 'for your account before disconnecting from LinkedIn.' %}</p>
+                    {% endif %}
+                {% else %}
+                    <a href="{% url 'social:begin' 'linkedin-oauth2' %}?next={{ request.path }}">{% trans 'Connect to' %} LinkedIn</a>
+                {% endif %}                        
+            </div>
+            <div class="google-login">
+            <h4>{% svg 'social/google' %}</h4>
+                {% if google_login %}
+                    <p>{% trans 'Connected as' %} <a href="https://google.com/profile.php?id={{ google_login.extra_data.id }}/" target="_blank">{{ google_login.extra_data.id }}</a></p>
+                    {% if can_disconnect %}
+                    <form method="post" action="{% url 'social:disconnect' 'google-oauth2' %}?next={{ request.path }}">
+                        {% csrf_token %}
+                        <button type="submit">{% trans 'Disconnect from Google' %}</button>
+                    </form>
+                    {% else %}
+                    <button type="button" disabled>{% trans 'Disconnect from Google' %}</button>
+                    <p style="color: red">{% trans 'You must' %} <a href="{% url 'account' %}">{% trans 'define a password' %}</a> {% trans 'for your account before disconnecting from Google.' %}</p>
+                    {% endif %}
+                {% else %}
+                    <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">{% trans 'Connect to' %} Google</a>
+                {% endif %}            
+            </div>                                   
+        </div>
+    </section>    
+
+    <section class="change-password">
+        <h3>{% trans "Change your password" %}</h3>
+        <p>{% trans 'Your email:' %} <strong>{{ user.email }}</strong></p>
+        <script async type="text/javascript" src="{% static 'django_password_strength/js/password_strength.js' %}"></script>
+        <script async type="text/javascript" src="{% static 'django_password_strength/js/zxcvbn.js' %}"></script>
+        <form class="email-login" method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" name="password" class="submit-password" value="{% trans 'Save changes' %}">
+        </form>
+    </section>
+
+    <section class="manage-notifications">
+        <h3>{% trans "Manage your notifications" %}</h3>
+        <p>{% trans "You will receive these notifications by mail:" %}</p>
+        <ul>
+            <li>{% trans "Messages" %}</li>
+            <li>{% trans "Trip requests" %}</li>
+            <li>{% trans "Contact requests" %}</li>
+            <li>{% trans "Likes" %}</li>
+            <li>{% trans "Comments" %}</li>
+            <li>{% trans "Number of profile views" %}</li>
+            <li>{% trans "Last added trips" %}</li>
+            <li>{% trans "Last searches" %}</li>
+        </ul>
+        <form method='post'>
+            {% csrf_token %}
+            {{ frequency_form }}
+            <button name="frequency">{% trans "Save changes" %}</button>
+        </form>
+    </section>
+
+    <section class="preferences">
+        <h3>{% trans "Manage your privacy" %}</h3>
+        <form method='post'>
+            {% csrf_token %}
+            {{ privacy_form }}
+            <button name="privacy">{% trans "Save changes" %}</button>
+        </form>
+    </section>
+
+    <section class="delete-account">
+        <h3>{% trans "Delete your account" %}</h3>
+        <div class="delete-account-buttons">
+            <button onclick="openPopup('deactivate-popup')">{% trans "Deactivate your account" %}</button>
+            <button onclick="openPopup('delete-popup')">{% trans "Delete your account" %}</button>
+        </div>   
+    </section>
+    <div id="deactivate-popup" class="deactivate-popup">
+        <div class="deactivate-popup-content">
+            <h4>{% trans "Deactivate your account" %}</h4>
+            <hr>
+            <p><strong>{% trans "Are you sure you want to deactivate your account ?" %}</strong></p>
+            <ul>
+                <li>
+                    <p>{% trans "If you decide to do it, you will no longer be visible on this site!" %}</p>
+                </li>
+                <li>
+                    <p>{% trans "Please be advised that it can be reactivated at any time via the link that we have sent to the email address that you used when signing up. You can also reactivate your account through other social networks." %}</p>
+                </li>                
+            </ul>
+            <hr>
+            <form method="post">
+            <div class="confirmation">
+                {% csrf_token %}
+                {{ deactivate_form }}   
+            </div>
+            <div class="deactivate-popup-buttons">
+                <button type="button" onclick="openPopup('deactivate-popup')" class="cancel-deactivate">{% trans "Cancel" %}</button>       
+                <button>{% trans "Submit" %}</button>
+            </div>
+            </form>    
+        </div>
+    </div>
+    <div id="delete-popup" class="delete-popup">
+        <div class="delete-popup-content">
+            <h4>{% trans "Delete your account" %}</h4>
+            <hr>
+            <p><strong>{% trans "Do you really want to delete your account?" %}</strong></p>
+            <ul>
+                <li>
+                    <p>{% trans "If you decide to do it, your data will be permanently deleted and your profile will be no longer visible!" %}</p>
+                </li>
+                <li>
+                    <p>{% trans "Please be advised, if you change your mind, you will need to create a new profile." %}</p>
+                </li>                
+            </ul>
+            <hr>
+            <form method="post">
+            <div class="confirmation">
+                {% csrf_token %}
+                {{ delete_form }}   
+            </div> 
+            <div class="delete-popup-buttons">
+                <button type="button" onclick="openPopup('delete-popup')" class="cancel-delete">{% trans "Cancel" %}</button>       
+                <button>{% trans "Submit" %}</button>
+            </div>
+            </form>       
+        </div>           
+    </div>       
+</div>
+
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

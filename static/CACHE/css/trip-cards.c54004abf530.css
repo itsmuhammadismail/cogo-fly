@@ -1,0 +1,384 @@
+/* line 1, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  min-height: 100%; }
+
+/* line 10, static/scss/base.scss */
+.map {
+  width: 100%;
+  box-sizing: border-box; }
+  /* line 13, static/scss/base.scss */
+  .map > div > div {
+    height: 100% !important;
+    padding-bottom: 0 !important; }
+
+/* line 19, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 26, static/scss/base.scss */
+.cards-content,
+.content,
+.seed-feed {
+  box-sizing: border-box;
+  min-height: calc(100vh - 90px); }
+
+/* line 34, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 35, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 44, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 47, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 55, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 58, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 61, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 77, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 80, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 88, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 92, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 100, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 102, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 109, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 115, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 121, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 128, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 136, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 140, static/scss/base.scss */
+  form img[src="/static/scss?97e8b7d651a5"] {
+    visibility: hidden; }
+
+/* line 145, static/scss/base.scss */
+button,
+input .button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 160, static/scss/base.scss */
+  button:hover,
+  input .button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 166, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 181, static/scss/base.scss */
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 184, static/scss/base.scss */
+  button:disabled:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 189, static/scss/base.scss */
+footer {
+  background-color: #141414;
+  padding: 20px 20px;
+  text-align: center;
+  overflow: hidden;
+  bottom: 0; }
+  /* line 196, static/scss/base.scss */
+  footer hr {
+    border-color: #bababa9f; }
+  /* line 199, static/scss/base.scss */
+  footer ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0; }
+    /* line 205, static/scss/base.scss */
+    footer ul li {
+      margin: 5px 20px; }
+      /* line 207, static/scss/base.scss */
+      footer ul li a {
+        color: #bababa;
+        font-size: 20px;
+        text-decoration: none; }
+        /* line 211, static/scss/base.scss */
+        footer ul li a:hover {
+          cursor: pointer;
+          color: #d6d6d6;
+          transition: color 0.2s; }
+      /* line 217, static/scss/base.scss */
+      footer ul li svg {
+        width: 40px;
+        height: 40px; }
+    /* line 224, static/scss/base.scss */
+    footer ul:nth-of-type(2) li:first-of-type {
+      margin-top: 0;
+      display: flex;
+      align-items: center; }
+      /* line 228, static/scss/base.scss */
+      footer ul:nth-of-type(2) li:first-of-type p {
+        margin: 0; }
+  /* line 235, static/scss/base.scss */
+  footer p {
+    color: #bababa;
+    font-size: 20px; }
+
+/* line 3, static/scss/card-pages.scss */
+header {
+  position: fixed;
+  z-index: 100; }
+
+/* line 8, static/scss/card-pages.scss */
+.cards-content {
+  padding: 20px;
+  display: flex;
+  justify-content: center; }
+
+/* line 14, static/scss/card-pages.scss */
+section {
+  margin: 10px; }
+
+/* line 18, static/scss/card-pages.scss */
+h2 {
+  text-align: center; }
+
+/* line 22, static/scss/card-pages.scss */
+.filters {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  position: sticky;
+  top: 100px; }
+  /* line 30, static/scss/card-pages.scss */
+  .filters h2 {
+    font-size: 20px;
+    margin: 5px auto; }
+  /* line 34, static/scss/card-pages.scss */
+  .filters hr {
+    width: 100%;
+    margin: 10px 0; }
+  /* line 38, static/scss/card-pages.scss */
+  .filters h3 {
+    margin: 0;
+    font-size: 15px;
+    text-align: center; }
+  /* line 44, static/scss/card-pages.scss */
+  .filters .my-trips-cards,
+  .filters .my-contacts,
+  .filters .filter-by {
+    display: flex;
+    flex-direction: column; }
+  /* line 50, static/scss/card-pages.scss */
+  .filters .filter-buttons {
+    display: flex;
+    flex-direction: column; }
+
+/* line 56, static/scss/card-pages.scss */
+.card-section {
+  padding: 10px; }
+  /* line 58, static/scss/card-pages.scss */
+  .card-section h2 {
+    margin: 5px 0; }
+  /* line 61, static/scss/card-pages.scss */
+  .card-section hr {
+    width: 97%;
+    margin: 15px auto 5px; }
+  /* line 65, static/scss/card-pages.scss */
+  .card-section > p {
+    margin: 10 0 15 12px; }
+  /* line 68, static/scss/card-pages.scss */
+  .card-section .cards-list {
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap; }
+    /* line 74, static/scss/card-pages.scss */
+    .card-section .cards-list .card {
+      margin: 10px; }
+      /* line 78, static/scss/card-pages.scss */
+      .card-section .cards-list .card .card-left .trip-info li > * {
+        margin: -2 0; }
+    /* line 84, static/scss/card-pages.scss */
+    .card-section .cards-list li {
+      list-style: none;
+      margin: 10px; }
+
+/* line 91, static/scss/card-pages.scss */
+.active {
+  background-color: #1168d8;
+  color: white; }
+
+@media all and (max-width: 1590px) {
+  /* line 98, static/scss/card-pages.scss */
+  .card-section .cards-list {
+    width: 800px; } }
+
+@media all and (max-width: 1210px) {
+  /* line 106, static/scss/card-pages.scss */
+  .card-section .cards-list {
+    width: 400px; } }
+
+@media all and (max-width: 800px) {
+  /* line 113, static/scss/card-pages.scss */
+  .cards-content {
+    flex-direction: column; }
+  /* line 116, static/scss/card-pages.scss */
+  .filters {
+    width: 100%;
+    margin: 0 auto 20px;
+    box-sizing: border-box; }
+    /* line 121, static/scss/card-pages.scss */
+    .filters .filter-by form {
+      width: 100%; }
+    /* line 125, static/scss/card-pages.scss */
+    .filters > form {
+      width: 100%; }
+  /* line 129, static/scss/card-pages.scss */
+  .card-section {
+    margin: auto;
+    flex: 1; } }
+
+/* line 4, static/scss/trip-cards.scss */
+.cards-content .card-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+  box-sizing: border-box; }
+  /* line 10, static/scss/trip-cards.scss */
+  .cards-content .card-section .card {
+    margin: 10px 10px 0; }
+  /* line 14, static/scss/trip-cards.scss */
+  .cards-content .card-section .card-and-actions .card-actions {
+    margin-left: 10px;
+    display: flex;
+    width: 380px; }
+    /* line 18, static/scss/trip-cards.scss */
+    .cards-content .card-section .card-and-actions .card-actions button {
+      padding: 6px 10px;
+      margin-right: 5px;
+      display: flex;
+      justify-content: center;
+      width: 100%; }
+      /* line 24, static/scss/trip-cards.scss */
+      .cards-content .card-section .card-and-actions .card-actions button svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px; }
+    /* line 30, static/scss/trip-cards.scss */
+    .cards-content .card-section .card-and-actions .card-actions a {
+      text-decoration: none;
+      width: 100%;
+      margin-right: 5px; }
+    /* line 35, static/scss/trip-cards.scss */
+    .cards-content .card-section .card-and-actions .card-actions form {
+      margin: 0;
+      width: 100%; }
+      /* line 38, static/scss/trip-cards.scss */
+      .cards-content .card-section .card-and-actions .card-actions form > button {
+        margin-left: 5px; }
+    /* line 42, static/scss/trip-cards.scss */
+    .cards-content .card-section .card-and-actions .card-actions .delete {
+      color: red;
+      border-color: red; }

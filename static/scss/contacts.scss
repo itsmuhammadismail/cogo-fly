@@ -1,0 +1,31 @@
+@import "card-pages";
+@import "base";
+
+.card-section {
+	min-height: 149px;
+	height: max-content;
+}
+
+
+.cards-content {
+	.card-section {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		height: min-content;
+		width: 1220px;
+		max-width: 1220px;
+		box-sizing: border-box;
+		min-height: 194px;
+		.card, .simple-card {
+			margin: 10px 10px 0;
+		}
+		.cards-list{
+			li{
+				> p{
+					margin: 0;
+				}
+			}
+		}
+	}
+}

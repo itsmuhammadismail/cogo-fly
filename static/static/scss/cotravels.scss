@@ -1,0 +1,10 @@
+.card-section {
+	min-height: 169px !important;
+	.cards-list{
+		li{
+			> p{
+				margin: 0;
+			}
+		}
+	}
+}

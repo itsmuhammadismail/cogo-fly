@@ -1,0 +1,472 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/landing.scss' %}">
+    <link rel="stylesheet" href="{% static 'css/splide.min.css' %}">
+{% endblock %}
+
+{% block js %}
+    <script defer type="text/javascript" src={% static 'js/landing.js' %}></script>
+    {{ form.media }}
+    <script type="text/javascript" src={% static 'js/splide.min.js' %}></script>
+    <script>
+        window.onload = function() {
+            var elms = document.getElementsByClassName( 'carousel' );
+            const elObs = document.getElementsByClassName('observations-carousel');
+            for ( var i = 0, len = elms.length; i < len; i++ ) {
+                new Splide(elms[i], {
+                    'cover': true,
+                    padding: '10px',
+                    gap: '20px',
+                    perPage: 3,
+                    breakpoints: {
+                        '640': {
+                            perPage: 2,
+                            gap    : '1rem',
+                        },
+                        '400': {
+                            perPage: 1
+                        }
+                    },                 
+                'arrowPath': 'm15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z',   
+                }).mount();
+            }
+            new Splide( elObs[0],{
+                'cover': true,
+                padding: '10px',
+                gap: '20px',                
+                perPage: 1,
+                'arrowPath': 'm15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z',   
+            }).mount();
+            var destination = $('#id_destination')
+            var start = $('#id_start')
+            var end = $('#id_end')
+            const destinationOrDates = function () {
+                if (start.val() || end.val()) {
+                    destination.attr('required', false)
+                }
+                else if (destination.val()) {
+                    start.attr('required', false)
+                    end.attr('required', false)
+                }
+                else {
+                    destination.attr('required', true)
+                    start.attr('required', true)
+                    end.attr('required', true)
+                }
+            }
+            destination.attr('required', true).change(destinationOrDates);
+            start.attr('required', true).change(destinationOrDates)
+            end.attr('required', true).change(destinationOrDates)
+            /*$('#future-cotravels').toggleClass('hide-carousel')*/
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+{% endblock %}
+
+{% block body %}
+    <body id='page'>
+        <header>
+            <nav id="nav-links" class="nav-links">
+                <h1 class="logo">
+                    <a href="/">
+                        <img src="{% static 'img/logo-CoGoFly-blanc.png' %}" alt="CoGoFly"/>
+                    </a>
+                </h1>
+                <ul>
+                    <li>
+                        <a href="{% url 'ukraine' %}" target="_blank" rel="noopener noreferrer">
+                            <img src="{% static "img/ukraine.jpg" %}" width="8%" height="100%">           
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'covid' %}" target="_blank" rel="noopener noreferrer">
+                            <p class="nav-link-text">{% trans 'COVID-19' %}</p>                
+                        </a>
+                    </li>          
+                    <li>
+                        <a href="{% url 'howitworks' %}" target="_blank" rel="noopener noreferrer">
+                            <p class="nav-link-text">{% trans 'How it works?' %}</p>                
+                        </a>
+                    </li>                         
+                    <!--<li class="add-trip">
+                        <a href={% url 'trip_add' %}>
+                            <button>{% trans 'Add trip' %}</button>
+                        </a>
+                    </li>-->
+                    <li>
+                        <a href={% url 'signup' %}>
+                            <p class="nav-link-text">{% trans 'Sign up' %}</p>
+                        </a>
+                        <p>{% blocktrans %} <strong>Sign up for free</strong> if you want to take advantage of all CoGoFly’s features.{% endblocktrans %}</p>
+                    </li>
+                    <li>
+                        <a href={% url 'login' %}>
+                            <p class="nav-link-text">{% trans 'Login' %}</p>
+                        </a>
+                    </li>
+                    <!--<li>
+                        <a id="lang-open">
+                            <p class="nav-link-text">{% trans 'Languages'%}</p>
+                        </a>
+                    </li>-->
+                </ul>
+                <button class="hamburger" id="menu-toggle">
+                    <span></span>
+                </button>
+                <div id="lang-modal" class="modal">
+                    <p>{% trans 'Select your language'%}</p>
+                    <ul>
+                        <li><a>{% svg 'flags/gb' %}{% trans 'English' %}</a></li>
+                        <li><a>{% svg 'flags/fr' %}{% trans 'French' %}</a></li>
+                        {% comment %}
+                        <li><a>{% svg 'flags/in' %}{% trans 'Hindi' %}</a></li>
+                        <li><a>{% svg 'flags/cn' %}{% trans 'Chinois' %}</a></li>
+                        <li><a>{% svg 'flags/de' %}{% trans 'Allemand' %}</a></li>
+                        <li><a>{% svg 'flags/it' %}{% trans 'Italien' %}</a></li>
+                        <li><a>{% svg 'flags/pt' %}{% trans 'Portugais' %}</a></li>
+                        <li><a>{% svg 'flags/ru' %}{% trans 'Russe' %}</a></li>
+                        <li><a>{% svg 'flags/jp' %}{% trans 'Japonais' %}</a></li>
+                        <li><a>{% svg 'flags/kr' %}{% trans 'Coréen' %}</a></li>
+                        <li><a>{% svg 'flags/vn' %}{% trans 'Vietnamien' %}</a></li>    
+                        {% endcomment %}                
+                    </ul>
+                    <button id="lang-close">X</button>
+                </div>
+                <button id="scrollup" title="{% trans 'Scroll to top' %}">▲</button>
+            </nav>
+        </header>
+        <main>
+        	<div id="cookieconsent"></div>
+            <section class="main-section">
+                <h2><span>{% trans 'Alone, we think…' %}</span><span>{% trans 'Together, we travel!' %}</span></h2>
+                <form action="{% url 'search' %}" onsubmit='$(this).find(":input").filter(function(){ return !this.value; }).attr("disabled", "disabled");return true;'>
+                    <div class="search-destination">
+                        {{ form.destination.label_tag }}
+                        {{ form.destination }}                    
+                    </div>
+                    <p>{% trans 'AND / OR*' %}</p>   
+                    <div class="search-start">
+                        {{ form.start.label_tag }}                 
+                        {{ form.start }}                    
+                    </div>
+                    <div class="search-end">
+                        {{ form.end.label_tag }}
+                        {{ form.end }}                    
+                    </div>
+                    <button>{% trans 'Search' %}</button>                
+                </form>
+                <span>                
+                    '<p><strong>{% trans 'Use search' %}</strong>{% trans 'to find international ' %}<strong>{% trans 'CoTravellers ' %}</strong>{% trans 'with the same centers of interests.' %}</p>
+                    <p>{% trans 'Join for free that new community, add trips and activities,and share your projects.' %}</p>'
+                </span>
+                <aside>
+                    <p>{% trans '*Good to know' %}</p>
+                    <ul>
+                        <li><p>{% trans 'You can add a destination OR dates OR both.' %}</p></li>
+                        <li><p>{% trans 'You can put dates in the past.' %}</p></li>
+                        <li><p>{% trans 'Click on “How it works ?” to get more useful info.' %}</p></li>
+                    </ul>                  
+                </aside>                    
+                <p>{% blocktrans %}Feel free to add Trips and share your boarding card around in order <strong>to be found by CoTravellers</strong>{% endblocktrans %}</p>
+            </section>
+            <section class='result-section'>
+                <h2>{% trans 'Last searched cities/countries' %}</h2>
+                <div class="carousel">
+                    <div class="splide__track" title="{% trans "Please log in, or sign up, to see more" %}">
+                        <ul class="splide__list">
+                            {% for search in last_searches_with_cities %}
+                                <li class="splide__slide">
+                                    {% if search..destination.picture_urls.mobile == " " or search.destination.picture_urls.mobile is None %}                            
+                                        <img src="{% static 'img/about-us-name.jpg' %}" alt="cogofly-about-us">
+                                    {% else %}
+                                        <img src="{{ search.destination.picture_urls.mobile }}" alt="cogofly-about-us">
+                                    {% endif %}
+                                    <div class="slide-content">
+                                        <div class="name">
+                                            <p title="{{ search.destination }}">{{ search.destination }}</p>                            
+                                        </div>                        
+                                    </div>
+                                </li>
+                            {% endfor %}  
+                            <li class="splide__slide">
+                                <img src={% static "img/golden-gate-bridge.jpg" %} alt="cogofly-golden-gate-bridge">
+                                <div class="slide-content">
+                                    <div class="name">
+                                        <p>{% trans "Please log in, or sign up, to see more" %}</p>                            
+                                    </div>                        
+                                </div>
+                            </li>                                                                                                                         
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+            <section class="concept-section">
+                <h2>{% trans 'Concept' %}</h2>
+                <p>{% trans 'A new concept is born to avoid travelling alone' %}</p>
+                <video src={% static "vid/cogofly-genesis.mp4" %} controls></video>
+                <ul>
+                    <li>
+                        <p><strong>{% trans "Don’t be fazed by travelling any more" %}</strong></p>
+                        <p>{% trans "Don’t be fazed by travelling any more, whether you want to go away for the weekend or just on a day out, and give your dreams a boost." %}</p>
+                    </li>                
+                    <li>
+                        <p><strong>{% trans "Find someone you can trust" %}</strong></p>
+                        <p>{% trans "Find someone you can trust, close to home or abroad, and plan together your trips... you'll also be able to plan and share weekends and outings." %}</p>
+                    </li>
+                    <li>
+                        <p><strong>{% trans "Discover a new way to get away" %}</strong></p>
+                        <p>{% trans "Discover a new way to get away which is financially advantageous, safe, and really practical" %}</p>
+                    </li>
+                </ul>
+
+            </section>
+            <section class='result-section'>
+                <h2>{% trans 'Last added trips' %}</h2>
+                <div class="carousel">
+                    {% comment%}
+                    <form>
+                    <p>{% trans "Filter by:" %}</p>
+                        <input placeholder="{% trans 'Country'%}" name="country"/>
+                        <input placeholder="{% trans 'City'%}" name="city"/>
+                        <input placeholder="{% trans 'Date'%}" name="date"/>
+                    </form>
+                    {% endcomment %}
+                    <div class="splide__track" title="{% trans "Please log in, or sign up, to see more" %}">
+                        <ul class="splide__list">
+                            {% for trip in trips.last_added|slice:':21' %}
+                            <li class="splide__slide">
+                                {% if trip.destination.picture_urls.mobile  == " " or trip.destination.picture_urls.mobile is None %}                            
+                                    <img src="{% static 'img/about-us-name.jpg' %}" alt="cogofly-about-us-name">
+                                {% else %}
+                                    <img src="{{ trip.destination.picture_urls.mobile }}" alt="cogofly-trip-destination">
+                                {% endif %}
+
+                                <div class="slide-content">
+                                    <div class="name">
+                                        <p title="{{ trip.destination }}">{{ trip.destination }}</p>                            
+                                    </div>
+                                    <div class="slide-details">
+                                        <p>{{ trip.start }} - {{ trip.end }}</p>
+                                    </div>                                
+                                </div>
+                            </li>
+                            {% endfor %} 
+                            <li class="splide__slide">
+                                <img src={% static "img/golden-gate-bridge.jpg" %} alt="Cogofly-golden-gate-bridge">
+                                <div class="slide-content">
+                                    <div class="name">
+                                        <p>{% trans "Please log in, or sign up, to see more" %}</p>                            
+                                    </div>                        
+                                </div>
+                            </li>                                                                                                                                      
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="community-section">
+                <h2>{% trans 'Community' %}</h2>
+                <p>{% trans 'The Genesis of CoTravellers' %}</p>
+                <div>
+                    <ul class="left">
+                        <li>
+                            <span><img src="{% static 'img/network64px.png' %}" alt="Network"></span>
+                            <p>{% trans 'Connect with persons from the 4 corners of the world, share their experiences and expand your network.' %}</p>
+                        </li>
+                        <li>
+                            <span><img src="{% static 'img/magnifying-glass64px.png' %}" alt="Search"></span>
+                            <p>{% trans 'Find cotravellers, with potentially the same socio-professional criteria and areas of interest, in order to organise your trips in the best possible conditions.' %}</p>
+                        </li>
+                        <li>
+                            <span><img src="{% static 'img/high-five64px.png' %}" alt="Together"></span>
+                            <p>{% trans 'Think Together, think Co, and take off to share your trips, weekends, and others outings!' %}</p>
+                        </li>
+                    </ul>
+                    <ul class="right">
+                        <li> 
+                            <p><img src="{% static 'img/locations64px.png' %}" alt="Countries"><strong>196 </strong>{% trans 'Countries' %}</p>
+                        </li>                        
+                        <li>
+                            <p><img src="{% static 'img/buildings64px.png' %}" alt="Cities"><strong>500+ </strong>{% trans 'Cities' %}</p>
+                        </li>                        
+                        <li>
+                            <p><img src="{% static 'img/group64px.png' %}" alt="Members"><strong>24040 </strong>{% trans 'Members' %}</p>
+                        </li>                        
+                        <li>
+                            <p><img src="{% static 'img/travel64px.png' %}" alt="CoGoFlyers"><strong>500+ </strong>{% trans 'CoGoFlyers' %}</p>
+                        </li>
+                     </ul>                
+                </div>
+            </section>
+            <section class="cotravels">
+                <h2>{% trans 'CoTravels' %}</h2>
+                <p>{% trans 'Travelling is great but doing it with 2, or more travellers, is really better…isn’t it?' %}</p>
+                <ul class="cotravels-toggles">
+                    <li id="cotravels-done" class="cotravels-toggle selected" onclick="toggleCoTravels(event, 'past-cotravels')"><p>{% trans "Done" %}</p></li>
+                    <li id="cotravels-to-become" class="cotravels-toggle" onclick="toggleCoTravels(event, 'future-cotravels')"><p>{% trans "To become" %}</p></li>
+                    <li id="cotravels-good-to-know" class="cotravels-toggle">
+                        <p>{% trans "Good to know" %}</p>
+                        <aside>
+                            <p>{% trans "All members will be able to:" %}</p>
+                            <ul>
+                                <li>
+                                    <p>{% trans "Add their cotravels done" %}</p>
+                                </li>
+                                <li>
+                                    <p>{% trans "Add the ones to become" %}</p>
+                                </li>
+                                <li>
+                                    <p>{% trans "And, if you want to let people know about your choices, share them around you:" %}</p>
+                                    <ul>
+                                        <li>
+                                            <p>{% trans "Inside all CoGoFlyer’s community" %}</p>
+                                        </li>
+                                        <li>
+                                            <p>{% trans "Just to one member" %}</p>
+                                        </li>
+                                        <li>
+                                            <p>{% trans "By mail" %}</p>
+                                        </li>
+                                        <li>
+                                            <p>{% trans "On social networks" %}</p>
+                                        </li>                                                                                                            
+                                    </ul>
+                                </li>                            
+                            </ul>
+                        </aside>
+                    </li>
+                </ul>
+                {# past cotravels section #}
+                <div id="past-cotravels" class="carousel cotravels-carousel show-carousel">
+                    <div class="splide__track" title="{% trans "Please log in, or sign up, to see more" %}">
+                        <ul class="splide__list">
+                            {% for trip in trips.cotravels.past %}
+                            <li class="splide__slide">
+                                {% if trip.destination.picture_urls.mobile == " " or trip.destination.picture_urls.mobile  == 'None' %}                            
+                                    <img src="{% static 'img/about-us-name.jpg' %}" alt="cogofly-about-us">
+                                {% else %}
+                                    <img src="{{ trip.destination.picture_urls.mobile }}" alt="">
+                                {% endif %}
+                                
+                                <div class="slide-content">
+                                    <div class="name">
+                                        <p title="{{ trip.destination }}">{{ trip.destination }}</p>                            
+                                    </div>
+                                    <div class="slide-details">
+                                        <p>{{ trip.start }} - {{ trip.end }}</p>
+                                        <p>{{ trip.members.count }} {% trans "travelers" %}</p>
+                                    </div>                                
+                                </div>
+                            </li>
+                            {% endfor %}   
+                            <li class="splide__slide">
+                                <img src={% static "img/golden-gate-bridge.jpg" %} alt="cogofly-destination">
+                                <div class="slide-content">
+                                    <div class="name">
+                                        <p>{% trans "Please log in, or sign up, to see more" %}</p>                            
+                                    </div>                        
+                                </div>
+                            </li>                                                                                                                                                                                        
+                        </ul>
+                    </div>
+                </div>
+                {# future cotravels section #}
+                <div id="future-cotravels" class="carousel cotravels-carousel">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            {% for trip in trips.cotravels.future %}
+                            <li class="splide__slide">
+                                {% if trip.destination.picture_urls.mobile == " " or trip.destination.picture_urls.mobile  == 'None' %}                            
+                                    <img src="{% static 'img/about-us-name.jpg' %}" alt="Cogofly-image">
+                                {% else %}
+                                    <img src="{{ trip.destination.picture_urls.mobile }}" alt="cogofly-destination-trip">
+                                {% endif %}
+                                <div class="slide-content">
+                                    <div class="name">
+                                        <p title="{{ trip.destination }}">{{ trip.destination }}</p>                            
+                                    </div>
+                                    <div class="slide-details">
+                                        <p>{{ trip.start }} - {{ trip.end }}</p>
+                                        <p>{{ trip.members.count }} {% trans "travelers" %}</p>
+                                    </div>                                
+                                </div>
+                            </li>
+                            {% endfor %}    
+                            <li class="splide__slide">
+                                <img src={% static "img/golden-gate-bridge.jpg" %} alt="cogofly-destination">
+                                <div class="slide-content">
+                                    <div class="name">
+                                        <p>{% trans "To see more, sign in or sign up for free" %}</p>                            
+                                    </div>                        
+                                </div>
+                            </li>                                                                                                                                                                                       
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="observations-section">
+                <h2>{% trans 'Observations' %}</h2>
+                <p>{% trans 'You prefer to stay alone? CoGoFly has been also done for you!' %}</p>
+                <div class="observations-carousel">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="{% static 'img/personnes-femme-voyage-aventure.jpg'%}" alt="cogofly-voyage-adventure">
+                                <div class="slide-content">
+                                    <div class="name">
+                                        <p>{% trans "Too many people travel alone and remain so for the duration of their trips." %}</p>                               
+                                    </div>                              
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <img src="{% static 'img/personne-randonneur-pic-sommet.jpg'%}" alt="">
+                                <div class="slide-content">
+                                    <div class="name">
+                                        <p>{% trans "Divorces, friends changing their minds, expatriate reintegration and, quite simply, solitude, are often the root-cause of such situation..." %}</p>                              
+                                    </div>                             
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <img src="{% static 'img/air-chaud-battant.jpg'%}" alt="cogofly-air">
+                                <div class="slide-content">
+                                    <div class="name">
+                                        <p>{% trans "Held back by shyness? Don't know anyone to join groups? Lacking motivation?...Plan ahead and step into the unknown together!" %}</p>
+                                    </div>                               
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>                                                                       
+            </section>
+            <section class="advantages-section">
+                <h2>{% trans 'Advantages' %}</h2>
+                <p>{% trans 'Combine handy tips, fun projects and get away stress-free' %}</p>
+                <ul>
+                   <li>
+                        <p><strong>{% trans "Peace of mind" %}</strong></p>
+                        <p>{% trans "Trips out, at any time, in complete confidence." %}</p>
+                        <p>{% trans "No more last-minute rushing around. Plan ahead in order to make the most of your stay." %}</p>
+                        <p>{% trans "Break down language barriers." %}</p>
+                    </li>                
+                    <li>
+                        <p><strong>{% trans "Financial" %}</strong></p>
+                        <p>{% trans "Share accommodation costs (think about the fees for a double room...)." %}</p>
+                        <p>{% trans "Share others expenses (taxi, car hire, fuel, tolls...)." %}</p>
+                        <p>{% trans "More attractive prices for shows, concerts, excursions..." %}</p>
+                    </li>
+                    <li>
+                        <p><strong>{% trans "Practical" %}</strong></p>
+                        <p>{% trans "Join up easily with groups on turnkey trips and excursions or to take part in diverse activities." %}</p>
+                        <p>{% trans "Additional activities: sport, excursions, local and regional sightseeing..." %}</p>
+                        <p>{% trans "Find a willing and reliable travel companion…and who knows, maybe a new friend!" %}</p>
+                    </li>
+                </ul>             
+            </section>
+        </main>
+    </body>
+{% endblock %}
+{% block footer %}{% include 'footer.html' %}{% endblock %}

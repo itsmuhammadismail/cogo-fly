@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %}
+
+{% block title%}{% if new %}Create{% else %}Edit{% endif %} trip{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/trip.scss' %}">
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/trip.js' %}"></script>
+<script>
+window.fbAsyncInit = function() {
+    FB.init({
+    appId            : '600914307472316',
+    autoLogAppEvents : true,
+    xfbml            : true,
+    version          : 'v9.0'
+    });
+};
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+<div class="content">
+    <section class="trip-top">
+        <img src="{{ trip.destination.picture_urls.web }}" alt="" id="trip-top-pic" onerror="
+        this.onerror=null;
+        this.src='{% static "img/plain-464646.svg" %}';">
+        <div class="trip-top-text">
+            <h2>{% svg "icons/pin" %}{{ trip.destination }}</h2>
+            <ul class="trip-info">
+                {% svg "icons/calendar" %}
+                {% if trip.departure %}<li><strong>{% trans "From: " %}</strong>{{ trip.departure }}</li>{% endif %}
+                <li><strong>{% trans "Dates: " %}</strong>{{ trip.start }} - {{ trip.end }}</li>
+            </ul>
+            <p class="trip-comment">{% if trip.comment %}" {{ trip.comment }} "{% else %}{% trans 'No comment.' %}{% endif %}</p>        
+        </div>
+        <span class="picture-toggle down-arrow" onclick="pictureFull()">{% svg "icons/down-arrow" %}</span>
+        <span class="picture-toggle up-arrow" onclick="pictureFull()">{% svg "icons/up-arrow" %}</span>     
+        <div class="trip-actions">
+            <form class="like-fav" method="POST">
+                {% csrf_token %}
+                {% if trip.is_liked %}
+                <button type="submit" title="{% trans 'Like' %}" name="unlike">{% svg 'icons/like' %}</button>
+                {% else %}
+                <button title="{% trans 'Unlike' %}" type="submit" name="like">{% svg 'icons/like-white' %}</button>
+                {% endif %}
+                {% if trip.is_favorite %}
+                <button title="{% trans 'Remove from favorites' %}" type="submit" name="unfav">{% svg 'icons/star' %}</button>
+                {% else %}
+                <button title="{% trans 'Add to favorites' %}" type="submit" name="fav">{% svg 'icons/star-white' %}</button>
+                {% endif %}
+            </form>       
+            {% if user == trip.user %}
+            <a href="{% url 'trip_edit' trip.id %}" title="{% trans "Edit your trip" %}"><button>{% svg 'icons/edit' %}</button></a>
+            {% elif user in trip.members.all %}
+            {% include 'popup.html' with icon='icons/delete' action='leavetrip' text=_('Leave trip') %}
+            {% elif trip.is_requested %}
+            {% include 'popup.html' with icon='icons/cancel-add-trip' action='cancelrequest' text=_('Cancel request') %}
+            {% else %}
+            {% include 'popup.html' with icon='icons/add-trip' action='sendrequest' form=sendrequestform %}
+            {% endif %}
+            {% if user in trip.members.all %}
+            <a title="{% trans "Send message" %}" href="{% url 'messages' trip.conversation.id %}"><button>{% svg 'icons/write' %}</button></a>
+            {% endif %}
+            <div class="share">
+                <button title="Share" onclick="$(this).next().toggleClass('flexbox')">{% svg "icons/next" %}</button>
+                <ul class="share-popup">
+                    <li title="Share to seed-feed">
+                        {% include 'popup.html' with icon='icons/timeline' action='share' form=shareform text=_('Share my trip') %}                       
+                    </li>
+                    <li title="Share by mail">
+                        {% include 'popup.html' with icon='icons/mail' action='email-share' form=emailshareform text=_('Share via email') url=trip.get_absolute_url %}
+                    </li>
+                    <li onclick="
+                    FB.ui({
+                        display: 'popup',
+                        method: 'share',
+                        href: 'https://cogofly.com/',
+                        quote: &quot;{% blocktrans with destination=trip.destination start=trip.start end=trip.end url=trip.get_absolute_url %}Dear Members, For people who love travelling, and don’t like to do it alone, I'm going to {{ destination }} from {{ start }} to {{ end }} via CoGoFly. Don’t hesitate and register for free at www.cogofly.com/{{url}}{% endblocktrans %}&quot;,
+                 }, function(response){});
+                    "
+                    title="Share to Facebook">
+                        {% svg "social/facebook" %}
+                        <!--{% trans "Share to Facebook" %}-->
+                    </li>
+                    <li title="Share to Twitter">
+                        <a target="_blank" rel="noopener noreferrer" href="http://twitter.com/intent/tweet?text=Dear%20Members,%20For%20people%20who%20love%20travelling,%20and%20don't%20like%20to%20do%20it%20alone,%20I'm%20going%20to%20{{ trip.destination }}%20from%20{{ trip.start }}%20to%20{{ trip.end }}%20via%20www.cogofly.com{{trip.get_absolute_url}}"%>
+                            {% svg "social/twitter" %}                    
+                            <!--{% trans "Share to Twitter" %}-->
+                        </a>                      
+                    </li>
+                </ul>                
+            </div>
+        </div>         
+    </section>   
+
+    <section class="travelers">
+        <h3>{% trans "Travelers" %}</h3>
+        <ul>
+            {% for member in trip.members.all %}
+            <li>{% include 'simple-card.html' with contact=member %}</li>
+            {% endfor %}        
+        </ul>
+    </section>
+
+    <section class="pictures">
+        <h3>{% trans "Trip pictures" %}</h3>
+        <ul>
+        {% for picture in trip.pictures.all %}
+            <li>
+                <img src="{{ picture.picture.url }}">
+            </li>
+        {% empty %}
+            <li>
+                <p>{% trans "No pictures" %}</p>
+            </li>
+        {% endfor %}                                              
+        </ul>
+
+    </section>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

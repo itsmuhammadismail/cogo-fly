@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* line 7, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+* {
+  font-family: "Nunito Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+/* line 16, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.hero-bg {
+  background-image: url("/static/img/svg/BK-1.png?165108720395");
+  background-size: cover;
+  text-align: center; }
+
+/* line 21, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.sec-img-1 {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 45px -15px rgba(0, 0, 0, 0.25);
+  border-radius: 25px 25px 0px 0px; }
+
+/* line 27, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.overlay-div {
+  background: rgba(240, 135, 26, 0.45);
+  mix-blend-mode: multiply;
+  border-radius: 20px; }
+
+/* line 1, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+footer {
+  background-color: #141414;
+  padding: 20px 20px;
+  text-align: center;
+  overflow: hidden; }
+  /* line 6, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer hr {
+    border-color: #bababa9f; }
+  /* line 9, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0;
+    /*&:nth-of-type(2) {
+			li {
+				&:first-of-type {
+					margin-top: 0;
+					display: flex;
+					align-items: center;
+					p {
+						margin: 0;
+					}
+				}
+			}
+		}*/ }
+    /* line 14, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer ul li {
+      list-style: none;
+      margin: 5px 20px; }
+      /* line 17, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+      footer ul li a {
+        color: #bababa;
+        font-size: 20px;
+        text-decoration: none; }
+        /* line 21, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+        footer ul li a:hover {
+          cursor: pointer;
+          color: #d6d6d6;
+          transition: color 0.2s; }
+      /* line 27, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+      footer ul li svg, footer ul li img {
+        width: 40px;
+        height: 40px; }
+  /* line 45, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-sm {
+    display: flex;
+    align-items: center; }
+    /* line 48, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .footer-sm > p {
+      white-space: nowrap; }
+    /* line 51, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .footer-sm ul {
+      width: 100%; }
+  /* line 55, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer p {
+    color: #bababa;
+    font-size: 20px; }
+  /* line 59, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .contact-us-log-in {
+    position: relative; }
+    /* line 61, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .contact-us-log-in span {
+      width: max-content;
+      position: absolute;
+      display: none;
+      top: 45px;
+      right: -110%;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: white;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 1000; }
+    /* line 75, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .contact-us-log-in:hover a {
+      cursor: default; }
+    /* line 78, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .contact-us-log-in:hover span {
+      display: block; }
+
+@media all and (max-width: 1065px) {
+  /* line 88, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-links li {
+    flex: 1 1 20%; }
+  /* line 92, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-sm {
+    display: block; } }
+
+@media all and (max-width: 860px) {
+  /* line 101, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-links li {
+    flex: 1 1 50%; }
+  /* line 107, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-sm ul li {
+    flex: 1 1 12%; } }
+
+@media all and (max-width: 550px) {
+  /* line 119, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-sm ul li {
+    flex: 1 1 30%; } }
+
+/* line 97, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+ul {
+  padding: 0; }
+  /* line 99, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  ul li {
+    list-style: none;
+    padding: 0; }
+
+/* line 210, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.is-blurred {
+  filter: blur(2px);
+  transition: filter 0.3 ease; }
+
+/* line 215, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+#lang-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  /* line 220, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  #lang-modal p {
+    font-size: 40px;
+    color: black;
+    padding: 0;
+    margin: 0; }
+  /* line 226, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  #lang-modal ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    justify-content: center; }
+    /* line 231, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+    #lang-modal ul li {
+      list-style: none;
+      margin-top: 20px;
+      padding: 10px; }
+      /* line 235, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+      #lang-modal ul li:first-of-type {
+        margin-left: 0; }
+      /* line 238, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+      #lang-modal ul li a {
+        color: black;
+        font-size: 20px; }
+  /* line 244, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  #lang-modal svg {
+    height: 30px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    vertical-align: middle; }
+  /* line 249, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  #lang-modal button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 40px; }
+  /* line 255, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  #lang-modal.open {
+    top: 50%; }
+
+/* line 260, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+#scrollup {
+  position: fixed;
+  right: 20px;
+  bottom: -100px;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  transition: bottom 0.5s ease; }
+  /* line 268, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+  #scrollup.visible {
+    bottom: 20px; }
+
+/* line 331, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+section {
+  position: relative;
+  text-align: center;
+  min-height: 65vh;
+  padding: 3em;
+  box-sizing: border-box;
+  overflow: hidden; }
+
+/* line 635, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.carousel .splide__track .splide__list li .slide-content .name p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+/* line 667, d:/cogoflydjango/cogo-fly/static/scss/landing.scss */
+.show-carousel {
+  display: block; }

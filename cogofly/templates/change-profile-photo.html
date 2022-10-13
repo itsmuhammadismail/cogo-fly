@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/profile.scss' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/profile-edit.scss' %}">
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+<div class="content">
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <section class="my-info">
+            <h2 class="tab-title">{% trans "My Profil Photo" %}</h2>
+            <div id="my-pictures" class="tab-content">
+                <div class="profile-cover">
+                    <div class="picture">
+                        {{ profileform.picture.label_tag }}
+                        {{ profileform.picture }}        
+                    </div>      
+                </div>
+                <div class="album">
+                    <label>{% trans 'Album' %}</label>
+                    {{ albumform.management_form }}
+                    <ul>
+                        {% for form in albumform %}
+                            {{ form.id }}
+                            {% include 'widgets/album_widget.html' %}
+                        {% endfor %}
+                    </ul>        
+                </div>
+        
+            </div>
+        </section>
+
+        <input type="submit" value="{% trans 'Save changes' %}">
+        <a class="cancel" href={% url 'profile' request.user.id %}>{% trans 'Cancel' %}</a>
+
+    </form>
+</div>
+
+<div class="bottom-pusher"></div>
+{% endblock %}
+
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/profile-edit.js' %}"></script>
+    {{ profileform.media }}
+{% endblock %}

@@ -1,0 +1,646 @@
+/* line 1, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+footer {
+  background-color: #141414;
+  padding: 20px 20px;
+  text-align: center;
+  overflow: hidden; }
+  /* line 6, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer hr {
+    border-color: #bababa9f; }
+  /* line 9, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0;
+    /*&:nth-of-type(2) {
+			li {
+				&:first-of-type {
+					margin-top: 0;
+					display: flex;
+					align-items: center;
+					p {
+						margin: 0;
+					}
+				}
+			}
+		}*/ }
+    /* line 14, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer ul li {
+      list-style: none;
+      margin: 5px 20px; }
+      /* line 17, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+      footer ul li a {
+        color: #bababa;
+        font-size: 20px;
+        text-decoration: none; }
+        /* line 21, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+        footer ul li a:hover {
+          cursor: pointer;
+          color: #d6d6d6;
+          transition: color 0.2s; }
+      /* line 27, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+      footer ul li svg, footer ul li img {
+        width: 40px;
+        height: 40px; }
+  /* line 45, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-sm {
+    display: flex;
+    align-items: center; }
+    /* line 48, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .footer-sm > p {
+      white-space: nowrap; }
+    /* line 51, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .footer-sm ul {
+      width: 100%; }
+  /* line 55, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer p {
+    color: #bababa;
+    font-size: 20px; }
+  /* line 59, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .contact-us-log-in {
+    position: relative; }
+    /* line 61, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .contact-us-log-in span {
+      width: max-content;
+      position: absolute;
+      display: none;
+      top: 45px;
+      right: -110%;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: white;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 1000; }
+    /* line 75, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .contact-us-log-in:hover a {
+      cursor: default; }
+    /* line 78, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+    footer .contact-us-log-in:hover span {
+      display: block; }
+
+@media all and (max-width: 1065px) {
+  /* line 88, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-links li {
+    flex: 1 1 20%; }
+  /* line 92, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-sm {
+    display: block; } }
+
+@media all and (max-width: 860px) {
+  /* line 101, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-links li {
+    flex: 1 1 50%; }
+  /* line 107, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-sm ul li {
+    flex: 1 1 12%; } }
+
+@media all and (max-width: 550px) {
+  /* line 119, d:/cogoflydjango/cogo-fly/static/scss/footer.scss */
+  footer .footer-sm ul li {
+    flex: 1 1 30%; } }
+
+/* line 3, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  min-height: 100%;
+  height: 100%; }
+  /* line 11, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  body > ul.messages {
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    z-index: 10000;
+    width: 30%;
+    /*min-height: 20%;*/
+    background-color: #eefaf0;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+    color: #66c26b; }
+    /* line 24, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+    body > ul.messages > span {
+      color: #476064;
+      font-weight: bold;
+      position: absolute;
+      top: 5px;
+      right: 10px; }
+      /* line 30, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+      body > ul.messages > span:hover {
+        cursor: pointer; }
+    /* line 34, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+    body > ul.messages li {
+      list-style: none;
+      color: wrgba(102, 194, 107, 255); }
+      /* line 37, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+      body > ul.messages li > p:first-of-type {
+        font-weight: bold;
+        margin: 0 0 5; }
+      /* line 41, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+      body > ul.messages li > * {
+        color: #66c26b; }
+    /* line 45, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+    body > ul.messages hr {
+      border: solid 1px #476064; }
+
+/* line 51, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+.map {
+  width: 100%;
+  box-sizing: border-box; }
+  /* line 54, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  .map > div > div {
+    height: 100% !important;
+    padding-bottom: 0 !important; }
+
+/* line 60, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 67, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+.cards-content,
+.content {
+  box-sizing: border-box;
+  min-height: calc(100vh - 334px); }
+
+/* line 74, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 75, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 81, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 84, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 92, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 95, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 98, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 114, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 117, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 125, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 129, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 137, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 139, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 146, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 152, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 158, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 165, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 173, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 177, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  form img[src="/static/scss?52255b5c5036"] {
+    visibility: hidden; }
+
+/* line 182, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+button,
+input .button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 197, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  button:hover,
+  input .button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 203, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 218, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 221, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  button:disabled:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 226, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+.active-filter {
+  background-color: #1168d8;
+  color: white; }
+
+/* line 231, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+.bottom-pusher {
+  height: 1;
+  margin-top: 20px; }
+
+@media all and (max-width: 1065px) {
+  /* line 237, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  .cards-content,
+  .content {
+    min-height: calc(100vh - 392px); } }
+
+@media all and (max-width: 600px) {
+  /* line 244, d:/cogoflydjango/cogo-fly/static/scss/base.scss */
+  body > ul.messages {
+    width: 96%;
+    right: 0%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0; } }
+
+/* line 3, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+.content {
+  min-height: calc(100% - 116px);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* line 9, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+section {
+  width: 40%;
+  position: relative; }
+  /* line 12, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  section > .card {
+    margin: 0 auto 15px; }
+  /* line 15, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  section > p {
+    text-align: center; }
+  /* line 18, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  section .preview-button {
+    display: flex;
+    width: 394px;
+    margin: auto; }
+    /* line 22, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .preview-button > * {
+      text-decoration: none;
+      width: 100%;
+      margin: 5px; }
+    /* line 27, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .preview-button button {
+      padding: 6px 10px;
+      display: flex;
+      justify-content: center;
+      width: 100%; }
+      /* line 32, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+      section .preview-button button svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px; }
+    /* line 38, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .preview-button .delete {
+      color: red;
+      border-color: red; }
+    /* line 43, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .preview-button .delete-form form {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 100;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+      /* line 57, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+      section .preview-button .delete-form form button {
+        padding: 10 16;
+        width: 85%;
+        box-sizing: content-box; }
+    /* line 63, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .preview-button .delete-form span {
+      font-size: 13px;
+      width: 85%;
+      transition: 0.4s;
+      border: solid 1px #1168d8;
+      background-color: white;
+      color: #1168d8;
+      border-radius: 5px;
+      margin: 5px 0;
+      padding: 10px 16px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer; }
+      /* line 79, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+      section .preview-button .delete-form span:hover {
+        transition: 0.4s;
+        filter: brightness(1.1); }
+    /* line 84, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .preview-button .delete-form .show-delete-form {
+      display: flex; }
+    /* line 88, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .preview-button .delete-not-auth {
+      position: relative; }
+      /* line 91, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+      section .preview-button .delete-not-auth:hover + span {
+        display: block; }
+    /* line 96, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .preview-button .delete-redirect {
+      display: none;
+      position: absolute;
+      /*bottom: -50px;*/
+      right: 15px;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: white;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+  /* line 107, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  section .social-share {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+    /* line 111, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .social-share > * {
+      margin: 0 5px; }
+
+/* line 117, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+form {
+  width: 100%; }
+  /* line 119, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  form > button {
+    width: 100%; }
+  /* line 122, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  form .select2 {
+    width: 100% !important; }
+  /* line 125, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  form .album-list > ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /*
+		.album-widget {
+			&.hidden {
+				visibility: hidden;
+				width: 0;
+			}
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			list-style: none;
+			height: 150px;
+			width: 150px;
+			margin-right: 20px;
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				&:before {
+					content: " ";
+					display: block;
+					position: absolute;
+					height: 100%;
+					width: 100%;
+					background: url(/static/svg/icons/add-image.svg?c59488871410) center no-repeat,
+						url(/static/img/white.png?6d0d76272650);
+					background-size: 100px 100px, 125px 125px;
+				}
+				&:hover {
+					cursor: pointer;
+				}
+			}
+			svg {
+				height: 30px;
+				width: 30px;
+			}
+		}*/ }
+    /* line 130, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    form .album-list > ul .album-widget {
+      margin: 2.1%;
+      width: 29%; }
+      /* line 134, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+      form .album-list > ul .album-widget > span .album-widget-image {
+        width: 100% !important;
+        height: 150px !important; }
+      /* line 139, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+      form .album-list > ul .album-widget svg:hover {
+        cursor: pointer; }
+      /* line 142, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+      form .album-list > ul .album-widget .album-widget-prompt {
+        display: none !important; }
+  /* line 184, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  form .errorlist {
+    padding: 0; }
+    /* line 186, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    form .errorlist li {
+      list-style: none;
+      color: red; }
+
+/* line 193, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+.cancel {
+  border: solid 1px red;
+  color: red;
+  width: 100%;
+  transition: 0.4s;
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 208, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  .cancel:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 214, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+.redirect-links {
+  width: 394px;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly; }
+  /* line 220, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  .redirect-links li {
+    list-style: none;
+    width: 100%;
+    margin: 0 5px; }
+    /* line 224, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    .redirect-links li a {
+      text-decoration: none;
+      color: #1168d8;
+      width: 100%; }
+      /* line 228, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+      .redirect-links li a button {
+        width: 100%; }
+
+/* line 238, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+.popup .popup-content form textarea {
+  margin: 10 0 0 0; }
+
+/* line 241, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+.popup .popup-content form input {
+  margin: 10 0; }
+  /* line 243, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  .popup .popup-content form input:last-of-type {
+    margin-top: 18px; }
+
+/* line 251, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+.show {
+  display: block !important; }
+
+/* line 255, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+.hide {
+  display: none; }
+
+/* line 259, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+.pusher {
+  margin-bottom: 20px; }
+
+@media all and (max-width: 1000px) {
+  /* line 264, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  section {
+    width: max-content; } }
+
+@media all and (max-width: 450px) {
+  /* line 270, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  .pusher {
+    height: 50px !important; }
+  /* line 273, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  .bottom-pusher {
+    margin: 0 !important; }
+  /* line 276, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    /* line 281, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section form {
+      width: 90%; }
+      /* line 283, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+      section form .select2-container {
+        min-width: auto; }
+    /* line 287, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .card {
+      margin: 0 auto 15px; }
+    /* line 290, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .preview-button {
+      flex-direction: column;
+      width: 380px; }
+      /* line 293, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+      section .preview-button > * {
+        margin: 0; }
+      /* line 296, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+      section .preview-button button {
+        padding: 10px; }
+      /* line 301, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+      section .preview-button .delete-form form > button, section .preview-button .delete-form form span {
+        width: 240px; }
+    /* line 307, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .back-home {
+      width: 90%; } }
+
+@media all and (max-width: 405px) {
+  /* line 315, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  section .preview-button, section .redirect-links {
+    width: 275px; }
+  /* line 318, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+  section .redirect-links {
+    flex-direction: column; }
+    /* line 320, d:/cogoflydjango/cogo-fly/static/scss/trip-edit.scss */
+    section .redirect-links li {
+      margin: 0; } }

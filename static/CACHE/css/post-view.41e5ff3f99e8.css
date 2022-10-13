@@ -1,0 +1,9 @@
+/* line 1, static/scss/post-view.scss */
+.post {
+  width: 60%;
+  margin: 20px auto 0; }
+
+@media all and (max-width: 900px) {
+  /* line 7, static/scss/post-view.scss */
+  .post {
+    width: 80%; } }

@@ -1,0 +1,174 @@
+/* line 1, static/scss/profile-edit.scss */
+.content {
+  min-height: calc(100% - 96px);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* line 7, static/scss/profile-edit.scss */
+.messages {
+  position: fixed;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  left: 20px; }
+  /* line 14, static/scss/profile-edit.scss */
+  .messages li {
+    list-style: none; }
+
+/* line 19, static/scss/profile-edit.scss */
+section {
+  margin: 10px; }
+  /* line 21, static/scss/profile-edit.scss */
+  section h2,
+  section h3 {
+    text-align: center; }
+
+/* line 27, static/scss/profile-edit.scss */
+form {
+  width: 40%;
+  min-height: calc(100% - 296px);
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  /* line 33, static/scss/profile-edit.scss */
+  form > * {
+    width: 100%; }
+  /* line 36, static/scss/profile-edit.scss */
+  form .select2 {
+    width: 100% !important;
+    min-width: auto; }
+  /* line 41, static/scss/profile-edit.scss */
+  form .my-info .tab-titles {
+    display: flex;
+    justify-content: space-evenly; }
+    /* line 44, static/scss/profile-edit.scss */
+    form .my-info .tab-titles p {
+      border-bottom: solid 2px transparent;
+      padding-bottom: 2px;
+      user-select: none;
+      text-align: center;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      /* line 53, static/scss/profile-edit.scss */
+      form .my-info .tab-titles p:hover {
+        cursor: pointer; }
+    /* line 57, static/scss/profile-edit.scss */
+    form .my-info .tab-titles .active-tab {
+      color: #1168d8;
+      border-bottom: solid 2px #1168d8;
+      font-weight: bold; }
+  /* line 65, static/scss/profile-edit.scss */
+  form > input {
+    width: calc(100% + 40px);
+    font-size: 15px;
+    transition: 0.4s;
+    border: solid 1px #14750b;
+    background-color: white;
+    color: #14750b;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer; }
+    /* line 78, static/scss/profile-edit.scss */
+    form > input:hover {
+      transition: 0.4s;
+      filter: brightness(1.1); }
+  /* line 83, static/scss/profile-edit.scss */
+  form svg {
+    height: 30px;
+    width: 30px; }
+
+/* line 89, static/scss/profile-edit.scss */
+.picture,
+.cover,
+.album {
+  width: max-content;
+  margin: 5px auto;
+  text-align: center; }
+
+/* line 97, static/scss/profile-edit.scss */
+.picture-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  /* line 103, static/scss/profile-edit.scss */
+  .picture-widget div img {
+    width: 200px !important;
+    height: 200px !important; }
+    /* line 106, static/scss/profile-edit.scss */
+    .picture-widget div img:before {
+      content: " ";
+      display: block;
+      position: absolute;
+      height: 200px;
+      width: 200px;
+      background-image: url(/static/img/default-cover.jpeg?4b7f1cfde928);
+      background-position: center;
+      background-size: cover; }
+    /* line 117, static/scss/profile-edit.scss */
+    .picture-widget div img:hover {
+      cursor: pointer; }
+  /* line 121, static/scss/profile-edit.scss */
+  .picture-widget div button {
+    padding: 8px 10;
+    font-size: 10px;
+    top: 8px !important;
+    right: 8px !important; }
+
+/* line 130, static/scss/profile-edit.scss */
+.profile-cover {
+  display: flex; }
+
+/* line 137, static/scss/profile-edit.scss */
+.picture div img:before {
+  background-image: url(/static/img/default-profile.png?4b7f1cfde928); }
+
+/* line 145, static/scss/profile-edit.scss */
+.album ul {
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px; }
+  /* line 150, static/scss/profile-edit.scss */
+  .album ul li {
+    list-style: none; }
+
+/* line 156, static/scss/profile-edit.scss */
+.cancel {
+  width: calc(100% + 5px);
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #1168d8;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer; }
+  /* line 170, static/scss/profile-edit.scss */
+  .cancel:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 176, static/scss/profile-edit.scss */
+footer {
+  display: none; }
+
+/* line 180, static/scss/profile-edit.scss */
+.pusher {
+  margin-bottom: 20px; }
+
+@media all and (max-width: 1065px) {
+  /* line 184, static/scss/profile-edit.scss */
+  .content {
+    min-height: calc(100vh - 78px); } }

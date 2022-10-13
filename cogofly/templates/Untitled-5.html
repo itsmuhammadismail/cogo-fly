@@ -1,0 +1,310 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %}
+{% get_current_language as LANGUAGE_CODE %} 
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/search.scss' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'css/jquery-ui.min.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+    
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+<header class="w-[100%] h-[5.125rem] max-w-[80rem] mx-auto">
+    <nav class="flex justify-around md:justify-between items-center  md:gap-[unset] gap-[3rem] py-[1rem]">
+        <div class="logo flex items-center">
+            <a href="/"> <img src="{% static 'img/svg/logo.svg' %}" alt="CoGoFly" class="w-[173.99px]" /> </a>
+        </div>
+        <div>
+            <ul class="gap-[2rem] items-center justify-center md:flex hidden text-[#AEAEAE]" >
+                <li> <a href={% url 'covid' %} target="_blank" rel="noopener noreferrer">COVID-19</a></li>
+                <li><a href="{% url 'howitworks' %}" target="_blank" rel="noopener noreferrer">How it works?</a></li>
+                <li>
+                    <a class="text-[#AEAEAE]"><img src="{% static 'img/svg/flag.svg' %}" alt="CoGoFly" class="w-[38px] h-[26px]" /></a>
+                </li>
+                <li> <a  href={% url 'login' %} class="text-[#1877F2] leading-[22px] font-[700]"> Log in</a
+          >
+        </li>
+        <li>   <a href="{% url 'search' %}">
+            <button>{% trans "Search" %}</button>
+          
+        </a>
+          </li>
+        
+        <li>
+          <button
+            class="rounded-[30px] bg-[#1877F2] text-white w-[90px] h-[36px]"
+          >
+          <a  href={% url 'signup' %}>
+            Sign Up
+        </a>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <!-- <-- drawer --> 
+    <div id="mySidenav" class="sidenav  h-[100vh] w-full bg-[#1E1E1E] flex flex-col items-center md:hidden top-[0]">
+         <div class="logo flex items-center flex-row w-full  justify-around py-[1rem] gap-[3rem] shadow-lg">
+            <a href="/"> <img src="{% static 'img/svg/logo.svg' %}" alt="CoGoFly" class="w-[173.99px]" /> </a>
+            
+            <img src="{% static 'img/svg/Cross-Icon.svg' %}" alt="CoGoFly" class="pr-[1rem] h-[2.063rem] w-[2.063rem] rounded-[50%]" onclick="closeNav()"/>
+        </div>
+        <hr class="w-full hr-line">
+        <ul class="gap-[2rem] items-center justify-start md:flex w-full my-[2rem] text-[#AEAEAE] ">
+                <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "><a class="text-white text-[22px]"><img src="{% static 'img/svg/flag.svg' %}" alt="CoGoFly" class="w-[38px] h-[26px]" /></a></li>
+        <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "><a href={% url 'covid' %} target="_blank" rel="noopener noreferrer" class=" text-white text-[22px]">COVID-19</a></li>
+        <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "><a href="{% url 'howitworks' %}" target="_blank" rel="noopener noreferrer" class="  text-white text-[22px]">How it works?</a></li>
+        <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "><a  href={% url 'login' %} class="  text-white text-[22px] leading-[22px]"> Log in</a></li>
+        <li class="flex items-center m-[0.625rem] rounded-[0.313rem]  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-2 leading-8 transition-colors duration-200 ease-in-out "> <button class="rounded-[30px] bg-[#1877F2] text-white w-[140px] h-[56px]"> <a  href={% url 'signup' %}>Sign Up</a> </button></li>
+        </ul>
+      </div>
+    <!-- drawer -->
+    <button class="md:hidden block hamburger transition-transform left-0 top-0 -translate-x-full" id="burger" >
+      <img
+        src="{% static 'img/svg/menu-1.svg' %}"
+        alt="CoGoFly"
+        class="w-[2rem] h-[3rem]"
+        onClick="openNav();"
+      />
+    </button>
+  </nav>
+</header> 
+
+<div class="cards-content">
+
+    <section class="filters h-[97.5vh]">
+        <h2 class="font-[900] text-[1.25rem] leading-[1.875rem] text-[#313131]"><strong>{% trans 'Search' %}</strong></h2>
+        <hr>
+        <!--{{ form.non_field_errors }}-->
+        <div class="filter-by h-[95vh]">
+            <form onsubmit="$(this).find(':input').filter(function(){ return !this.value || $(this).css('display') == 'none'; }).attr('disabled', 'disabled');return true;">
+                <div class="city-country-search">
+                    {{ form.destination.label_tag }}
+                    <div class="flex">
+                        <span>{% trans "City, " %}</span>  
+                    <!-- <input type="checkbox" class="w-[4rem]" id="input-switch" {% if 'country' in request.GET %}checked{% endif %}>
+                    <label for="input-switch "></label>                                    -->
+                    <span>{% trans "Country" %}</span>
+                    <!-- {{ form.country }} -->
+                </div>
+                {{ form.destination }}
+                </div>                       
+
+                {{ form.start.label_tag }}
+                {{ form.start }}
+
+                {{ form.end.label_tag }}
+                {{ form.end.errors }}
+                {{ form.end }}
+   
+                <input type="checkbox" id="advanced-switch" {% if advanced %}checked{% endif %}>
+                <label for="advanced-switch" class="advanced-label mb-[0.938rem !important]">{% trans "Advanced search" %}{% svg 'icons/down-arrow' %}</label>
+                <div class="advanced-filters" style="border: 1px solid #e4e6eb !important;
+                background: #e4e6eb;font-weight: 500 !important;">
+                    {% if not user.is_authenticated %}<p><strong>{% trans "Sign up for free to use advanced filters" %}</strong></p>{% endif %}
+
+                    <div class="covid smoker">
+                        {{ form.covid.label_tag }}
+                        {{ form.covid }}
+                    </div>
+
+                    <div class="covid smoker">
+                    {{ form.help_ukranian.label_tag }}
+                    {{ form.help_ukranian }}                        
+                    </div>
+
+                    <div class="covid smoker">
+                    {{ form.I_have_an_handicap.label_tag }}{{ form.covid }}                        
+                    </div>
+
+                    {{ form.sex.label_tag }}
+                    {{ form.sex }}
+                    
+                    <label>{% trans "Age range" %} : <span id="range-display"></span>
+                    {{ form.minage }}
+                    {{ form.maxage }}
+                    <div id="slider-range"></div>
+                    </label>
+
+                    {{ form.departure.label_tag }}
+                    {{ form.departure }}
+
+                    {{ form.language.label_tag }}
+                    {{ form.language }}
+
+                    {{ form.children.label_tag }}
+                    {{ form.children }}
+
+                    {{ form.zodiac.label_tag }}
+                    {{ form.zodiac }}
+
+                    {{ form.hobbies.label_tag }}
+                    {{ form.hobbies }}
+
+                    {{ form.personalities.label_tag }}
+                    {{ form.personalities }}
+
+                    <div class="smoker">
+                        {{ form.nonsmoker.label_tag }}
+                        {{ form.nonsmoker }}                    
+                    </div>
+
+                    {{ form.licenses.label_tag }}
+                    {{ form.licenses }}
+
+                    {{ form.level.label_tag }}
+                    {{ form.level }}
+
+                    {{ form.subjects.label_tag }}
+                    {{ form.subjects }}
+
+                    {{ form.sector.label_tag }}
+                    {{ form.sector }}
+
+                    {{ form.job.label_tag }}
+                    {{ form.job }}
+
+                    {{ form.current.label_tag }}
+                    {{ form.current }}
+
+                    {{ form.previous.label_tag }}
+                    {{ form.previous }}
+                </div>
+
+                <a href="{% url 'search' %}">
+                    <button type="button">{% trans "Reset" %}</button></a>
+                <!--<button type="button" onclick="toggleLucky()">{% trans "I'm feeling lucky" %}</button>
+                <div class="popup lucky">
+                    <span onclick="toggleLucky()">X</span>
+                    <p>{% trans "Do you want to find the CoGoFlyers who have:" %}</p>
+                    <ul onclick="$(this)[0].form.reset()">
+                        <li><button name="lucky" value="profile">{% trans "The same profile" %}</button></li>
+                        <li><button name="lucky" value="trip">{% trans "The same destinations" %}</button></li>
+                        <li><button name="lucky" value="search">{% trans "The same searches" %}</button></li>
+                    </ul>
+                </div>   -->
+                <button type="submit">{% trans "Co" %}</button>
+                {% if user.is_authenticated %}
+                <hr>2 people has travelled between 08/08/21 and 08/15/21
+                <p>{% trans "Use this quick button to find who really looks like you :" %}</p>
+                <input type="checkbox" id="lucky-switch" {% if advanced %}checked{% endif %}>
+                <label for="lucky-switch" class="lucky-label">{% trans "I'm feeling lucky" %}{% svg 'icons/down-arrow' %}</label>
+                <div class="lucky">
+                    <!--<span onclick="toggleLucky()">X</span>-->
+                    <p>{% trans "Do you want to find the CoGoFlyers who have:" %}</p>
+                    <ul onclick="$(this)[0].form.reset()">
+                        <li><button name="lucky" value="profile">{% trans "The same profile" %}</button></li>
+                        <li><button name="lucky" value="trip">{% trans "The same destinations" %}</button></li>
+                        <li><button name="lucky" value="search">{% trans "The same searches" %}</button></li>
+                    </ul>
+                </div>
+                {% endif %}                
+            </form>
+        </div>
+    </section>
+
+    <div class="search-content">
+        <section class="card-section">
+            <div class="card-section-title">
+                <p id="default-tab" class="tab-title" onclick="tabContentSwitch(event, 'cards-list')"><strong>{% trans "Search results" %}</strong></p>    
+                <hr>
+                {% if user.is_authenticated and 'destination' in request.GET %}
+                    <p class="tab-title" onclick="tabContentSwitch(event, 'local-map')"><strong>{% trans "People around me" %}</strong></p>
+                    <hr>
+                    <p class="tab-title" onclick="tabContentSwitch(event, 'destination-map')"><strong>{% trans "People at my destination" %}</strong></p>            
+                {% else %}
+                    <p class="tab-title unclickable" title="{% trans "Enter a destination first" %}"><strong>{% trans "People around me" %}</strong></p>
+                    <hr>
+                    <p class="tab-title unclickable" title="{% trans "Enter a destination first" %}"><strong>{% trans "People at my destination" %}</strong></p>            
+                {% endif %}    
+            </div>
+            <hr>
+            <div id="cards-list" class="tab-content cards-list">     
+                {% if results is not None%}
+                <p><strong>{{ results|length }} {{ summary }}</strong></p>
+                <ul>
+                {% for result in results %}
+                    <li>
+                        {% include "simple-card.html" with contact=result %}
+                    </li>
+                {% empty %}
+                    <li class="empty-search">
+                        <p>{% trans 'No results.'%}</p>
+                        <p>{% trans 'Try searching often. New members register everyday.'%}</p>
+                        {% if destination %}
+                        <p>{% trans 'Check, by clicking on "People at my destination", if some people didn&#39;t decide to go to '%} {{ destination }}</p>
+                        {% endif %}
+                    </li>                                 
+                {% endfor %}
+                </ul>
+                {% else %}
+                <p><strong>{% trans "Use the search panel to find Cotravelers" %}</strong></p>
+                {{ form.non_field_errors|linebreaks }}
+                <script>
+                    window.onload = function () {
+                        if (window.location.href.indexOf('?') > -1) {
+                            document.getElementsByClassName("nonfield")[0].style.display = "block";
+                            if (window.innerWidth < 600) {
+                                document.getElementsByClassName("search-content")[0].scrollIntoView();
+                            }                                  
+                        }                  
+                    }            
+                </script>
+                {% endif %}                   
+            </div>
+            <div id="local-map" class="tab-content local-map">
+                <p>{% trans "Zoom on the map to see all travelers who live around you" %} </p>
+                {{ aroundmemap | safe }}
+            </div>
+            <div id="destination-map" class="tab-content destination-map">
+                <p>{% trans "Zoom on the map to see all travelers who did, or will travel to the same destination" %}</p>
+                {{ arounddestmap | safe }}
+            </div>    
+        </section>
+
+        {% if 'destination' in request.GET %}
+        <section class="additional-information">
+            <p class="tab-title"><strong>{% trans "Information on my destination" %}</strong></p>
+            <div id="widgets" class="widgets">
+                <p>{{wiki}}{% trans "Useful information on your destination" %}</p>
+            </div>    
+        </section>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script>
+    $( function() {
+        $( "#slider-range" ).slider({
+        {% if not user.is_authenticated %}disabled: true,{% endif %}
+        range: true,
+        min: 18,
+        max: 99,
+        slide: function( event, ui ) {
+            const min = ui.values[0];
+            const max = ui.values[1];
+            $( "#range-display" ).text(min + " - " + max);
+            $("#id_minage").val(min != 18 ? min : null);
+            $("#id_maxage").val(max != 99 ? max : null);
+        }
+        });
+        $( "#slider-range" ).slider("values", 0, $("#id_minage").val() || 18);
+        $( "#slider-range" ).slider("values", 1, $("#id_maxage").val() || 99);
+        $( "#range-display" ).text( $( "#slider-range" ).slider("values", 0) + " - " + $("#slider-range").slider("values",1));
+    } );
+    </script>   
+    <script type="text/javascript" src="{% static 'js/search.js' %}"></script>
+    {{ form.media }}
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

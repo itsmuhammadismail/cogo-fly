@@ -1,0 +1,1134 @@
+/* line 1, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px; }
+
+/* line 9, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 17, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 18, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 27, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 30, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 38, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 41, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 44, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 60, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 63, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 71, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 75, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 83, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 85, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 92, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 98, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 104, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 111, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 119, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 123, static/scss/base.scss */
+  form img[src="/static/scss?c09fe338285a"] {
+    visibility: hidden; }
+
+/* line 128, static/scss/base.scss */
+button,
+input .button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 143, static/scss/base.scss */
+  button:hover,
+  input .button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 149, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 164, static/scss/base.scss */
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 167, static/scss/base.scss */
+  button:disabled:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 172, static/scss/base.scss */
+footer {
+  margin-top: 25px;
+  background-color: #141414;
+  padding: 20px 20px;
+  text-align: center;
+  overflow: hidden; }
+  /* line 178, static/scss/base.scss */
+  footer hr {
+    border-color: #bababa9f; }
+  /* line 181, static/scss/base.scss */
+  footer ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0; }
+    /* line 187, static/scss/base.scss */
+    footer ul li {
+      margin: 5px 20px; }
+      /* line 189, static/scss/base.scss */
+      footer ul li a {
+        color: #bababa;
+        font-size: 20px;
+        text-decoration: none; }
+        /* line 193, static/scss/base.scss */
+        footer ul li a:hover {
+          cursor: pointer;
+          color: #d6d6d6;
+          transition: color 0.2s; }
+      /* line 199, static/scss/base.scss */
+      footer ul li svg {
+        width: 40px;
+        height: 40px; }
+    /* line 206, static/scss/base.scss */
+    footer ul:nth-of-type(2) li:first-of-type {
+      margin-top: 0;
+      display: flex;
+      align-items: center; }
+      /* line 210, static/scss/base.scss */
+      footer ul:nth-of-type(2) li:first-of-type p {
+        margin: 0; }
+  /* line 217, static/scss/base.scss */
+  footer p {
+    color: #bababa;
+    font-size: 20px; }
+
+/* line 1, static/scss/header.scss */
+header {
+  background-color: #1168d8;
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0; }
+  /* line 8, static/scss/header.scss */
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    /* line 12, static/scss/header.scss */
+    header nav h1 {
+      margin: 0; }
+      /* line 14, static/scss/header.scss */
+      header nav h1 img {
+        padding: 10px;
+        height: 75px;
+        box-sizing: border-box; }
+    /* line 20, static/scss/header.scss */
+    header nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      height: 75px; }
+      /* line 25, static/scss/header.scss */
+      header nav ul a {
+        position: relative;
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center; }
+      /* line 37, static/scss/header.scss */
+      header nav ul .profile-toggle {
+        color: white; }
+        /* line 40, static/scss/header.scss */
+        header nav ul .profile-toggle > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          /* line 44, static/scss/header.scss */
+          header nav ul .profile-toggle > div:hover {
+            cursor: pointer; }
+      /* line 49, static/scss/header.scss */
+      header nav ul li {
+        list-style: none;
+        margin: 0 5px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px; }
+      /* line 60, static/scss/header.scss */
+      header nav ul .nav-button svg {
+        display: none; }
+      /* line 64, static/scss/header.scss */
+      header nav ul p {
+        margin: 0 5px; }
+      /* line 67, static/scss/header.scss */
+      header nav ul svg {
+        width: 25px;
+        height: 25px;
+        filter: invert(1); }
+      /* line 73, static/scss/header.scss */
+      header nav ul .logout > span:hover {
+        cursor: pointer; }
+      /* line 76, static/scss/header.scss */
+      header nav ul .logout .show-logout-modal {
+        display: flex !important; }
+      /* line 79, static/scss/header.scss */
+      header nav ul .logout .logout-modal {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center; }
+        /* line 90, static/scss/header.scss */
+        header nav ul .logout .logout-modal > div {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          padding: 0 20px;
+          border-radius: 5px; }
+          /* line 97, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > p {
+            margin: 20 0 10; }
+          /* line 100, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div .logout-buttons {
+            display: flex;
+            justify-content: center; }
+            /* line 103, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons button {
+              margin: 0; }
+            /* line 106, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons > a {
+              margin: 10 5 20 0;
+              width: auto; }
+            /* line 110, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons > button {
+              margin: 10 0 20 5;
+              color: red;
+              border-color: red; }
+          /* line 116, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > span {
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            color: grey; }
+            /* line 121, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div > span:hover {
+              cursor: pointer; }
+    /* line 129, static/scss/header.scss */
+    header nav #nav-hamburger {
+      display: none;
+      height: 60px;
+      width: 45px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      cursor: pointer; }
+      /* line 137, static/scss/header.scss */
+      header nav #nav-hamburger span {
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background: white;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out; }
+        /* line 148, static/scss/header.scss */
+        header nav #nav-hamburger span:nth-child(1) {
+          top: 30%; }
+        /* line 151, static/scss/header.scss */
+        header nav #nav-hamburger span:nth-child(2), header nav #nav-hamburger span:nth-child(3) {
+          top: 50%; }
+        /* line 155, static/scss/header.scss */
+        header nav #nav-hamburger span:nth-child(4) {
+          top: 70%; }
+    /* line 162, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(1) {
+      top: 30%;
+      width: 0%;
+      left: 50%; }
+    /* line 167, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(2) {
+      transform: rotate(45deg); }
+    /* line 170, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(3) {
+      transform: rotate(-45deg); }
+    /* line 173, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(4) {
+      top: 70%;
+      width: 0%;
+      left: 50%; }
+
+/* line 183, static/scss/header.scss */
+.sub-header {
+  position: fixed;
+  z-index: 100;
+  top: 125px;
+  right: 0px;
+  padding: 0;
+  border-radius: 5px 5px 0 5px; }
+
+/* line 192, static/scss/header.scss */
+.profile-dropdown {
+  padding: 0;
+  width: 300px;
+  text-align: center;
+  position: absolute;
+  right: -1000px;
+  top: 80px;
+  opacity: 0;
+  z-index: 100;
+  /*transition: right 0.4s;*/
+  color: black; }
+  /* line 203, static/scss/header.scss */
+  .profile-dropdown .banner {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 40px; }
+  /* line 210, static/scss/header.scss */
+  .profile-dropdown .profile-pic-bg {
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    top: 40px;
+    left: 100px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+    /* line 220, static/scss/header.scss */
+    .profile-dropdown .profile-pic-bg .profile-picture {
+      object-fit: cover;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: auto;
+      display: block; }
+  /* line 229, static/scss/header.scss */
+  .profile-dropdown > span {
+    color: white;
+    font-weight: bold;
+    top: 5px;
+    right: 7px;
+    position: absolute; }
+    /* line 235, static/scss/header.scss */
+    .profile-dropdown > span:hover {
+      cursor: pointer; }
+  /* line 239, static/scss/header.scss */
+  .profile-dropdown p {
+    margin: 5px 0;
+    padding-bottom: 5px;
+    /*border-bottom: solid 1px rgba(192, 191, 191, 0.5);*/ }
+  /* line 244, static/scss/header.scss */
+  .profile-dropdown ul {
+    padding: 0 20px;
+    margin: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto; }
+    /* line 250, static/scss/header.scss */
+    .profile-dropdown ul a {
+      text-decoration: none;
+      color: black;
+      flex-direction: row; }
+    /* line 255, static/scss/header.scss */
+    .profile-dropdown ul li {
+      margin: 5px 0; }
+      /* line 257, static/scss/header.scss */
+      .profile-dropdown ul li svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        filter: invert(0); }
+
+/* line 267, static/scss/header.scss */
+.show-profile-dropdown {
+  opacity: 1;
+  right: 5px;
+  /*transition: right 0.4s;*/ }
+
+/* line 273, static/scss/header.scss */
+.pusher {
+  height: 100px; }
+
+@media all and (max-width: 965px) {
+  /* line 279, static/scss/header.scss */
+  header nav {
+    position: relative; }
+    /* line 281, static/scss/header.scss */
+    header nav .logo {
+      position: absolute;
+      left: 0;
+      top: 0; }
+    /* line 287, static/scss/header.scss */
+    header nav ul li {
+      display: none; }
+    /* line 291, static/scss/header.scss */
+    header nav ul.open-menu {
+      width: 100%;
+      margin: auto;
+      margin-top: 75px;
+      justify-content: center; }
+      /* line 296, static/scss/header.scss */
+      header nav ul.open-menu li {
+        float: none;
+        display: flex;
+        text-align: left; }
+    /* line 302, static/scss/header.scss */
+    header nav #nav-hamburger {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      margin: 7.5px 15px 0 0; } }
+
+@media all and (max-width: 750px) {
+  /* line 316, static/scss/header.scss */
+  header nav ul.open-menu {
+    justify-content: center; }
+    /* line 318, static/scss/header.scss */
+    header nav ul.open-menu > li {
+      margin: 0 10px; }
+      /* line 322, static/scss/header.scss */
+      header nav ul.open-menu > li > a .nav-link-text,
+      header nav ul.open-menu > li > div .nav-link-text {
+        display: none; }
+      /* line 325, static/scss/header.scss */
+      header nav ul.open-menu > li > a svg,
+      header nav ul.open-menu > li > div svg {
+        height: 35px;
+        width: 35px;
+        flex-shrink: 0; }
+  /* line 335, static/scss/header.scss */
+  .notification {
+    right: -10px !important; } }
+
+@media all and (max-width: 600px) {
+  /* line 343, static/scss/header.scss */
+  header nav ul.open-menu {
+    flex-wrap: wrap;
+    height: max-content; }
+    /* line 346, static/scss/header.scss */
+    header nav ul.open-menu li {
+      margin: 15px; }
+    /* line 350, static/scss/header.scss */
+    header nav ul.open-menu .nav-button button {
+      display: none; }
+    /* line 353, static/scss/header.scss */
+    header nav ul.open-menu .nav-button svg {
+      display: block; }
+  /* line 360, static/scss/header.scss */
+  .notification {
+    top: -10px !important; } }
+
+/* line 4, static/scss/how-it-works.scss */
+.pusher {
+  height: 75px !important; }
+
+/* line 8, static/scss/how-it-works.scss */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  width: 100%;
+  min-height: calc(100vh - 266px); }
+  /* line 13, static/scss/how-it-works.scss */
+  .content .left-column {
+    padding: 0 10px;
+    text-align: center;
+    background-color: white; }
+    /* line 17, static/scss/how-it-works.scss */
+    .content .left-column .left-column-content {
+      position: sticky;
+      top: 90px; }
+      /* line 20, static/scss/how-it-works.scss */
+      .content .left-column .left-column-content h2 {
+        font-size: 2.5em;
+        margin-top: 5px;
+        margin-bottom: 25px; }
+      /* line 25, static/scss/how-it-works.scss */
+      .content .left-column .left-column-content > p {
+        text-align: left;
+        width: 90%;
+        margin: auto; }
+      /* line 30, static/scss/how-it-works.scss */
+      .content .left-column .left-column-content ul {
+        padding: 0; }
+        /* line 32, static/scss/how-it-works.scss */
+        .content .left-column .left-column-content ul li {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          width: 90%;
+          margin: auto;
+          text-align: left;
+          user-select: none; }
+          /* line 40, static/scss/how-it-works.scss */
+          .content .left-column .left-column-content ul li:hover {
+            cursor: pointer; }
+          /* line 43, static/scss/how-it-works.scss */
+          .content .left-column .left-column-content ul li svg {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+            margin-right: 5px;
+            transform: rotate(-90deg); }
+        /* line 51, static/scss/how-it-works.scss */
+        .content .left-column .left-column-content ul > a {
+          text-decoration: none;
+          transition: 0.4s;
+          border: solid 1px #1168d8;
+          background-color: #1168d8;
+          color: white;
+          border-radius: 5px;
+          padding: 8px;
+          margin: 0 20px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          /* line 61, static/scss/how-it-works.scss */
+          .content .left-column .left-column-content ul > a:hover {
+            transition: 0.4s;
+            filter: brightness(1.1); }
+          /* line 68, static/scss/how-it-works.scss */
+          .content .left-column .left-column-content ul > a svg {
+            width: 25px;
+            height: 25px;
+            filter: invert(1); }
+          /* line 74, static/scss/how-it-works.scss */
+          .content .left-column .left-column-content ul > a:first-of-type svg {
+            margin-left: 10px; }
+          /* line 80, static/scss/how-it-works.scss */
+          .content .left-column .left-column-content ul > a:nth-of-type(2) svg, .content .left-column .left-column-content ul > a:nth-of-type(3) svg {
+            margin-right: 10px; }
+          /* line 84, static/scss/how-it-works.scss */
+          .content .left-column .left-column-content ul > a p {
+            margin: 0; }
+        /* line 88, static/scss/how-it-works.scss */
+        .content .left-column .left-column-content ul #cta-4 {
+          display: none !important; }
+  /* line 94, static/scss/how-it-works.scss */
+  .content .right-column {
+    width: 85%;
+    margin: 0 auto; }
+    /* line 97, static/scss/how-it-works.scss */
+    .content .right-column h3 {
+      font-size: 1.5em; }
+    /* line 100, static/scss/how-it-works.scss */
+    .content .right-column #step-one-content,
+    .content .right-column #step-two-content,
+    .content .right-column #step-three-content,
+    .content .right-column #step-four-content {
+      flex-direction: column; }
+    /* line 106, static/scss/how-it-works.scss */
+    .content .right-column #step-one-content {
+      text-align: center; }
+      /* line 108, static/scss/how-it-works.scss */
+      .content .right-column #step-one-content h3 {
+        text-align: center; }
+      /* line 111, static/scss/how-it-works.scss */
+      .content .right-column #step-one-content .step-one-titles {
+        padding: 0;
+        display: flex;
+        justify-content: center; }
+        /* line 115, static/scss/how-it-works.scss */
+        .content .right-column #step-one-content .step-one-titles li {
+          list-style: none;
+          margin: 0 10px;
+          color: grey;
+          transition: filter 0.4s; }
+          /* line 120, static/scss/how-it-works.scss */
+          .content .right-column #step-one-content .step-one-titles li:hover {
+            cursor: pointer;
+            filter: brightness(0.8);
+            transition: filter 0.4s; }
+        /* line 126, static/scss/how-it-works.scss */
+        .content .right-column #step-one-content .step-one-titles .active-title {
+          color: #1168d8;
+          font-weight: bold; }
+      /* line 132, static/scss/how-it-works.scss */
+      .content .right-column #step-one-content .information-content,
+      .content .right-column #step-one-content .optional-content {
+        margin: 15px 0;
+        display: flex;
+        flex-direction: column; }
+        /* line 137, static/scss/how-it-works.scss */
+        .content .right-column #step-one-content .information-content ul,
+        .content .right-column #step-one-content .optional-content ul {
+          padding: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          animation: fadeEffect 1s; }
+          /* line 144, static/scss/how-it-works.scss */
+          .content .right-column #step-one-content .information-content ul li,
+          .content .right-column #step-one-content .optional-content ul li {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            padding: 0 10px;
+            width: 25%;
+            height: 200px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.05); }
+            /* line 157, static/scss/how-it-works.scss */
+            .content .right-column #step-one-content .information-content ul li svg,
+            .content .right-column #step-one-content .optional-content ul li svg {
+              width: 75px;
+              height: 75px;
+              margin: 15px; }
+            /* line 162, static/scss/how-it-works.scss */
+            .content .right-column #step-one-content .information-content ul li p,
+            .content .right-column #step-one-content .optional-content ul li p {
+              text-align: center; }
+          /* line 168, static/scss/how-it-works.scss */
+          .content .right-column #step-one-content .information-content ul:nth-of-type(1) li:hover, .content .right-column #step-one-content .information-content ul:nth-of-type(3) li:hover,
+          .content .right-column #step-one-content .optional-content ul:nth-of-type(1) li:hover,
+          .content .right-column #step-one-content .optional-content ul:nth-of-type(3) li:hover {
+            cursor: pointer; }
+        /* line 173, static/scss/how-it-works.scss */
+        .content .right-column #step-one-content .information-content #practical-tips,
+        .content .right-column #step-one-content .information-content #optional-tips,
+        .content .right-column #step-one-content .optional-content #practical-tips,
+        .content .right-column #step-one-content .optional-content #optional-tips {
+          margin: 0; }
+          /* line 176, static/scss/how-it-works.scss */
+          .content .right-column #step-one-content .information-content #practical-tips li,
+          .content .right-column #step-one-content .information-content #optional-tips li,
+          .content .right-column #step-one-content .optional-content #practical-tips li,
+          .content .right-column #step-one-content .optional-content #optional-tips li {
+            transition: opacity 0.4s;
+            opacity: 0; }
+          /* line 180, static/scss/how-it-works.scss */
+          .content .right-column #step-one-content .information-content #practical-tips .show-sub-info,
+          .content .right-column #step-one-content .information-content #optional-tips .show-sub-info,
+          .content .right-column #step-one-content .optional-content #practical-tips .show-sub-info,
+          .content .right-column #step-one-content .optional-content #optional-tips .show-sub-info {
+            transition: opacity 0.4s;
+            opacity: 1; }
+    /* line 188, static/scss/how-it-works.scss */
+    .content .right-column #step-two-content h3 {
+      text-align: center; }
+    /* line 191, static/scss/how-it-works.scss */
+    .content .right-column #step-two-content .step-two-explanation {
+      background-color: #1167d82c;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+      width: 75%;
+      margin: auto auto 10px; }
+    /* line 199, static/scss/how-it-works.scss */
+    .content .right-column #step-two-content .search {
+      text-align: center; }
+      /* line 201, static/scss/how-it-works.scss */
+      .content .right-column #step-two-content .search img {
+        border-radius: 5px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.05); }
+    /* line 206, static/scss/how-it-works.scss */
+    .content .right-column #step-two-content > a {
+      display: block;
+      width: max-content;
+      margin: auto;
+      text-decoration: none;
+      color: #1168d8;
+      font-weight: bold; }
+      /* line 213, static/scss/how-it-works.scss */
+      .content .right-column #step-two-content > a:hover {
+        filter: brightness(1.1); }
+    /* line 219, static/scss/how-it-works.scss */
+    .content .right-column #step-three-content h3 {
+      text-align: center; }
+    /* line 222, static/scss/how-it-works.scss */
+    .content .right-column #step-three-content .member-choice {
+      display: flex;
+      justify-content: center; }
+      /* line 225, static/scss/how-it-works.scss */
+      .content .right-column #step-three-content .member-choice button {
+        margin: 0 5px; }
+        /* line 227, static/scss/how-it-works.scss */
+        .content .right-column #step-three-content .member-choice button:focus {
+          outline: 0; }
+      /* line 231, static/scss/how-it-works.scss */
+      .content .right-column #step-three-content .member-choice .clicked {
+        color: white;
+        background-color: #1168d8; }
+    /* line 236, static/scss/how-it-works.scss */
+    .content .right-column #step-three-content > ul {
+      padding: 0; }
+      /* line 238, static/scss/how-it-works.scss */
+      .content .right-column #step-three-content > ul .add-trip-choice {
+        display: none; }
+      /* line 241, static/scss/how-it-works.scss */
+      .content .right-column #step-three-content > ul .show {
+        display: block; }
+      /* line 244, static/scss/how-it-works.scss */
+      .content .right-column #step-three-content > ul > div > li,
+      .content .right-column #step-three-content > ul > li {
+        list-style: none; }
+        /* line 247, static/scss/how-it-works.scss */
+        .content .right-column #step-three-content > ul > div > li .both-cases,
+        .content .right-column #step-three-content > ul > li .both-cases {
+          background-color: #1167d82c;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+          width: 75%;
+          margin: auto; }
+          /* line 254, static/scss/how-it-works.scss */
+          .content .right-column #step-three-content > ul > div > li .both-cases li,
+          .content .right-column #step-three-content > ul > li .both-cases li {
+            margin-left: 20px; }
+            /* line 256, static/scss/how-it-works.scss */
+            .content .right-column #step-three-content > ul > div > li .both-cases li svg,
+            .content .right-column #step-three-content > ul > li .both-cases li svg {
+              height: 15px;
+              width: 15px;
+              flex-shrink: 0;
+              transform: rotate(-90deg); }
+            /* line 262, static/scss/how-it-works.scss */
+            .content .right-column #step-three-content > ul > div > li .both-cases li .timeframes,
+            .content .right-column #step-three-content > ul > li .both-cases li .timeframes {
+              padding: 0;
+              display: flex;
+              justify-content: space-evenly; }
+              /* line 266, static/scss/how-it-works.scss */
+              .content .right-column #step-three-content > ul > div > li .both-cases li .timeframes li,
+              .content .right-column #step-three-content > ul > li .both-cases li .timeframes li {
+                list-style: none;
+                padding: 10px;
+                border: solid 2px #1168d8;
+                border-radius: 4px; }
+            /* line 273, static/scss/how-it-works.scss */
+            .content .right-column #step-three-content > ul > div > li .both-cases li .comments,
+            .content .right-column #step-three-content > ul > div > li .both-cases li .pictures,
+            .content .right-column #step-three-content > ul > li .both-cases li .comments,
+            .content .right-column #step-three-content > ul > li .both-cases li .pictures {
+              text-align: center; }
+              /* line 276, static/scss/how-it-works.scss */
+              .content .right-column #step-three-content > ul > div > li .both-cases li .comments img,
+              .content .right-column #step-three-content > ul > div > li .both-cases li .pictures img,
+              .content .right-column #step-three-content > ul > li .both-cases li .comments img,
+              .content .right-column #step-three-content > ul > li .both-cases li .pictures img {
+                width: 100%;
+                border-radius: 5px;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.05); }
+      /* line 286, static/scss/how-it-works.scss */
+      .content .right-column #step-three-content > ul .add-trip .add-trip-content {
+        display: flex;
+        justify-content: center; }
+        /* line 289, static/scss/how-it-works.scss */
+        .content .right-column #step-three-content > ul .add-trip .add-trip-content button {
+          cursor: default;
+          filter: grayscale(0);
+          margin: 5px; }
+      /* line 296, static/scss/how-it-works.scss */
+      .content .right-column #step-three-content > ul .past-future {
+        background-color: #1167d82c;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+        width: 75%;
+        margin: 10px auto 0; }
+        /* line 303, static/scss/how-it-works.scss */
+        .content .right-column #step-three-content > ul .past-future > p {
+          text-align: center;
+          margin-top: 0; }
+        /* line 307, static/scss/how-it-works.scss */
+        .content .right-column #step-three-content > ul .past-future .past-future-choice {
+          display: flex;
+          align-items: center; }
+          /* line 310, static/scss/how-it-works.scss */
+          .content .right-column #step-three-content > ul .past-future .past-future-choice > * {
+            margin: 0 5px; }
+          /* line 313, static/scss/how-it-works.scss */
+          .content .right-column #step-three-content > ul .past-future .past-future-choice button {
+            transition: 0.4s; }
+            /* line 315, static/scss/how-it-works.scss */
+            .content .right-column #step-three-content > ul .past-future .past-future-choice button:focus {
+              outline: 0; }
+          /* line 319, static/scss/how-it-works.scss */
+          .content .right-column #step-three-content > ul .past-future .past-future-choice .active-past-future-button {
+            color: white;
+            background-color: #1168d8;
+            transition: 0.4s; }
+          /* line 324, static/scss/how-it-works.scss */
+          .content .right-column #step-three-content > ul .past-future .past-future-choice p {
+            opacity: 0; }
+            /* line 326, static/scss/how-it-works.scss */
+            .content .right-column #step-three-content > ul .past-future .past-future-choice p:nth-of-type(2) {
+              opacity: 1; }
+            /* line 329, static/scss/how-it-works.scss */
+            .content .right-column #step-three-content > ul .past-future .past-future-choice p:nth-of-type(1), .content .right-column #step-three-content > ul .past-future .past-future-choice p:nth-of-type(3) {
+              width: 50%; }
+          /* line 334, static/scss/how-it-works.scss */
+          .content .right-column #step-three-content > ul .past-future .past-future-choice .show-past-future {
+            opacity: 1;
+            transition: 0.4s; }
+          /* line 338, static/scss/how-it-works.scss */
+          .content .right-column #step-three-content > ul .past-future .past-future-choice svg {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0; }
+            /* line 342, static/scss/how-it-works.scss */
+            .content .right-column #step-three-content > ul .past-future .past-future-choice svg:first-of-type {
+              transform: rotate(90deg); }
+            /* line 345, static/scss/how-it-works.scss */
+            .content .right-column #step-three-content > ul .past-future .past-future-choice svg:last-of-type {
+              transform: rotate(-90deg); }
+      /* line 351, static/scss/how-it-works.scss */
+      .content .right-column #step-three-content > ul .destination,
+      .content .right-column #step-three-content > ul .comments,
+      .content .right-column #step-three-content > ul .bc {
+        text-align: center; }
+        /* line 355, static/scss/how-it-works.scss */
+        .content .right-column #step-three-content > ul .destination img,
+        .content .right-column #step-three-content > ul .comments img,
+        .content .right-column #step-three-content > ul .bc img {
+          border-radius: 5px;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.05); }
+    /* line 361, static/scss/how-it-works.scss */
+    .content .right-column #step-three-content > a {
+      display: block;
+      width: max-content;
+      margin: 20px auto;
+      text-decoration: none;
+      color: #1168d8;
+      font-weight: bold; }
+      /* line 368, static/scss/how-it-works.scss */
+      .content .right-column #step-three-content > a:hover {
+        filter: brightness(1.1); }
+    /* line 373, static/scss/how-it-works.scss */
+    .content .right-column #step-four-content {
+      display: flex;
+      flex-direction: column; }
+      /* line 376, static/scss/how-it-works.scss */
+      .content .right-column #step-four-content h2,
+      .content .right-column #step-four-content h3 {
+        text-align: center; }
+      /* line 380, static/scss/how-it-works.scss */
+      .content .right-column #step-four-content img {
+        margin: auto; }
+      /* line 383, static/scss/how-it-works.scss */
+      .content .right-column #step-four-content .both-cases {
+        background-color: #1167d82c;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+        width: 75%;
+        margin: auto; }
+
+/* line 395, static/scss/how-it-works.scss */
+.substep {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  position: relative; }
+  /* line 400, static/scss/how-it-works.scss */
+  .substep > * {
+    margin: 0 5px; }
+  /* line 403, static/scss/how-it-works.scss */
+  .substep span {
+    padding: 5px;
+    background-color: #ffff00b0;
+    border-radius: 50%;
+    width: 20;
+    height: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    font-weight: bold; }
+  /* line 415, static/scss/how-it-works.scss */
+  .substep svg {
+    position: absolute; }
+
+/* line 421, static/scss/how-it-works.scss */
+.substep-one svg {
+  height: 190px;
+  top: 50px;
+  left: -45px;
+  transform: rotateY(180deg); }
+
+/* line 430, static/scss/how-it-works.scss */
+.substep-two svg {
+  height: 190px;
+  top: 50px;
+  left: 20px; }
+
+/* line 438, static/scss/how-it-works.scss */
+.hints > h4 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 0; }
+
+/* line 443, static/scss/how-it-works.scss */
+.hints > p:first-of-type {
+  text-align: center; }
+
+/* line 446, static/scss/how-it-works.scss */
+.hints .tips {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px; }
+  /* line 450, static/scss/how-it-works.scss */
+  .hints .tips .tip-one,
+  .hints .tips .tip-two {
+    text-align: center;
+    width: 50%;
+    margin: 0 20px; }
+    /* line 455, static/scss/how-it-works.scss */
+    .hints .tips .tip-one button,
+    .hints .tips .tip-two button {
+      min-width: 150px;
+      transition: 0.4s; }
+      /* line 458, static/scss/how-it-works.scss */
+      .hints .tips .tip-one button:focus,
+      .hints .tips .tip-two button:focus {
+        outline: 0; }
+      /* line 461, static/scss/how-it-works.scss */
+      .hints .tips .tip-one button p,
+      .hints .tips .tip-two button p {
+        margin: 0; }
+        /* line 463, static/scss/how-it-works.scss */
+        .hints .tips .tip-one button p:first-of-type,
+        .hints .tips .tip-two button p:first-of-type {
+          font-size: 1.5em; }
+    /* line 468, static/scss/how-it-works.scss */
+    .hints .tips .tip-one .active-button,
+    .hints .tips .tip-two .active-button {
+      color: white;
+      background-color: #1168d8;
+      transition: 0.4s; }
+    /* line 473, static/scss/how-it-works.scss */
+    .hints .tips .tip-one > ul,
+    .hints .tips .tip-two > ul {
+      padding: 0;
+      display: none;
+      text-align: left;
+      animation: fadeEffect 1s; }
+      /* line 478, static/scss/how-it-works.scss */
+      .hints .tips .tip-one > ul > li,
+      .hints .tips .tip-two > ul > li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+        margin: 10px 0;
+        padding: 10px;
+        transition: color 0.4s, box-shadow 0.4s; }
+        /* line 488, static/scss/how-it-works.scss */
+        .hints .tips .tip-one > ul > li:hover,
+        .hints .tips .tip-two > ul > li:hover {
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          transition: color 0.4s, box-shadow 0.4s;
+          cursor: pointer; }
+          /* line 492, static/scss/how-it-works.scss */
+          .hints .tips .tip-one > ul > li:hover svg,
+          .hints .tips .tip-two > ul > li:hover svg {
+            filter: invert(0%) sepia(100%) saturate(7430%) hue-rotate(15deg) brightness(81%) contrast(114%);
+            transition: filter 0.4s; }
+        /* line 498, static/scss/how-it-works.scss */
+        .hints .tips .tip-one > ul > li svg,
+        .hints .tips .tip-two > ul > li svg {
+          width: 15px;
+          height: 15px;
+          flex-shrink: 0;
+          margin: 0 5px;
+          transform: rotate(-90deg);
+          filter: invert(56%) sepia(0%) saturate(0%) hue-rotate(298deg) brightness(90%) contrast(88%);
+          transition: filter 0.4s; }
+        /* line 509, static/scss/how-it-works.scss */
+        .hints .tips .tip-one > ul > li p svg,
+        .hints .tips .tip-two > ul > li p svg {
+          width: 15px;
+          height: 15px;
+          flex-shrink: 0;
+          margin: 0 5px;
+          transform: rotate(-90deg);
+          filter: invert(56%) sepia(0%) saturate(0%) hue-rotate(298deg) brightness(90%) contrast(88%);
+          transition: filter 0.4s; }
+        /* line 520, static/scss/how-it-works.scss */
+        .hints .tips .tip-one > ul > li .hide,
+        .hints .tips .tip-two > ul > li .hide {
+          opacity: 0; }
+        /* line 523, static/scss/how-it-works.scss */
+        .hints .tips .tip-one > ul > li .show-tip-content,
+        .hints .tips .tip-two > ul > li .show-tip-content {
+          color: #1168d8;
+          font-weight: bold;
+          opacity: 1;
+          transition: opacity 0.4s; }
+      /* line 530, static/scss/how-it-works.scss */
+      .hints .tips .tip-one > ul #why-tip,
+      .hints .tips .tip-two > ul #why-tip {
+        display: block; }
+        /* line 533, static/scss/how-it-works.scss */
+        .hints .tips .tip-one > ul #why-tip #why li,
+        .hints .tips .tip-two > ul #why-tip #why li {
+          display: list-item;
+          list-style: disc;
+          margin: 2.5 0;
+          color: #1168d8;
+          font-weight: bold; }
+    /* line 545, static/scss/how-it-works.scss */
+    .hints .tips .tip-one > #step-three-tip-two li > p,
+    .hints .tips .tip-one > #step-three-tip-two li strong,
+    .hints .tips .tip-two > #step-three-tip-two li > p,
+    .hints .tips .tip-two > #step-three-tip-two li strong {
+      width: 50%; }
+    /* line 551, static/scss/how-it-works.scss */
+    .hints .tips .tip-one .show-tip,
+    .hints .tips .tip-two .show-tip {
+      display: block; }
+  /* line 558, static/scss/how-it-works.scss */
+  .hints .tips .tip-one > ul li p {
+    width: 50%; }
+
+/* line 567, static/scss/how-it-works.scss */
+.active-tab {
+  color: #1168d8;
+  font-weight: bold; }
+  /* line 570, static/scss/how-it-works.scss */
+  .active-tab svg {
+    filter: invert(30%) sepia(91%) saturate(2176%) hue-rotate(203deg) brightness(86%) contrast(95%); }
+
+/* line 576, static/scss/how-it-works.scss */
+.step-content {
+  animation: fadeEffect 0.4s; }
+
+/* line 580, static/scss/how-it-works.scss */
+footer {
+  margin-top: 0; }
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }

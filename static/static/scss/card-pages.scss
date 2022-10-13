@@ -1,0 +1,186 @@
+@import "base";
+
+header {
+	position: fixed;
+	z-index: 100;
+}
+
+.cards-content {
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+section {
+	margin: 10px;
+}
+
+h2 {
+	text-align: center;
+}
+
+.filters {
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	margin: 10px;
+	position: sticky;
+	top: 100px;
+	z-index: 100;
+	h2 {
+		font-size: 20px;
+		margin: 5px auto;
+	}
+	hr {
+		width: 100%;
+		margin: 10px 0;
+	}
+	h3 {
+		margin: 0;
+		font-size: 15px;
+		text-align: center;
+	}
+
+	.my-trips-cards,
+	.my-contacts,
+	.filter-by {
+		display: flex;
+		flex-direction: column;
+	}
+	.filter-buttons {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.card-section {
+	padding: 10px;
+	min-width: 400px;
+	height: min-content;
+
+	h2 {
+		margin: 5px 0;
+	}
+	hr {
+		width: 97%;
+		margin: 15px auto 5px;
+	}
+	> p {
+		margin: 10 0 15 12px;
+	}
+	.cards-list {
+		margin: 0;
+		padding: 0px;
+		display: flex;
+		flex-wrap: wrap;
+
+		.card, .simple-card {
+			margin: 10px;
+			.card-left {
+				.trip-info {
+					li > * {
+						margin: -2 0;
+					}
+				}
+			}
+		}
+		>li {
+			list-style: none;
+			margin: 10px;
+		}
+	}
+}
+
+.active {
+	background-color: #1168d8;
+	color: white;
+}
+@media all and (max-width: 1505px) {
+	.cards-content {
+		.card-section {
+			width: 820px !important;
+		}
+	}
+}
+
+@media all and (max-width: 1205px) {
+	.cards-content {
+		.card-section {
+			width: 420px !important;
+		}
+	}
+}
+
+@media all and (max-width:700px){
+	.cards-content{
+		flex-direction: column;
+		justify-content: initial;
+		padding: 0;		
+		.card-section{
+			min-width: 0;
+			margin: 10 0 0;
+			width: 100% !important;
+			justify-content: center;
+			/*.card-and-actions{
+				.card{
+					margin: 5 0;
+				}
+				.card-actions{
+					.delete-form{
+						form{
+							right: 30 !important;
+						}
+					}
+				}
+			}*/
+		}	
+		.map-section{
+			align-content: initial !important;
+		}	
+	}
+	.filters{
+		margin: 0;
+		top: 75px;
+		form{
+			width: 100%;
+		}		
+		.my-trips-cards,
+		.my-contacts,
+		.filter-by {
+			display: block;
+			width: 100%;
+			button{
+				width: 100%;
+			}
+
+		}
+	}
+
+}
+
+@media all and (max-width: 405px){
+	.cards-content{
+		.card-section{
+			.card-and-actions{
+				.card-actions{
+					width: 275px !important;
+					.delete-form{
+						form{
+							width: 260px !important;
+							right: 2.5 !important;
+							padding: 5px !important;
+							button, span{
+								font-size: 10px !important;
+							}
+							span{
+								width: 87% !important;
+							}
+						}
+					}
+				}		
+			}
+		}
+	}
+
+}

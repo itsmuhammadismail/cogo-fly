@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Nunito Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  @apply font-[900] text-[28px]  lg:text-[38px]  leading-[35px] lg:leading-[51.83px] text-center;
+}
+
+h6 {
+  @apply font-[700] text-[18px]  lg:text-[20px]  leading-[15px] lg:leading-[27.28px] text-[#1877F1];
+}
+p {
+  @apply font-[700] text-[14px]  lg:text-[16px]  leading-[15px] lg:leading-[22px] text-[#313131];
+}
+
+.hero-bg {
+  background-image: url("../img/svg/BK-1.png");
+  background-size: cover;
+  text-align: center;
+}
+.sec-img-1 {
+  background: #ffffff;
+  box-shadow: 0px 4px 45px -15px rgba(0, 0, 0, 0.25);
+  border-radius: 25px 25px 0px 0px;
+}
+
+.overlay-div {
+  background: rgba(240, 135, 26, 0.45);
+  mix-blend-mode: multiply;
+  border-radius: 20px;
+}
+
+.concept-section ul li:nth-of-type(1) {
+  background: linear-gradient(transparent, rgba(43, 41, 41, 0.5)),
+    url("../img/bike-road.jpg") center center / cover no-repeat;
+  /* &:hover {
+					background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)),
+						url("../img/bike-road.jpg") center center / cover no-repeat;
+				} */
+}
+.concept-section ul li:nth-of-type(2) {
+  background: linear-gradient(transparent, rgba(43, 41, 41, 0.5)),
+    url("../img/hands.jpg") center center / cover no-repeat;
+  /* &:hover {
+					background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)),
+						url("../img/hands.jpg") center center / cover no-repeat;
+				} */
+}
+.concept-section ul li:nth-of-type(3) {
+  background: linear-gradient(transparent, rgba(43, 41, 41, 0.5)),
+    url("../img/steelwool.jpg") center center / cover no-repeat;
+  /* &:hover {
+					background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)),
+						url("../img/steelwool.jpg") center center / cover no-repeat;
+				} */
+}
+
+.content-heading {
+  display: flex;
+}
+
+.content-hidden {
+  display: none;
+}
+
+.content-li:hover .content-hidden {
+  display: flex;
+}
+.shadow-div {
+  box-shadow: 0 0 20px rgb(0 0 0 / 20%) !important;
+}
+
+.content-li:hover .content-heading {
+  display: none;
+}
+@media (max-width: 674px) {
+  ul#splide01-list {
+    width: 20rem !important;
+  }
+  ul#splide02-list {
+    width: 10rem !important;
+  }
+  span.select2-selection.select2-selection--single {
+    width: 100% !important;
+}
+}
+
+.swiper-button-next {
+  /* position: absolute !important; */
+  /* right: 0rem !important; */
+  top: -3rem !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  left: auto !important;
+  top: -3rem !important;
+  border: 3px solid #1877f1;
+  border-radius: 50%;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #1877f1;
+  color: #fff;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 15px !important;
+  font-weight: bold !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+/* .swiper {
+  overflow: visible !important;
+} */
+
+.swiper-button-prev {
+  right: 4rem !important;
+}
+
+.swiper-width {
+  /* width: calc(100vw - 10rem) !important; */
+}
+
+.select2-container--default .select2-selection--single {
+  background-color: #f0f0f0 !important;
+  border: 1px solid #f0f0f0 !important;
+  border-radius: 0.5rem !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  line-height: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-content: center !important;
+}
+.select2-container {
+  min-width: 45rem !important;
+}
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
+  position: absolute;
+  top: 10px !important;
+  right: 9px !important;
+}
+
+#id_start,
+#id_end {
+  background: #f0f0f0 !important;
+  padding: 0.75rem !important;
+  width: 100% !important;
+  border-radius: 0.5rem !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 200ms !important;
+  line-height: 2rem !important;
+}
+
+hr.w-full.hr-line {
+  border-color: #e5e7eb42 !important;
+}
+div#menu-open {
+  width: 80%;
+  position: absolute;
+  left: 100%;
+}
+
+@media screen and (max-width: 647px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+  span.select2-selection.select2-selection--single {
+    width: 100% !important;
+}
+ 
+  .select2-container {
+    min-width: 15rem !important;
+  }
+  /* ul#menu li { */
+  /* margin-top: 1rem !important; */
+  /* margin-bottom: 1rem !important; */
+  /* padding-bottom: 2.25rem; */
+  /* border-radius: 5px !important; */
+  /* background-color: #1e1e1e !important; */
+  /* box-shadow: 0 0 6px rgb(0 0 0 / 20%) !important; */
+  /* text-align: center !important; */
+  /* transition: background-color 0.4s !important; */
+  /* } */
+}
+
+/* navbar responsive */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  /* padding-top: 60px; */
+}
+
+.sidenav li button a {
+  font-size: 21px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-content: center !important;
+}
+.sidenav li a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav li a {
+  /* padding: 8px 8px 8px 32px; */
+  text-decoration: none;
+  font-size: 25px;
+  /* color: #818181; */
+  display: block;
+  transition: 0.3s;
+}
+.sidenav li .button a {
+  padding: 0px;
+}
+.sidenav ul {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+  span.select2-selection.select2-selection--single {
+    width: 100% !important;
+}
+}
+
+

@@ -1,0 +1,138 @@
+/* line 1, static/scss/profile-edit.scss */
+.messages {
+  position: fixed;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  left: 20px; }
+  /* line 8, static/scss/profile-edit.scss */
+  .messages li {
+    list-style: none; }
+
+/* line 13, static/scss/profile-edit.scss */
+section {
+  margin: 10px; }
+  /* line 15, static/scss/profile-edit.scss */
+  section h2 {
+    text-align: center; }
+
+/* line 20, static/scss/profile-edit.scss */
+form {
+  width: 40%;
+  display: block; }
+  /* line 23, static/scss/profile-edit.scss */
+  form .select2 {
+    width: 100% !important; }
+  /* line 27, static/scss/profile-edit.scss */
+  form > input {
+    width: calc(100% - 15px);
+    margin: 5 auto !important;
+    transition: 0.4s;
+    border: solid 1px #14750b;
+    background-color: white;
+    color: #14750b;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer; }
+    /* line 41, static/scss/profile-edit.scss */
+    form > input:hover {
+      transition: 0.4s;
+      filter: brightness(1.1); }
+
+/* line 48, static/scss/profile-edit.scss */
+.picture,
+.cover,
+.album {
+  width: max-content;
+  margin: 5px auto;
+  text-align: center; }
+
+/* line 56, static/scss/profile-edit.scss */
+.picture-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  /* line 62, static/scss/profile-edit.scss */
+  .picture-widget div img {
+    width: 200px !important;
+    height: 200px !important; }
+    /* line 65, static/scss/profile-edit.scss */
+    .picture-widget div img:before {
+      content: " ";
+      display: block;
+      position: absolute;
+      height: 200px;
+      width: 200px;
+      background-image: url(/static/img/default-cover.jpeg?4b7f1cfde928);
+      background-position: center;
+      background-size: cover; }
+    /* line 76, static/scss/profile-edit.scss */
+    .picture-widget div img:hover {
+      cursor: pointer; }
+  /* line 80, static/scss/profile-edit.scss */
+  .picture-widget div button {
+    padding: 8px 10;
+    font-size: 10px;
+    top: 8px !important;
+    right: 8px !important; }
+
+/* line 89, static/scss/profile-edit.scss */
+.profile-cover {
+  display: flex; }
+
+/* line 96, static/scss/profile-edit.scss */
+.picture div img:before {
+  background-image: url(/static/img/default-profile.png?4b7f1cfde928); }
+
+/* line 104, static/scss/profile-edit.scss */
+.album-widget img {
+  height: 125px !important;
+  width: 125px !important; }
+  /* line 107, static/scss/profile-edit.scss */
+  .album-widget img:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    height: 125px;
+    width: 125px;
+    background: url(/static/svg/icons/add-image.svg?894952b71d02) center no-repeat, url(/static/img/white.png?4b7f1cfde928);
+    background-size: 75px 75px, 125px 125px; }
+  /* line 117, static/scss/profile-edit.scss */
+  .album-widget img:hover {
+    cursor: pointer; }
+
+/* line 121, static/scss/profile-edit.scss */
+.album-widget button {
+  height: fit-content;
+  width: fit-content;
+  padding: 8px 10;
+  font-size: 10px;
+  top: 8px !important;
+  right: 8px !important; }
+
+/* line 132, static/scss/profile-edit.scss */
+.album ul {
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px; }
+  /* line 137, static/scss/profile-edit.scss */
+  .album ul li {
+    list-style: none; }
+
+/* line 143, static/scss/profile-edit.scss */
+.cancel {
+  width: calc(40% - 15px);
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: center; }
+  /* line 148, static/scss/profile-edit.scss */
+  .cancel a {
+    text-decoration: none;
+    color: #1168d8; }

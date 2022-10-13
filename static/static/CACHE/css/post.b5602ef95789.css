@@ -1,0 +1,328 @@
+/* line 1, static/scss/post.scss */
+.post {
+  margin-top: 20px;
+  padding: 0;
+  position: relative; }
+  /* line 5, static/scss/post.scss */
+  .post .post-top {
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px rgba(192, 191, 191, 0.5); }
+    /* line 11, static/scss/post.scss */
+    .post .post-top .poster-info p:first-of-type {
+      margin-bottom: 0; }
+    /* line 14, static/scss/post.scss */
+    .post .post-top .poster-info p:nth-of-type(2) {
+      margin-top: 0; }
+    /* line 18, static/scss/post.scss */
+    .post .post-top .poster-info form {
+      position: absolute;
+      top: 20px;
+      right: 10px; }
+      /* line 22, static/scss/post.scss */
+      .post .post-top .poster-info form button {
+        border: none;
+        margin: 0;
+        padding: 0; }
+        /* line 26, static/scss/post.scss */
+        .post .post-top .poster-info form button svg {
+          width: 30px;
+          height: 30px; }
+  /* line 35, static/scss/post.scss */
+  .post .profile-picture {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    object-fit: cover; }
+  /* line 44, static/scss/post.scss */
+  .post .post-content > p {
+    padding: 0 20px;
+    overflow-wrap: anywhere; }
+  /* line 48, static/scss/post.scss */
+  .post .post-content .carousel img {
+    width: 100%;
+    object-fit: cover; }
+  /* line 52, static/scss/post.scss */
+  .post .post-content hr {
+    margin: 10px; }
+  /* line 55, static/scss/post.scss */
+  .post .post-content .card, .post .post-content .simple-card {
+    margin: auto; }
+  /* line 58, static/scss/post.scss */
+  .post .post-content .post-stats {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    /* line 62, static/scss/post.scss */
+    .post .post-content .post-stats > p {
+      color: grey;
+      font-size: 12px;
+      margin: 0;
+      padding: 0 10px 0 0; }
+    /* line 68, static/scss/post.scss */
+    .post .post-content .post-stats span {
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      border-bottom: solid 1px transparent; }
+      /* line 75, static/scss/post.scss */
+      .post .post-content .post-stats span:first-of-type {
+        color: #f30051; }
+      /* line 78, static/scss/post.scss */
+      .post .post-content .post-stats span:last-of-type {
+        color: #1fbf66; }
+        /* line 80, static/scss/post.scss */
+        .post .post-content .post-stats span:last-of-type:hover {
+          cursor: pointer;
+          border-bottom: solid 1px #1fbf66; }
+      /* line 85, static/scss/post.scss */
+      .post .post-content .post-stats span svg {
+        height: 15px;
+        width: 15px;
+        margin-left: 2px; }
+  /* line 92, static/scss/post.scss */
+  .post .post-content .shared-post {
+    margin: 10 15 15 15;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+    /* line 97, static/scss/post.scss */
+    .post .post-content .shared-post .shared-post-user {
+      display: flex;
+      align-items: center;
+      border-bottom: solid 1px rgba(192, 191, 191, 0.5); }
+      /* line 101, static/scss/post.scss */
+      .post .post-content .shared-post .shared-post-user .profile-picture {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        margin: 10px;
+        object-fit: cover; }
+      /* line 110, static/scss/post.scss */
+      .post .post-content .shared-post .shared-post-user .shared-post-user-info p:first-of-type {
+        margin-bottom: 0; }
+      /* line 113, static/scss/post.scss */
+      .post .post-content .shared-post .shared-post-user .shared-post-user-info p:nth-of-type(2) {
+        margin-top: 0;
+        color: grey;
+        font-size: 12px; }
+    /* line 123, static/scss/post.scss */
+    .post .post-content .shared-post .carousel .splide__arrows > * {
+      top: 55%; }
+    /* line 126, static/scss/post.scss */
+    .post .post-content .shared-post .carousel .splide__arrows .splide__arrow--prev {
+      left: 2em; }
+    /* line 129, static/scss/post.scss */
+    .post .post-content .shared-post .carousel .splide__arrows .splide__arrow--next {
+      right: 2em; }
+    /* line 134, static/scss/post.scss */
+    .post .post-content .shared-post .shared-post-text {
+      padding: 0 20;
+      overflow-wrap: anywhere; }
+    /* line 138, static/scss/post.scss */
+    .post .post-content .shared-post > a {
+      margin: 5 10px;
+      text-decoration: none;
+      color: #1168d8;
+      display: flex;
+      justify-content: flex-end; }
+  /* line 149, static/scss/post.scss */
+  .post .post-bottom hr {
+    margin: 5px 10px; }
+  /* line 152, static/scss/post.scss */
+  .post .post-bottom .post-bottom-like-share {
+    display: flex;
+    /*justify-content: left;*/
+    align-items: center;
+    padding: 5px 0; }
+    /* line 157, static/scss/post.scss */
+    .post .post-bottom .post-bottom-like-share > form, .post .post-bottom .post-bottom-like-share > span, .post .post-bottom .post-bottom-like-share > button {
+      width: 100%; }
+    /* line 160, static/scss/post.scss */
+    .post .post-bottom .post-bottom-like-share > form {
+      margin: 0 20px 0 0; }
+      /* line 162, static/scss/post.scss */
+      .post .post-bottom .post-bottom-like-share > form button {
+        width: 100%;
+        color: black;
+        font-weight: normal;
+        text-transform: none;
+        font-size: 15px;
+        border: solid 1px transparent;
+        border-radius: 10px;
+        background-color: rgba(192, 191, 191, 0.2);
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+        transition: 0.4s; }
+        /* line 177, static/scss/post.scss */
+        .post .post-bottom .post-bottom-like-share > form button:hover {
+          cursor: pointer;
+          background-color: rgba(192, 191, 191, 0.5);
+          transition: 0.4s; }
+        /* line 182, static/scss/post.scss */
+        .post .post-bottom .post-bottom-like-share > form button svg {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px; }
+    /* line 189, static/scss/post.scss */
+    .post .post-bottom .post-bottom-like-share > span,
+    .post .post-bottom .post-bottom-like-share > button {
+      color: black;
+      font-weight: normal;
+      text-transform: none;
+      font-size: 15px;
+      border: solid 1px transparent;
+      border-radius: 10px;
+      background-color: rgba(192, 191, 191, 0.2);
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 10px;
+      transition: 0.4s; }
+      /* line 204, static/scss/post.scss */
+      .post .post-bottom .post-bottom-like-share > span:hover,
+      .post .post-bottom .post-bottom-like-share > button:hover {
+        cursor: pointer;
+        background-color: rgba(192, 191, 191, 0.5);
+        transition: 0.4s; }
+      /* line 209, static/scss/post.scss */
+      .post .post-bottom .post-bottom-like-share > span svg,
+      .post .post-bottom .post-bottom-like-share > button svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px; }
+  /* line 217, static/scss/post.scss */
+  .post .post-bottom .comments {
+    display: none;
+    padding: 0;
+    margin-top: 0; }
+    /* line 221, static/scss/post.scss */
+    .post .post-bottom .comments hr {
+      margin: 5px 10px; }
+    /* line 224, static/scss/post.scss */
+    .post .post-bottom .comments form {
+      margin: 0px;
+      display: flex;
+      align-items: center; }
+      /* line 228, static/scss/post.scss */
+      .post .post-bottom .comments form textarea {
+        margin: 10px 0;
+        padding: 10px;
+        width: calc(100% - 20px);
+        border: solid 1px #aaa !important;
+        height: 40px; }
+      /* line 235, static/scss/post.scss */
+      .post .post-bottom .comments form button {
+        height: 40px;
+        margin: 5px; }
+    /* line 240, static/scss/post.scss */
+    .post .post-bottom .comments li {
+      list-style: none;
+      margin: 0 0 0 10px;
+      display: flex;
+      overflow-wrap: anywhere; }
+      /* line 245, static/scss/post.scss */
+      .post .post-bottom .comments li img {
+        margin: 5 10 10 0; }
+      /* line 248, static/scss/post.scss */
+      .post .post-bottom .comments li .comment-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column; }
+        /* line 252, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content > div {
+          width: 100%; }
+        /* line 255, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content p {
+          margin: 5 10 5 0; }
+          /* line 257, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content p:first-of-type {
+            margin-bottom: 0; }
+          /* line 260, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content p:nth-of-type(2) {
+            margin-top: 0;
+            font-size: 12px;
+            color: grey; }
+        /* line 266, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content form {
+          width: min-content;
+          display: flex; }
+          /* line 269, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content form > button, .post .post-bottom .comments li .comment-content form > span {
+            padding: 0;
+            margin: 0;
+            background: none;
+            height: min-content;
+            border: none; }
+            /* line 275, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content form > button:first-of-type, .post .post-bottom .comments li .comment-content form > span:first-of-type {
+              margin-right: 5; }
+            /* line 278, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content form > button:hover, .post .post-bottom .comments li .comment-content form > span:hover {
+              cursor: pointer; }
+            /* line 281, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content form > button svg, .post .post-bottom .comments li .comment-content form > span svg {
+              margin: 0;
+              height: 20px;
+              width: 20px; }
+          /* line 287, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content form .delete-comment-popup {
+            display: flex;
+            flex-direction: column; }
+            /* line 290, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content form .delete-comment-popup span {
+              transition: 0.4s;
+              border: solid 1px #1168d8;
+              background-color: white;
+              color: #1168d8;
+              border-radius: 5px;
+              margin: 5px 0;
+              padding: 10px 16px;
+              text-align: center;
+              font-weight: bold;
+              text-transform: uppercase;
+              white-space: nowrap;
+              text-decoration: none;
+              cursor: pointer; }
+              /* line 304, static/scss/post.scss */
+              .post .post-bottom .comments li .comment-content form .delete-comment-popup span:hover {
+                transition: 0.4s;
+                filter: brightness(1.1); }
+          /* line 310, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content form .show-delete-comment-popup {
+            display: flex; }
+    /* line 316, static/scss/post.scss */
+    .post .post-bottom .comments .all-comments-toggle {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1167d817;
+      padding: 10px;
+      transition: background-color 0.4s; }
+      /* line 324, static/scss/post.scss */
+      .post .post-bottom .comments .all-comments-toggle:hover {
+        transition: background-color 0.4s;
+        background-color: #1167d830;
+        cursor: pointer; }
+    /* line 330, static/scss/post.scss */
+    .post .post-bottom .comments .hidden {
+      display: none; }
+  /* line 334, static/scss/post.scss */
+  .post .post-bottom .comments-toggled {
+    display: block; }
+
+/* line 340, static/scss/post.scss */
+.splide__pagination {
+  display: none; }
+
+/* line 344, static/scss/post.scss */
+.splide__list, .splide__slide {
+  width: initial !important; }

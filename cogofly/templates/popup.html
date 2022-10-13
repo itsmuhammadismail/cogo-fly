@@ -1,0 +1,24 @@
+{% load i18n %}
+{% load static %}
+{% load svg %}
+{% load compress %}
+
+{% compress css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/popup.scss' %}">
+{% endcompress %}
+
+<button type='button' title="{{ text }}" onclick="$(this).next().toggleClass('open')">{% if icon %}{% svg icon %}{% else %}{{ text }}{% endif %}</button>
+<div class="popup" {% if show_form == action %}style="display: unset"{% endif %} >
+    <div class="popup-content">
+        <span class="popup-title">{{ text }}</span>
+        <form method="POST"{% if url %} action="{{ url }}"{% endif %}>
+            {% csrf_token %}
+            {% if form %}
+            {{ form }}
+            {% else %}
+            <button type="submit" name={{ action }}>{{ text }}</button>
+            {% endif %}
+            <button type="button" onclick="$(this).parent().parent().parent().toggleClass('open')">{% trans 'Cancel' %}</button>                                   
+        </form>    
+    </div>
+</div>  

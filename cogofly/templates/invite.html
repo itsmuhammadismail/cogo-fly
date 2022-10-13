@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/invite.scss' %}">
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/invite.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+<div class="content">
+    <section>
+        <h2>{% trans "Invite your friends to join CoGoFly !" %}</h2>
+        <p>{% trans "How would you like to send your invitations?" %}</p>
+        <ul>
+            <li class="email-toggle" onclick="showEmailInvite()">
+                <button>
+                    {% svg 'icons/mail' %}{% trans "Mail" %}
+                </button>
+            </li>
+            <li class="facebook-toggle">
+                <button>
+                    <a target="_blank" rel="noopener noreferrer"  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcogofly.com%2Fen%2F&amp;src=sdkpreparse">{% svg 'social/facebook' %}{% trans "Facebook" %}</a>
+                </button>
+            </li>
+            <li class="linkedin-toggle">
+                <button>
+                    <a target="_blank" rel="noopener noreferrer"  href="https://www.linkedin.com/sharing/share-offsite/?url=https://cogofly.com/">{% svg 'social/linkedin' %}{% trans "LinkedIn" %}</a>  
+                </button>
+            </li>
+        </ul> 
+
+        <div id="email-invite" class="email-invite">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <button>{% trans "Send invitation" %}</button>
+            </form>
+        </div>
+        <a href="/home" id="cancel"><button class="cancel-button">{% trans "Cancel" %}</button></a>
+    </section>
+</div>    
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}
+

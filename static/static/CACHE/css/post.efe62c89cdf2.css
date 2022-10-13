@@ -1,0 +1,454 @@
+/* line 1, static/scss/post.scss */
+.post {
+  margin-top: 20px;
+  padding: 0;
+  position: relative; }
+  /* line 5, static/scss/post.scss */
+  .post .post-top {
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px rgba(192, 191, 191, 0.5); }
+    /* line 9, static/scss/post.scss */
+    .post .post-top .poster-info {
+      width: 100%; }
+      /* line 12, static/scss/post.scss */
+      .post .post-top .poster-info p:first-of-type {
+        margin-bottom: 0; }
+      /* line 15, static/scss/post.scss */
+      .post .post-top .poster-info p:nth-of-type(2) {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        max-width: 85%; }
+        /* line 21, static/scss/post.scss */
+        .post .post-top .poster-info p:nth-of-type(2) > * {
+          margin: 0 5; }
+        /* line 24, static/scss/post.scss */
+        .post .post-top .poster-info p:nth-of-type(2) svg {
+          width: 20px; }
+        /* line 27, static/scss/post.scss */
+        .post .post-top .poster-info p:nth-of-type(2) strong {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden; }
+      /* line 34, static/scss/post.scss */
+      .post .post-top .poster-info .delete-post {
+        position: absolute;
+        top: 20px;
+        right: 10px; }
+        /* line 38, static/scss/post.scss */
+        .post .post-top .poster-info .delete-post > button {
+          border: none;
+          margin: 0;
+          padding: 0; }
+          /* line 42, static/scss/post.scss */
+          .post .post-top .poster-info .delete-post > button svg {
+            width: 30px;
+            height: 30px; }
+  /* line 51, static/scss/post.scss */
+  .post .delete-post-form {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    height: max-content;
+    width: max-content;
+    z-index: 100;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    /* line 67, static/scss/post.scss */
+    .post .delete-post-form button {
+      padding: 10 16;
+      margin: 0;
+      color: red;
+      border-color: red; }
+    /* line 73, static/scss/post.scss */
+    .post .delete-post-form span {
+      width: 89%;
+      transition: 0.4s;
+      border: solid 1px #1168d8;
+      background-color: white;
+      color: #1168d8;
+      border-radius: 5px;
+      margin: 5px 0;
+      padding: 10px 16px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer; }
+      /* line 88, static/scss/post.scss */
+      .post .delete-post-form span:hover {
+        transition: 0.4s;
+        filter: brightness(1.1); }
+  /* line 94, static/scss/post.scss */
+  .post .show-delete-post-form {
+    display: flex; }
+  /* line 99, static/scss/post.scss */
+  .post .profile-picture {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    object-fit: cover; }
+  /* line 108, static/scss/post.scss */
+  .post .post-content > p {
+    padding: 0 20px;
+    overflow-wrap: anywhere; }
+  /* line 112, static/scss/post.scss */
+  .post .post-content hr {
+    margin: 10px; }
+  /* line 115, static/scss/post.scss */
+  .post .post-content .card, .post .post-content .simple-card {
+    margin: auto; }
+  /* line 118, static/scss/post.scss */
+  .post .post-content .post-stats {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    /* line 122, static/scss/post.scss */
+    .post .post-content .post-stats > p {
+      color: grey;
+      font-size: 12px;
+      margin: 0;
+      padding: 0 10px 0 0; }
+    /* line 128, static/scss/post.scss */
+    .post .post-content .post-stats span {
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      border-bottom: solid 1px transparent; }
+      /* line 135, static/scss/post.scss */
+      .post .post-content .post-stats span:first-of-type {
+        color: #f30051; }
+      /* line 138, static/scss/post.scss */
+      .post .post-content .post-stats span:last-of-type {
+        color: #1fbf66; }
+        /* line 140, static/scss/post.scss */
+        .post .post-content .post-stats span:last-of-type:hover {
+          cursor: pointer;
+          border-bottom: solid 1px #1fbf66; }
+      /* line 145, static/scss/post.scss */
+      .post .post-content .post-stats span svg {
+        height: 15px;
+        width: 15px;
+        margin-left: 2px; }
+  /* line 152, static/scss/post.scss */
+  .post .post-content .shared-post {
+    margin: 10 15 15 15;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+    /* line 157, static/scss/post.scss */
+    .post .post-content .shared-post .shared-post-user {
+      display: flex;
+      align-items: center;
+      border-bottom: solid 1px rgba(192, 191, 191, 0.5); }
+      /* line 161, static/scss/post.scss */
+      .post .post-content .shared-post .shared-post-user .profile-picture {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        margin: 10px;
+        object-fit: cover; }
+      /* line 170, static/scss/post.scss */
+      .post .post-content .shared-post .shared-post-user .shared-post-user-info p:first-of-type {
+        margin-bottom: 0; }
+      /* line 173, static/scss/post.scss */
+      .post .post-content .shared-post .shared-post-user .shared-post-user-info p:nth-of-type(2) {
+        margin-top: 0;
+        color: grey;
+        font-size: 12px; }
+    /* line 182, static/scss/post.scss */
+    .post .post-content .shared-post .shared-post-text {
+      padding: 0 20;
+      overflow-wrap: anywhere; }
+    /* line 186, static/scss/post.scss */
+    .post .post-content .shared-post > a {
+      margin: 5 10px;
+      text-decoration: none;
+      color: #1168d8;
+      display: flex;
+      justify-content: flex-end; }
+  /* line 197, static/scss/post.scss */
+  .post .post-bottom hr {
+    margin: 5px 10px; }
+  /* line 200, static/scss/post.scss */
+  .post .post-bottom .post-bottom-like-share {
+    display: flex;
+    /*justify-content: left;*/
+    align-items: center;
+    padding: 5px 0; }
+    /* line 205, static/scss/post.scss */
+    .post .post-bottom .post-bottom-like-share > form, .post .post-bottom .post-bottom-like-share > span, .post .post-bottom .post-bottom-like-share > button {
+      width: 100%; }
+    /* line 208, static/scss/post.scss */
+    .post .post-bottom .post-bottom-like-share > form {
+      margin: 0 20px 0 0; }
+      /* line 210, static/scss/post.scss */
+      .post .post-bottom .post-bottom-like-share > form button {
+        width: 100%;
+        color: black;
+        font-weight: normal;
+        text-transform: none;
+        font-size: 15px;
+        border: solid 1px transparent;
+        border-radius: 10px;
+        background-color: rgba(192, 191, 191, 0.2);
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+        transition: 0.4s; }
+        /* line 225, static/scss/post.scss */
+        .post .post-bottom .post-bottom-like-share > form button:hover {
+          cursor: pointer;
+          background-color: rgba(192, 191, 191, 0.5);
+          transition: 0.4s; }
+        /* line 230, static/scss/post.scss */
+        .post .post-bottom .post-bottom-like-share > form button svg {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px; }
+    /* line 237, static/scss/post.scss */
+    .post .post-bottom .post-bottom-like-share > span,
+    .post .post-bottom .post-bottom-like-share > button {
+      color: black;
+      font-weight: normal;
+      text-transform: none;
+      font-size: 15px;
+      border: solid 1px transparent;
+      border-radius: 10px;
+      background-color: rgba(192, 191, 191, 0.2);
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 10px;
+      transition: 0.4s; }
+      /* line 252, static/scss/post.scss */
+      .post .post-bottom .post-bottom-like-share > span:hover,
+      .post .post-bottom .post-bottom-like-share > button:hover {
+        cursor: pointer;
+        background-color: rgba(192, 191, 191, 0.5);
+        transition: 0.4s; }
+      /* line 257, static/scss/post.scss */
+      .post .post-bottom .post-bottom-like-share > span svg,
+      .post .post-bottom .post-bottom-like-share > button svg {
+        width: 20px;
+        height: 20px; }
+    /* line 263, static/scss/post.scss */
+    .post .post-bottom .post-bottom-like-share > span svg {
+      margin-right: 10px; }
+  /* line 269, static/scss/post.scss */
+  .post .post-bottom .comments {
+    display: none;
+    padding: 0;
+    margin-top: 0; }
+    /* line 273, static/scss/post.scss */
+    .post .post-bottom .comments hr {
+      margin: 5px 10px; }
+    /* line 276, static/scss/post.scss */
+    .post .post-bottom .comments form {
+      margin: 0px;
+      display: flex;
+      align-items: center; }
+      /* line 280, static/scss/post.scss */
+      .post .post-bottom .comments form textarea {
+        margin: 10px 0;
+        padding: 10px;
+        width: calc(100% - 20px);
+        border: solid 1px #aaa !important;
+        height: 40px; }
+      /* line 287, static/scss/post.scss */
+      .post .post-bottom .comments form > button {
+        height: 40px;
+        margin: 5px; }
+    /* line 292, static/scss/post.scss */
+    .post .post-bottom .comments li {
+      list-style: none;
+      margin: 0 0 0 10px;
+      display: flex;
+      overflow-wrap: anywhere; }
+      /* line 297, static/scss/post.scss */
+      .post .post-bottom .comments li img {
+        margin: 5 10 10 0; }
+      /* line 300, static/scss/post.scss */
+      .post .post-bottom .comments li .comment-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column; }
+        /* line 304, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content > div {
+          width: 100%; }
+        /* line 307, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content p {
+          margin: 5 10 5 0; }
+          /* line 309, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content p:first-of-type {
+            margin-bottom: 0; }
+          /* line 312, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content p:nth-of-type(2) {
+            margin-top: 0;
+            font-size: 12px;
+            color: grey; }
+        /* line 318, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content > form {
+          width: min-content;
+          display: flex; }
+          /* line 321, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content > form > button, .post .post-bottom .comments li .comment-content > form > span {
+            padding: 0;
+            margin: 0;
+            background: none;
+            height: min-content;
+            border: none; }
+            /* line 327, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form > button:first-of-type, .post .post-bottom .comments li .comment-content > form > span:first-of-type {
+              margin-right: 5; }
+            /* line 330, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form > button:hover, .post .post-bottom .comments li .comment-content > form > span:hover {
+              cursor: pointer; }
+            /* line 333, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form > button svg, .post .post-bottom .comments li .comment-content > form > span svg {
+              margin: 0;
+              height: 20px;
+              width: 20px; }
+          /* line 339, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content > form .delete-comment-popup {
+            display: none; }
+            /* line 341, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form .delete-comment-popup > * {
+              font-size: 10px;
+              margin: 0; }
+            /* line 345, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form .delete-comment-popup button {
+              color: red;
+              border-color: red;
+              margin-right: 5px;
+              padding: 3 5; }
+              /* line 350, static/scss/post.scss */
+              .post .post-bottom .comments li .comment-content > form .delete-comment-popup button.if-mobile {
+                display: none; }
+            /* line 354, static/scss/post.scss */
+            .post .post-bottom .comments li .comment-content > form .delete-comment-popup span {
+              transition: 0.4s;
+              border: solid 1px #1168d8;
+              background-color: white;
+              color: #1168d8;
+              border-radius: 5px;
+              padding: 3 5;
+              text-align: center;
+              font-weight: bold;
+              text-transform: uppercase;
+              white-space: nowrap;
+              text-decoration: none;
+              cursor: pointer; }
+              /* line 367, static/scss/post.scss */
+              .post .post-bottom .comments li .comment-content > form .delete-comment-popup span:hover {
+                transition: 0.4s;
+                filter: brightness(1.1); }
+          /* line 373, static/scss/post.scss */
+          .post .post-bottom .comments li .comment-content > form .show-delete-comment-popup {
+            display: flex; }
+    /* line 379, static/scss/post.scss */
+    .post .post-bottom .comments .all-comments-toggle {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1167d817;
+      padding: 10px;
+      transition: background-color 0.4s; }
+      /* line 387, static/scss/post.scss */
+      .post .post-bottom .comments .all-comments-toggle:hover {
+        transition: background-color 0.4s;
+        background-color: #1167d830;
+        cursor: pointer; }
+    /* line 393, static/scss/post.scss */
+    .post .post-bottom .comments .hidden {
+      display: none; }
+  /* line 397, static/scss/post.scss */
+  .post .post-bottom .comments-toggled {
+    display: block; }
+
+/* line 404, static/scss/post.scss */
+.carousel {
+  margin: 10px; }
+  /* line 406, static/scss/post.scss */
+  .carousel .splide__arrows {
+    /*
+		.splide__arrow--prev{
+			left: 2em;
+		}
+		.splide__arrow--next{
+			right: 2em;
+		}*/ }
+    /* line 407, static/scss/post.scss */
+    .carousel .splide__arrows > * {
+      top: 55%; }
+  /* line 419, static/scss/post.scss */
+  .carousel .splide__track .splide__list .splide__slide {
+    height: 300px !important; }
+  /* line 425, static/scss/post.scss */
+  .carousel.hide-arrows .splide__arrows {
+    display: none; }
+
+/* line 430, static/scss/post.scss */
+.splide__pagination {
+  display: none; }
+
+/*
+.splide__list, .splide__slide{
+	width: initial !important;
+}*/
+/* line 438, static/scss/post.scss */
+.splide__slide {
+  height: 500px;
+  width: 33%; }
+
+/* line 446, static/scss/post.scss */
+.popup .popup-content form textarea {
+  margin: 10 0 0 0; }
+
+/* line 450, static/scss/post.scss */
+.popup .popup-content form input:last-of-type {
+  margin-top: 18px; }
+
+@media all and (max-width: 525px) {
+  /* line 461, static/scss/post.scss */
+  .post .post-top .poster-info {
+    width: 70%; }
+    /* line 463, static/scss/post.scss */
+    .post .post-top .poster-info svg {
+      width: 80px; }
+  /* line 472, static/scss/post.scss */
+  .post .post-bottom .comments li .comment-content > form {
+    width: 100%; }
+    /* line 474, static/scss/post.scss */
+    .post .post-bottom .comments li .comment-content > form .delete-comment-popup {
+      width: 100%;
+      flex-direction: column; }
+      /* line 477, static/scss/post.scss */
+      .post .post-bottom .comments li .comment-content > form .delete-comment-popup button {
+        margin: 0 2.5 2.5 0; }
+        /* line 479, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content > form .delete-comment-popup button.if-desktop {
+          display: none; }
+        /* line 482, static/scss/post.scss */
+        .post .post-bottom .comments li .comment-content > form .delete-comment-popup button.if-mobile {
+          display: block; }
+      /* line 486, static/scss/post.scss */
+      .post .post-bottom .comments li .comment-content > form .delete-comment-popup span {
+        margin: 2.5 2.5 0 0; } }

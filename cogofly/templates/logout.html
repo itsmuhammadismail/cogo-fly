@@ -1,0 +1,19 @@
+{% extends "base_auth.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block title%}{% trans 'Logout' %}{% endblock %}
+
+{% block main_panel %}
+
+<div class="login logout">
+    <div class="signup-form">
+        <h2>{% trans 'Logout' %}</h2> 
+        <p>{% trans 'Thank you for visiting' %}</p>
+        <a href="{% url 'login' %}">{% trans 'Login with another account' %}</a>
+        <a href="{% url 'landing' %}">{% trans 'Go back to main page' %}</a>
+    </div>
+</div>
+
+{% endblock %}

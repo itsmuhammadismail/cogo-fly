@@ -1,0 +1,55 @@
+@import "base";
+@import "header";
+
+body > section {
+	max-width: 75%;
+	background: none;
+	box-shadow: none;
+	margin: auto;
+	padding: 0;
+	p {
+		text-align: justify;
+	}
+}
+
+.terms-and-conditions-introduction {
+	margin-top: 50px;
+	.introduction-content {
+		h1 {
+			font-size: 40px;
+		}
+		#mail-popup{
+			display: none;
+			position: absolute;
+			right: 0;
+			width: max-content;
+			padding: 20px;
+			border-radius: 5px;
+			background-color: white;
+			box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+		}
+		.mail-link{
+			color: #1168d8;
+			position: relative;
+			&:hover{
+				cursor: pointer;
+				#mail-popup{
+					display: block;
+					color: black;
+					&:hover{
+						cursor: default;
+					}
+				}
+			}
+		}
+	}
+	a {
+		text-decoration: none;
+		color: #1168d8;
+	}
+}
+@media all and (max-width: 800px){
+	body > section{
+		max-width: 95%;
+	}
+}

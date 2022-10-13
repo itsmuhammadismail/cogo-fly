@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/profile.scss' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/simple-card.scss' %}">
+{% endblock %}
+
+{% block js %}
+    {{ form.media }}
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+        appId            : '600914307472316',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v9.0'
+        });
+    };
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+{% endblock %}
+
+{% block body %}
+{% include 'header.html' %}
+{% if profile_user == request.user %}
+<div class="profile-view">
+    {% if request.GET.as == 'friend' %}
+        {% trans "You are seeing your profile as a friend." %} <a href="{% url 'profile' request.user.id %}">{% trans "See as everyone" %}</a>
+    {% else %}
+        {% trans "You are seeing your profile as everyone." %} <a href="{% url 'profile' request.user.id %}?as=friend">{% trans "See as a friend" %}</a>
+    {% endif %}
+</div>
+{% endif %}
+<div class="profile">
+    <section class="profile-top">
+        <a href="{% url 'change-profile-photos' %}"><img src="{% if profile_user.profile.cover %}{{ profile_user.profile.cover.url }}{% else %}{% static 'img/default-cover.jpeg' %}{% endif %}" class="banner"></a>
+        <div class="profile-pic-bg">
+            <a href="{% url 'change-profile-photo' %}"><img src="{% if profile_user.profile.picture %}{{ profile_user.profile.picture.url }}{% else %}{% static 'img/default-profile.png' %}{% endif %}" alt="" class="profile-picture"></a>
+        </div>
+        <p>{{ profile_user.first_name }} {{ profile_user.last_name }}</p>
+        <div class="profile-actions">
+            <form class="like-fav" method="POST">
+                {% csrf_token %}
+                {% if profile_user.is_liked %}
+                <button type="submit" title="{% trans 'Unlike' %}" name="unlike">{% svg 'icons/like' %}</button>
+                {% else %}
+                <button title="{% trans 'Like' %}" type="submit" name="like">{% svg 'icons/like-white' %}</button>
+                {% endif %}
+                {% if profile_user.is_favorite %}
+                <button title="{% trans 'Remove from favorites' %}" type="submit" name="unfav">{% svg 'icons/star' %}</button>
+                {% else %}
+                <button title="{% trans 'Add to favorites' %}" type="submit" name="fav">{% svg 'icons/star-white' %}</button>
+                {% endif %}
+                {% if profile_user != request.user %}
+                <button title="{% trans "Send message" %}" type="submit" name="sendmessage">{% svg 'icons/write' %}</button>
+                {% endif %}
+            </form>       
+            {% if profile_user == request.user %}
+                <a class="button" href={% url 'profile_edit' %} title="{% trans "Modify your profile" %}"><button>{% svg 'icons/edit' %}</button></a>
+            {% else %}
+                {% if action == 'removecontact' %}
+                {% include 'popup.html' with icon=_('icons/delete') text=_('Remove contact')%}
+                {% elif action == 'answerrequest' %}
+                {% include 'popup.html' with icon=_('icons/answer-request') %}
+                {% elif action == 'cancelrequest' %}
+                {% include 'popup.html' with icon=_('icons/cancel-request') %}
+                {% elif action == 'sendrequest' %}
+                {% include 'popup.html' with icon=_('icons/add') %}
+                {% endif %}
+            {% endif %}
+            {% include 'popup.html' with icon='icons/next' action='share' form=shareform text=_('Share profile') url=profile_user.get_absolute_url %}
+        </div>
+    </section>
+
+    <section class="about-me">
+        <div class="practical-info">
+            <h2>{% trans 'About' %} {{ profile_user.first_name }}</h2>
+            <p><strong>{% trans 'Member since' %}</strong> {{ profile_user.date_joined|date:'SHORT_DATE_FORMAT' }}</p>
+            <p class="flag">
+                <strong>{% trans 'Lives in' %}</strong>
+                {{ profile_user.profile.place }} 
+                {% if profile_user.profile.place.country.code2 %}
+                {% svg 'flags/'|add:profile_user.profile.place.country.code2|lower %}
+                {% endif %}
+             </p>
+            <p class="sex">{{ profile_user.profile.get_sex_display }}{% if profile_user.profile.sex %}{% svg 'icons/male' %}{% else %}{% svg 'icons/female' %}{% endif %}</p>
+            <p><strong>{% trans "Age" %}</strong> : {{ profile_user.profile.age }}
+
+            {% if profile_user.profile.birthplace %}
+            {% if profile_user.privacy.birthplace == 2 or profile_user.privacy.birthplace == 1 and is_friend %}
+            <p class="flag">
+            <strong>{% trans 'From' %}</strong>
+             {{ profile_user.profile.birthplace }} 
+             {% if profile_user.profile.birthplace.country.code2 %}
+             {% svg 'flags/'|add:profile_user.profile.birthplace.country.code2|lower %}</p>
+             {% endif %}
+            {% endif %}{% endif %}
+
+            {% if profile_user.profile.nationality %}
+            {% if profile_user.privacy.nationality == 2 or profile_user.privacy.nationality == 1 and is_friend %}
+            <p><strong>{% trans 'Nationality' %}</strong> : {{ profile_user.profile.nationality }}</p>
+            {% endif %}{% endif %}
+
+            {% if profile_user.profile.mothertongue %}
+            {% if profile_user.privacy.mothertongue == 2 or profile_user.privacy.mothertongue == 1 and is_friend %}
+            <p><strong>{% trans 'Mother tongue' %}</strong> : {{ profile_user.profile.get_mothertongue_display }}</p>
+            {% endif %}{% endif %}
+
+            {% if profile_user.profile.languages %}
+            {% if profile_user.privacy.languages == 2 or profile_user.privacy.languages == 1 and is_friend %}
+            <p><strong>{% trans 'Spoken languages' %}</strong> : {{ profile_user.profile.get_languages_display }}</p>
+            {% endif %}{% endif %}
+            
+            <hr>
+
+            {% if profile_user.privacy.zodiac == 2 or profile_user.privacy.zodiac == 1 and is_friend %}
+            <p><strong>{% trans "Star sign" %}</strong> : {{ profile_user.profile.zodiac }}
+            {% endif %}
+
+            {% if profile_user.profile.children is not None %}
+            {% if profile_user.privacy.children == 2 or profile_user.privacy.children == 1 and is_friend %}
+            <p><strong>{% trans 'Number of children' %}</strong> : {{ profile_user.profile.children }}</p>
+            {% endif %}{% endif %}
+
+            {% if profile_user.profile.personalities %}
+            {% if profile_user.privacy.personalities == 2 or profile_user.privacy.personalities == 1 and is_friend %}
+            <p><strong>{% trans 'Personalities' %}</strong> : {{ profile_user.profile.personalities }}</p>
+            {% endif %}{% endif %}
+
+            {% if profile_user.profile.hobbies %}
+            {% if profile_user.privacy.hobbies == 2 or profile_user.privacy.hobbies == 1 and is_friend %}
+            <p><strong>{% trans 'Hobbies' %}</strong> : {{ profile_user.profile.hobbies }}</p>
+            {% endif %}{% endif %}
+
+            {% if profile_user.profile.licenses %}
+            {% if profile_user.privacy.licenses == 2 or profile_user.privacy.licenses == 1 and is_friend %}
+            <p><strong>{% trans 'Licences' %}</strong> : {{ profile_user.profile.licenses }}</p>
+            {% endif %}{% endif %}
+
+            {% if profile_user.privacy.smoker == 2 or profile_user.privacy.smoker == 1 and is_friend %}
+            <p><strong>{% trans 'Smoker' %}</strong> : {% if profile_user.profile.smoker is not None %}{{ profile_user.profile.smoker|yesno:_('Oui,Non') }}{% else %}{% trans "Not specified" %}{% endif %}</p>
+            {% endif %}
+
+            {% if profile_user.profile.level is not None %}
+            {% if profile_user.privacy.level == 2 or profile_user.privacy.level == 1 and is_friend %}
+            <p><strong>{% trans 'Level of education' %}</strong> : {{ profile_user.profile.get_level_display }}</p>
+            {% endif %}{% endif %}
+
+            {% if profile_user.privacy.subjects == 2 or profile_user.privacy.subjects == 1 and is_friend %}
+            {% if profile_user.profile.subjects %}<p><strong>{% trans 'Subjects of study' %}</strong> : {{ profile_user.profile.subjects }}</p>
+            {% endif %}{% endif %}
+
+            <hr>
+
+            {% if profile_user.profile.sectors %}
+            {% if profile_user.privacy.sector == 2 or profile_user.privacy.sector == 1 and is_friend %}
+            <p><strong>{% trans 'Activty sectors' %}</strong> : {{ profile_user.profile.sectors }}</p>
+            {% endif %}{% endif %}
+
+            {% if profile_user.profile.job %}
+            {% if profile_user.privacy.job == 2 or profile_user.privacy.job == 1 and is_friend %}
+            <p><strong>{% trans 'Job' %}</strong> : {{ profile_user.profile.get_job_display }}</p>
+            {% endif %}{% endif %}
+
+            {% if profile_user.profile.current %}
+            {% if profile_user.privacy.current == 2 or profile_user.privacy.current == 1 and is_friend %}
+            <p><strong>{% trans 'Current employer' %}</strong> : {{ profile_user.profile.get_current_display }}</p>
+            {% endif %}{% endif %}
+
+            {% if profile_user.profile.previous %}
+            {% if profile_user.privacy.previous == 2 or profile_user.privacy.previous == 1 and is_friend %}
+            <p><strong>{% trans 'Previous employer' %}</strong> : {{ profile_user.profile.get_previous_display }}</p>
+            {% endif %}{% endif %}
+
+        </div>
+
+        {% if profile_user.profile.about %}
+        {% if profile_user.privacy.about == 2 or profile_user.privacy.about == 1 and is_friend %}
+        <div class="description">
+            <span>{% svg "icons/left-quote" %}</span>
+            <p>{{ profile_user.profile.about }}</p>
+            <span>{% svg "icons/left-quote" %}</span>
+        </div>
+        {% endif %}{% endif %}
+
+    </section>
+
+    <section class="album">
+        <h2>{% trans 'Album' %}</h2>
+        <div class="album-pictures">
+            {% if profile_user.privacy.album == 2 or profile_user.privacy.album == 1 and is_friend %}
+                {% for picture in profile_user.profile.album.all %}
+                <img src="{{ picture.picture.url }}">
+                {% empty %}
+                <p>{% trans "No pictures." %}</p>
+                <script>
+                $(".album-pictures").css('display', 'block')
+                </script>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="future-trips">
+        <h2>{% trans 'Future trips' %}</h2>
+        <ul>
+            {% for trip in profile_user.trips.future %}
+            {% include 'trip-card.html' %}
+            {% empty %}
+            <p>{% trans "No trips" %}</p>
+            {% endfor %}        
+        </ul>
+    </section>
+
+    <section class="past-trips">
+        <h2>{% trans 'Past trips' %}</h2>
+        <ul>
+            {% for trip in profile_user.trips.past %}
+            {% include 'trip-card.html' %}
+            {% empty %}
+            <p>{% trans "No trips" %}</p>
+            
+            {% endfor %}        
+        </ul>
+    </section>    
+
+    <section class="contacts">
+        <h2>{% trans 'Contacts' %}</h2>
+        <div class="contacts-container">
+            {% for contact in profile_user.contacts.all %}
+            {% include 'simple-card.html' %}
+            {% empty %}
+            <p>{% trans "No contacts" %}</p>
+            {% endfor %}        
+        </div>
+    </section>
+
+</div>
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

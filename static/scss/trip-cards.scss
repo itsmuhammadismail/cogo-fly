@@ -1,0 +1,101 @@
+@import "card-pages";
+
+.cards-content {
+	.card-section {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		height: min-content;
+		width: 1220px;
+		max-width: 1220px;
+		box-sizing: border-box;
+		min-height: 194px;
+		.card {
+			margin: 10px 10px 0;
+		}
+		.card-and-actions {
+			.card-actions {
+				display: flex;
+				width: 380px;
+				margin: 0 10;
+				button {
+					padding: 6px 10px;
+					margin-right: 5px;
+					display: flex;
+					justify-content: center;
+					width: 100%;
+					svg {
+						width: 15px;
+						height: 15px;
+						margin-right: 5px;
+					}
+				}
+				a {
+					text-decoration: none;
+					width: 100%;
+					margin-right: 5px;
+				}
+				.delete-form{
+					width: 100%;
+					position: relative;
+					form{
+						display: none;
+						position: absolute;
+						top: -165;
+						right: 15;
+						height: max-content;
+						width: max-content;
+						z-index: 100;
+						padding: 20px;
+						border-radius: 5px;
+						background-color: white;
+						box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+						button{
+							padding: 10 16;
+							margin: 0;
+						}
+						}
+						span{
+							width: 89%;
+							transition: 0.4s;
+							border: solid 1px #1168d8;
+							background-color: white;
+							color: #1168d8;
+							border-radius: 5px;
+							margin: 5px 0;
+							padding: 10px 16px;
+							text-align: center;
+							font-weight: bold;
+							text-transform: uppercase;
+							white-space: nowrap;
+							text-decoration: none;
+							cursor: pointer;
+							&:hover {
+								transition: 0.4s;
+								filter: brightness(1.1);
+							}
+						}
+					.show-delete-form{
+						display: flex;
+					}
+				}				
+				form {
+					margin: 0 0 0 5;
+					width: 100%;
+				}
+				.delete {
+					color: red;
+					border-color: red;
+				}
+			}
+		}
+	}
+	.map-section {
+		height: initial;
+		min-width: 50%;
+	}
+}
+

@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load static %}
+{% load svg %}
+{% load i18n %}
+{% load compress %}
+
+{% block title%}Sign up{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/signup-next.scss' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/header.scss' %}">
+{% endblock %}
+
+{% block js %}
+    <script defer type="text/javascript" src="{% static 'js/signup-next.js' %}"></script>
+    {{ profileform.media }}
+{% endblock %}
+
+{% block body %}
+
+<header>
+    <nav>
+        <h1 class="logo"><a href="/home"><img src="{% static 'img/logo-CoGoFly-blanc.png' %}" alt="CoGoFly"/></a></h1>
+        <ul class="nav-links">
+            <li>
+                <a href="#">
+                    {% svg 'icons/question-mark-filled' %}
+                    <p>{% trans 'How it works?' %}</p>                
+                </a>
+            </li>        
+            <li>
+                <a href="{% url 'search' %}"><button>{% trans "Search" %}</button></a>
+            </li>        
+            <li>
+                <a href="{% url 'trip_add' %}"><button>{% trans "Add Trip" %}</button></a>
+            </li>                   
+            <li>
+                <a href="/logout">
+                    {% svg 'icons/logout-filled' %}
+                </a>
+            </li>
+        </ul>
+    </nav>    
+</header> 
+
+<div class="pusher"></div>
+
+<section class="signup-forms">
+    <h1>{% trans 'Complete your account' %}</h1>
+    <div class="progressbar-container">
+        <ul class="progressbar">
+            <li id="practical-progress" class="active"></li>
+            <li id="optional-progress"></li>
+            <li id="picture-progress"></li>
+        </ul>
+    </div>   
+    <form method="POST" id="form" enctype="multipart/form-data">
+        {{ nameform.non_field_errors }}
+        {% csrf_token %} 
+        <div class='moving'>
+            <div id='practical' class='visible'>
+            
+                <div class="name">
+                    <div class="first-name">
+                        {{ nameform.first_name.errors }}
+                        {{ nameform.first_name.label_tag }}
+                        {{ nameform.first_name }}                    
+                    </div>
+                    <div class="last-name">
+                        {{ nameform.last_name.errors }}
+                        {{ nameform.last_name.label_tag }}
+                        {{ nameform.last_name }}                    
+                    </div>
+                </div>
+                {{ profileform.sex.errors }}
+                {{ profileform.sex.label_tag }}
+                {{ profileform.sex }}
+
+                {{ profileform.birthdate.errors }}
+                {{ profileform.birthdate.label_tag }}
+                {{ profileform.birthdate }}
+
+                <!-- Ne s'affiche pas comme un select avec le style de required -->
+                {{ profileform.place.errors }}
+                {{ profileform.place.label_tag }}
+                {{ profileform.place }}
+            </div>
+            <div id='optional'>
+                {{ profileform.birthplacee.errors }}
+                {{ profileform.birthplace.label_tag }}
+                {{ profileform.birthplace }}
+
+                {{ profileform.nationality.errors }}
+                {{ profileform.nationality.label_tag }}
+                {{ profileform.nationality }}
+
+                {{ profileform.mothertongue.errors }}
+                {{ profileform.mothertongue.label_tag }}
+                {{ profileform.mothertongue }}
+
+                {{ profileform.how.errors }}
+                {{ profileform.how.label_tag }}
+                {{ profileform.how }}
+            </div>
+            <div id='picture'>
+                {{ profileform.picture }}
+            </div>
+        </div>
+    </form>    
+    <div class="nav-buttons">
+        <button class='back'>{% trans 'Back' %}</button>
+        <button class='next'>{% trans 'Next' %}</button>
+        <button type='submit' form='form' class='save'>{% trans 'Save' %}</button>
+    </div>
+</section>
+
+{% endblock %}

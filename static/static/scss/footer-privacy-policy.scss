@@ -1,0 +1,29 @@
+@import "base";
+@import "header";
+
+body > section {
+	max-width: 75%;
+	background: none;
+	box-shadow: none;
+	margin: auto;
+	padding: 0;
+	p {
+		text-align: justify;
+	}
+}
+
+.privacy-policy-introduction {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+	.introduction-content {
+		h1 {
+			font-size: 40px;
+		}
+	}
+}
+@media all and (max-width: 800px){
+	body > section{
+		max-width: 95%;
+	}
+}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block js %}
+    <script>
+    add_form = function() {
+        var form_idx = $('#id_cogofly-picture-content_type-object_id-TOTAL_FORMS').val();
+        const filled_forms = $('album_widget')
+        $('#form-set').append($('#empty_form').html().replace(/__prefix__/g, form_idx));
+        $('#id_cogofly-picture-content_type-object_id-TOTAL_FORMS').val(parseInt(form_idx) + 1);
+    };
+    </script>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/around-me.scss' %}">
+{% endblock %}
+
+{% block body %}
+{% include 'header.html' %}
+<section class='content'>
+    <div class='map'>{{ map|safe }}</div>
+</section>
+{% endblock %}

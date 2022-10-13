@@ -1,0 +1,47 @@
+@import "base";
+@import "header";
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+        font-size: 100px;
+        margin: 4 0;
+    }
+    svg{
+        width: 600px;
+        height: 400px;
+    }
+    p{
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+    }    
+}
+
+@media all and (max-width:1065px){
+    section{
+        h1{
+            margin: 13 0;
+        }
+    }
+}
+
+@media all and (max-width:700px){
+    section{
+        svg{
+            height: 260px;
+            width: auto;
+        }
+    }
+}
+
+@media all and (max-width:450px){
+    section{
+        svg{
+            height: 170px;
+        }
+    }
+}

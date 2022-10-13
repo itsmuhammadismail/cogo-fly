@@ -1,0 +1,1617 @@
+{% extends "base.html" %} {% load static %} {% load i18n %} {% load svg %} {%
+load compress %} {% block css %}
+<link
+  rel="stylesheet"
+  type="text/x-scss"
+  href="{% static 'scss/covid-19.scss' %}"
+/>
+{% endblock %} {% block js %}
+<script type="text/javascript" src="{% static 'js/covid-19.js' %}"></script>
+{% endblock %} {% block body %}
+<body id="page">
+  {% include "header.html" %}
+
+  <section class="introduction pt-[5rem]">
+    <div class="introduction-content">
+      <h1>{% trans "CoGoFly, CoVoyages & CoVid-19" %}</h1>
+      <p>
+        {% trans "Travelling alone, or cotravelling, is a question of
+        anticipation." %}
+      </p>
+      <p>
+        {% trans "All travels must be prepared and scheduling to travel alone,
+        or to co-travel, need time :" %}
+      </p>
+      <ul>
+        <li>
+          <p>
+            {% trans "Start your search of cotravellers and find members who
+            look like you." %}
+          </p>
+        </li>
+        <li>
+          <p>
+            {% trans "Préparer au mieux vos voyages en les ajoutant dès
+            maintenant. Take the opportunity to add your travels now. Some
+            travellers will be happy to join you." %}
+          </p>
+        </li>
+        <li>
+          <p>
+            {% trans "Learn about the cotravellers and leave without any doubt.
+            " %}
+          </p>
+        </li>
+      </ul>
+      <p>
+        {% trans "Travelling alone, or cotravelling, during that sanitary crisis
+        period is not forbidden." %}
+      </p>
+      <ul>
+        <li>
+          <p>
+            {% trans "Maybe, if your country is not under lock-down situation,
+            it’s the best moment to travel inside your own country ?" %}
+          </p>
+        </li>
+        <li>
+          <p>
+            {% trans "Who know it perfectly ? You might be surprised by the
+            beauty of the landscapes and the richness of the different
+            terroirs." %}
+          </p>
+        </li>
+        <li>
+          <p>
+            {% trans "The key is to remain cautious and to be well informed to
+            take the appropriate measures before moving." %}
+          </p>
+        </li>
+      </ul>
+      <h2>
+        {% trans "CoGoFly is ready to help you during that health’s crisis." %}
+      </h2>
+      <p>
+        {% trans "Your security is our priority. If you believe that the
+        coronavirus pandemic (COVID-19) may affect your travel plans, and
+        commuting, please review all of the restrictions and recommendations
+        below made by region of the world." %}
+      </p>
+    </div>
+  </section>
+
+  <section class="overview">
+    <h3>{% trans "Government travel restrictions and advisories" %}</h3>
+    <p>
+      {% trans "Please check for travel restrictions before booking an
+      accommodation, travelling alone, or with a group." %}
+    </p>
+    <p>
+      {% trans "Travel may be permitted only for certain purposes and in
+      particular, touristic travel may not be allowed." %}
+    </p>
+    <p>
+      {% trans "To help you on your way, we included publicly available links to
+      government websites for several countries around the world." %}
+    </p>
+    <p>{% trans "Please note that not all countries are covered below." %}</p>
+    <p>
+      {% trans "If a country is not included in this overview it doesn’t mean
+      that no travel restrictions are in place and we recommend that you seek
+      out information for any country you are planning to travel to." %}
+    </p>
+    <p>
+      {% trans "We are not responsible for the content of the public
+      (government) websites linked below." %}
+    </p>
+    <p>
+      {% trans "Government responses continue to evolve, so please check back
+      often for updates and rely on your national and local government for the
+      most current information." %}
+    </p>
+  </section>
+
+  <section class="travel-restrictions">
+    <div class="collapsible africa">
+      <div class="collapsible-header">
+        <p>{% trans "Africa" %}</p>
+        <span class="collapsible-toggle" onclick="toggleCollapsible(event)"
+          >{% svg "icons/upload" %}</span
+        >
+      </div>
+      <ul>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.sis.gov.eg/?lang=en-us"
+          >
+            {% svg "flags/eg" %} {% trans "Egypt" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://www.presidency.gov.gh/"
+          >
+            {% svg "flags/gh" %} {% trans "Ghana" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.president.go.ke/"
+          >
+            {% svg "flags/ke" %} {% trans "Kenya" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://govmu.org/EN/Pages/default.aspx"
+          >
+            {% svg "flags/mu" %} {% trans "Mauritius" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://www.pm.gov.tn/pm/content/index.php?lang=en"
+          >
+            {% svg "flags/tn" %} {% trans "Tunisia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.southafrica.net/gl/en/trade"
+          >
+            {% svg "flags/za" %} {% trans "South Africa" %}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapsible asia">
+      <div class="collapsible-header">
+        <p>{% trans "Asia-Pacific" %}</p>
+        <span class="collapsible-toggle" onclick="toggleCollapsible(event)"
+          >{% svg "icons/upload" %}</span
+        >
+      </div>
+      <ul>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.samoagovt.ws/"
+          >
+            {% svg "flags/ws" %} {% trans "American Samoa" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert/coronavirus-covid-19-restrictions/coronavirus-covid-19-advice-for-international-travellers?utm_source=health.gov.au&utm_medium=redirect&utm_campaign=digital_transformation&utm_content=coronavirus-covid-19-advice-for-international-travellers"
+          >
+            {% svg "flags/au" %} {% trans "Australia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://www.moh.gov.bn/Lists/CO_Announcements/NewDispForm.aspx?ID=133"
+          >
+            {% svg "flags/bn" %} {% trans "Brunei" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://www.mohca.gov.bt/"
+          >
+            {% svg "flags/bt" %} {% trans "Bhutan" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/mfaic.gov.kh"
+          >
+            {% svg "flags/kh" %} {% trans "Cambodia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.fmprc.gov.cn/mfa_eng/topics_665678/kjgzbdfyyq/"
+          >
+            {% svg "flags/cn" %} {% trans "People's Republic of China" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.presidence.pf/"
+          >
+            {% svg "flags/pf" %} {% trans "French Polynesia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.coronavirus.gov.hk/eng/inbound-travel.html"
+          >
+            {% svg "flags/hk" %} {% trans "Hong Kong" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.mha.gov.in/notifications/circulars-covid-19"
+          >
+            {% svg "flags/in" %} {% trans "India" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://kemlu.go.id/portal/id/page/72/covid-19%20update"
+          >
+            {% svg "flags/id" %} {% trans "Indonesia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.japan.travel/en/coronavirus/"
+          >
+            {% svg "flags/jp" %} {% trans "Japan" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://covid19.gov.la/index.php"
+          >
+            {% svg "flags/la" %} {% trans "Laos" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.ssm.gov.mo/apps1/PreventCOVID-19/en.aspx#clg17458"
+          >
+            {% svg "flags/mo" %} {% trans "Macau" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.pmo.gov.my/special-contents/2019-novel-coronavirus-2019-ncov/"
+          >
+            {% svg "flags/my" %} {% trans "Malaysia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.tourism.gov.mv/"
+          >
+            {% svg "flags/mv" %} {% trans "Maldives" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://tourism.gov.mm/covid-19/"
+          >
+            {% svg "flags/mm" %} {% trans "Myanmar" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://mofa.gov.np/"
+          >
+            {% svg "flags/np" %} {% trans "Nepal" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://gouv.nc/coronavirus"
+          >
+            {% svg "flags/nc" %} {% trans "New Caledonia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.immigration.govt.nz/about-us/covid-19/coronavirus-update-inz-response"
+          >
+            {% svg "flags/nz" %} {% trans "New Zealand" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://doh.gov.ph/"
+          >
+            {% svg "flags/ph" %} {% trans "Philippines" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://safetravel.ica.gov.sg/health"
+          >
+            {% svg "flags/sg" %} {% trans "Singapore" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://ncov.mohw.go.kr/en/baroView.do?brdId=11&brdGubun=111&dataGubun=&ncvContSeq=&contSeq=&board_id=&gubun"
+          >
+            {% svg "flags/kr" %} {% trans "South Korea" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://www.immigration.gov.lk/web/index.php?option=com_content&view=article&id=337&lang=en"
+          >
+            {% svg "flags/lk" %} {% trans "Sri Lanka" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.cdc.gov.tw/En"
+          >
+            {% svg "flags/tw" %} {% trans "Taiwan" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.mfa.go.th/main/en/home"
+          >
+            {% svg "flags/th" %} {% trans "Thailand" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://immigration.gov.vu/index.php/news-updates/covid-19-advisories"
+          >
+            {% svg "flags/vu" %} {% trans "Vanuatu" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://ncov.moh.gov.vn/"
+          >
+            {% svg "flags/vn" %} {% trans "Vietnam" %}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapsible europe">
+      <div class="collapsible-header">
+        <p>{% trans "Europe" %}</p>
+        <span class="collapsible-toggle" onclick="toggleCollapsible(event)"
+          >{% svg "icons/upload" %}</span
+        >
+      </div>
+      <ul>
+        <p>
+          {% trans "For an overview of borders and available means of transport
+          and tourism services in EU Member States, please visit Re-open EU." %}
+        </p>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.sozialministerium.at/en.html"
+          >
+            {% svg "flags/at" %} {% trans "Austria" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.info-coronavirus.be/"
+          >
+            {% svg "flags/be" %} {% trans "Belgium" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://mint.gov.hr/news-11455/big-interest-in-opening-borders-says-tourism-minister/21180"
+          >
+            {% svg "flags/hr" %} {% trans "Croatia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.vlada.cz/en/media-centrum/aktualne/measures-adopted-by-the-czech-government-against-coronavirus-180545/"
+          >
+            {% svg "flags/cz" %} {% trans "Czech Republic" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.pio.gov.cy/coronavirus/eng/categories/en-fly"
+          >
+            {% svg "flags/cy" %} {% trans "Republic of Cyprus" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://politi.dk/en/travel"
+          >
+            {% svg "flags/dk" %} {% trans "Denmark" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://kkk.kriis.ee/en/faq/travelling-to-and-from-estonia/crossing-the-estonian-border"
+          >
+            {% svg "flags/ee" %} {% trans "Estonia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://valtioneuvosto.fi/en/information-on-coronavirus/questions-and-answers"
+          >
+            {% svg "flags/fi" %} {% trans "Finland" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gouvernement.fr/en/coronavirus-covid-19"
+          >
+            {% svg "flags/fr" %} {% trans "France" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.auswaertiges-amt.de/de/ReiseUndSicherheit/covid-19/2296762"
+          >
+            {% svg "flags/de" %} {% trans "Germany" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://eody.gov.gr/en/covid-19/"
+          >
+            {% svg "flags/gr" %} {% trans "Greece" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://koronavirus.gov.hu/"
+          >
+            {% svg "flags/hu" %} {% trans "Hungary" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.covid.is/categories/tourists-travelling-to-iceland"
+          >
+            {% svg "flags/is" %} {% trans "Iceland" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gov.ie/en/collection/50c4dc-daily-briefings-on-the-governments-response-to-covid-19/?referrer=http://www.gov.ie/en/publication/3b16b6-covid-19-coronavirus-information-from-across-government/"
+          >
+            {% svg "flags/ie" %} {% trans "Ireland" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.esteri.it/mae/en/ministero/normativaonline/decreto-iorestoacasa-domande-frequenti/focus-cittadini-italiani-in-rientro-dall-estero-e-cittadini-stranieri-in-italia.html"
+          >
+            {% svg "flags/it" %} {% trans "Italy" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://covid19.gov.lv/en/covid-19-frequently-asked-questions-and-answers?categories=35"
+          >
+            {% svg "flags/lv" %} {% trans "Latvia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.llv.li/inhalt/118724/amtsstellen/coronavirus"
+          >
+            {% svg "flags/li" %} {% trans "Lichtenstein" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://koronastop.lrv.lt/en/"
+          >
+            {% svg "flags/lt" %} {% trans "Lithuania" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://covid19.public.lu/en.html"
+          >
+            {% svg "flags/lu" %} {% trans "Luxembourg" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://deputyprimeminister.gov.mt/en/health-promotion/covid-19/Pages/landing-page.aspx"
+          >
+            {% svg "flags/mt" %} {% trans "Malta" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gov.me/en/homepage/measures_and_recommendations/"
+          >
+            {% svg "flags/me" %} {% trans "Montenegro" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.government.nl/topics/coronavirus-covid-19"
+          >
+            {% svg "flags/nl" %} {% trans "Netherlands" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.regjeringen.no/en/topics/foreign-affairs/reiseinformasjon/travel_coronavirus/id2691821/"
+          >
+            {% svg "flags/no" %} {% trans "Norway" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gov.pl/web/koronawirus/informacje-dla-podrozujacych"
+          >
+            {% svg "flags/pl" %} {% trans "Poland" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://covid19.min-saude.pt/"
+          >
+            {% svg "flags/pt" %} {% trans "Portugal" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://gov.ro/ro/info-coronavirus-covid-19"
+          >
+            {% svg "flags/ro" %} {% trans "Romania" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://government.ru/"
+          >
+            {% svg "flags/ru" %} {% trans "Russia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.srbija.gov.rs/"
+          >
+            {% svg "flags/rs" %} {% trans "Serbia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.vlada.gov.sk/"
+          >
+            {% svg "flags/sk" %} {% trans "Slovakia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gov.si/en/topics/coronavirus-disease-covid-19/"
+          >
+            {% svg "flags/si" %} {% trans "Slovenia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.mscbs.gob.es/"
+          >
+            {% svg "flags/es" %} {% trans "Spain" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.krisinformation.se/en/hazards-and-risks/disasters-and-incidents/2020/official-information-on-the-new-coronavirus/visiting-sweden-during-the-covid-19-pandemic"
+          >
+            {% svg "flags/se" %} {% trans "Sweden" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/empfehlungen-fuer-reisende.html"
+          >
+            {% svg "flags/ch" %} {% trans "Switzerland" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.icisleri.gov.tr/"
+          >
+            {% svg "flags/tr" %} {% trans "Turkey" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gov.uk/guidance/travel-advice-novel-coronavirus"
+          >
+            {% svg "flags/sh" %} {% trans "United Kingdom" %}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapsible latin-america">
+      <div class="collapsible-header">
+        <p>{% trans "Latin America and the Caribbean" %}</p>
+        <span class="collapsible-toggle" onclick="toggleCollapsible(event)"
+          >{% svg "icons/upload" %}</span
+        >
+      </div>
+      <ul>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.bahamas.com/es/covid-19-0"
+          >
+            {% svg "flags/bs" %} {% trans "Bahamas" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.ministeriodesalud.go.cr/"
+          >
+            {% svg "flags/cr" %} {% trans "Costa Rica" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://coronavirusrd.gob.do/"
+          >
+            {% svg "flags/do" %} {% trans "Dominican Republic " %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.moh.gov.jm/"
+          >
+            {% svg "flags/jm" %} {% trans "Jamaica" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://coronavirus.gob.mx/"
+          >
+            {% svg "flags/mx" %} {% trans "Mexico" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://www.minsa.gob.pa/"
+          >
+            {% svg "flags/pa" %} {% trans "Panama" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://www.salud.gov.pr/Pages/coronavirus.aspx"
+          >
+            {% svg "flags/pr" %} {% trans "Puerto Rico" %}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapsible middle-east">
+      <div class="collapsible-header">
+        <p>{% trans "Middle East" %}</p>
+        <span class="collapsible-toggle" onclick="toggleCollapsible(event)"
+          >{% svg "icons/upload" %}</span
+        >
+      </div>
+      <ul>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gov.il/he/departments/topics/corona-main-sub"
+          >
+            {% svg "flags/il" %} {% trans "Israel" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.petra.gov.jo/Include/Main.jsp?lang=en"
+          >
+            {% svg "flags/jo" %} {% trans "Jordan" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.moh.gov.om/en/-/moh-alert-corona-virus-disease-covid-1-2"
+          >
+            {% svg "flags/om" %} {% trans "Oman" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.moi.gov.ae/en/default.aspx"
+          >
+            {% svg "flags/ae" %} {% trans "United Arab Emirates" %}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapsible north-america">
+      <div class="collapsible-header">
+        <p>{% trans "North America" %}</p>
+        <span class="collapsible-toggle" onclick="toggleCollapsible(event)"
+          >{% svg "icons/upload" %}</span
+        >
+      </div>
+      <ul>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection/latest-travel-health-advice.html"
+          >
+            {% svg "flags/ca" %} {% trans "Canada" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.alberta.ca/covid-19-travel-advice.aspx"
+          >
+            {% svg "flags/ca" %} {% trans "Alberta" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://www.bccdc.ca/health-info/diseases-conditions/covid-19/prevention-risks/travel"
+          >
+            {% svg "flags/ca" %} {% trans "British Columbia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gov.mb.ca/covid19/index.html"
+          >
+            {% svg "flags/ca" %} {% trans "Manitoba" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www2.gnb.ca/content/gnb/en/departments/ocmoh/cdc/content/respiratory_diseases/coronavirus/InformationForTravelers.html"
+          >
+            {% svg "flags/ca" %} {% trans "New Brunswick" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gov.nl.ca/covid-19/individuals-and-households/travel-advice-2/"
+          >
+            {% svg "flags/ca" %} {% trans "Newfoundland and Labrador" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gov.nt.ca/covid-19/"
+          >
+            {% svg "flags/ca" %} {% trans "Northwest Territories" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://novascotia.ca/coronavirus/"
+          >
+            {% svg "flags/ca" %} {% trans "Nova Scotia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gov.nu.ca/health/information/covid-19-novel-coronavirus"
+          >
+            {% svg "flags/ca" %} {% trans "Nunavut" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.ontario.ca/page/how-ontario-is-responding-covid-19"
+          >
+            {% svg "flags/ca" %} {% trans "Ontario" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.princeedwardisland.ca/fr/information/justice-et-securite-publique/processus-dapprobation-deplacements"
+          >
+            {% svg "flags/ca" %} {% trans "Prince Edward Island" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.quebec.ca/en/health/health-issues/a-z/2019-coronavirus/instructions-for-travellers-covid19/"
+          >
+            {% svg "flags/ca" %} {% trans "Quebec 1" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.quebec.ca/en/health/health-issues/a-z/2019-coronavirus/travelling-region-to-another-covid19/"
+          >
+            {% svg "flags/ca" %} {% trans "Quebec 2" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.saskatchewan.ca/government/health-care-administration-and-provider-resources/treatment-procedures-and-guidelines/emerging-public-health-issues/2019-novel-coronavirus/travel-information"
+          >
+            {% svg "flags/ca" %} {% trans "Saskatchewan" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://yukon.ca/en/health-and-wellness/covid-19-information/borders-and-travel-covid-19/border-enforcement-during-covid-19"
+          >
+            {% svg "flags/ca" %} {% trans "Yukon" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/index.html"
+          >
+            {% svg "flags/us" %} {% trans "United States" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://covid19.alabama.gov/"
+          >
+            {% svg "flags/us" %} {% trans "Alabama" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://covid19.alaska.gov/?elementor_library=health-mandates"
+          >
+            {% svg "flags/us" %} {% trans "Alaska" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/index.php"
+          >
+            {% svg "flags/us" %} {% trans "Arizona" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.healthy.arkansas.gov/programs-services/topics/covid-19-guidance-for-travelers"
+          >
+            {% svg "flags/us" %} {% trans "Arkensas" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://covid19.ca.gov/"
+          >
+            {% svg "flags/us" %} {% trans "California" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://covid19.colorado.gov/public-health-executive-orders"
+          >
+            {% svg "flags/us" %} {% trans "Colorado" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://portal.ct.gov/Coronavirus"
+          >
+            {% svg "flags/us" %} {% trans "Connecticut" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://coronavirus.delaware.gov/"
+          >
+            {% svg "flags/us" %} {% trans "Delaware" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://coronavirus.dc.gov/"
+          >
+            {% svg "flags/us" %} {% trans "District of Columbia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://floridahealthcovid19.gov/travelers/"
+          >
+            {% svg "flags/us" %} {% trans "Florida" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://dph.georgia.gov/"
+          >
+            {% svg "flags/us" %} {% trans "Georgia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://health.hawaii.gov/coronavirusdisease2019/travel/travelers-returning-to-hawaii/"
+          >
+            {% svg "flags/us" %} {% trans "Hawaii" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://coronavirus.idaho.gov/"
+          >
+            {% svg "flags/us" %} {% trans "Idaho" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.dph.illinois.gov/tourism-travel"
+          >
+            {% svg "flags/us" %} {% trans "Illinois" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.coronavirus.in.gov/"
+          >
+            {% svg "flags/us" %} {% trans "Indiana" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://idph.iowa.gov/Emerging-Health-Issues/Novel-Coronavirus"
+          >
+            {% svg "flags/us" %} {% trans "Iowa" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.coronavirus.kdheks.gov/"
+          >
+            {% svg "flags/us" %} {% trans "Kansas" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://govstatus.egov.com/kycovid19"
+          >
+            {% svg "flags/us" %} {% trans "Kentucky" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://ldh.la.gov/Coronavirus/"
+          >
+            {% svg "flags/us" %} {% trans "Louisiana" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.maine.gov/covid19/"
+          >
+            {% svg "flags/us" %} {% trans "Maine" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://coronavirus.maryland.gov/"
+          >
+            {% svg "flags/us" %} {% trans "Maryland" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.mass.gov/info-details/covid-19-travel-order"
+          >
+            {% svg "flags/us" %} {% trans "Massachusetts" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.michigan.gov/coronavirus"
+          >
+            {% svg "flags/us" %} {% trans "Michigan" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.health.state.mn.us/diseases/coronavirus/index.html"
+          >
+            {% svg "flags/us" %} {% trans "Minnesota" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://msdh.ms.gov/msdhsite/_static/14,0,420.html"
+          >
+            {% svg "flags/us" %} {% trans "Mississippi" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://health.mo.gov/living/healthcondiseases/communicable/novel-coronavirus/"
+          >
+            {% svg "flags/us" %} {% trans "Missouri" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://covid19.mt.gov/"
+          >
+            {% svg "flags/us" %} {% trans "Montana" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://dhhs.ne.gov/Pages/COVID-19-Traveler-Recommendations.aspx"
+          >
+            {% svg "flags/us" %} {% trans "Nebraska" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://nvhealthresponse.nv.gov/travel-visitors/travelers-visitors/"
+          >
+            {% svg "flags/us" %} {% trans "Nevada" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.nh.gov/covid19/"
+          >
+            {% svg "flags/us" %} {% trans "New Hampshire" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://covid19.nj.gov/"
+          >
+            {% svg "flags/us" %} {% trans "New Jersey" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://cv.nmhealth.org/public-health-orders-and-executive-orders/"
+          >
+            {% svg "flags/us" %} {% trans "New Mexico" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://coronavirus.health.ny.gov/travel-large-gatherings-and-quarantines"
+          >
+            {% svg "flags/us" %} {% trans "New York" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.nc.gov/covid19"
+          >
+            {% svg "flags/us" %} {% trans "North Carolina" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.health.nd.gov/diseases-conditions/coronavirus/travel-guidance"
+          >
+            {% svg "flags/us" %} {% trans "North Dakota" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://coronavirus.ohio.gov/wps/portal/gov/covid-19/resources/public-health-orders/public-health-orders"
+          >
+            {% svg "flags/us" %} {% trans "Ohio" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://oklahoma.gov/covid19.html"
+          >
+            {% svg "flags/us" %} {% trans "Oklahoma" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://govstatus.egov.com/OR-OHA-COVID-19"
+          >
+            {% svg "flags/us" %} {% trans "Oregon" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.health.pa.gov/topics/disease/coronavirus/Pages/Coronavirus.aspx"
+          >
+            {% svg "flags/us" %} {% trans "Pennsylvania" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://health.ri.gov/diseases/ncov2019/"
+          >
+            {% svg "flags/us" %} {% trans "Rhode Island" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://scdhec.gov/covid19/resources-community-covid-19/travelers-covid-19"
+          >
+            {% svg "flags/us" %} {% trans "South Carolina" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://doh.sd.gov/news/coronavirus.aspx"
+          >
+            {% svg "flags/us" %} {% trans "South Dakota" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://covid19.tn.gov/"
+          >
+            {% svg "flags/us" %} {% trans "Tennessee" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.dshs.texas.gov/coronavirus/travelers.aspx"
+          >
+            {% svg "flags/us" %} {% trans "Texas" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://coronavirus.utah.gov/"
+          >
+            {% svg "flags/us" %} {% trans "Utah" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://vem.vermont.gov/StayHome"
+          >
+            {% svg "flags/us" %} {% trans "Vermont" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.vdh.virginia.gov/coronavirus/coronavirus/travel-to-areas-with-widespread-ongoing-community-spread/"
+          >
+            {% svg "flags/us" %} {% trans "Virginia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://coronavirus.wa.gov/travelers-commuters"
+          >
+            {% svg "flags/us" %} {% trans "Washington" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://dhhr.wv.gov/COVID-19/Pages/travelers.aspx"
+          >
+            {% svg "flags/us" %} {% trans "West Virginia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.dhs.wisconsin.gov/covid-19/travel.htm"
+          >
+            {% svg "flags/us" %} {% trans "Wisconsin" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://health.wyo.gov/publichealth/infectious-disease-epidemiology-unit/disease/novel-coronavirus/covid-19-orders-and-guidance/"
+          >
+            {% svg "flags/us" %} {% trans "Wyoming" %}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapsible">
+      <div class="collapsible-header south-america">
+        <p>{% trans "South America" %}</p>
+        <span class="collapsible-toggle" onclick="toggleCollapsible(event)"
+          >{% svg "icons/upload" %}</span
+        >
+      </div>
+      <ul>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.boletinoficial.gob.ar/detalleAviso/primera/227022/20200319"
+          >
+            {% svg "flags/ar" %} {% trans "Argentinia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.minsalud.gob.bo/"
+          >
+            {% svg "flags/bo" %} {% trans "Bolivia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gov.br/saude/pt-br"
+          >
+            {% svg "flags/br" %} {% trans "Brazil" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gob.cl/coronavirus/plandeaccion/"
+          >
+            {% svg "flags/cl" %} {% trans "Chile" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.minsalud.gov.co/portada-covid-19.html"
+          >
+            {% svg "flags/co" %} {% trans "Columbia" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.salud.gob.ec/coronavirus-covid-19/"
+          >
+            {% svg "flags/ec" %} {% trans "Ecuador" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.mspbs.gov.py/covid-19.php"
+          >
+            {% svg "flags/py" %} {% trans "Paraguay" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gob.pe/9862-indicaciones-para-viajes-interprovinciales-por-via-terrestre-o-aerea"
+          >
+            {% svg "flags/pe" %} {% trans "Peru" %}
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.gub.uy/ministerio-salud-publica/tematica/coronavirus"
+          >
+            {% svg "flags/uy" %} {% trans "Uruguay" %}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="booking">
+    <h3>{% trans "Booking conditions" %}</h3>
+    <p>
+      {% trans "For bookings made on or after 6 April 2020, we advise you to
+      consider the risk of Coronavirus (COVID-19) and associated government
+      measures." %}
+    </p>
+    <p>
+      {% trans "If you don’t book a flexible rate, you may not be entitled to a
+      refund." %}
+    </p>
+    <p>
+      {% trans "Your cancellation request will be handled by the property based
+      on your chosen policy and mandatory consumer law, where applicable." %}
+    </p>
+    <p>
+      {% trans "During times of uncertainty, we recommend booking an option with
+      free cancellation." %}
+    </p>
+    <p>
+      {% trans "If your plans change, you can cancel free of charge until free
+      cancellation expires." %}
+    </p>
+  </section>
+</body>
+{% endblock %}

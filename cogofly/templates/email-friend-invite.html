@@ -1,0 +1,27 @@
+{% extends 'email-base.html' %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Join CoGoFly !" %}
+{% endblock %}
+
+{% block content %}
+<tr>
+<td align="left" bgcolor="#ffffff" style="padding: 5px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: center;">
+    <p>{% blocktrans with first_name=user.first_name last_name=user.last_name %}
+    {{ first_name }} {{ last_name }} has invited you on www.cogofly.com !
+    {% endblocktrans %}</p>
+</td>
+</tr>  
+
+<tr>
+<td align="left" bgcolor="#ffffff" style="padding: 5px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: center;">
+    <p>{{ text }}</p>
+</td>
+</tr>  
+{% endblock %} 
+
+{% block footer %}
+<p style="margin: 0;">{% blocktrans %}If you are not a member of CoGoFly, sign up for free <a href="https://www.cogofly.com/signup" style="color: white;">here</a>{% endblocktrans %}</p>
+{% endblock footer %}
+

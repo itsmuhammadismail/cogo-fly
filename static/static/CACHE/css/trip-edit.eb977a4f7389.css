@@ -1,0 +1,486 @@
+/* line 1, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  min-height: 100%;
+  height: 100%; }
+  /* line 9, static/scss/base.scss */
+  body > ul.messages {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 50%;
+    background-color: #141414;
+    padding: 10px;
+    margin: 0;
+    border-radius: 0 0 5px 5px; }
+    /* line 20, static/scss/base.scss */
+    body > ul.messages > span {
+      color: white;
+      font-weight: bold;
+      position: absolute;
+      top: 5px;
+      right: 10px; }
+      /* line 26, static/scss/base.scss */
+      body > ul.messages > span:hover {
+        cursor: pointer; }
+    /* line 30, static/scss/base.scss */
+    body > ul.messages li {
+      list-style: none;
+      color: white; }
+      /* line 33, static/scss/base.scss */
+      body > ul.messages li > * {
+        color: white; }
+    /* line 37, static/scss/base.scss */
+    body > ul.messages hr {
+      border: solid 1px rgba(255, 255, 255, 0.5); }
+
+/* line 43, static/scss/base.scss */
+.map {
+  width: 100%;
+  box-sizing: border-box; }
+  /* line 46, static/scss/base.scss */
+  .map > div > div {
+    height: 100% !important;
+    padding-bottom: 0 !important; }
+
+/* line 52, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 59, static/scss/base.scss */
+.cards-content,
+.content {
+  box-sizing: border-box;
+  min-height: calc(100vh - 291px); }
+
+/* line 66, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 67, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 76, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 79, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 87, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 90, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 93, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 109, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 112, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 120, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 124, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 132, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 134, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 141, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 147, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 153, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 160, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 168, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 172, static/scss/base.scss */
+  form img[src="/static/scss?3fd49f1cdf47"] {
+    visibility: hidden; }
+
+/* line 177, static/scss/base.scss */
+button,
+input .button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 192, static/scss/base.scss */
+  button:hover,
+  input .button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 198, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 213, static/scss/base.scss */
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 216, static/scss/base.scss */
+  button:disabled:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 221, static/scss/base.scss */
+footer {
+  background-color: #141414;
+  padding: 20px 20px;
+  text-align: center;
+  overflow: hidden;
+  bottom: 0; }
+  /* line 228, static/scss/base.scss */
+  footer hr {
+    border-color: #bababa9f; }
+  /* line 231, static/scss/base.scss */
+  footer ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none; }
+    /* line 239, static/scss/base.scss */
+    footer ul li a {
+      color: #bababa;
+      font-size: 20px;
+      text-decoration: none; }
+      /* line 243, static/scss/base.scss */
+      footer ul li a:hover {
+        cursor: pointer;
+        color: #d6d6d6;
+        transition: color 0.2s; }
+    /* line 249, static/scss/base.scss */
+    footer ul li svg {
+      width: 40px;
+      height: 40px; }
+    /* line 254, static/scss/base.scss */
+    footer ul .contact-us-log-in {
+      position: relative; }
+      /* line 256, static/scss/base.scss */
+      footer ul .contact-us-log-in span {
+        width: max-content;
+        position: absolute;
+        display: none;
+        top: 45px;
+        right: -110%;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        display: none;
+        z-index: 1000; }
+      /* line 270, static/scss/base.scss */
+      footer ul .contact-us-log-in:hover a {
+        cursor: default; }
+      /* line 273, static/scss/base.scss */
+      footer ul .contact-us-log-in:hover span {
+        display: block; }
+    /* line 280, static/scss/base.scss */
+    footer ul:nth-of-type(2) li:first-of-type {
+      margin-top: 0;
+      display: flex;
+      align-items: center; }
+      /* line 284, static/scss/base.scss */
+      footer ul:nth-of-type(2) li:first-of-type p {
+        margin: 0; }
+  /* line 291, static/scss/base.scss */
+  footer p {
+    color: #bababa;
+    font-size: 20px; }
+  /* line 295, static/scss/base.scss */
+  footer .pinterest-button {
+    font-size: 50px; }
+    /* line 298, static/scss/base.scss */
+    footer .pinterest-button svg {
+      pointer-events: none; }
+
+/* line 303, static/scss/base.scss */
+.bottom-pusher {
+  height: 1;
+  margin-top: 20px; }
+
+@media all and (max-width: 1065px) {
+  /* line 312, static/scss/base.scss */
+  footer ul li a, footer ul li p {
+    font-size: initial; }
+  /* line 317, static/scss/base.scss */
+  footer p {
+    font-size: initial; }
+  /* line 321, static/scss/base.scss */
+  .cards-content,
+  .content {
+    min-height: calc(100vh - 273px); } }
+
+@media all and (max-width: 700px) {
+  /* line 328, static/scss/base.scss */
+  footer {
+    padding: 0 20px; }
+    /* line 330, static/scss/base.scss */
+    footer ul {
+      align-items: initial;
+      justify-content: initial; }
+    /* line 335, static/scss/base.scss */
+    footer .footer-links li {
+      flex: 1 1 165px;
+      margin: 10px 0; }
+    /* line 340, static/scss/base.scss */
+    footer .footer-sm {
+      position: relative;
+      padding-top: 25px; }
+      /* line 343, static/scss/base.scss */
+      footer .footer-sm li {
+        flex: 1 1 105px;
+        margin: 10px 0; }
+        /* line 346, static/scss/base.scss */
+        footer .footer-sm li:first-of-type {
+          position: absolute;
+          top: 0;
+          right: 50%;
+          transform: translateX(50%); } }
+
+/* line 3, static/scss/trip-edit.scss */
+.content {
+  min-height: calc(100% - 96px);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* line 9, static/scss/trip-edit.scss */
+section {
+  width: 40%;
+  position: relative; }
+  /* line 12, static/scss/trip-edit.scss */
+  section > .card {
+    margin: 0 auto 15px; }
+  /* line 15, static/scss/trip-edit.scss */
+  section > p {
+    text-align: center; }
+  /* line 18, static/scss/trip-edit.scss */
+  section .preview-button {
+    display: flex;
+    width: 394px;
+    margin: auto; }
+    /* line 22, static/scss/trip-edit.scss */
+    section .preview-button > * {
+      text-decoration: none;
+      width: 100%;
+      margin: 5px; }
+    /* line 27, static/scss/trip-edit.scss */
+    section .preview-button button {
+      padding: 6px 10px;
+      display: flex;
+      justify-content: center;
+      width: 100%; }
+      /* line 32, static/scss/trip-edit.scss */
+      section .preview-button button svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px; }
+    /* line 38, static/scss/trip-edit.scss */
+    section .preview-button .delete {
+      color: red;
+      border-color: red; }
+  /* line 43, static/scss/trip-edit.scss */
+  section .social-share {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+    /* line 47, static/scss/trip-edit.scss */
+    section .social-share > * {
+      margin: 0 5px; }
+
+/* line 53, static/scss/trip-edit.scss */
+form {
+  width: 100%; }
+  /* line 55, static/scss/trip-edit.scss */
+  form > button {
+    width: 100%; }
+  /* line 58, static/scss/trip-edit.scss */
+  form .select2 {
+    width: 100% !important; }
+  /* line 61, static/scss/trip-edit.scss */
+  form > ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /*
+		.album-widget {
+			&.hidden {
+				visibility: hidden;
+				width: 0;
+			}
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			list-style: none;
+			height: 150px;
+			width: 150px;
+			margin-right: 20px;
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				&:before {
+					content: " ";
+					display: block;
+					position: absolute;
+					height: 100%;
+					width: 100%;
+					background: url(/static/svg/icons/add-image.svg?894952b71d02) center no-repeat,
+						url(/static/img/white.png?4b7f1cfde928);
+					background-size: 100px 100px, 125px 125px;
+				}
+				&:hover {
+					cursor: pointer;
+				}
+			}
+			svg {
+				height: 30px;
+				width: 30px;
+			}
+		}*/ }
+    /* line 66, static/scss/trip-edit.scss */
+    form > ul .album-widget {
+      margin: 0 10px; }
+      /* line 68, static/scss/trip-edit.scss */
+      form > ul .album-widget svg:hover {
+        cursor: pointer; }
+      /* line 71, static/scss/trip-edit.scss */
+      form > ul .album-widget .album-widget-prompt {
+        display: none !important; }
+
+/* line 115, static/scss/trip-edit.scss */
+.cancel {
+  border: solid 1px red;
+  color: red;
+  width: 100%; }
+
+/* line 121, static/scss/trip-edit.scss */
+.redirect-links {
+  width: 394px;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly; }
+  /* line 127, static/scss/trip-edit.scss */
+  .redirect-links li {
+    list-style: none;
+    width: 100%;
+    margin: 0 5px; }
+    /* line 131, static/scss/trip-edit.scss */
+    .redirect-links li a {
+      text-decoration: none;
+      color: #1168d8;
+      width: 100%; }
+      /* line 135, static/scss/trip-edit.scss */
+      .redirect-links li a button {
+        width: 100%; }
+
+/* line 142, static/scss/trip-edit.scss */
+.show {
+  display: block; }
+
+/* line 146, static/scss/trip-edit.scss */
+.hide {
+  display: none; }
+
+/* line 150, static/scss/trip-edit.scss */
+.pusher {
+  margin-bottom: 20px; }
+
+@media all and (max-width: 1065px) {
+  /* line 155, static/scss/trip-edit.scss */
+  .content {
+    min-height: calc(100vh - 78px); } }
+
+@media all and (max-width: 1000px) {
+  /* line 161, static/scss/trip-edit.scss */
+  section {
+    width: max-content; } }

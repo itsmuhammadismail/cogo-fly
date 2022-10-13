@@ -1,0 +1,1080 @@
+/* line 1, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  min-height: 100%;
+  height: 100%; }
+  /* line 9, static/scss/base.scss */
+  body > ul.messages {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 50%;
+    background-color: #141414;
+    padding: 10px;
+    margin: 0;
+    border-radius: 0 0 5px 5px; }
+    /* line 20, static/scss/base.scss */
+    body > ul.messages > span {
+      color: white;
+      font-weight: bold;
+      position: absolute;
+      top: 5px;
+      right: 10px; }
+      /* line 26, static/scss/base.scss */
+      body > ul.messages > span:hover {
+        cursor: pointer; }
+    /* line 30, static/scss/base.scss */
+    body > ul.messages li {
+      list-style: none;
+      color: white; }
+      /* line 33, static/scss/base.scss */
+      body > ul.messages li > * {
+        color: white; }
+    /* line 37, static/scss/base.scss */
+    body > ul.messages hr {
+      border: solid 1px rgba(255, 255, 255, 0.5); }
+
+/* line 43, static/scss/base.scss */
+.map {
+  width: 100%;
+  box-sizing: border-box; }
+  /* line 46, static/scss/base.scss */
+  .map > div > div {
+    height: 100% !important;
+    padding-bottom: 0 !important; }
+
+/* line 52, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 59, static/scss/base.scss */
+.cards-content,
+.content {
+  box-sizing: border-box;
+  min-height: calc(100vh - 311px); }
+
+/* line 66, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 67, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 76, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 79, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 87, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 90, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 93, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 109, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 112, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 120, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 124, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 132, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 134, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 141, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 147, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 153, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 160, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 168, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 172, static/scss/base.scss */
+  form img[src="/static/scss?3fd49f1cdf47"] {
+    visibility: hidden; }
+
+/* line 177, static/scss/base.scss */
+button,
+input .button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 192, static/scss/base.scss */
+  button:hover,
+  input .button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 198, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 213, static/scss/base.scss */
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 216, static/scss/base.scss */
+  button:disabled:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 221, static/scss/base.scss */
+footer {
+  background-color: #141414;
+  padding: 20px 20px;
+  text-align: center;
+  overflow: hidden;
+  bottom: 0; }
+  /* line 228, static/scss/base.scss */
+  footer hr {
+    border-color: #bababa9f; }
+  /* line 231, static/scss/base.scss */
+  footer ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none; }
+    /* line 238, static/scss/base.scss */
+    footer ul li {
+      margin: 5px 20px; }
+      /* line 240, static/scss/base.scss */
+      footer ul li a {
+        color: #bababa;
+        font-size: 20px;
+        text-decoration: none; }
+        /* line 244, static/scss/base.scss */
+        footer ul li a:hover {
+          cursor: pointer;
+          color: #d6d6d6;
+          transition: color 0.2s; }
+      /* line 250, static/scss/base.scss */
+      footer ul li svg {
+        width: 40px;
+        height: 40px; }
+    /* line 255, static/scss/base.scss */
+    footer ul .contact-us-log-in {
+      position: relative; }
+      /* line 257, static/scss/base.scss */
+      footer ul .contact-us-log-in span {
+        width: max-content;
+        position: absolute;
+        display: none;
+        top: 45px;
+        right: -110%;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        display: none;
+        z-index: 1000; }
+      /* line 271, static/scss/base.scss */
+      footer ul .contact-us-log-in:hover a {
+        cursor: default; }
+      /* line 274, static/scss/base.scss */
+      footer ul .contact-us-log-in:hover span {
+        display: block; }
+    /* line 281, static/scss/base.scss */
+    footer ul:nth-of-type(2) li:first-of-type {
+      margin-top: 0;
+      display: flex;
+      align-items: center; }
+      /* line 285, static/scss/base.scss */
+      footer ul:nth-of-type(2) li:first-of-type p {
+        margin: 0; }
+  /* line 292, static/scss/base.scss */
+  footer p {
+    color: #bababa;
+    font-size: 20px; }
+  /* line 296, static/scss/base.scss */
+  footer .pinterest-button {
+    font-size: 50px; }
+    /* line 299, static/scss/base.scss */
+    footer .pinterest-button svg {
+      pointer-events: none; }
+
+/* line 304, static/scss/base.scss */
+.bottom-pusher {
+  height: 1;
+  margin-top: 20px; }
+
+/* line 1, static/scss/header.scss */
+header {
+  background-color: #1168d8;
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0; }
+  /* line 8, static/scss/header.scss */
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    /* line 12, static/scss/header.scss */
+    header nav h1 {
+      margin: 0; }
+      /* line 14, static/scss/header.scss */
+      header nav h1 img {
+        padding: 10px;
+        height: 75px;
+        box-sizing: border-box; }
+    /* line 20, static/scss/header.scss */
+    header nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      height: 75px; }
+      /* line 25, static/scss/header.scss */
+      header nav ul li {
+        list-style: none;
+        margin: 0 5px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px; }
+        /* line 34, static/scss/header.scss */
+        header nav ul li a,
+        header nav ul li > span {
+          position: relative;
+          text-decoration: none;
+          color: white;
+          text-align: center;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center; }
+        /* line 48, static/scss/header.scss */
+        header nav ul li .notifications:hover {
+          cursor: pointer; }
+      /* line 53, static/scss/header.scss */
+      header nav ul .profile-toggle {
+        color: white; }
+        /* line 56, static/scss/header.scss */
+        header nav ul .profile-toggle > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          /* line 60, static/scss/header.scss */
+          header nav ul .profile-toggle > div:hover {
+            cursor: pointer; }
+      /* line 66, static/scss/header.scss */
+      header nav ul .nav-button svg {
+        display: none; }
+      /* line 70, static/scss/header.scss */
+      header nav ul p {
+        margin: 0 5px; }
+      /* line 73, static/scss/header.scss */
+      header nav ul svg {
+        width: 25px;
+        height: 25px;
+        filter: invert(1); }
+      /* line 79, static/scss/header.scss */
+      header nav ul .logout > span:hover {
+        cursor: pointer; }
+      /* line 82, static/scss/header.scss */
+      header nav ul .logout .show-logout-modal {
+        display: flex !important; }
+      /* line 85, static/scss/header.scss */
+      header nav ul .logout .logout-modal {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center; }
+        /* line 96, static/scss/header.scss */
+        header nav ul .logout .logout-modal > div {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          padding: 0 20px;
+          border-radius: 5px; }
+          /* line 103, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > p {
+            margin: 20 0 10; }
+          /* line 106, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div .logout-buttons {
+            display: flex;
+            justify-content: center; }
+            /* line 109, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons button {
+              margin: 0; }
+            /* line 112, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons > a {
+              margin: 10 5 20 0;
+              width: auto; }
+            /* line 116, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons > button {
+              margin: 10 0 20 5;
+              color: red;
+              border-color: red; }
+          /* line 122, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > span {
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            color: grey; }
+            /* line 127, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div > span:hover {
+              cursor: pointer; }
+    /* line 135, static/scss/header.scss */
+    header nav #nav-hamburger {
+      display: none;
+      height: 60px;
+      width: 45px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      cursor: pointer; }
+      /* line 143, static/scss/header.scss */
+      header nav #nav-hamburger span {
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background: white;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out; }
+        /* line 154, static/scss/header.scss */
+        header nav #nav-hamburger span:nth-child(1) {
+          top: 30%; }
+        /* line 157, static/scss/header.scss */
+        header nav #nav-hamburger span:nth-child(2), header nav #nav-hamburger span:nth-child(3) {
+          top: 50%; }
+        /* line 161, static/scss/header.scss */
+        header nav #nav-hamburger span:nth-child(4) {
+          top: 70%; }
+    /* line 168, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(1) {
+      top: 30%;
+      width: 0%;
+      left: 50%; }
+    /* line 173, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(2) {
+      transform: rotate(45deg); }
+    /* line 176, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(3) {
+      transform: rotate(-45deg); }
+    /* line 179, static/scss/header.scss */
+    header nav #nav-hamburger.open-hamburger span:nth-child(4) {
+      top: 70%;
+      width: 0%;
+      left: 50%; }
+
+/* line 189, static/scss/header.scss */
+.notification-panel {
+  position: absolute;
+  max-height: 400px;
+  width: 300px;
+  overflow-y: auto;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  right: -1000px;
+  top: 80px;
+  opacity: 0; }
+  /* line 201, static/scss/header.scss */
+  .notification-panel > span {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: grey;
+    font-weight: bold; }
+    /* line 207, static/scss/header.scss */
+    .notification-panel > span:hover {
+      cursor: pointer; }
+  /* line 211, static/scss/header.scss */
+  .notification-panel > p {
+    margin: 5px 0 5px 5px; }
+  /* line 214, static/scss/header.scss */
+  .notification-panel h4 {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0 5px; }
+  /* line 219, static/scss/header.scss */
+  .notification-panel hr {
+    margin: 0; }
+  /* line 222, static/scss/header.scss */
+  .notification-panel .notification-feed {
+    padding: 0;
+    flex-direction: column;
+    height: max-content; }
+    /* line 226, static/scss/header.scss */
+    .notification-panel .notification-feed li {
+      position: relative;
+      list-style: none;
+      padding: 10px;
+      margin: 0;
+      border-radius: 0;
+      transition: background-color 0.4s; }
+      /* line 233, static/scss/header.scss */
+      .notification-panel .notification-feed li:hover {
+        background-color: gainsboro;
+        transition: background-color 0.4s; }
+      /* line 237, static/scss/header.scss */
+      .notification-panel .notification-feed li a {
+        text-decoration: none;
+        color: inherit;
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: start;
+        width: 100%; }
+        /* line 244, static/scss/header.scss */
+        .notification-panel .notification-feed li a img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-right: 10px; }
+        /* line 250, static/scss/header.scss */
+        .notification-panel .notification-feed li a .notification-info {
+          width: calc(100% - 60px); }
+          /* line 252, static/scss/header.scss */
+          .notification-panel .notification-feed li a .notification-info p {
+            width: 100%; }
+          /* line 255, static/scss/header.scss */
+          .notification-panel .notification-feed li a .notification-info .preview {
+            font-size: 12.5px;
+            color: grey;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden; }
+          /* line 262, static/scss/header.scss */
+          .notification-panel .notification-feed li a .notification-info .notification-time {
+            font-style: oblique; }
+      /* line 267, static/scss/header.scss */
+      .notification-panel .notification-feed li .unread-notification-bubble {
+        display: none; }
+    /* line 271, static/scss/header.scss */
+    .notification-panel .notification-feed .unread-notification {
+      background-color: #1167d80e;
+      align-items: flex-start; }
+      /* line 274, static/scss/header.scss */
+      .notification-panel .notification-feed .unread-notification a {
+        width: 90%; }
+      /* line 277, static/scss/header.scss */
+      .notification-panel .notification-feed .unread-notification .unread-notification-bubble {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 40%;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: #1168d8; }
+    /* line 288, static/scss/header.scss */
+    .notification-panel .notification-feed hr {
+      width: 99%;
+      margin: 0; }
+
+/* line 295, static/scss/header.scss */
+.profile-dropdown {
+  padding: 0;
+  width: 300px;
+  text-align: center;
+  position: absolute;
+  right: -1000px;
+  top: 80px;
+  opacity: 0;
+  z-index: 100;
+  /*transition: right 0.4s;*/
+  color: black; }
+  /* line 306, static/scss/header.scss */
+  .profile-dropdown .banner {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 40px; }
+  /* line 313, static/scss/header.scss */
+  .profile-dropdown .profile-pic-bg {
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    top: 40px;
+    left: 100px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+    /* line 323, static/scss/header.scss */
+    .profile-dropdown .profile-pic-bg .profile-picture {
+      object-fit: cover;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: auto;
+      display: block; }
+  /* line 332, static/scss/header.scss */
+  .profile-dropdown > span {
+    color: white;
+    font-weight: bold;
+    top: 5px;
+    right: 7px;
+    position: absolute; }
+    /* line 338, static/scss/header.scss */
+    .profile-dropdown > span:hover {
+      cursor: pointer; }
+  /* line 342, static/scss/header.scss */
+  .profile-dropdown p {
+    margin: 5px 0;
+    padding-bottom: 5px;
+    /*border-bottom: solid 1px rgba(192, 191, 191, 0.5);*/ }
+  /* line 347, static/scss/header.scss */
+  .profile-dropdown ul {
+    padding: 0 20px;
+    margin: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto; }
+    /* line 353, static/scss/header.scss */
+    .profile-dropdown ul a {
+      text-decoration: none;
+      color: black;
+      flex-direction: row; }
+    /* line 358, static/scss/header.scss */
+    .profile-dropdown ul li {
+      margin: 5px 0; }
+      /* line 360, static/scss/header.scss */
+      .profile-dropdown ul li svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        filter: invert(0); }
+
+/* line 370, static/scss/header.scss */
+.show-dropdown {
+  opacity: 1;
+  right: 5px;
+  /*transition: right 0.4s;*/ }
+
+/* line 376, static/scss/header.scss */
+.pusher {
+  height: 75px; }
+
+@media all and (max-width: 965px) {
+  /* line 382, static/scss/header.scss */
+  header nav {
+    position: relative; }
+    /* line 384, static/scss/header.scss */
+    header nav .logo {
+      position: absolute;
+      left: 0;
+      top: 0; }
+    /* line 390, static/scss/header.scss */
+    header nav ul li {
+      display: none; }
+    /* line 394, static/scss/header.scss */
+    header nav ul.open-menu {
+      width: 100%;
+      margin: auto;
+      margin-top: 75px;
+      justify-content: center; }
+      /* line 399, static/scss/header.scss */
+      header nav ul.open-menu li {
+        float: none;
+        display: flex;
+        text-align: left; }
+    /* line 405, static/scss/header.scss */
+    header nav #nav-hamburger {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      margin: 7.5px 15px 0 0; } }
+
+@media all and (max-width: 750px) {
+  /* line 419, static/scss/header.scss */
+  header nav ul.open-menu {
+    justify-content: center; }
+    /* line 421, static/scss/header.scss */
+    header nav ul.open-menu > li {
+      margin: 0 10px; }
+      /* line 425, static/scss/header.scss */
+      header nav ul.open-menu > li > a .nav-link-text,
+      header nav ul.open-menu > li > div .nav-link-text {
+        display: none; }
+      /* line 428, static/scss/header.scss */
+      header nav ul.open-menu > li > a svg,
+      header nav ul.open-menu > li > div svg {
+        height: 35px;
+        width: 35px;
+        flex-shrink: 0; }
+  /* line 438, static/scss/header.scss */
+  .notification {
+    right: -10px !important; } }
+
+@media all and (max-width: 600px) {
+  /* line 446, static/scss/header.scss */
+  header nav ul.open-menu {
+    flex-wrap: wrap;
+    height: max-content; }
+    /* line 449, static/scss/header.scss */
+    header nav ul.open-menu li {
+      margin: 15px; }
+    /* line 453, static/scss/header.scss */
+    header nav ul.open-menu .nav-button button {
+      display: none; }
+    /* line 456, static/scss/header.scss */
+    header nav ul.open-menu .nav-button svg {
+      display: block; }
+  /* line 463, static/scss/header.scss */
+  .notification {
+    top: -10px !important; } }
+
+/* line 4, static/scss/messages.scss */
+body {
+  height: 100%;
+  /*background-color: white;*/ }
+
+/* line 9, static/scss/messages.scss */
+.pusher {
+  height: 75px !important; }
+
+/* line 13, static/scss/messages.scss */
+.content {
+  display: grid;
+  grid-template-areas: "side chat-top" "side messages-content" "side messages-content";
+  grid-template-rows: 75px auto 75px;
+  grid-template-columns: 250px auto;
+  /*height: calc(100% - 105px);*/
+  min-height: initial;
+  margin: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px; }
+
+/* line 28, static/scss/messages.scss */
+.side {
+  width: 250px;
+  height: calc(100vh - 130px);
+  grid-area: side;
+  background-color: white;
+  border-right: solid 1px #ececec; }
+  /* line 34, static/scss/messages.scss */
+  .side .actions {
+    display: flex;
+    padding: 10px; }
+    /* line 37, static/scss/messages.scss */
+    .side .actions > * {
+      margin: 5px; }
+    /* line 40, static/scss/messages.scss */
+    .side .actions .search {
+      width: 100%;
+      display: flex;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      align-items: center; }
+      /* line 46, static/scss/messages.scss */
+      .side .actions .search input {
+        width: 100%;
+        padding: 10px;
+        border: transparent;
+        background-color: transparent;
+        outline: transparent; }
+      /* line 53, static/scss/messages.scss */
+      .side .actions .search svg {
+        width: 20px;
+        height: 20px;
+        margin-left: 5px; }
+    /* line 59, static/scss/messages.scss */
+    .side .actions > button {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      margin: 0; }
+      /* line 64, static/scss/messages.scss */
+      .side .actions > button svg {
+        width: 30px;
+        height: 30px;
+        margin-left: 5px; }
+  /* line 71, static/scss/messages.scss */
+  .side .contacts {
+    padding: 0px 0px 10px;
+    height: calc(100% - 115px);
+    scrollbar-width: thin;
+    overflow-y: auto; }
+    /* line 76, static/scss/messages.scss */
+    .side .contacts::-webkit-scrollbar {
+      width: 10px; }
+    /* line 79, static/scss/messages.scss */
+    .side .contacts::-webkit-scrollbar-thumb {
+      border-radius: 20px;
+      background-color: #c7c7c7;
+      border: solid 3px white; }
+    /* line 84, static/scss/messages.scss */
+    .side .contacts > p {
+      margin-left: 15px; }
+    /* line 87, static/scss/messages.scss */
+    .side .contacts hr {
+      border: solid 1px #ececec;
+      margin: 0; }
+    /* line 91, static/scss/messages.scss */
+    .side .contacts .contact {
+      position: relative;
+      list-style: none;
+      margin: 10px;
+      height: 80px;
+      border: solid 1px transparent;
+      border-radius: 5px;
+      background-color: transparent;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.4s; }
+      /* line 101, static/scss/messages.scss */
+      .side .contacts .contact:hover {
+        cursor: pointer;
+        transition: background-color 0.4s;
+        background-color: rgba(192, 191, 191, 0.2); }
+      /* line 106, static/scss/messages.scss */
+      .side .contacts .contact a {
+        width: 100%;
+        height: 100%;
+        padding-left: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: black;
+        display: flex;
+        align-items: center; }
+      /* line 117, static/scss/messages.scss */
+      .side .contacts .contact img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        object-fit: cover; }
+      /* line 123, static/scss/messages.scss */
+      .side .contacts .contact .chat-info {
+        width: calc(100% - 60px);
+        margin-left: 10px; }
+        /* line 127, static/scss/messages.scss */
+        .side .contacts .contact .chat-info p:first-of-type {
+          margin-bottom: 3px; }
+        /* line 130, static/scss/messages.scss */
+        .side .contacts .contact .chat-info p:last-of-type {
+          margin-top: 3px;
+          font-size: 12.5px;
+          color: grey;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis; }
+      /* line 140, static/scss/messages.scss */
+      .side .contacts .contact .unread-bubble {
+        display: none; }
+    /* line 146, static/scss/messages.scss */
+    .side .contacts .unread .chat-info p {
+      font-weight: bold; }
+    /* line 150, static/scss/messages.scss */
+    .side .contacts .unread .unread-bubble {
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 40%;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background-color: #1168d8; }
+    /* line 161, static/scss/messages.scss */
+    .side .contacts .active-convo {
+      background-color: #617da021;
+      margin: 0;
+      border-left: solid 5px #1168d8;
+      border-radius: 0; }
+    /* line 168, static/scss/messages.scss */
+    .side .contacts .group-message a {
+      position: relative; }
+      /* line 170, static/scss/messages.scss */
+      .side .contacts .group-message a img {
+        position: absolute;
+        width: 40px;
+        height: 40px; }
+        /* line 174, static/scss/messages.scss */
+        .side .contacts .group-message a img:first-of-type {
+          z-index: 100;
+          top: 15%;
+          left: 2%; }
+        /* line 179, static/scss/messages.scss */
+        .side .contacts .group-message a img:last-of-type {
+          left: 7%;
+          top: 40%;
+          z-index: 0; }
+    /* line 186, static/scss/messages.scss */
+    .side .contacts .group-message .chat-info {
+      margin-left: 50px; }
+
+/* line 194, static/scss/messages.scss */
+.popup .popup-title {
+  margin-bottom: 5px; }
+
+/* line 197, static/scss/messages.scss */
+.popup input[type="submit"] {
+  transition: filter 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+  cursor: pointer; }
+  /* line 208, static/scss/messages.scss */
+  .popup input[type="submit"]:hover {
+    transition: filter 0.4s;
+    filter: brightness(1.1); }
+
+/* line 215, static/scss/messages.scss */
+.chat-top {
+  grid-area: chat-top;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  position: relative; }
+  /* line 221, static/scss/messages.scss */
+  .chat-top img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover; }
+  /* line 227, static/scss/messages.scss */
+  .chat-top > * {
+    margin: 5px; }
+  /* line 230, static/scss/messages.scss */
+  .chat-top hr {
+    position: absolute;
+    bottom: 0px;
+    width: calc(100% - 2px);
+    margin: 0; }
+
+/* line 237, static/scss/messages.scss */
+.messages-content {
+  grid-area: messages-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*margin: 15px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;*/ }
+
+/* line 247, static/scss/messages.scss */
+.messages {
+  grid-area: messages;
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+  overflow: auto;
+  /*background-color: #1167d80e;*/ }
+  /* line 254, static/scss/messages.scss */
+  .messages > a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1168d8;
+    font-weight: bold;
+    height: 50px;
+    transition: background-color 0.4s; }
+    /* line 263, static/scss/messages.scss */
+    .messages > a:hover {
+      transition: background-color 0.4s;
+      background-color: #1168d80f;
+      cursor: pointer; }
+  /* line 269, static/scss/messages.scss */
+  .messages .message {
+    list-style: none;
+    display: flex;
+    flex-direction: column; }
+    /* line 273, static/scss/messages.scss */
+    .messages .message .chat {
+      width: fit-content;
+      max-width: 45%;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 5px;
+      overflow-wrap: break-word; }
+    /* line 281, static/scss/messages.scss */
+    .messages .message .messageinfo {
+      margin: 0 5px 10px;
+      font-size: 12.5px;
+      color: grey; }
+  /* line 288, static/scss/messages.scss */
+  .messages .sender .chat {
+    color: black;
+    background-color: rgba(228, 228, 228, 0.8); }
+  /* line 293, static/scss/messages.scss */
+  .messages .receiver {
+    align-items: flex-end; }
+    /* line 295, static/scss/messages.scss */
+    .messages .receiver .chat {
+      color: white;
+      background-color: #1168d8; }
+
+/* line 302, static/scss/messages.scss */
+.no-messages {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  /* line 306, static/scss/messages.scss */
+  .no-messages li {
+    list-style: none; }
+
+/* line 311, static/scss/messages.scss */
+.chatbox {
+  grid-area: chatbox;
+  display: flex;
+  align-items: center;
+  border-top: solid 1px #ececec;
+  background-color: white;
+  width: 100%;
+  min-height: 7%;
+  /*border-radius: 0 0 5px 5px;*/ }
+  /* line 315, static/scss/messages.scss */
+  .chatbox > * {
+    margin: 5px; }
+  /* line 323, static/scss/messages.scss */
+  .chatbox span {
+    transition: 0.4s;
+    border: solid 1px #1168d8;
+    background-color: white;
+    color: #1168d8;
+    border-radius: 5px;
+    margin: 0 5px;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer; }
+    /* line 335, static/scss/messages.scss */
+    .chatbox span:hover {
+      transition: 0.4s;
+      filter: brightness(1.1); }
+  /* line 340, static/scss/messages.scss */
+  .chatbox input[type="text"] {
+    margin-left: 0;
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+    border: transparent !important;
+    background-color: #f0f0f0 !important;
+    outline: transparent; }
+  /* line 349, static/scss/messages.scss */
+  .chatbox button:last-of-type {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0; }
+    /* line 354, static/scss/messages.scss */
+    .chatbox button:last-of-type svg {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px; }
+      /* line 358, static/scss/messages.scss */
+      .chatbox button:last-of-type svg:hover {
+        cursor: pointer; }
+
+/* line 366, static/scss/messages.scss */
+.no-chatbox button {
+  pointer-events: none; }
+  /* line 368, static/scss/messages.scss */
+  .no-chatbox button svg {
+    filter: grayscale(1); }

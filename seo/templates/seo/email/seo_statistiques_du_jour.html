@@ -1,0 +1,89 @@
+{% extends 'email-base.html' %}
+{% load i18n %}
+{% load humanize %}
+{% block hero %}
+    {% trans "SEO - Statistiques du jour" %}
+{% endblock %}
+{% block content %}
+    <tr>
+        <td align="left"
+            bgcolor="#ffffff"
+            style="padding: 5px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: center;">
+            <tr>
+                <td>
+                    <ul>
+                        <li>
+                            <p>
+                                <a href="https://www.cogofly.com/login"
+                                   target="_blank"
+                                   style="margin: 0; color: #1168d8">{{ app_status.counter_nb_visites_total }}</a> {% trans " gests total in the web site!" %}
+                        </p>
+                        <p>
+                            <a href="https://www.cogofly.com/login"
+                               target="_blank"
+                               style="margin: 0; color: #1168d8">{{ app_status.counter_nb_visites_today }}</a> {% trans " gests today in the web site!" %}
+                    </p>
+                </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td align="left"
+            bgcolor="#ffffff"
+            style="padding: 5px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: center;">
+            <p>
+                <a href="https://www.cogofly.com/login"
+                   target="_blank"
+                   style="margin: 0; color: #1168d8">{% trans "Today " %}</a> {{ app_status.date }}
+        </p>
+        <ul>
+            <li align="left">
+                <p>
+                    {{ app_status.user_acounts_creation }} nouvelles créations de nouveaux comptes!
+                </p>
+                <p>
+                    {{ app_status.users_profils_acount }} nouvelles créations de nouveaux profils!
+                </p>
+                <p>
+                    {{ app_status.completed_users_profils_count }} nouveaux propfils completés!
+                </p>
+                <p>
+                    {{ app_status.daily_users_message_count }} messages echangés aujourd'hui!!
+                </p>
+                <p>
+                    {{ app_status.total_users_messages_count }} total de messages echangées!
+                </p>
+                <p>
+                    {{ app_status.users_connected_count }} total connexions au site!
+                </p>
+                <p>
+                    {{ app_status.users_guest_count }} total de connexions sans profil!
+                </p>
+                <p>
+                    {{ app_status.users_profils_count_by_profil_hadicap  }} nouvelles créations de compte profil handicap!
+                </p>
+                <p>
+                    {{ app_status.daily_trips_added  }} nouvelles cartes voyage crées!
+                </p>
+                <p>
+                    {{ app_status.total_trips_added }} total de cartes de voyages!
+                </p>
+                <p>
+                    {{ app_status.pictures_count }} total de photos mises en ligne!
+                </p>
+                <p>
+                    {{ app_status.daily_searches_count }} recherches sur le site web!
+                </p>
+                <p>
+                    {{ app_status.total_searches_count }} total de recherches!
+                </p>
+            </li>
+        </ul>
+    </td>
+</tr>
+{% endblock %}
+{% block footer %}
+    <p style="margin: 0;">
+        <a href="https://www.cogofly.com/login">{% trans "You received this email because you are designed by the web master! " %}</a>
+    </p>
+{% endblock footer %}

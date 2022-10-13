@@ -1,0 +1,16 @@
+.post{
+    width: 60%;
+    margin: 20px auto 0;
+}
+
+@media all and (max-width: 900px){
+    .post{
+        width: 80%;
+    }
+}
+
+@media all and (max-width: 600px){
+    .post{
+        width: 95%;
+    }
+}

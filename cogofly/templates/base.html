@@ -1,0 +1,72 @@
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %}
+{% get_current_language as LANGUAGE_CODE %} 
+
+<html lang={{ LANGUAGE_CODE }}>
+    <head>
+        <title>{% block title %}CoGoFly: Add Trip, Find CoTravellers And Travel Together{% endblock %}</title>
+        <meta name="description" content="Are you fed up with travelling alone? Find co travellers and vaccinated travellers on CoGoFly and be a part of the international co travellers community."/>
+        <meta name="keywords" content="Find co travellers, Find travel buddy, Website to find travel buddy,	International travellers community, International co travellers community, Vaccinated travellers, Social Networking Sites for travellers, Find travel mate, How to find travel mate, Find travel partner, Find travel partner free, How to find co travellers, Covid safe travel, Travel in your own country," />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <meta property="og:url"           content="https://cogofly.com/" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="CoGoFly: Alone, we think... Together, we travel!" />
+        <meta property="og:description"   content="Find international CoTravellers with whom you would like to go away." />
+        <meta property="og:image"         content="https://cogofly.com/static/img/road.jpg" />   
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+      />
+        {% compress css %}
+            {% block css %}{% endblock %}
+        {% endcompress %}
+        <script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+        <script src="https://unpkg.com/htmx.org@1.7.0"></script>   
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-93018020-1', 'auto');
+            ga('send', 'pageview');
+        </script>          
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122939509-1"></script>
+        
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-122939509-1');
+        </script>           
+        <script>
+            function clearMessages(){
+                document.getElementById("messages").style.display = "none"
+            }
+        </script>      
+
+        
+        <script src="https://cdn.tailwindcss.com"></script> 
+        {% block js %}{% endblock %}
+    </head>
+    <body>
+    {% if messages %}
+        <ul id="messages" class="messages">
+            <span onclick="$(this).parent().css('display', 'none')">X</span>
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            <!--<hr>-->
+            {% endfor %}
+            <script>
+                window.setTimeout(clearMessages, 3000)
+            </script>
+        </ul>
+    {% endif %}
+    {% block body %}{% endblock %}
+    </body>
+    {% block footer %}{% endblock %}
+</html>

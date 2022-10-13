@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/profile.scss' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/profile-edit.scss' %}">
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+<div class="content">
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <section class="my-info">
+            <h2>{% trans 'My info' %}</h2>
+            <div class="tab-titles">
+                <p id="default-tab" class="tab-title" onclick="tabContentSwitch(event, 'practical-tab')">{% trans "Practical information" %}</p>
+                <p class="tab-title" onclick="tabContentSwitch(event, 'optional-tab')">{% trans "Optional information" %}</p>
+                <p class="tab-title" onclick="tabContentSwitch(event, 'hobbies-tab')">{% trans "Hobbies/Activities" %}</p>
+                <p class="tab-title" onclick="tabContentSwitch(event, 'my-pictures')">{% trans "My pictures" %}</p>
+            </div>
+            {# {{ nameform.errors }} {{ profileform.errors }} {{ albumform.errors }} #}
+            <div id="practical-tab" class="tab-content">
+                <script async type="text/javascript" src="{% static 'django_password_strength/js/password_strength.js' %}"></script>
+                <script async type="text/javascript" src="{% static 'django_password_strength/js/zxcvbn.js' %}"></script>
+                {{ nameform }}
+
+                {{ profileform.birthdate.label_tag }}<span class="help">{{ profileform.birthdate.help_text }}</span>
+                {{ profileform.birthdate }}
+
+                {{ profileform.sex.label_tag }}<span class="help">{{ profileform.sex.help_text }}</span>
+                {{ profileform.sex }}
+
+                {{ profileform.place.label_tag }}<span class="help">{{ profileform.place.help_text }}</span>
+                {{ profileform.place }}
+
+                {{ profileform.birthplace.label_tag }}
+                {{ profileform.birthplace }}
+            </div>
+
+            <div id="optional-tab" class="tab-content">
+                {{ profileform.nationality.label_tag }}
+                {{ profileform.nationality }}
+
+                {{ profileform.mothertongue.label_tag }}
+                {{ profileform.mothertongue }}
+
+                {{ profileform.languages.label_tag }}
+                {{ profileform.languages }}
+
+                {{ profileform.children.label_tag }}
+                {{ profileform.children }}
+
+                {{ profileform.personalities.label_tag }}
+                {{ profileform.personalities }}
+
+                {{ profileform.licenses.label_tag }}
+                {{ profileform.licenses }}
+
+                {{ profileform.smoker.label_tag }}
+                {{ profileform.smoker }}
+
+                {{ profileform.covid.label_tag }}
+                {{ profileform.covid }}
+                
+                {{ profileform.handicap.label_tag }}
+                {{ profileform.handicap }}
+
+                {{ profileform.help_ukranian.label_tag }}
+                {{ profileform.help_ukranian }}
+
+
+                {{ profileform.level.label_tag }}
+                {{ profileform.level }}
+
+                {{ profileform.subjects.label_tag }}
+                {{ profileform.subjects }}
+
+                {{ profileform.sector.label_tag }}
+                {{ profileform.sector }}
+
+                {{ profileform.job.label_tag }}
+                {{ profileform.job }}
+
+                {{ profileform.current.label_tag }}
+                {{ profileform.current }}
+
+                {{ profileform.previous.label_tag }}
+                {{ profileform.previous }}
+
+                {{ profileform.about.label_tag }}
+                {{ profileform.about }}            
+            </div>
+            <div id="hobbies-tab" class="tab-content">
+                {{ profileform.hobbies.label_tag }}
+                {{ profileform.hobbies }}
+            </div>
+            <div id="my-pictures" class="tab-content">
+                <h3>{% trans 'My pictures' %}</h2>
+                <div class="profile-cover">
+                    <div class="picture">
+                        {{ profileform.picture.label_tag }}
+                        {{ profileform.picture }}        
+                    </div>
+                    <div class="cover">
+                        {{ profileform.cover.label_tag }}
+                        {{ profileform.cover }}        
+                    </div>        
+                </div>
+
+                <div class="album">
+                    <label>{% trans 'Album' %}</label>
+                    {{ albumform.management_form }}
+                    <ul>
+                        {% for form in albumform %}
+                            {{ form.id }}
+                            {% include 'widgets/album_widget.html' %}
+                        {% endfor %}
+                    </ul>        
+                </div>
+        
+            </div>
+        </section>
+
+        <input type="submit" value="{% trans 'Save changes' %}">
+        <a class="cancel" href={% url 'profile' request.user.id %}>{% trans 'Cancel' %}</a>
+
+    </form>
+</div>
+
+<div class="bottom-pusher"></div>
+{% endblock %}
+
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/profile-edit.js' %}"></script>
+    {{ profileform.media }}
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

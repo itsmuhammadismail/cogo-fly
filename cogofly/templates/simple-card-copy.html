@@ -1,0 +1,133 @@
+
+
+
+?"
+\\\\\\\\\\\\\\"}?"{% load static %}
+{% load svg %}
+{% load i18n %}
+{% load compress %} 
+ 
+{% compress css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/simple-card.scss' %}">
+{% endcompress %}
+<div class="simple-card">
+
+    <div class="card-top">
+        <ul class="identity">
+            <li>{% if contact.profile.sex %}{% svg 'icons/male' %}{% else %}{% svg 'icons/female' %}{% endif %}</li>
+            <li><p>{% if contact == request.user %}{% trans "You" %}{% else %}{{ contact.first_name }} {{ contact.last_name }}{% endif %}</p></li>                
+        </ul>
+        <!--<p>{% trans "No request sent" %}</p>-->
+        <ul>
+            {% comment %}
+            <li><a title="Delete" href="{% url 'profile' contact.id %}?action=removecontact">{% svg 'icons/delete' %}</a></li>
+            {% endcomment %}
+            <li><a title="See profile" target="_blank" rel="noopener noreferrer" href="{% url 'profile' contact.id %}">{% svg 'icons/plus' %}</a></li>
+        </ul>        
+    </div>
+
+    <div class="card-content">
+        <img src="{{ contact.profile.picture_url }}" alt="cogofly profile picture" class="profile-picture">
+        <ul>
+            <li>                   
+                <p title="{% trans "Lives in " %}{{ contact.profile.place.name }}">
+                    {% svg 'icons/house' %}
+                    {% trans 'Lives in' %} 
+                    <strong>{{ contact.profile.place.name }}</strong> 
+                    {% if contact.profile.place.country.code2  %}
+                    {% svg 'flags/'|add:contact.profile.place.country.code2|lower %}
+                    {% endif %}
+                </p> 
+            </li>
+            
+            <li>     
+                {% if contact.profile.birthplace %}
+                <p title="{% trans "Born in " %}{{ contact.profile.birthplace.name }}">
+                    {% svg 'icons/pin' %}
+                    {% trans 'Born in' %} 
+                    <strong>{{ contact.profile.birthplace.name }}</strong> 
+                    {% if contact.profile.birthplace.country.code2 %}
+                    {% svg 'flags/'|add:contact.profile.birthplace.country.code2|lower %}
+                    {% endif %}
+                </p> 
+                {% else %}
+                <p title="{% trans 'Birthplace not specified' %}">
+                    {% svg 'icons/pin' %}
+                    {% trans 'Birthplace not specified' %}
+                </p>                
+                {% endif %}
+            </li>
+            
+            <li>
+                {% with contact.trips.all.previous as trip %}
+                    {% if trip and trip.destination.country.code2 %}
+                    <p title="{% trans "Last travel: " %}{{ trip.destination.name }}">
+                        {% svg 'icons/calendar-completed' %}
+                        {% trans 'Last travel: ' %}
+                        <strong>{{ trip.destination.name }}</strong> 
+                        {% svg 'flags/'|add:trip.destination.country.code2|lower %}
+                    </p> 
+                    <!--<p>{{ contact.trips.last.start }} - {{ contact.trips.last.end }}</p>-->
+                    {% else %}
+                    <p title="{% trans 'No travels done.' %}">
+                        {% svg 'icons/calendar-completed' %}
+                        {% trans 'No travels done.' %}                
+                    </p>
+                    {% endif%}
+                {% endwith %}
+            </li>
+            <li>
+                {% with contact.trips.all.next as trip %}
+                    {% if trip and trip.destination.country.code2 %}
+                    <p title="{% trans "Next travel: " %}{{ trip.destination.name }}">
+                        {% svg 'icons/calendar' %}
+                        {% trans 'Next travel: ' %}
+                        <strong>{{ trip.destination.name }}</strong>
+                        {% svg 'flags/'|add:trip.destination.country.code2|lower %}
+                    </p> 
+                    <!--<p>{{ contact.trips.next.start }} - {{ contact.trips.next.end }}</p>-->
+                    {% else %}
+                    <p title="{% trans 'No travels planned.' %} ">
+                        {% svg 'icons/calendar' %}
+                        {% trans 'No travels planned.' %}                
+                    </p>
+                    {% endif %}
+                {% endwith %}
+            </li>    
+                                                   
+        </ul> 
+    </div>
+
+    <hr>
+
+    <div class="card-bottom">
+        <ul class="links">
+            <form method="POST" action="{% url 'profile' contact.id %}">
+                {% csrf_token %}
+                <li>
+                    {% if is_liked or contact.is_liked %}
+                    <button title="{% trans 'Unlike' %}" type="submit" name="unlike">{% svg 'icons/like' %}</button>
+                    {% else %}
+                    <button title="{% trans 'Like' %}" type="submit" name="like">{% svg 'icons/like-white' %}</button>
+                    {% endif %}
+                </li>               
+                <li>
+                    {% if is_favorite or contact.is_favorite %}
+                    <button title="{% trans 'Remove from favorites' %}" type="submit" name="unfav">{% svg 'icons/star' %}</button>
+                    {% else %}
+                    <button title="{% trans 'Add to favorites' %}" type="submit" name="fav">{% svg 'icons/star-white' %}</button>
+                    {% endif %}
+                </li>
+                <li>
+                    <button title="{% trans "Send message" %}" type="submit" name="sendmessage">{% svg 'icons/comment' %}</button>
+                </li>            
+            </form>
+            {% comment %}
+                <li><a title="Send mail" href="#">{% svg 'icons/mail' %}</a></li>        -->        
+                <li><a title={% trans "Add to contacts" %} href="{% url 'profile' contact.id %}?action=sendrequest">{% svg 'icons/add' %}</a></li>
+            {% endcomment %}   
+            {% include 'popup.html' with icon='icons/next' action='share' form=shareform text=_('Share profile') url=contact.get_absolute_url %}        
+        </ul>        
+    </div>
+
+</div>

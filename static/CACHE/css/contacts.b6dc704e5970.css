@@ -1,0 +1,452 @@
+/* line 1, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px; }
+
+/* line 9, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 17, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 18, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 27, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 30, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 38, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 41, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 44, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 60, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 63, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 71, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 75, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 83, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 85, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 92, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 98, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 104, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 111, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 119, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 123, static/scss/base.scss */
+  form img[src="/static/scss?5a74cce07561"] {
+    visibility: hidden; }
+
+/* line 128, static/scss/base.scss */
+button,
+input
+.button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 145, static/scss/base.scss */
+  button:hover,
+  input
+.button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 151, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 166, static/scss/base.scss */
+.disabled-button {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 169, static/scss/base.scss */
+  .disabled-button:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 3, static/scss/card-pages.scss */
+header {
+  position: fixed;
+  z-index: 100; }
+
+/* line 8, static/scss/card-pages.scss */
+.cards-content {
+  display: flex;
+  justify-content: center; }
+
+/* line 13, static/scss/card-pages.scss */
+section {
+  margin: 10px; }
+
+/* line 17, static/scss/card-pages.scss */
+h2 {
+  text-align: center; }
+
+/* line 21, static/scss/card-pages.scss */
+.filters {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  position: sticky;
+  top: 100px;
+  height: fit-content; }
+  /* line 28, static/scss/card-pages.scss */
+  .filters h2 {
+    font-size: 20px;
+    margin: 5px auto; }
+  /* line 32, static/scss/card-pages.scss */
+  .filters hr {
+    width: 100%;
+    margin: 10px 0; }
+  /* line 36, static/scss/card-pages.scss */
+  .filters h3 {
+    margin: 0;
+    font-size: 15px;
+    text-align: center; }
+  /* line 42, static/scss/card-pages.scss */
+  .filters .my-trips-cards,
+  .filters .my-contacts,
+  .filters .filter-by {
+    display: flex;
+    flex-direction: column; }
+  /* line 48, static/scss/card-pages.scss */
+  .filters .filter-buttons {
+    display: flex;
+    flex-direction: column; }
+
+/* line 54, static/scss/card-pages.scss */
+.card-section {
+  padding: 10px; }
+  /* line 57, static/scss/card-pages.scss */
+  .card-section h2 {
+    margin: 5px 0; }
+  /* line 60, static/scss/card-pages.scss */
+  .card-section hr {
+    width: 97%;
+    margin: 15px auto 5px; }
+  /* line 64, static/scss/card-pages.scss */
+  .card-section > p {
+    margin-left: 10px; }
+  /* line 67, static/scss/card-pages.scss */
+  .card-section .cards-list {
+    margin-top: 0;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px; }
+    /* line 73, static/scss/card-pages.scss */
+    .card-section .cards-list .card {
+      margin: 10px; }
+    /* line 76, static/scss/card-pages.scss */
+    .card-section .cards-list li {
+      list-style: none;
+      margin: 10px; }
+
+/* line 83, static/scss/card-pages.scss */
+.active {
+  background-color: #1168d8;
+  color: white; }
+
+@media all and (max-width: 1590px) {
+  /* line 90, static/scss/card-pages.scss */
+  .card-section .cards-list {
+    width: 800px; } }
+
+@media all and (max-width: 1210px) {
+  /* line 98, static/scss/card-pages.scss */
+  .card-section .cards-list {
+    width: 400px; } }
+
+/*
+@media all and (max-height: 600px) {
+	.cards-content {
+		.filters {
+			h2 {
+				font-size: 15px;
+			}
+			h3 {
+				font-size: 14px;
+			}
+			hr {
+				margin: 5px 0;
+			}
+			button {
+				font-size: 12px;
+				padding: 0px 5px;
+				height: 30px;
+			}
+		}
+		.card-section {
+			padding: 10px 5px;
+			.cards-list {
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+}
+*/
+/* line 1, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px; }
+
+/* line 9, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 17, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 18, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 27, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 30, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 38, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 41, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 44, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 60, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 63, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 71, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 75, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 83, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 85, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 92, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 98, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 104, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 111, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 119, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 123, static/scss/base.scss */
+  form img[src="/static/scss?5a74cce07561"] {
+    visibility: hidden; }
+
+/* line 128, static/scss/base.scss */
+button,
+input
+.button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 145, static/scss/base.scss */
+  button:hover,
+  input
+.button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 151, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 166, static/scss/base.scss */
+.disabled-button {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 169, static/scss/base.scss */
+  .disabled-button:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 5, static/scss/contacts.scss */
+.card-section .cards-list {
+  padding: 0; }
+  /* line 7, static/scss/contacts.scss */
+  .card-section .cards-list .card {
+    margin: 10px; }

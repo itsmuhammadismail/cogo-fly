@@ -1,0 +1,388 @@
+/* line 1, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+.card {
+  background-color: white;
+  height: 235px;
+  width: 380px;
+  margin: 5px;
+  display: flex;
+  position: relative;
+  font-family: "Roboto Mono", monospace; }
+  /* line 10, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+  .card .card-left {
+    border: solid black 1px;
+    border-right: 0;
+    border-radius: 10px 0 0 10px;
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+    /* line 19, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card .card-left .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      /* line 23, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .card-top img {
+        filter: brightness(0);
+        width: 125px; }
+      /* line 27, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .card-top > span {
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 22px;
+        min-width: 50px;
+        background-color: #4d99e7;
+        color: white;
+        border-radius: 20px; }
+        /* line 37, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+        .card .card-left .card-top > span svg {
+          height: 15px;
+          width: 15px; }
+      /* line 42, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .card-top a {
+        color: black;
+        text-decoration: none;
+        font-family: "Lato", sans-serif;
+        font-size: 9px;
+        display: flex;
+        align-self: center;
+        align-items: center;
+        border-radius: 5px;
+        border: solid 1px black;
+        padding: 5px 20px; }
+    /* line 55, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card .card-left .trip-info {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0; }
+      /* line 60, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .trip-info li {
+        list-style: none;
+        margin: 5px;
+        width: 100%; }
+        /* line 64, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+        .card .card-left .trip-info li:first-of-type {
+          margin: 5 5 0 0; }
+          /* line 66, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+          .card .card-left .trip-info li:first-of-type p:last-of-type {
+            width: 245px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; }
+        /* line 73, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+        .card .card-left .trip-info li:last-of-type {
+          display: flex;
+          margin-left: 0; }
+          /* line 76, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+          .card .card-left .trip-info li:last-of-type div {
+            width: 50%; }
+            /* line 78, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+            .card .card-left .trip-info li:last-of-type div p:last-of-type {
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis; }
+        /* line 85, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+        .card .card-left .trip-info li p {
+          font-size: 10px;
+          margin: 0; }
+    /* line 91, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card .card-left .trip-photos {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      margin: 0;
+      position: relative; }
+      /* line 97, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .trip-photos > p {
+        position: absolute;
+        z-index: 100;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        font-family: "Lato", sans-serif; }
+      /* line 109, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .trip-photos li {
+        list-style: none;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 60px;
+        position: relative; }
+        /* line 119, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+        .card .card-left .trip-photos li img {
+          position: absolute;
+          width: 82px;
+          height: 60px;
+          left: 0;
+          z-index: 1;
+          border-radius: 10px;
+          /*&:before {
+						content: " ";
+						display: block;
+						position: absolute;
+						width: 82px;
+						height: 60px;
+						background: url(/static/img/cogofly_logo_v2.png?6d0d76272650) no-repeat,
+							url(/static/img/white.png?6d0d76272650);
+						background-size: 70px 30px, 70px 60px;
+						background-position: center, center;
+						z-index: 10;
+					}*/ }
+    /* line 142, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card .card-left .comment p {
+      font-size: 10px;
+      margin: 5px 0 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+    /* line 149, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card .card-left .comment .comment-text {
+      display: flex;
+      padding: 5px;
+      height: 30px;
+      border: solid 1px black;
+      border-radius: 5px; }
+      /* line 155, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .comment .comment-text p {
+        font-size: 9px; }
+  /* line 162, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+  .card::before {
+    content: "";
+    background-color: white;
+    border: solid black 1px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: 0;
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    right: 25%;
+    top: 0; }
+  /* line 175, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+  .card::after {
+    content: "";
+    background-color: white;
+    border: solid black 1px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 0;
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    right: 25%;
+    bottom: 0; }
+  /* line 188, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+  .card .card-right {
+    background: url("/static/img/clouds.jpg?6d0d76272650") center no-repeat;
+    background-size: cover;
+    border: solid black 1px;
+    border-left: 0;
+    width: 30%;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    /* line 198, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card .card-right p {
+      font-size: 18px;
+      margin-bottom: 0;
+      color: white;
+      text-align: center; }
+    /* line 204, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card .card-right hr {
+      width: 100%;
+      border-color: white; }
+      /* line 207, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-right hr:first-of-type {
+        margin-bottom: 0; }
+      /* line 210, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-right hr:last-of-type {
+        margin-top: 0; }
+    /* line 214, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card .card-right .card-buttons {
+      height: 60%;
+      width: 105px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%; }
+      /* line 217, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-right .card-buttons form {
+        display: contents; }
+      /* line 225, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-right .card-buttons form > div > button,
+      .card .card-right .card-buttons .share > button {
+        border: none;
+        padding: 0;
+        background: transparent;
+        height: fit-content;
+        margin: 5px 0; }
+      /* line 233, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-right .card-buttons svg {
+        height: 25px;
+        width: 25px; }
+      /* line 238, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-right .card-buttons .share button:focus {
+        outline: 0; }
+      /* line 241, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-right .card-buttons .share .share-popup {
+        display: none;
+        flex-direction: column;
+        padding: 0px;
+        margin: 0;
+        position: absolute;
+        right: -12%;
+        top: 23%;
+        z-index: 100;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        width: max-content; }
+        /* line 254, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+        .card .card-right .card-buttons .share .share-popup li {
+          list-style: none;
+          font-family: "Lato", sans-serif;
+          font-size: initial;
+          display: flex;
+          align-items: center; }
+          /* line 260, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+          .card .card-right .card-buttons .share .share-popup li:hover {
+            cursor: pointer;
+            background-color: #dbdbdb; }
+          /* line 264, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+          .card .card-right .card-buttons .share .share-popup li > * {
+            padding: 10px; }
+          /* line 268, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+          .card .card-right .card-buttons .share .share-popup li > button {
+            border: none;
+            background: transparent;
+            height: fit-content;
+            margin: 0; }
+          /* line 274, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+          .card .card-right .card-buttons .share .share-popup li svg {
+            width: 20px;
+            height: 20px;
+            /*margin-right: 5px;*/ }
+          /* line 279, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+          .card .card-right .card-buttons .share .share-popup li > a {
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center; }
+      /* line 287, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-right .card-buttons .share .share-popup-open {
+        display: flex; }
+    /* line 292, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card .card-right .creator-info {
+      font-family: "Lato", sans-serif;
+      font-size: 17px;
+      color: #1168d8;
+      text-align: center;
+      margin: 0 0 5px; }
+    /* line 299, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card .card-right > span {
+      height: 60px; }
+
+/* line 308, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+.popup .popup-content form textarea {
+  margin: 10 0 0 0; }
+
+/* line 312, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+.popup .popup-content form input:nth-of-type(2) {
+  margin-top: 10px; }
+
+/* line 315, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+.popup .popup-content form input:last-of-type {
+  margin-top: 18px; }
+
+@media all and (max-width: 405px) {
+  /* line 325, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+  .card-and-actions .card {
+    width: 275px !important; }
+  /* line 329, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+  .card-and-actions .card .card-left {
+    padding: 10 8; }
+    /* line 332, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card-and-actions .card .card-left .card-top > img {
+      width: 90px; }
+    /* line 335, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card-and-actions .card .card-left .card-top > span {
+      min-width: 35px; }
+    /* line 338, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card-and-actions .card .card-left .card-top > a {
+      padding: 5 10; }
+    /* line 346, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card-and-actions .card .card-left .trip-info li:first-of-type p:last-of-type {
+      width: 165px; }
+    /* line 355, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card-and-actions .card .card-left .trip-photos li {
+      width: 45%; }
+      /* line 356, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card-and-actions .card .card-left .trip-photos li:last-of-type {
+        display: none; }
+      /* line 360, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card-and-actions .card .card-left .trip-photos li img {
+        width: 100%; }
+        /* line 362, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+        .card-and-actions .card .card-left .trip-photos li img::before {
+          width: 100%; }
+    /* line 369, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card-and-actions .card .card-left .comment > p {
+      display: none; }
+  /* line 375, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+  .card-and-actions .card .card-right .creator-info {
+    font-size: 13px; }
+  /* line 379, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+  .card-and-actions .card::before, .card-and-actions .card::after {
+    right: 26%; }
+  /* line 384, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+  .card {
+    width: 275px !important; }
+    /* line 386, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card .card-left {
+      padding: 10 8; }
+      /* line 389, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .card-top > img {
+        width: 90px; }
+      /* line 392, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .card-top > span {
+        min-width: 35px; }
+      /* line 395, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .card-top > a {
+        padding: 5 10; }
+      /* line 403, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .trip-info li:first-of-type p:last-of-type {
+        width: 165px; }
+      /* line 412, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .trip-photos li {
+        width: 45%; }
+        /* line 413, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+        .card .card-left .trip-photos li:last-of-type {
+          display: none; }
+        /* line 417, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+        .card .card-left .trip-photos li img {
+          width: 100%; }
+          /* line 419, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+          .card .card-left .trip-photos li img::before {
+            width: 100%; }
+      /* line 426, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+      .card .card-left .comment > p {
+        display: none; }
+    /* line 432, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card .card-right .creator-info {
+      font-size: 13px; }
+    /* line 436, c:/users/hp/downloads/cogo-fly/cogo-fly/static/scss/trip-card.scss */
+    .card::before, .card::after {
+      right: 26%; } }

@@ -1,0 +1,96 @@
+/* line 1, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+.popup {
+  display: none;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.4); }
+  /* line 11, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+  .popup.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+  /* line 17, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+  .popup .popup-content {
+    background: white;
+    border-radius: 5px;
+    padding: 20px; }
+  /* line 22, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+  .popup .popup-title {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px; }
+  /* line 28, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+  .popup form {
+    height: initial;
+    display: block; }
+    /* line 31, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+    .popup form > button {
+      border-color: red;
+      color: red;
+      width: 100%; }
+    /* line 36, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+    .popup form input[type="submit"] {
+      transition: 0.4s;
+      border: solid 1px #1168d8;
+      background-color: white;
+      color: #1168d8;
+      border-radius: 5px;
+      margin: 5px 0;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer; }
+      /* line 50, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+      .popup form input[type="submit"]:hover {
+        transition: 0.4s;
+        filter: brightness(1.1); }
+  /* line 56, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+  .popup #id_picture {
+    visibility: hidden;
+    position: absolute; }
+  /* line 60, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+  .popup .popup-buttons {
+    display: flex; }
+    /* line 63, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+    .popup .popup-buttons button:first-of-type {
+      margin-right: 5px;
+      color: red;
+      border: solid 1px red !important;
+      transition: 0.4s;
+      background-color: white;
+      border-radius: 5px;
+      margin: 5px 0;
+      padding: 10px 16px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer; }
+      /* line 77, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+      .popup .popup-buttons button:first-of-type:hover {
+        transition: 0.4s;
+        filter: brightness(1.1); }
+    /* line 82, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+    .popup .popup-buttons button:last-of-type {
+      margin-left: 5px;
+      color: green;
+      border: solid 1px green !important; }
+
+@media all and (max-height: 600px) {
+  /* line 92, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+  .popup {
+    padding: 10px 20px; }
+    /* line 94, c:/users/loupy/onedrive/bureau/cogofly/cogofly-website-v2.webapp.prod/apps/main/static/scss/popup.scss */
+    .popup .popup-title {
+      font-size: 20px;
+      margin: 10px 0; } }

@@ -1,0 +1,58 @@
+/* line 1, static/scss/popup.scss */
+.popup {
+  display: none;
+  position: fixed;
+  padding: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  z-index: 90;
+  box-shadow: 0 0 0 1000000px rgba(0, 0, 0, 0.4);
+  border-radius: 5px; }
+  /* line 12, static/scss/popup.scss */
+  .popup.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+  /* line 18, static/scss/popup.scss */
+  .popup .popup-title {
+    font-size: 30px;
+    display: flex;
+    justify-content: center; }
+  /* line 23, static/scss/popup.scss */
+  .popup form {
+    height: initial;
+    display: block; }
+    /* line 26, static/scss/popup.scss */
+    .popup form > button {
+      border-color: red;
+      color: red;
+      width: 100%; }
+  /* line 32, static/scss/popup.scss */
+  .popup #id_picture {
+    visibility: hidden;
+    position: absolute; }
+  /* line 36, static/scss/popup.scss */
+  .popup .popup-buttons {
+    display: flex; }
+    /* line 39, static/scss/popup.scss */
+    .popup .popup-buttons button:first-of-type {
+      margin-right: 5px;
+      color: red;
+      border: solid 1px red !important; }
+    /* line 44, static/scss/popup.scss */
+    .popup .popup-buttons button:last-of-type {
+      margin-left: 5px;
+      color: green;
+      border: solid 1px green !important; }
+
+@media all and (max-height: 600px) {
+  /* line 54, static/scss/popup.scss */
+  .popup {
+    padding: 10px 20px; }
+    /* line 56, static/scss/popup.scss */
+    .popup .popup-title {
+      font-size: 20px;
+      margin: 10px 0; } }

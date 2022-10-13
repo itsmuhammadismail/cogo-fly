@@ -1,0 +1,693 @@
+@charset "UTF-8";
+/* line 1, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px; }
+
+/* line 9, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 17, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 18, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 27, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 30, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 38, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 41, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 44, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 60, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 63, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 71, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 75, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 83, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 85, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 92, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 98, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 104, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 111, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 119, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 123, static/scss/base.scss */
+  form img[src="/static/scss?09e1318b19e6"] {
+    visibility: hidden; }
+
+/* line 128, static/scss/base.scss */
+button,
+input .button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 144, static/scss/base.scss */
+  button:hover,
+  input .button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 150, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 165, static/scss/base.scss */
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 168, static/scss/base.scss */
+  button:disabled:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 1, static/scss/header.scss */
+header {
+  background-color: #1168d8;
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0; }
+  /* line 8, static/scss/header.scss */
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    /* line 12, static/scss/header.scss */
+    header nav h1 {
+      margin: 0; }
+      /* line 14, static/scss/header.scss */
+      header nav h1 img {
+        padding: 10px;
+        height: 75px;
+        box-sizing: border-box; }
+    /* line 20, static/scss/header.scss */
+    header nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      height: 75px; }
+      /* line 25, static/scss/header.scss */
+      header nav ul a {
+        position: relative;
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center; }
+      /* line 37, static/scss/header.scss */
+      header nav ul .profile-toggle {
+        color: white; }
+        /* line 40, static/scss/header.scss */
+        header nav ul .profile-toggle > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          /* line 44, static/scss/header.scss */
+          header nav ul .profile-toggle > div:hover {
+            cursor: pointer; }
+      /* line 49, static/scss/header.scss */
+      header nav ul li {
+        list-style: none;
+        margin: 0 5px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px; }
+      /* line 59, static/scss/header.scss */
+      header nav ul p {
+        margin: 0 5px; }
+      /* line 62, static/scss/header.scss */
+      header nav ul svg {
+        width: 25px;
+        height: 25px;
+        filter: invert(1); }
+      /* line 68, static/scss/header.scss */
+      header nav ul .logout > span:hover {
+        cursor: pointer; }
+      /* line 71, static/scss/header.scss */
+      header nav ul .logout .show-logout-modal {
+        display: flex !important; }
+      /* line 74, static/scss/header.scss */
+      header nav ul .logout .logout-modal {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center; }
+        /* line 84, static/scss/header.scss */
+        header nav ul .logout .logout-modal > div {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          padding: 0 20px;
+          border-radius: 5px; }
+          /* line 91, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > p {
+            margin: 20 0 10; }
+          /* line 94, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div .logout-buttons {
+            display: flex;
+            justify-content: center; }
+            /* line 97, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons button {
+              margin: 0; }
+            /* line 100, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons > a {
+              margin: 10 5 20 0;
+              width: auto; }
+            /* line 104, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div .logout-buttons > button {
+              margin: 10 0 20 5;
+              color: red;
+              border-color: red; }
+          /* line 110, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > span {
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            color: grey; }
+            /* line 115, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div > span:hover {
+              cursor: pointer; }
+
+/* line 126, static/scss/header.scss */
+.sub-header {
+  position: fixed;
+  z-index: 100;
+  top: 125px;
+  right: 0px;
+  padding: 0;
+  border-radius: 5px 5px 0 5px; }
+
+/* line 135, static/scss/header.scss */
+.profile-dropdown {
+  padding: 0;
+  width: 300px;
+  text-align: center;
+  position: absolute;
+  right: -1000px;
+  top: 80px;
+  opacity: 0;
+  /*transition: right 0.4s;*/
+  color: black; }
+  /* line 145, static/scss/header.scss */
+  .profile-dropdown .banner {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 40px; }
+  /* line 152, static/scss/header.scss */
+  .profile-dropdown .profile-pic-bg {
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    top: 40px;
+    left: 100px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+    /* line 162, static/scss/header.scss */
+    .profile-dropdown .profile-pic-bg .profile-picture {
+      object-fit: cover;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: auto;
+      display: block; }
+  /* line 171, static/scss/header.scss */
+  .profile-dropdown > span {
+    color: white;
+    font-weight: bold;
+    top: 5px;
+    right: 7px;
+    position: absolute; }
+    /* line 177, static/scss/header.scss */
+    .profile-dropdown > span:hover {
+      cursor: pointer; }
+  /* line 181, static/scss/header.scss */
+  .profile-dropdown p {
+    margin: 5px 0;
+    padding-bottom: 5px;
+    /*border-bottom: solid 1px rgba(192, 191, 191, 0.5);*/ }
+  /* line 186, static/scss/header.scss */
+  .profile-dropdown ul {
+    padding: 0 20px;
+    margin: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto; }
+    /* line 192, static/scss/header.scss */
+    .profile-dropdown ul a {
+      text-decoration: none;
+      color: black;
+      flex-direction: row; }
+    /* line 197, static/scss/header.scss */
+    .profile-dropdown ul li {
+      margin: 5px 0; }
+      /* line 199, static/scss/header.scss */
+      .profile-dropdown ul li svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        filter: invert(0); }
+
+/* line 209, static/scss/header.scss */
+.show-profile-dropdown {
+  opacity: 1;
+  right: 5px;
+  /*transition: right 0.4s;*/ }
+
+/* line 215, static/scss/header.scss */
+.pusher {
+  height: 100px; }
+
+@media all and (max-height: 600px) {
+  /* line 222, static/scss/header.scss */
+  header nav ul {
+    margin: 0 10px; } }
+
+/* line 4, static/scss/how-it-works.scss */
+.pusher {
+  height: 75px !important; }
+
+/* line 8, static/scss/how-it-works.scss */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  width: 100%;
+  min-height: 100vh; }
+  /* line 13, static/scss/how-it-works.scss */
+  .content .left-column {
+    padding: 25px 10px 0 10px;
+    text-align: center;
+    background-color: white; }
+    /* line 17, static/scss/how-it-works.scss */
+    .content .left-column .left-column-content {
+      position: sticky;
+      top: 131px; }
+      /* line 20, static/scss/how-it-works.scss */
+      .content .left-column .left-column-content h2 {
+        font-size: 2.5em; }
+      /* line 23, static/scss/how-it-works.scss */
+      .content .left-column .left-column-content > p {
+        text-align: left;
+        width: 90%;
+        margin: auto; }
+      /* line 28, static/scss/how-it-works.scss */
+      .content .left-column .left-column-content ul {
+        padding: 0; }
+        /* line 30, static/scss/how-it-works.scss */
+        .content .left-column .left-column-content ul li {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          transition: transform 0.4s;
+          width: 90%;
+          margin: auto;
+          text-align: left; }
+          /* line 38, static/scss/how-it-works.scss */
+          .content .left-column .left-column-content ul li:hover {
+            transform: translateX(10px);
+            transition: transform 0.4s;
+            cursor: pointer; }
+          /* line 43, static/scss/how-it-works.scss */
+          .content .left-column .left-column-content ul li svg {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px; }
+  /* line 52, static/scss/how-it-works.scss */
+  .content .right-column {
+    padding-top: 25px;
+    width: 85%;
+    margin: 0 auto; }
+    /* line 56, static/scss/how-it-works.scss */
+    .content .right-column h3 {
+      font-size: 1.5em; }
+    /* line 60, static/scss/how-it-works.scss */
+    .content .right-column #step-one-content h3 {
+      text-align: center; }
+    /* line 63, static/scss/how-it-works.scss */
+    .content .right-column #step-one-content .step-one-titles {
+      padding: 0;
+      display: flex;
+      justify-content: center; }
+      /* line 67, static/scss/how-it-works.scss */
+      .content .right-column #step-one-content .step-one-titles li {
+        list-style: none;
+        margin: 0 10px;
+        color: grey;
+        transition: filter 0.4s; }
+        /* line 72, static/scss/how-it-works.scss */
+        .content .right-column #step-one-content .step-one-titles li:hover {
+          cursor: pointer;
+          filter: brightness(0.8);
+          transition: filter 0.4s; }
+      /* line 78, static/scss/how-it-works.scss */
+      .content .right-column #step-one-content .step-one-titles .active-title {
+        color: #1168d8;
+        font-weight: bold; }
+    /* line 86, static/scss/how-it-works.scss */
+    .content .right-column #step-one-content .information-content ul,
+    .content .right-column #step-one-content .optional-content ul {
+      padding: 0;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      animation: fadeEffect 1s; }
+      /* line 92, static/scss/how-it-works.scss */
+      .content .right-column #step-one-content .information-content ul li,
+      .content .right-column #step-one-content .optional-content ul li {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        padding: 0 10px;
+        width: 25%;
+        height: 275px;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.05); }
+        /* line 105, static/scss/how-it-works.scss */
+        .content .right-column #step-one-content .information-content ul li svg,
+        .content .right-column #step-one-content .optional-content ul li svg {
+          width: 75px;
+          height: 75px;
+          margin: 15px; }
+        /* line 110, static/scss/how-it-works.scss */
+        .content .right-column #step-one-content .information-content ul li p,
+        .content .right-column #step-one-content .optional-content ul li p {
+          text-align: center;
+          height: 30%; }
+    /* line 119, static/scss/how-it-works.scss */
+    .content .right-column #step-two-content h3 {
+      text-align: center; }
+    /* line 122, static/scss/how-it-works.scss */
+    .content .right-column #step-two-content > ul {
+      padding: 0; }
+      /* line 124, static/scss/how-it-works.scss */
+      .content .right-column #step-two-content > ul > li {
+        list-style: none; }
+      /* line 128, static/scss/how-it-works.scss */
+      .content .right-column #step-two-content > ul .add-trip .add-trip-content {
+        display: flex;
+        justify-content: center; }
+        /* line 131, static/scss/how-it-works.scss */
+        .content .right-column #step-two-content > ul .add-trip .add-trip-content button {
+          cursor: default;
+          filter: grayscale(0);
+          margin: 5px; }
+      /* line 138, static/scss/how-it-works.scss */
+      .content .right-column #step-two-content > ul .past-future {
+        background-color: #1167d82c;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+        width: 75%;
+        margin: 10px auto 0; }
+        /* line 145, static/scss/how-it-works.scss */
+        .content .right-column #step-two-content > ul .past-future > p {
+          text-align: center;
+          margin-top: 0; }
+        /* line 149, static/scss/how-it-works.scss */
+        .content .right-column #step-two-content > ul .past-future .past-future-choice {
+          display: flex;
+          align-items: center; }
+          /* line 152, static/scss/how-it-works.scss */
+          .content .right-column #step-two-content > ul .past-future .past-future-choice > * {
+            margin: 0 5px; }
+          /* line 155, static/scss/how-it-works.scss */
+          .content .right-column #step-two-content > ul .past-future .past-future-choice svg {
+            width: 15px;
+            height: 15px; }
+      /* line 161, static/scss/how-it-works.scss */
+      .content .right-column #step-two-content > ul .destination {
+        text-align: center; }
+    /* line 167, static/scss/how-it-works.scss */
+    .content .right-column #step-three-content h3 {
+      text-align: center; }
+    /* line 170, static/scss/how-it-works.scss */
+    .content .right-column #step-three-content .step-three-explanation {
+      background-color: #1167d82c;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+      width: 75%;
+      margin: auto; }
+
+/* line 182, static/scss/how-it-works.scss */
+.substep {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  position: relative; }
+  /* line 187, static/scss/how-it-works.scss */
+  .substep > * {
+    margin: 0 5px; }
+  /* line 190, static/scss/how-it-works.scss */
+  .substep span {
+    padding: 5px;
+    background-color: #ffff00b0;
+    border-radius: 50%;
+    width: 20;
+    height: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    font-weight: bold; }
+  /* line 202, static/scss/how-it-works.scss */
+  .substep svg {
+    position: absolute; }
+
+/* line 208, static/scss/how-it-works.scss */
+.substep-one svg {
+  height: 200px;
+  top: 50px;
+  left: -45px;
+  transform: rotateY(180deg); }
+
+/* line 217, static/scss/how-it-works.scss */
+.substep-two svg {
+  height: 285px;
+  top: 55px;
+  left: 20px; }
+
+/* line 225, static/scss/how-it-works.scss */
+.hints > p:first-of-type {
+  text-align: center; }
+
+/* line 228, static/scss/how-it-works.scss */
+.hints .tip-one,
+.hints .tip-two {
+  display: flex;
+  align-items: center; }
+  /* line 232, static/scss/how-it-works.scss */
+  .hints .tip-one button,
+  .hints .tip-two button {
+    height: min-content;
+    margin-right: 10px;
+    min-width: 150px; }
+    /* line 236, static/scss/how-it-works.scss */
+    .hints .tip-one button:focus,
+    .hints .tip-two button:focus {
+      outline: 0; }
+    /* line 239, static/scss/how-it-works.scss */
+    .hints .tip-one button p,
+    .hints .tip-two button p {
+      margin: 0; }
+      /* line 241, static/scss/how-it-works.scss */
+      .hints .tip-one button p:first-of-type,
+      .hints .tip-two button p:first-of-type {
+        font-size: 1.5em; }
+  /* line 246, static/scss/how-it-works.scss */
+  .hints .tip-one > ul,
+  .hints .tip-two > ul {
+    padding: 0;
+    display: none;
+    animation: fadeEffect 1s; }
+    /* line 250, static/scss/how-it-works.scss */
+    .hints .tip-one > ul li,
+    .hints .tip-two > ul li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      color: grey;
+      /*svg à rendre gris aussi*/
+      transition: color 0.4s; }
+      /* line 257, static/scss/how-it-works.scss */
+      .hints .tip-one > ul li:hover,
+      .hints .tip-two > ul li:hover {
+        color: black;
+        transition: color 0.4s;
+        cursor: pointer; }
+      /* line 262, static/scss/how-it-works.scss */
+      .hints .tip-one > ul li svg,
+      .hints .tip-two > ul li svg {
+        width: 15px;
+        height: 15px;
+        margin: 0 5px; }
+  /* line 269, static/scss/how-it-works.scss */
+  .hints .tip-one .show-tip,
+  .hints .tip-two .show-tip {
+    display: block; }
+
+/* line 273, static/scss/how-it-works.scss */
+.hints > ul {
+  background-color: #1167d82c;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  width: 75%;
+  margin: auto; }
+  /* line 280, static/scss/how-it-works.scss */
+  .hints > ul li {
+    margin-left: 20px; }
+    /* line 282, static/scss/how-it-works.scss */
+    .hints > ul li svg {
+      height: 15px;
+      width: 15px; }
+    /* line 286, static/scss/how-it-works.scss */
+    .hints > ul li .timeframes {
+      padding: 0;
+      display: flex;
+      justify-content: space-evenly; }
+      /* line 290, static/scss/how-it-works.scss */
+      .hints > ul li .timeframes li {
+        list-style: none;
+        padding: 10px;
+        border: solid 2px #1168d8;
+        border-radius: 4px; }
+    /* line 297, static/scss/how-it-works.scss */
+    .hints > ul li .comments,
+    .hints > ul li .pictures {
+      text-align: center; }
+
+/* line 305, static/scss/how-it-works.scss */
+.active-tab {
+  color: #1168d8;
+  /* changer couleur svg*/ }
+
+/* line 310, static/scss/how-it-works.scss */
+.step-content {
+  animation: fadeEffect 0.4s; }
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }

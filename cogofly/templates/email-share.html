@@ -1,0 +1,49 @@
+{% extends 'email-base.html' %}
+{% load i18n %}
+
+{% block content %}
+<tr>
+<td align="left" bgcolor="#ffffff" style="padding: 5px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: center;">
+    <p>{% blocktrans with first_name=user.first_name last_name=user.last_name %}
+    {{ first_name }} {{ last_name }} has shared this trip with you on www.cogofly.com !
+    {% endblocktrans %}</p>
+</td>
+</tr>  
+
+<tr>
+<td align="left" bgcolor="#ffffff" style="padding: 5px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: center;">
+    <p>{{ trip.destination }}</p>
+    <p>{{ trip.start }} - {{ trip.end }}</p>
+</td>
+</tr>  
+
+<tr>
+<td align="left" bgcolor="#ffffff" style="padding: 5px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: center; text-align: center;">
+    <p>{{ text }}</p>
+</td>
+</tr>  
+
+<tr>
+  <td align="left" bgcolor="#ffffff">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td align="center" bgcolor="#ffffff" style="padding: 12px;">
+          <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td align="center" bgcolor="#1168d8" style="border-radius: 6px;">
+                <a href="https://www.cogofly.com{{ trip.get_absolute_url }}" target="_blank" style="display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;">
+                  {% trans "See trip" %}
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+{% endblock %} 
+
+{% block footer %}
+<p style="margin: 0;">{% blocktrans %}If you are not a member of CoGoFly, sign up for free <a href="https://www.cogofly.com/signup" style="color: white;">here</a>{% endblocktrans %}</p>
+{% endblock footer %}

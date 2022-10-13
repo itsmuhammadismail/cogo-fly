@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/trip-cards.scss' %}">
+{% endblock %}
+
+{% block js %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">     
+{% endblock %}
+
+{% block body %}
+<script>
+window.fbAsyncInit = function() {
+    FB.init({
+    appId            : '600914307472316',
+    autoLogAppEvents : true,
+    xfbml            : true,
+    version          : 'v9.0'
+    });
+};
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+{% include "header.html" %}
+<div class="cards-content">
+    <section class="filters">
+        <form>
+        <div class="my-trips-cards">
+            <h2>{% trans 'My Trips' %} ({{ user.trips.count }})</h2>
+            <button 
+            name="type" 
+            value="future"
+            class="{% if "?type=future" in request.get_full_path %}active-filter{% endif %}">
+                {% trans 'Future trips' %} ({{ user.own_trips.future.count }})
+            </button>
+            <button 
+            name="type" 
+            value="past"
+            class="{% if "?type=past" in request.get_full_path %}active-filter{% endif %}">
+                {% trans 'Past trips' %} ({{ user.own_trips.past.count }})
+            </button>
+            <button 
+            name="type" 
+            value="map"
+            class="{% if "?type=map" in request.get_full_path %}active-filter{% endif %}">
+                {% trans 'My travel map' %} ({{ user.own_trips.count }})
+            </button>
+        </div>
+        </form>
+    </section>
+    <section class="card-section {% if map %}map-section{% endif %}">
+        {% if map %}
+        <div class='map' >{{ map|safe }}<div>
+        {% else %}
+            {% for trip in trips %}
+            <div class="card-and-actions">
+                {% include "trip-card.html" %}
+                <div class="card-actions">
+                    <a href="{% url 'trip_edit' trip.id %}" class="share"><button>{% svg "icons/pencil" %}{% trans "Modify" %}</button></a>
+                    <div class="delete-form">
+                        <button class="delete" onclick="$(this).next().toggleClass('show-delete-form')">{% svg "icons/delete" %}{% trans "Delete" %}</button>
+                        <form id="delete-form" method="POST" action="{% url 'trip' trip.id %}">
+                            {% csrf_token %}
+                            <button name="delete" class="delete">{% trans "Are you sure you want to delete ?" %}</button>
+                            <span onclick="$(this).parent().toggleClass('show-delete-form')">{% trans "Cancel" %}</span>
+                        </form>                       
+                    </div>                 
+                </div>            
+            </div>
+            {% empty %}
+            {% trans 'You have no trips yet. Add a trip or join one to fill this page!' %}            
+            {% endfor %}
+        {% endif %}
+    </section>      
+</div>
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

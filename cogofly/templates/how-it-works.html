@@ -1,0 +1,507 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/how-it-works.scss' %}">
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/how-it-works.js' %}"></script>
+    {{ form.media }}   
+{% endblock %}
+
+{% block body %}
+<header>
+    <nav>
+        <h1 class="logo"><a href="/"><img src="{% static 'img/logo-CoGoFly-blanc.png' %}" alt="CoGoFly"/></a></h1>
+    </nav>
+</header>
+<div class="pusher"></div>
+<div class="content">
+
+    <div class="left-column">
+        <div class="left-column-content">
+            <h2>{% trans "How it works ? " %}</h2>
+            <p>{% trans "Click on the steps below to find out how to use CoGoFly:" %}</p>
+            <ul>
+                <li id="defaultTabOpen" class="step-one tab" onclick="openStep(event, 'step-one-content', 'cta-1')">
+                    {% svg "icons/down-arrow" %}
+                    <p>{% trans "Sign up and fill in your profile" %}</p>
+                </li>
+                <a href="{% url 'signup' %}" id="cta-1" class="cta">{% svg "icons/person-filled" %}<p>{% trans "Click here to sign up and fill in your profile" %}</p></a>
+                <li class="step-two tab" onclick="openStep(event, 'step-two-content', 'cta-2')">
+                    {% svg "icons/down-arrow" %}
+                    <p>{% trans "Use basic or advanced search to find your CoGoFlyers" %}</p>
+                </li>                
+                <a href="{% url 'search' %}" id="cta-2" class="cta">{% svg "icons/search-filled" %}<p>{% trans "Click here to use the search" %}</p></a>
+                <li class="step-three tab" onclick="openStep(event, 'step-three-content', 'cta-3')">
+                    {% svg "icons/down-arrow" %}
+                    <p>{% trans "Add trips, weekends, days out, ..." %}</p>
+                </li>
+                <a href="{% url 'trip_add' %}" id="cta-3" class="cta">{% svg "icons/suitcase-filled" %}<p>{% trans "Click here to add a trip" %}</p></a>
+                <li class="step-four tab" onclick="openStep(event, 'step-four-content', 'cta-4')">
+                    {% svg "icons/down-arrow" %}
+                    <p>{% trans "Amazing feature: The CoTravels" %}</p>
+                </li>
+                <a href="" id="cta-4" class="cta"></a>
+                <li id="step-five" name="whiteboard" class="step-five tab" onclick="openStep(event, 'step-five-content', 'cta-5')">
+                    {% svg "icons/down-arrow" %}
+                    <p>{% trans "Too lazy to read ?" %}</p>
+                </li>
+                <a href="" id="cta-5" class="cta"></a>                
+            </ul>        
+        </div>
+    </div>
+
+    <div class="right-column">
+    
+        <div id="step-one-content" class="step-content">
+            <h3>{% trans "Sign up and fill in your profile" %}</h3>
+            <ul class="step-one-titles">
+                <li id="defaultTitleOpen" class="practical-title title" onclick="switchInformation(event, 'practical', 'practical-tips')">{% trans "Practical Information" %}</li>
+                <li class="optional-title title" onclick="switchInformation(event, 'optional', 'optional-tips')">{% trans "Optional Information" %}</li>
+            </ul>
+            <div class="information-content">
+                <ul id="practical" class="practical-content information">
+                    <li onclick="toggleSubInfo('personal')">
+                        {% svg "icons/to-do-list" %}
+                        <p><strong>{% trans "Personal information" %}</strong></p>
+                    </li>
+                    <li onclick="toggleSubInfo('security')">
+                        {% svg "icons/diamond" %}                        
+                        <p><strong>{% trans "More security" %}</strong></p>
+                    </li>
+                    <li onclick="toggleSubInfo('raised')">
+                        {% svg "icons/spotlight" %}
+                        <p><strong>{% trans "CoGoFly has been raised for you" %}</strong></p>
+                    </li>
+                    <li onclick="toggleSubInfo('recommendation')">
+                        {% svg "icons/anonymous" %}
+                        <p><strong>{% trans "Recommendations" %}</strong></p>
+                    </li>
+                </ul>
+                <ul id="practical-tips" class="sub-information">
+                    <li id="personal">
+                        <p>{% trans "The personal information has intentionally been marked as mandatory." %}</p>
+                    </li>
+                    <li id="security">
+                        <p>{% trans "CoGoFly wants each and every member to feel valued, important and fully involved in this new concept designed to help people travel/go away together." %}</p>
+                    </li>
+                    <li id="raised">
+                        <p>{% trans "Putting people back in the spotlight, and ensuring that this new social network it top quality, remains CoGoFly's leitmotiv." %}</p>
+                    </li>
+                    <li id="recommendation">
+                        <p>{% trans "Pseudonyms, often considered impersonal, will not be used by this new international community." %}</p>
+                    </li>                                                            
+                </ul>
+                <ul id="optional" class="optional-content information">
+                    <li onclick="toggleSubInfo('choice')">
+                        {% svg "icons/choice" %}
+                        <p><strong>{% trans "Many criteria available" %}</strong></p>
+                    </li>
+                    <li onclick="toggleSubInfo('suit')">
+                        {% svg "icons/laugh" %}                    
+                        <p><strong>{% trans "Add them in a few seconds" %}</strong></p>
+                    </li>
+                    <li onclick="toggleSubInfo('common')">
+                        {% svg "icons/debate" %}
+                        <p><strong>{% trans "More profiles like you" %}</strong></p>
+                    </li>
+                    <li onclick="toggleSubInfo('detailed')">
+                        {% svg "icons/attraction" %}                    
+                        <p><strong>{% trans "More views on your profile" %}</strong></p>
+                    </li>
+                </ul>
+                <ul id="optional-tips" class="sub-information">
+                    <li id="choice">
+                        <p>{% trans "Filling in the different criteria is not mandatory... The choice is yours!" %}</p>
+                    </li>
+                    <li id="suit">
+                        <p>{% trans "However, if you are interested in going away with someone similar to yourself, we would advise taking a few extra seconds to fill in the fields to suit your requirements." %}</p>
+                    </li>
+                    <li id="common">
+                        <p>{% trans "That way, you will guarantee finding people with common interests, something which may be important to you." %}</p>
+                    </li>
+                    <li id="detailed">
+                        <p>{% trans "A more detailed profile will without doubt attract more attention... So don't wait around, give yourself the best chance!" %}</p>
+                    </li>                                                            
+                </ul>                
+            </div>
+        </div>
+
+        <div id="step-two-content" class="step-content">
+            <h3>{% trans "Use basic or advanced search to find your CoGoFlyers" %}</h3>
+            <div class="step-two-explanation">
+                <p>{% trans "The goal of this basic search is to find a range of people with the same destination and/or rough travel dates in mind as you. It is not designed to find any one particular person (search by surname/first name is impossible!)." %}</p>
+                <p>{% trans "This search will therefore only function if at least two of the fields above is filled out. If no information is entered, the search will yield zero results!" %}</p>            
+            </div>
+            <div class="search">
+                <img src={% static "img/search-filters.png"%} alt="Add Trip BC">
+                <p>{% trans "If, however, you still have any unanswered questions as to how the search works, please take the time to read the hints and tips section." %}</p> 
+            </div>
+            <div class="hints">
+                <div class="tips">
+                    <div class="tip-one">
+                        <button id="step-two-tip-one-button" onclick="toggleTip(event, 'step-two-tip-one')">
+                            <p>{% trans "Tip 1" %}</p>
+                            <p>{% trans "Future trips" %}</p>
+                        </button>
+                        <ul id="step-two-tip-one">
+                            <li onclick="toggleTipContent('where-and-when')">
+                                <p>{% trans "You know precisely where and when you want to go" %}</p>
+                                {% svg "icons/down-arrow" %}
+                                <p id="where-and-when" class="hide">{% trans "Fill in all fields" %}</p>
+                            </li>
+                            <li onclick="toggleTipContent('when')">
+                                <p>{% trans "You don't know when you want to go away" %}</p>                           
+                                {% svg "icons/down-arrow" %}
+                                <p id="when" class="hide">{% trans "Fill in the destination and select the dates that suit you" %}</p>
+                            </li>
+                            <li onclick="toggleTipContent('where')">
+                                <p>{% trans "You don't know where you want to go" %}</p>
+                                {% svg "icons/down-arrow" %}
+                                <p id="where" class="hide">{% trans "Fill in your dates of departure and/or arrival and select the destination you didn't think about" %}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tip-two">
+                        <button id="step-two-tip-two-button" onclick="toggleTip(event, 'step-two-tip-two')">
+                            <p>{% trans "Tip 2" %}</p>
+                            <p>{% trans "Past trips" %}</p>
+                        </button>
+                        <ul id="step-two-tip-two">
+                            <li onclick="toggleTipContent('site-for-you')">
+                                <p>{% trans "You enjoy being alone and wish to remain so..." %}</p>
+                                {% svg "icons/down-arrow" %}
+                                <strong id="site-for-you" class="hide">{% trans "This site is also for you!" %}</strong>
+                            </li>
+                            <li>
+                                <p><strong>{% trans "Use this basic search by entering dates in the past" %}</strong>
+                                {% trans "and get in touch with people who went to the town/country that your picked as your next destination" %}</p>
+                            </li>
+                            <li onclick="toggleTipContent('fellow-travellers')">
+                                <strong><p>{% trans "Who better than fellow travellers to help you?" %}</p></strong>
+                                {% svg "icons/down-arrow" %}
+                                <p id="fellow-travellers" class="hide">{% trans "Get their experiences, feedback and share useful information around you." %}</p>
+                            </li>
+                            <li onclick="toggleTipContent('why')" id="why-tip">
+                                </strong><p>{% trans "You can use the search by entering dates in the future even if you want to stay alone. Why?" %}</p></strong>
+                                <ul id="why" class="hide">
+                                    <li>{% trans "You may change your mind" %}</li>
+                                    <li>{% trans "You need help at your chosen destination" %}</li>
+                                    <li>{% trans "You haven't found anyone who has visited the place in question" %}</li>
+                                    <li>{% trans "You want to help a friend who wants to find a travel companion" %}</li>
+                                </ul>
+                            </li>                    
+                        </ul>
+                    </div>                    
+                </div>       
+            </div>              
+            <div class="step-two-explanation">
+                <p>{% trans "The goal of this advanced search is to find, once more, a range of people with the same destination and/or rough travel dates in mind as you, but also with certain people-related criteria." %}</p>
+                <p>{% trans "As opposed to the basic search, this advanced search will actually allow you to choose with whom to go away (ex: sex, age, and so on but not by name)... What will be the most important criteria for you?" %}</p>            
+                <p>{% trans "This search will only function if at least one of the above fields is filled out (place, date, criteria). If no information is entered, the search will yield zero results!" %}</p>            
+            </div>
+            <div class="search">
+                <img src={% static "img/advanced-search-filters.png"%} alt="Add Trip BC">
+                <p>{% trans "If, however, you still have any unanswered questions as to how the search works, please take the time to read the hints and tips section." %}</p> 
+            </div>     
+            <div class="hints">
+                <div class="tips">
+                    <div class="tip-one">
+                        <button id="step-two-tip-three-button" onclick="toggleTip(event, 'step-two-tip-three')">
+                            <p>{% trans "Tip 1" %}</p>
+                            <p>{% trans "Future trips" %}</p>
+                        </button>
+                        <ul id="step-two-tip-three">
+                            <li onclick="toggleTipContent('where-and-when-15')">
+                                <p>{% trans "You know precisely where and when you want to go" %}</p>
+                                {% svg "icons/down-arrow" %}
+                                <p id="where-and-when-15" class="hide">{% trans "Fill in all fields" %}</p>
+                            </li>
+                            <li onclick="toggleTipContent('when-15')">
+                                <p>{% trans "You don't know when you want to go away" %}</p>                           
+                                {% svg "icons/down-arrow" %}
+                                <p id="when-15" class="hide">{% trans "Fill in the destination and select the dates that suit you" %}</p>
+                            </li>
+                            <li onclick="toggleTipContent('where-15')">
+                                <p>{% trans "You don't know where you want to go" %}</p>
+                                {% svg "icons/down-arrow" %}
+                                <p id="where-15" class="hide">{% trans "Fill in your dates of departure and/or arrival and select the destination you didn't think about" %}</p>
+                            </li>
+                            <li onclick="toggleTipContent('comfort-zone')" id="comfort-zone-tip">
+                                </strong><p>{% trans "You wish to remain in your « comfort zone » and go away with people:" %}</p></strong>
+                                <ul id="comfort-zone" class="hide">
+                                    <li>{% trans "Who work in the same sector." %}</li>
+                                    <li>{% trans "Who do exactly the same job." %}</li>
+                                    <li>{% trans "With whom you have activities in common (sporting, cultural, leisure...)." %}</li>
+                                    <li>{% trans "Who have visited the same cities/countries." %}</li>
+                                    <li>{% trans "Who have the same plans." %}</li>
+                                    <li>{% trans "And so on..." %}</li>
+                                </ul>
+                            </li>                               
+                        </ul>
+                    </div>
+                    <div class="tip-two">
+                        <button id="step-two-tip-four-button" onclick="toggleTip(event, 'step-two-tip-four')">
+                            <p>{% trans "Tip 2" %}</p>
+                            <p>{% trans "Past trips" %}</p>
+                        </button>
+                        <ul id="step-two-tip-four">
+                            <li onclick="toggleTipContent('site-for-you-15')">
+                                <p>{% trans "You enjoy being alone and wish to remain so..." %}</p>
+                                {% svg "icons/down-arrow" %}
+                                <strong id="site-for-you-15" class="hide">{% trans "This site is also for you!" %}</strong>
+                            </li>
+                            <li>
+                                <p>{% trans "You will be able to use this advanced search to find, just like the basic search, people who have already been to the town/country that you have picked as your next destination. Furthermore, thanks to all of the useful criteria, you will be able to find people with the same centers of interest." %}</p>
+                            </li>
+                            <li onclick="toggleTipContent('fellow-travellers-15')">
+                                <strong><p>{% trans "Who better than fellow travellers to help you?" %}</p></strong>
+                                {% svg "icons/down-arrow" %}
+                                <p id="fellow-travellers-15" class="hide">{% trans " travel like they do, make the most of their feedback and share practical information about the countries they have visited." %}</p>
+                            </li>
+                            <li onclick="toggleTipContent('why-15')" id="why-tip">
+                                </strong><p>{% trans "You will then also be able to use the search by entering dates in the future if:" %}</p></strong>
+                                <ul id="why-15" class="hide">
+                                    <li>{% trans "You may change your mind" %}</li>
+                                    <li>{% trans "You need help at your chosen destination" %}</li>
+                                    <li>{% trans "You haven't found anyone who has visited the place in question" %}</li>
+                                    <li>{% trans "You want to help a friend who wants to find a travel companion" %}</li>
+                                </ul>
+                            </li>                    
+                        </ul>
+                    </div>                    
+                </div>       
+            </div>                          
+        </div>   
+
+        <div id="step-three-content" class="step-content">
+            <h3>{% trans "Add trips, weekends, days out, ..." %}</h3>
+            <div class="member-choice">
+                <button class="member-choice-button" onclick="toggleMemberChoice(event, 'add-trip-visitor')">{% trans "You are not yet a member" %}</button>
+                <button class="member-choice-button" onclick="toggleMemberChoice(event, 'add-trip-member')">{% trans "You are already a member" %}</button>
+            </div>
+            <ul>
+                <div id="add-trip-visitor" class="add-trip-choice">
+                    <li class="destination">
+                        <div class="substep substep-one">
+                            <span>1</span>
+                            <h4>{% trans "Add a destination and/or a date" %}</h4>
+                            <!--{% svg "icons/curve" %}-->
+                        </div>                
+                        <!--<p>{% trans "Fill in at least one of the two fields (place and/or date). Here's an example:" %}</p>-->
+                        <img src={% static "img/add-trip-destination.png"%} alt="Add Trip Destinations">
+                    </li>
+                    <li class="comments">
+                        <div class="substep substep-two">
+                            <span>2</span>
+                            <h4>{% trans "Feel free to add your departure place and some comments" %}</h4>
+                            <!--{% svg "icons/curve" %}-->
+                        </div>                
+                        <!--<p>{% trans "Fill in at least one of the two fields (place and/or date). Here's an example:" %}</p>-->
+                        <img src={% static "img/add-trip-comment-visitor.png"%} alt="Add Trip Destinations">
+                    </li>                
+                    <li class="bc">
+                        <div class="substep">
+                            <span>3</span>
+                            <h4>{% trans "Your BC is ready" %}</h4>
+                        </div>                   
+                        <img src={% static "img/add-trip-BC-visitor.png"%} alt="Add Trip BC">
+                        <p>{% trans "Feel free to become a member for free by saving that BC. You can decide later but you are able to share this BC around you." %}</p>
+                    </li>                
+                </div>
+                <div id="add-trip-member" class="add-trip-choice">
+                    <li class="destination">
+                        <div class="substep substep-one">
+                            <span>1</span>
+                            <h4>{% trans "Add a destination and/or a date" %}</h4>
+                            <!--{% svg "icons/curve" %}-->
+                        </div>                
+                        <!--<p>{% trans "Fill in at least one of the two fields (place and/or date). Here's an example:" %}</p>-->
+                        <img src={% static "img/add-trip-destination.png"%} alt="Add Trip Destinations">
+                    </li>
+                    <li class="comments">
+                        <div class="substep substep-two">
+                            <span>2</span>
+                            <h4>{% trans "Feel free to add your departure place, some comments and pictures" %}</h4>
+                            <!--{% svg "icons/curve" %}-->
+                        </div>                
+                        <!--<p>{% trans "Fill in at least one of the two fields (place and/or date). Here's an example:" %}</p>-->
+                        <img src={% static "img/add-trip-comment-member.png"%} alt="Add Trip Destinations">
+                    </li>                
+                    <li class="bc">
+                        <div class="substep">
+                            <span>3</span>
+                            <h4>{% trans "Your BC is ready" %}</h4>
+                        </div>                   
+                        <img src={% static "img/add-trip-BC-member.png"%} alt="Add Trip BC">
+                    </li>               
+                    <li class="explanations">
+                        <p><strong>{% trans "About your BC" %}</strong></p>
+                        <ul>
+                            <li>
+                                <img src={% static "img/BC-number-cotravelers.png" %} alt="">
+                                <p>{% trans "Number of Cotravellers on this trip" %}</p>
+                            </li>
+                            <li>
+                                <img src={% static "img/BC-more.png" %} alt="">
+                                <p>{% trans "See more about the trip you have added on your profile" %}</p>
+                            </li>
+                            <li>
+                                <img src={% static "img/BC-creator.png" %} alt="">
+                                <p>{% trans "The creator is the Cotraveller who has added a trip" %}</p>
+                            </li>
+                        </ul>
+                    </li> 
+                </div>                
+                <hr>
+                <li class="hints">
+                    <h4>{% trans "Some good hints..." %}</h4>
+                    <div class="tips">
+                        <div class="tip-one">
+                            <button id="step-three-tip-one-button" onclick="toggleTip(event, 'step-three-tip-one')">
+                                <p>{% trans "Tip 1" %}</p>
+                                <p>{% trans "Future trips" %}</p>
+                            </button>
+                            <ul id="step-three-tip-one">
+                                <li onclick="toggleTipContent('where-and-when-2')">
+                                    <p>{% trans "You know precisely where and when you want to go" %}</p>
+                                    {% svg "icons/down-arrow" %}
+                                    <p id="where-and-when-2" class="hide">{% trans "Fill in all fields" %}</p>
+                                </li>
+                                <li onclick="toggleTipContent('when-2')">
+                                    <p>{% trans "You don't know when you want to go away" %}</p>                           
+                                    {% svg "icons/down-arrow" %}
+                                    <p id="when-2" class="hide">{% trans "Fill in the destination and select the dates that suit you" %}</p>
+                                </li>
+                                <li onclick="toggleTipContent('where-2')">
+                                    <p>{% trans "You don't know where you want to go" %}</p>
+                                    {% svg "icons/down-arrow" %}
+                                    <p id="where-2" class="hide">{% trans "Fill in your dates of departure and/or arrival and select the destination you didn't think about" %}</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tip-two">
+                            <button id="step-three-tip-two-button" onclick="toggleTip(event, 'step-three-tip-two')">
+                                <p>{% trans "Tip 2" %}</p>
+                                <p>{% trans "Past trips" %}</p>
+                            </button>
+                            <ul id="step-three-tip-two">
+                                <li onclick="toggleTipContent('enjoy-alone')">
+                                    <p>{% trans "You enjoy being alone and wish to remain so..." %}</p>
+                                    {% svg "icons/down-arrow" %}
+                                    <strong id="enjoy-alone" class="hide"><p>{% trans "This site is also for you!" %}</p></strong>
+                                </li>
+                                <li onclick="toggleTipContent('add-destination-dates')">
+                                    <p>{% trans "Feel free to add your destination and dates if you remember..." %}</p>
+                                    {% svg "icons/down-arrow" %}
+                                    <strong id="add-destination-dates" class="hide"><p>{% trans "Some CoGoFlyers, like you, are not looking for CoTravelers..." %}</p></strong>
+                                </li>
+                                <li onclick="toggleTipContent('share-experience')">
+                                    <p>{% trans "Share your experience and give the best info." %}</p>
+                                    {% svg "icons/down-arrow" %}
+                                    <strong id="share-experience" class="hide"><p>{% trans "Some CoGoFlyers will be happy to know more about your past trips." %}</p></strong>
+                                </li>
+                            </ul>
+                        </div>            
+                    </div>             
+                </li>
+                <li>
+                    <ul class="both-cases">
+                        <p><strong>{% trans "In both cases, you will be able to put:" %}</strong></p>     
+                        <li><p>{% trans "Destination or not" %}</p></li>
+                        <li>
+                            <p>{% trans "Different timeframe periods which could be:" %}</p>
+                            <ul class="timeframes">
+                                <li>{% trans "A long trip" %}</li>
+                                <li>{% trans "A weekend" %}</li>
+                                <li>{% trans "A day or night out" %}</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>{% trans "More comment and picures:" %}</p>
+                            <div class="comments">
+                                <p>{% trans "Add many comments to give a right reason from CoGoFlyers to contact you" %}</p>
+                                <img src={% static "img/add-trip-comment.png" %} alt="Add Trip Comment">
+                            </div>
+                            <div class="pictures">
+                                <p>{% trans "Add many pictures of places and areas you have seen or want to see: some CoGoFlyers have the same ideas and will contact you:" %}</p>
+                                <img src={% static "img/add-trip-photos.png"%} alt="Add Trip Pictures"> {# à ajouter #}
+                                <p>{% trans "Note: this feature is only available to CoGoFly members" %}</p>
+                            </div>
+                        </li>
+                    </ul>                   
+                </li>
+            </ul>
+        </div>
+
+        <div id="step-four-content" class="step-content">
+            <h2>{% trans "Amazing feature: The CoTravels" %}</h2>
+            <p>{% trans "You are able, with this feature, to:" %}</p>
+            <ul class="cotravels-concept">
+                <li>
+                    {% svg "icons/add-sent" %}
+                    <p>{% trans "Send a request, like a friend's one, whom the member you want to travel with" %}</p>
+                </li>
+                <li>
+                    {% svg "icons/answer-request" %}
+                    <p>{% trans "Receive some travel requests and accept or not" %}</p>
+                </li>                
+            </ul>
+            <img src={% static "img/contact-request.png" %} alt="">
+            <hr>
+            <h3>{% trans "Hints" %}</h3>
+            <ul class="step-four-hints">
+                <li>
+                    <p>{% trans "You are able to send a request for future trips to one or the number of people you want to travel with" %}</p>
+                </li>
+                <li>
+                    <p>{% trans "You can also decide, if you forgot to send this request before your trip, to send it after your trip" %}</p>
+                </li>                
+            </ul>
+            <ul class="both-cases">
+                <p>{% trans "In both cases, you will be able, without any obligation, to share that info:" %}</p>
+                <li>
+                    <p>{% trans "By mail" %}</p>
+                </li>
+                <li>
+                    <p>{% trans "On all social networks" %}</p>
+                </li>
+                <li>
+                    <p>{% trans "On your CoGoFly seed-feed" %}</p>
+                </li>                
+                <p>{% trans "Example:" %}</p>
+                <img src={% static "img/bc-shares.png" %} alt="">                
+                <p>{% trans "You will be able to see your accepted trip requests at any time: " %}</p>
+                <img src={% static "img/contact-request-confirmation.png" %} alt="">                
+            </ul>
+        </div>
+
+        <div id="step-five-content" class="step-content">
+            <h2>{% trans "Too lazy to read ?" %}</h2>
+            <p>{% trans "Please watch the whiteboard below." %}</p>
+            <video 
+            src="{% static "vid/CoGoFly_WB_Video.mp4" %}"
+            type="video/mp4"
+            controls
+            width="100%"
+            >
+            {% trans "Your browser does not support embedded videos." %}
+            </video>
+        </div>
+
+    </div>
+
+</div>
+<script>
+document.getElementById("defaultTabOpen").click();
+document.getElementById("defaultTabOpen").click();
+document.getElementById("defaultTitleOpen").click();
+if (window.location.href.indexOf('whiteboard') > -1) {
+    document.getElementById('step-five').click();
+}
+</script> 
+{% endblock %}

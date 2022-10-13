@@ -1,0 +1,1288 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+/* line 11, static/scss/normalize.scss */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+     ========================================================================== */
+/**
+   * Remove the margin in all browsers.
+   */
+/* line 23, static/scss/normalize.scss */
+body {
+  margin: 0; }
+
+/**
+   * Render the `main` element consistently in IE.
+   */
+/* line 31, static/scss/normalize.scss */
+main {
+  display: block; }
+
+/**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+/* line 40, static/scss/normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+     ========================================================================== */
+/**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+/* line 53, static/scss/normalize.scss */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+/* line 64, static/scss/normalize.scss */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+     ========================================================================== */
+/**
+   * Remove the gray background on active links in IE 10.
+   */
+/* line 76, static/scss/normalize.scss */
+a {
+  background-color: transparent; }
+
+/**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+/* line 85, static/scss/normalize.scss */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+/* line 95, static/scss/normalize.scss */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+/* line 105, static/scss/normalize.scss */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+   * Add the correct font size in all browsers.
+   */
+/* line 116, static/scss/normalize.scss */
+small {
+  font-size: 80%; }
+
+/**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+/* line 125, static/scss/normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 133, static/scss/normalize.scss */
+sub {
+  bottom: -0.25em; }
+
+/* line 137, static/scss/normalize.scss */
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+     ========================================================================== */
+/**
+   * Remove the border on images inside links in IE 10.
+   */
+/* line 148, static/scss/normalize.scss */
+img {
+  border-style: none; }
+
+/* Forms
+     ========================================================================== */
+/**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+/* line 160, static/scss/normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+/* line 176, static/scss/normalize.scss */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+/* line 187, static/scss/normalize.scss */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+/* line 197, static/scss/normalize.scss */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+/**
+   * Remove the inner border and padding in Firefox.
+   */
+/* line 208, static/scss/normalize.scss */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+   * Restore the focus styles unset by the previous rule.
+   */
+/* line 220, static/scss/normalize.scss */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+   * Correct the padding in Firefox.
+   */
+/* line 231, static/scss/normalize.scss */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+/* line 242, static/scss/normalize.scss */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+/* line 255, static/scss/normalize.scss */
+progress {
+  vertical-align: baseline; }
+
+/**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+/* line 263, static/scss/normalize.scss */
+textarea {
+  overflow: auto; }
+
+/**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+/* line 272, static/scss/normalize.scss */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+/* line 282, static/scss/normalize.scss */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+/* line 292, static/scss/normalize.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+/* line 301, static/scss/normalize.scss */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+/* line 310, static/scss/normalize.scss */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+     ========================================================================== */
+/*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+/* line 322, static/scss/normalize.scss */
+details {
+  display: block; }
+
+/*
+   * Add the correct display in all browsers.
+   */
+/* line 330, static/scss/normalize.scss */
+summary {
+  display: list-item; }
+
+/* Misc
+     ========================================================================== */
+/**
+   * Add the correct display in IE 10+.
+   */
+/* line 341, static/scss/normalize.scss */
+template {
+  display: none; }
+
+/**
+   * Add the correct display in IE 10.
+   */
+/* line 349, static/scss/normalize.scss */
+[hidden] {
+  display: none; }
+
+/* line 3, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px; }
+
+/* line 11, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 19, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 20, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 29, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 32, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 40, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 43, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 46, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 62, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 65, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 73, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 77, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 85, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 87, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 94, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 100, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 106, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 113, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 121, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 125, static/scss/base.scss */
+  form img[src="/static/scss?9aa628792dc7"] {
+    visibility: hidden; }
+
+/* line 130, static/scss/base.scss */
+button,
+input .button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 146, static/scss/base.scss */
+  button:hover,
+  input .button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 152, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 167, static/scss/base.scss */
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 170, static/scss/base.scss */
+  button:disabled:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 3, static/scss/card-pages.scss */
+header {
+  position: fixed;
+  z-index: 100; }
+
+/* line 8, static/scss/card-pages.scss */
+.cards-content {
+  display: flex;
+  justify-content: center; }
+
+/* line 13, static/scss/card-pages.scss */
+section {
+  margin: 10px; }
+
+/* line 17, static/scss/card-pages.scss */
+h2 {
+  text-align: center; }
+
+/* line 21, static/scss/card-pages.scss */
+.filters {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  position: sticky;
+  top: 100px; }
+  /* line 28, static/scss/card-pages.scss */
+  .filters h2 {
+    font-size: 20px;
+    margin: 5px auto; }
+  /* line 32, static/scss/card-pages.scss */
+  .filters hr {
+    width: 100%;
+    margin: 10px 0; }
+  /* line 36, static/scss/card-pages.scss */
+  .filters h3 {
+    margin: 0;
+    font-size: 15px;
+    text-align: center; }
+  /* line 42, static/scss/card-pages.scss */
+  .filters .my-trips-cards,
+  .filters .my-contacts,
+  .filters .filter-by {
+    display: flex;
+    flex-direction: column; }
+  /* line 48, static/scss/card-pages.scss */
+  .filters .filter-buttons {
+    display: flex;
+    flex-direction: column; }
+
+/* line 54, static/scss/card-pages.scss */
+.card-section {
+  padding: 10px; }
+  /* line 56, static/scss/card-pages.scss */
+  .card-section h2 {
+    margin: 5px 0; }
+  /* line 59, static/scss/card-pages.scss */
+  .card-section hr {
+    width: 97%;
+    margin: 15px auto 5px; }
+  /* line 63, static/scss/card-pages.scss */
+  .card-section > p {
+    margin: 10 0 15 12px; }
+  /* line 66, static/scss/card-pages.scss */
+  .card-section .cards-list {
+    margin-top: 0;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px; }
+    /* line 72, static/scss/card-pages.scss */
+    .card-section .cards-list .card {
+      margin: 10px; }
+      /* line 76, static/scss/card-pages.scss */
+      .card-section .cards-list .card .card-left .trip-info li > * {
+        margin: -2 0; }
+    /* line 82, static/scss/card-pages.scss */
+    .card-section .cards-list li {
+      list-style: none;
+      margin: 10px; }
+
+/* line 89, static/scss/card-pages.scss */
+.active {
+  background-color: #1168d8;
+  color: white; }
+
+@media all and (max-width: 1590px) {
+  /* line 96, static/scss/card-pages.scss */
+  .card-section .cards-list {
+    width: 800px; } }
+
+@media all and (max-width: 1210px) {
+  /* line 104, static/scss/card-pages.scss */
+  .card-section .cards-list {
+    width: 400px; } }
+
+/*
+@media all and (max-height: 600px) {
+	.cards-content {
+		.filters {
+			h2 {
+				font-size: 15px;
+			}
+			h3 {
+				font-size: 14px;
+			}
+			hr {
+				margin: 5px 0;
+			}
+			button {
+				font-size: 12px;
+				padding: 0px 5px;
+				height: 30px;
+			}
+		}
+		.card-section {
+			padding: 10px 5px;
+			.cards-list {
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+}
+*/
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+/* line 11, static/scss/normalize.scss */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+     ========================================================================== */
+/**
+   * Remove the margin in all browsers.
+   */
+/* line 23, static/scss/normalize.scss */
+body {
+  margin: 0; }
+
+/**
+   * Render the `main` element consistently in IE.
+   */
+/* line 31, static/scss/normalize.scss */
+main {
+  display: block; }
+
+/**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+/* line 40, static/scss/normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+     ========================================================================== */
+/**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+/* line 53, static/scss/normalize.scss */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+/* line 64, static/scss/normalize.scss */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+     ========================================================================== */
+/**
+   * Remove the gray background on active links in IE 10.
+   */
+/* line 76, static/scss/normalize.scss */
+a {
+  background-color: transparent; }
+
+/**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+/* line 85, static/scss/normalize.scss */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+/* line 95, static/scss/normalize.scss */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+/* line 105, static/scss/normalize.scss */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+   * Add the correct font size in all browsers.
+   */
+/* line 116, static/scss/normalize.scss */
+small {
+  font-size: 80%; }
+
+/**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+/* line 125, static/scss/normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 133, static/scss/normalize.scss */
+sub {
+  bottom: -0.25em; }
+
+/* line 137, static/scss/normalize.scss */
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+     ========================================================================== */
+/**
+   * Remove the border on images inside links in IE 10.
+   */
+/* line 148, static/scss/normalize.scss */
+img {
+  border-style: none; }
+
+/* Forms
+     ========================================================================== */
+/**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+/* line 160, static/scss/normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+/* line 176, static/scss/normalize.scss */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+/* line 187, static/scss/normalize.scss */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+/* line 197, static/scss/normalize.scss */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+/**
+   * Remove the inner border and padding in Firefox.
+   */
+/* line 208, static/scss/normalize.scss */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+   * Restore the focus styles unset by the previous rule.
+   */
+/* line 220, static/scss/normalize.scss */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+   * Correct the padding in Firefox.
+   */
+/* line 231, static/scss/normalize.scss */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+/* line 242, static/scss/normalize.scss */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+/* line 255, static/scss/normalize.scss */
+progress {
+  vertical-align: baseline; }
+
+/**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+/* line 263, static/scss/normalize.scss */
+textarea {
+  overflow: auto; }
+
+/**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+/* line 272, static/scss/normalize.scss */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+/* line 282, static/scss/normalize.scss */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+/* line 292, static/scss/normalize.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+/* line 301, static/scss/normalize.scss */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+/* line 310, static/scss/normalize.scss */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+     ========================================================================== */
+/*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+/* line 322, static/scss/normalize.scss */
+details {
+  display: block; }
+
+/*
+   * Add the correct display in all browsers.
+   */
+/* line 330, static/scss/normalize.scss */
+summary {
+  display: list-item; }
+
+/* Misc
+     ========================================================================== */
+/**
+   * Add the correct display in IE 10+.
+   */
+/* line 341, static/scss/normalize.scss */
+template {
+  display: none; }
+
+/**
+   * Add the correct display in IE 10.
+   */
+/* line 349, static/scss/normalize.scss */
+[hidden] {
+  display: none; }
+
+/* line 3, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px; }
+
+/* line 11, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 19, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 20, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 29, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 32, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 40, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 43, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 46, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 62, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 65, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 73, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 77, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 85, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 87, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 94, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 100, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 106, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 113, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 121, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 125, static/scss/base.scss */
+  form img[src="/static/scss?9aa628792dc7"] {
+    visibility: hidden; }
+
+/* line 130, static/scss/base.scss */
+button,
+input .button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 146, static/scss/base.scss */
+  button:hover,
+  input .button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 152, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 167, static/scss/base.scss */
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 170, static/scss/base.scss */
+  button:disabled:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 4, static/scss/search.scss */
+.filters {
+  max-width: 325px; }
+  /* line 6, static/scss/search.scss */
+  .filters h2 {
+    font-size: 1.5em; }
+  /* line 9, static/scss/search.scss */
+  .filters form {
+    max-width: 325px; }
+  /* line 13, static/scss/search.scss */
+  .filters .filter-by .errorlist {
+    padding: 0;
+    color: red; }
+    /* line 16, static/scss/search.scss */
+    .filters .filter-by .errorlist li {
+      list-style: none; }
+  /* line 20, static/scss/search.scss */
+  .filters .filter-by .city-country-search {
+    align-items: center;
+    margin-bottom: 5px; }
+    /* line 23, static/scss/search.scss */
+    .filters .filter-by .city-country-search input[type="checkbox"] {
+      display: inline-block;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+      /* line 28, static/scss/search.scss */
+      .filters .filter-by .city-country-search input[type="checkbox"] + label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 30px;
+        height: 15px;
+        background: #1168d8;
+        border-radius: 10px;
+        display: inline-block;
+        position: relative; }
+        /* line 37, static/scss/search.scss */
+        .filters .filter-by .city-country-search input[type="checkbox"] + label:after {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          width: 15px;
+          height: 15px;
+          background: #fff;
+          border-radius: 10px;
+          transition: 0.3s; }
+      /* line 50, static/scss/search.scss */
+      .filters .filter-by .city-country-search input[type="checkbox"]:checked ~ #id_destination {
+        display: none; }
+        /* line 52, static/scss/search.scss */
+        .filters .filter-by .city-country-search input[type="checkbox"]:checked ~ #id_destination + .select2 {
+          display: none; }
+      /* line 56, static/scss/search.scss */
+      .filters .filter-by .city-country-search input[type="checkbox"]:checked + label {
+        background: #1168d8; }
+        /* line 58, static/scss/search.scss */
+        .filters .filter-by .city-country-search input[type="checkbox"]:checked + label:after {
+          transform: translateX(16px); }
+      /* line 63, static/scss/search.scss */
+      .filters .filter-by .city-country-search input[type="checkbox"]:not(:checked) ~ #id_country {
+        display: none; }
+        /* line 65, static/scss/search.scss */
+        .filters .filter-by .city-country-search input[type="checkbox"]:not(:checked) ~ #id_country + .select2 {
+          display: none; }
+      /* line 69, static/scss/search.scss */
+      .filters .filter-by .city-country-search input[type="checkbox"] + label::after {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: transform 0.4s; }
+  /* line 81, static/scss/search.scss */
+  .filters .filter-by form .advanced-filters {
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: 0.4s;
+    position: relative; }
+    /* line 87, static/scss/search.scss */
+    .filters .filter-by form .advanced-filters > p {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.9); }
+  /* line 99, static/scss/search.scss */
+  .filters .filter-by #advanced-switch,
+  .filters .filter-by #lucky-switch {
+    cursor: pointer;
+    visibility: hidden;
+    height: 0;
+    margin: 0; }
+    /* line 105, static/scss/search.scss */
+    .filters .filter-by #advanced-switch + label,
+    .filters .filter-by #lucky-switch + label {
+      cursor: pointer;
+      display: block;
+      margin-bottom: 10px; }
+      /* line 109, static/scss/search.scss */
+      .filters .filter-by #advanced-switch + label svg,
+      .filters .filter-by #lucky-switch + label svg {
+        transition: transform 0.4s;
+        height: 10px;
+        width: 10px; }
+    /* line 116, static/scss/search.scss */
+    .filters .filter-by #advanced-switch:checked + label svg,
+    .filters .filter-by #lucky-switch:checked + label svg {
+      transform: scaleY(-1); }
+    /* line 119, static/scss/search.scss */
+    .filters .filter-by #advanced-switch:checked ~ div,
+    .filters .filter-by #lucky-switch:checked ~ div {
+      visibility: visible;
+      max-height: 1000px; }
+  /* line 125, static/scss/search.scss */
+  .filters .filter-by .lucky {
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: 0.4s; }
+    /* line 130, static/scss/search.scss */
+    .filters .filter-by .lucky > p {
+      margin: 0; }
+    /* line 133, static/scss/search.scss */
+    .filters .filter-by .lucky ul {
+      padding: 0; }
+      /* line 135, static/scss/search.scss */
+      .filters .filter-by .lucky ul li {
+        list-style: none; }
+        /* line 137, static/scss/search.scss */
+        .filters .filter-by .lucky ul li button {
+          white-space: normal; }
+  /* line 143, static/scss/search.scss */
+  .filters .filter-by #slider-range {
+    margin: 5px 10px; }
+  /* line 146, static/scss/search.scss */
+  .filters .filter-by .smoker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; }
+    /* line 150, static/scss/search.scss */
+    .filters .filter-by .smoker input {
+      margin: 0 5px;
+      height: 13px;
+      width: 13px; }
+  /* line 156, static/scss/search.scss */
+  .filters .filter-by button {
+    width: 100%; }
+    /* line 158, static/scss/search.scss */
+    .filters .filter-by button[type="submit"] {
+      background-color: #1168d8;
+      color: white; }
+
+/* line 166, static/scss/search.scss */
+.card-section {
+  width: 1200px;
+  min-height: 395px;
+  height: max-content; }

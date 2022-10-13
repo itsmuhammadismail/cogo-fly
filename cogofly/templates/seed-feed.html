@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load humanize %}
+
+{% block js %}
+<script>
+add_form = function() {
+    var form_idx = $('#id_cogofly-picture-content_type-object_id-TOTAL_FORMS').val();
+    $('#form-set').append($('#empty_form').html().replace(/__prefix__/g, form_idx));
+    $('#id_cogofly-picture-content_type-object_id-TOTAL_FORMS').val(parseInt(form_idx) + 1);
+};
+</script>
+<script defer type="text/javascript" src="{% static 'js/seed-feed.js' %}"></script>
+<script type="text/javascript" src={% static 'js/splide.min.js' %}></script>
+<script>
+    window.onload = function() {
+        var elms = document.getElementsByClassName( 'carousel' );
+        for ( var i = 0, len = elms.length; i < len; i++ ) {
+            new Splide(elms[i], {               
+            'cover': true,    
+            perPage: 1,
+            'arrowPath': 'm15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z',   
+            }).mount();
+        }
+    }
+</script>
+<script>
+window.fbAsyncInit = function() {
+    FB.init({
+    appId            : '600914307472316',
+    autoLogAppEvents : true,
+    xfbml            : true,
+    version          : 'v9.0'
+    });
+};
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>   
+
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/seed-feed.scss' %}">
+    <link rel="stylesheet" href="{% static 'css/splide.min.css' %}">
+{% endblock %}
+
+{% block body %}
+
+{% include 'header.html' %}
+
+<div class="seed-feed">
+    <section class="last">
+        <div class="last-added-trips">
+            <h2>{% trans "Last added trips" %}</h2>
+            <ul>
+                {% for trip in trips.last_added|slice:':21' %}
+                <li>
+                    <a href="{% url 'trip' trip.id %}">
+                        {% if trip.user.profile.picture_url == " " or trip.user.profile.picture_url is None %}
+                            
+                            <img src="{% static 'img/about-us-name.jpg' %}" alt="Cogofly icon">
+                        {% else %}
+                            <img src="{{ trip.user.profile.picture_url }}" alt="Cogofly icon" class="profile-picture">
+                        {% endif %}
+                        <div class="trip-info">
+                            <p title="{{ trip.destination }}">{{ trip.destination }}</p>
+                            <p title="{{ trip.start }} - {{ trip.end }}">{{ trip.start }} - {{ trip.end }}</p>   
+                            <p title="{{ trip.created|naturaltime }}">{{ trip.created|naturaltime }}</p>  
+                        </div>  
+                    </a>                
+                </li>
+                <hr>
+                {% endfor %}                                                                                                       
+            </ul>    
+        </div>
+        <div class="last-searches">
+            <h2>{% trans "Last searches" %}</h2>
+            <ul>
+                {% for search in last_searches_with_cities %}
+                <li>
+                    <a href="{{ search.get_absolute_url }}">
+                        {% if search.destination.picture_url == " " or search.destination.picture_url is None %}
+                            <img src="{% static 'img/about-us-name.jpg' %}" alt="Cogofly icon">
+                        {% else %}
+                            <img src="{{ search.destination.picture_url }}" alt="Cogofly icon">  
+                        {% endif %}
+                        <div class="search-info">
+                            <p title="{{ search.destination }}">{{ search.destination }}</p>
+                            <p>{% blocktrans count counter=search.criteria_count %}+ {{ counter }} criteria {% plural %}+ {{ counter }} criterias{% endblocktrans %}</p>
+                            <p title="{{ search.created|naturaltime }}">{{ search.created|naturaltime }}</p>                                              
+                        </div>                                  
+                    </a>
+                </li>
+                <hr>
+                {% endfor %}                                                                                                     
+            </ul>        
+        </div>
+    </section>  
+
+    {% if request.user.welcome_message %}
+    <div class="welcome">
+        <p>{% blocktrans %}Welcome on CoGoFly! Please have a look at the <a href="how-it-works#whiteboard" target="_blank" rel="noopener noreferrer">WhiteBoard</a> to understand how to use our website.{% endblocktrans %}</p>
+        <form action="{% url 'home' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" name="welcome" onclick="closeWelcomePopup()">{% trans "Do not show again" %}</button>
+        </form>
+    </div>  
+    {% endif %}   
+
+    {% if user.profile.completion.missing_fields and request.user.completion_message %}
+    <section id="progress-bar" class="progress-bar">
+        <p><strong>{% trans "Your profile is " %}{{ user.profile.completion.value }}% {% trans "complete" %}:</strong></p>
+        <progress max="100" value="{{ user.profile.completion.value }}"></progress>
+        <p>{% trans "In order to add to it, or even finalise it, please go to" %}<a href="{% url 'profile_edit' %}">{% trans "Modify my profile" %}</a></p>
+        <p>{% trans "The more information you have on your profile, the more people will check it out. What's more, they'll be more inclined to place their trust in you... increase your chances of being found straightaway." %}</p>
+        <div id="missing-info">
+            <hr>
+            <p>{% trans "Once you have filled out the missing optional information, your profile will be 100% complete, and therefore viewed by more people:" %}</p>
+            <ul>
+                {% for field in user.profile.completion.missing_fields %}
+                <li>{{ field|capfirst }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="progress-bar-buttons">
+            <button id="expand-button" onclick="expandMissingInfo()">
+                {% svg "icons/down-arrow" %}
+                <p id="show-more">{% trans "Show me more" %}</p>
+                <p id="show-less">{% trans "Show me less" %}</p>
+            </button>
+            <button onclick="closeProgressBar()">
+                {% svg "icons/error-filled" %}
+                <p>{% trans "Close" %}</p>
+            </button>
+        </div>
+        <form action="{% url 'home' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" name="completion" onclick="closeProgressBar()">{% trans "Do not show again" %}</button>
+        </form>
+    </section>
+    {% endif %}   
+
+    <div class="newsfeed">
+        <section class="express-yourself">
+            <form method="POST" enctype="multipart/form-data" action="{% url 'post' %}">
+                {% csrf_token %}
+                <div class="express-top">
+                    <p>{% trans 'Create post' %}</p>
+                </div>
+                <div class="express-content">
+                    <img src="{% if user.profile.picture %}{{ user.profile.picture.url }}{% else %}{% static 'img/default-profile.png' %}{% endif %}" alt="cogofly profile image" class="profile-picture">
+                    {{ post_form.text }}
+                </div>
+                <div class="express-bottom">
+                    {{ album_form.management_form }}
+                    <ul id="form-set">
+                        {% for form in album_form %}
+                            {% include 'widgets/album_widget_sf.html' with form=form %}
+                        {% endfor %}
+                        <div id="empty_form" style="display: none">
+                            {% include 'widgets/album_widget_sf.html' with form=album_form.empty_form %}
+                        </div>
+                    </ul>
+                    <button>{% trans 'Post' %}</button>              
+                </div>
+            </form>
+        </section>
+        <div class="posts">
+            {% if posts.has_previous %}
+                <a href="?page={{ posts.previous_page_number }}" class="page-load">
+                    <p>{% trans "Load newer posts" %}</p>
+                </a>
+            {% endif %}
+                
+            {% for post in posts %}
+                {% include "post.html" %}
+            {% endfor %}
+
+            {% if posts.has_next %}
+                <a href="?page={{ posts.next_page_number }}" class="page-load">
+                    <p>{% trans "Load older posts" %}</p>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="ads">
+        <ul>
+            <li>
+                <a target="_blank" rel="noopener noreferrer" href="https://myexpatjob.com/">
+                    <img src="{% static 'img/logo-my-expat-job.png' %}" alt="My Expat Job Logo">
+                    <div class="ad-text">
+                        <p><strong>{% trans "My Expat Job" %}</strong></p>  
+                        <p>{% trans "Find job offers all around the world and be hunted by thousands of international recruiters" %}</p>                       
+                    </div>             
+                </a>
+            </li>
+            <li>
+                <a target="_blank" rel="noopener noreferrer" href="https://escales-voyageuses.org/">
+                    <img src="{% static 'img/escales-voyageuses.png' %}" alt="Escales Voyageuses Logo">
+                    <div class="ad-text">
+                        <p><strong>{% trans "Les Escales Voyageuses" %}</strong></p>  
+                        <p>{% trans "Le rendez-vous des amoureux du voyage" %}</p>                       
+                    </div>             
+                </a>
+            </li>
+            <li>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.libreautourdumonde.com/">
+                    <img src="{% static 'img/Libreautourdumonde.png' %}" alt="Libre Autour du Monde Logo">
+                    <div class="ad-text">
+                        <p><strong>{% trans "Libre Autour du Monde" %}</strong></p>  
+                        <p>{% trans "Pour préparer librement votre voyage" %}</p>                        
+                    </div>          
+                </a>
+            </li>    
+            <li>
+                <a href="mailto:support@cogofly.com">
+                    <p>{% trans "Dear partners," %}</p>
+                    <p>{% trans "Do you want to propose your best offers to our CoGoFlyers ?" %}</p>
+                    {% svg "icons/add-filled" %}
+                    <p>{% trans "Don't hesitate to contact us..." %}</p>                
+                </a>
+            </li>                    
+        </ul>
+    </div>  
+
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

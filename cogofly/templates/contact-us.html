@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load compress %}
+{% load svg %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/contact-us.scss' %}">
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+
+<section class="content">
+    <h2>{% trans "Contact the CoGoFly team" %}</h2>
+    <p>{% trans "Thank you in advance for your trust, support, and any comments and suggestions you may share with us." %}</p>
+    <ul class="contact-toggles">
+        <li name="remarks" id="remarks" class="toggle" onclick="toggleContact(event, 'contact-message')">{% trans "Remarks" %}</li>
+        <li name="testimony" id="testimony" class="toggle" onclick="toggleContact(event, 'testimony-section')">{% trans "Testimony" %}</li>
+    </ul>
+    <hr>
+    <div id="contact-message" class="contact-message section">
+        <p>{% trans "Feel free to contact us with any remarks or suggestions you may have, any problems you have encountered and any ways in which you feel our site could be improved in order to meet your expectations." %}</p>
+        <form method='post'>
+            {% csrf_token %}
+            {{ remarkform }}
+            <button type='submit'>{% trans "Send message" %}</button>
+        </form>
+        <a href="/home"><button class="cancel">{% trans "Cancel" %}</button></a>    
+    </div>
+    <div id="testimony-section" class="testimony section">
+        <p>{% trans "Your testimonies and positive feedback are paramount to help CoGoFly going that extra mile...They will also motivate new members to join this new community of CoGoFlyers!" %}</p>
+        <p>{% trans "These same testimonies will appear on your contacts' news feed and will be available to view at any time through the link" %} <a target="_blank" rel="noopener noreferrer" href="{% url 'testimonies' %}">{% trans 'Testimonies' %}</a> {% trans "below" %}</p>
+        <form method='post'>
+            {% csrf_token %}
+            {{ testimonyform }}
+            {% if user.testimony %}
+                {% if user.testimony.accepted %}
+                    {% trans "Your testimony has been accepted and published" %}
+                {% else %}
+                    {% trans "Your testimony is waiting for approval" %}
+                {% endif %}
+                <button type='submit' name='testimony'>{% trans "Modify testimony" %}</button>
+                <button type='submit' name='delete'>{% trans "Delete testimony" %}</button>   
+            {% else %}
+                <button type='submit' name='testimony'>{% trans "Testify" %}</button>
+            {% endif %}
+        </form>
+        <a href="/home"><button class="cancel">{% trans "Cancel" %}</button></a>    
+    </div>
+</section>
+
+{% block js %}
+    <script type="text/javascript" src="{%static 'js/contact-us.js' %}"></script>
+{% endblock %}
+
+<script>
+window.onload = function(){
+    if (window.location.href.indexOf('remarks') > -1) {
+        document.getElementById('remarks').click();
+        window.scrollTo(0,0);
+    }
+    if (window.location.href.indexOf('testimony') > -1) {
+        document.getElementById('testimony').click();
+        window.scrollTo(0,0);
+    }
+};
+</script>
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

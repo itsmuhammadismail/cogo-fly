@@ -1,0 +1,561 @@
+/* line 1, static/scss/how-it-works.scss */
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif; }
+
+/* line 6, static/scss/how-it-works.scss */
+header {
+  background-color: #1168d8;
+  margin: 0;
+  width: 100%; }
+  /* line 10, static/scss/how-it-works.scss */
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    /* line 14, static/scss/how-it-works.scss */
+    header nav h1 {
+      margin: 0; }
+      /* line 16, static/scss/how-it-works.scss */
+      header nav h1 img {
+        padding: 1rem;
+        height: 8rem;
+        box-sizing: border-box; }
+    /* line 22, static/scss/how-it-works.scss */
+    header nav a {
+      margin-right: 50px;
+      text-decoration: none;
+      color: white;
+      font-size: 20px; }
+
+/* line 31, static/scss/how-it-works.scss */
+button {
+  background-color: #1168d8;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  outline: transparent;
+  font-family: "Lato", sans-serif;
+  /* tailles provisoire en attendant un vrai code responsive*/ }
+  /* line 42, static/scss/how-it-works.scss */
+  button:hover {
+    background-color: #2e76d4;
+    transition-duration: 0.4s; }
+
+/* line 48, static/scss/how-it-works.scss */
+.howitworks-section {
+  position: relative;
+  text-align: center;
+  min-height: 65vh;
+  padding: 3em;
+  box-sizing: border-box;
+  overflow: hidden; }
+  /* line 55, static/scss/how-it-works.scss */
+  .howitworks-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px; }
+  /* line 59, static/scss/how-it-works.scss */
+  .howitworks-section > p {
+    font-size: 1.5em;
+    margin: 0 10px; }
+  /* line 63, static/scss/how-it-works.scss */
+  .howitworks-section .how-it-works-toggles {
+    display: flex;
+    justify-content: center; }
+    /* line 66, static/scss/how-it-works.scss */
+    .howitworks-section .how-it-works-toggles li {
+      list-style: none;
+      padding: 10px;
+      margin: 10px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      border: solid 1px #1168d8;
+      border-radius: 5px;
+      cursor: pointer;
+      user-select: none; }
+      /* line 77, static/scss/how-it-works.scss */
+      .howitworks-section .how-it-works-toggles li p {
+        margin: 0; }
+        /* line 79, static/scss/how-it-works.scss */
+        .howitworks-section .how-it-works-toggles li p:first-of-type {
+          margin-top: 20px;
+          font-size: 50px; }
+    /* line 85, static/scss/how-it-works.scss */
+    .howitworks-section .how-it-works-toggles .first-square {
+      background-color: #1168d8;
+      color: white; }
+  /* line 90, static/scss/how-it-works.scss */
+  .howitworks-section .how-it-works-1 {
+    width: 1200px;
+    display: grid;
+    grid-template-rows: 20% 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 10px;
+    height: 25vh;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4); }
+    /* line 100, static/scss/how-it-works.scss */
+    .howitworks-section .how-it-works-1 h3 {
+      grid-column: span(1, 2);
+      background-color: white;
+      border-radius: 10px 10px 0px 0px;
+      margin: 0;
+      padding: 10px 0px;
+      cursor: pointer;
+      line-height: 200%; }
+    /* line 109, static/scss/how-it-works.scss */
+    .howitworks-section .how-it-works-1 #tab-title-2 {
+      background-color: #343436;
+      color: white; }
+    /* line 113, static/scss/how-it-works.scss */
+    .howitworks-section .how-it-works-1 ul {
+      grid-row: 2;
+      grid-column: 1 / 3;
+      background-color: white;
+      border-radius: 0px 0px 10px 10px;
+      text-align: left;
+      margin: 0;
+      display: none; }
+      /* line 121, static/scss/how-it-works.scss */
+      .howitworks-section .how-it-works-1 ul:first-of-type {
+        display: initial; }
+      /* line 125, static/scss/how-it-works.scss */
+      .howitworks-section .how-it-works-1 ul li:first-of-type {
+        margin-top: 35px; }
+      /* line 128, static/scss/how-it-works.scss */
+      .howitworks-section .how-it-works-1 ul li p {
+        font-size: 15px; }
+  /* line 134, static/scss/how-it-works.scss */
+  .howitworks-section .how-it-works-2,
+  .howitworks-section .how-it-works-3 {
+    height: 50%;
+    display: none;
+    background-color: white;
+    padding: 10px;
+    margin: 0 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4); }
+    /* line 143, static/scss/how-it-works.scss */
+    .howitworks-section .how-it-works-2 .hiw2-first-step,
+    .howitworks-section .how-it-works-3 .hiw2-first-step {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      /* line 148, static/scss/how-it-works.scss */
+      .howitworks-section .how-it-works-2 .hiw2-first-step p,
+      .howitworks-section .how-it-works-3 .hiw2-first-step p {
+        font-size: 20px; }
+      /* line 151, static/scss/how-it-works.scss */
+      .howitworks-section .how-it-works-2 .hiw2-first-step .hiw2-first-step-content,
+      .howitworks-section .how-it-works-3 .hiw2-first-step .hiw2-first-step-content {
+        display: flex; }
+        /* line 153, static/scss/how-it-works.scss */
+        .howitworks-section .how-it-works-2 .hiw2-first-step .hiw2-first-step-content p,
+        .howitworks-section .how-it-works-3 .hiw2-first-step .hiw2-first-step-content p {
+          opacity: 0;
+          transition: 0.2s; }
+        /* line 157, static/scss/how-it-works.scss */
+        .howitworks-section .how-it-works-2 .hiw2-first-step .hiw2-first-step-content > p,
+        .howitworks-section .how-it-works-3 .hiw2-first-step .hiw2-first-step-content > p {
+          opacity: 1; }
+        /* line 160, static/scss/how-it-works.scss */
+        .howitworks-section .how-it-works-2 .hiw2-first-step .hiw2-first-step-content .past-trip,
+        .howitworks-section .how-it-works-2 .hiw2-first-step .hiw2-first-step-content .future-trip,
+        .howitworks-section .how-it-works-3 .hiw2-first-step .hiw2-first-step-content .past-trip,
+        .howitworks-section .how-it-works-3 .hiw2-first-step .hiw2-first-step-content .future-trip {
+          width: 100%; }
+          /* line 163, static/scss/how-it-works.scss */
+          .howitworks-section .how-it-works-2 .hiw2-first-step .hiw2-first-step-content .past-trip button,
+          .howitworks-section .how-it-works-2 .hiw2-first-step .hiw2-first-step-content .future-trip button,
+          .howitworks-section .how-it-works-3 .hiw2-first-step .hiw2-first-step-content .past-trip button,
+          .howitworks-section .how-it-works-3 .hiw2-first-step .hiw2-first-step-content .future-trip button {
+            color: #1168d8;
+            background-color: white;
+            border: solid 1px #1168d8; }
+      /* line 170, static/scss/how-it-works.scss */
+      .howitworks-section .how-it-works-2 .hiw2-first-step .navigation-buttons,
+      .howitworks-section .how-it-works-3 .hiw2-first-step .navigation-buttons {
+        display: flex;
+        justify-content: flex-end; }
+        /* line 173, static/scss/how-it-works.scss */
+        .howitworks-section .how-it-works-2 .hiw2-first-step .navigation-buttons button,
+        .howitworks-section .how-it-works-3 .hiw2-first-step .navigation-buttons button {
+          width: 125px; }
+    /* line 178, static/scss/how-it-works.scss */
+    .howitworks-section .how-it-works-2 .hiw2-second-step,
+    .howitworks-section .how-it-works-2 .hiw3-first-step,
+    .howitworks-section .how-it-works-3 .hiw2-second-step,
+    .howitworks-section .how-it-works-3 .hiw3-first-step {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%; }
+      /* line 184, static/scss/how-it-works.scss */
+      .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content,
+      .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content,
+      .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content,
+      .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content,
+      .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content,
+      .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content,
+      .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content,
+      .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content {
+        display: flex;
+        height: 100%; }
+        /* line 188, static/scss/how-it-works.scss */
+        .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips,
+        .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips,
+        .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips,
+        .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips,
+        .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips,
+        .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips,
+        .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips,
+        .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips {
+          display: flex;
+          flex-direction: row;
+          width: 100%; }
+          /* line 192, static/scss/how-it-works.scss */
+          .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips li,
+          .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips li,
+          .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips li,
+          .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips li,
+          .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips li,
+          .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips li,
+          .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips li,
+          .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips li {
+            list-style: none; }
+          /* line 195, static/scss/how-it-works.scss */
+          .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles,
+          .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles,
+          .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles,
+          .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles,
+          .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles,
+          .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles,
+          .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles,
+          .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles {
+            width: 150px;
+            padding: 0;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; }
+            /* line 202, static/scss/how-it-works.scss */
+            .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles li,
+            .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles li,
+            .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles li,
+            .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles li,
+            .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles li,
+            .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles li,
+            .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles li,
+            .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles li {
+              width: 100px;
+              height: 100px;
+              border: solid 1px #1168d8;
+              color: #1168d8;
+              border-radius: 5px;
+              margin: 10px 0;
+              user-select: none;
+              cursor: pointer;
+              display: flex;
+              flex-direction: column;
+              justify-content: center; }
+              /* line 214, static/scss/how-it-works.scss */
+              .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles li p,
+              .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles li p,
+              .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles li p,
+              .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles li p,
+              .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles li p,
+              .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles li p,
+              .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles li p,
+              .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles li p {
+                margin: 5px; }
+                /* line 216, static/scss/how-it-works.scss */
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles li p:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles li p:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles li p:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles li p:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles li p:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles li p:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-toggles li p:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-toggles li p:nth-of-type(2) {
+                  font-size: 15px; }
+          /* line 222, static/scss/how-it-works.scss */
+          .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content,
+          .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content,
+          .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content,
+          .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content,
+          .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content,
+          .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content,
+          .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content,
+          .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content {
+            display: flex;
+            align-items: center; }
+            /* line 225, static/scss/how-it-works.scss */
+            .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1,
+            .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1,
+            .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1,
+            .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1,
+            .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1,
+            .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1,
+            .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1,
+            .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1,
+            .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 {
+              display: none;
+              /*Becomes flex with js*/
+              padding: 0; }
+              /* line 229, static/scss/how-it-works.scss */
+              .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p,
+              .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p,
+              .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p,
+              .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p,
+              .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p,
+              .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p,
+              .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p,
+              .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p,
+              .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p,
+              .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p,
+              .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p,
+              .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p,
+              .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p,
+              .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p,
+              .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p,
+              .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p {
+                font-size: 15px;
+                height: 100px;
+                width: 150px;
+                display: flex;
+                align-items: center;
+                user-select: none; }
+                /* line 236, static/scss/how-it-works.scss */
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:first-of-type,
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:first-of-type,
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:first-of-type,
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:first-of-type,
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:first-of-type,
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:first-of-type,
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:first-of-type,
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:first-of-type,
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:first-of-type,
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:first-of-type,
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:first-of-type,
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:first-of-type,
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:first-of-type,
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:first-of-type,
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:first-of-type,
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:first-of-type {
+                  border: solid 1px #1168d8;
+                  border-radius: 5px;
+                  color: #1168d8;
+                  margin: 0 10px; }
+                /* line 242, static/scss/how-it-works.scss */
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-1 p:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 p:nth-of-type(2) {
+                  align-items: flex-start;
+                  justify-content: center;
+                  margin-left: 11px; }
+            /* line 249, static/scss/how-it-works.scss */
+            .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2,
+            .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 {
+              display: none;
+              flex-direction: column; }
+              /* line 252, static/scss/how-it-works.scss */
+              .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li,
+              .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li,
+              .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li,
+              .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li,
+              .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li,
+              .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li,
+              .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li,
+              .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li {
+                width: 90%;
+                margin: 2px 0; }
+                /* line 255, static/scss/how-it-works.scss */
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p,
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p,
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p,
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p,
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p,
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p,
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p,
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p {
+                  width: 100%;
+                  border: solid 1px #969696 !important;
+                  color: #969696 !important;
+                  transition: 0.4s;
+                  display: flex;
+                  justify-content: center; }
+                  /* line 262, static/scss/how-it-works.scss */
+                  .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p:hover,
+                  .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p:hover,
+                  .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p:hover,
+                  .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p:hover,
+                  .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p:hover,
+                  .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p:hover,
+                  .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p:hover,
+                  .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-2 li p:hover {
+                    color: #1168d8 !important;
+                    border: solid 1px #1168d8 !important;
+                    transition: 0.4s; }
+            /* line 270, static/scss/how-it-works.scss */
+            .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3,
+            .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3,
+            .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3,
+            .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3,
+            .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3,
+            .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3,
+            .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3,
+            .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3 {
+              display: none;
+              flex-direction: column;
+              text-align: initial;
+              padding: 0; }
+              /* line 275, static/scss/how-it-works.scss */
+              .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3 li,
+              .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3 li,
+              .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3 li,
+              .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3 li,
+              .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3 li,
+              .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3 li,
+              .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3 li,
+              .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-tips .add-trips-tips-content .add-trips-tips-3 li {
+                list-style: initial;
+                padding: 10px; }
+        /* line 282, static/scss/how-it-works.scss */
+        .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-search,
+        .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-search,
+        .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-search,
+        .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-search,
+        .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-search,
+        .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-search,
+        .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-search,
+        .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-search {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 100%; }
+          /* line 287, static/scss/how-it-works.scss */
+          .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-search p,
+          .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-search p,
+          .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-search p,
+          .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-search p,
+          .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-search p,
+          .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-search p,
+          .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-search p,
+          .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-search p {
+            text-align: left;
+            margin-left: 20px; }
+          /* line 291, static/scss/how-it-works.scss */
+          .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-search .add-trips-search-content,
+          .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-search .add-trips-search-content,
+          .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-search .add-trips-search-content,
+          .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-search .add-trips-search-content,
+          .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-search .add-trips-search-content,
+          .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-search .add-trips-search-content,
+          .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-search .add-trips-search-content,
+          .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-search .add-trips-search-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center; }
+            /* line 295, static/scss/how-it-works.scss */
+            .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form,
+            .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form,
+            .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form,
+            .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form,
+            .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form,
+            .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form,
+            .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form,
+            .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+              height: 100%;
+              margin: 0 20px;
+              width: 225px;
+              box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4); }
+              /* line 303, static/scss/how-it-works.scss */
+              .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form input,
+              .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form input,
+              .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form input,
+              .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form input,
+              .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form input,
+              .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form input,
+              .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form input,
+              .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form input {
+                font-family: "Lato", sans-serif;
+                font-size: 15px;
+                width: 90%;
+                height: 25%;
+                padding: 5px;
+                margin: 0 10px;
+                border: none; }
+                /* line 311, static/scss/how-it-works.scss */
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(2), .howitworks-section .how-it-works-2 .hiw2-second-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(3),
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw2-second-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(3),
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(3),
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(2),
+                .howitworks-section .how-it-works-2 .hiw3-first-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(3),
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(3),
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw2-second-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(3),
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw2-second-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(3),
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(2),
+                .howitworks-section .how-it-works-3 .hiw3-first-step .hiw3-first-step-content .add-trips-search .add-trips-search-content form input:nth-of-type(3) {
+                  border-top: solid 1px #e0e0e0; }
+      /* line 320, static/scss/how-it-works.scss */
+      .howitworks-section .how-it-works-2 .hiw2-second-step .navigation-buttons,
+      .howitworks-section .how-it-works-2 .hiw3-first-step .navigation-buttons,
+      .howitworks-section .how-it-works-3 .hiw2-second-step .navigation-buttons,
+      .howitworks-section .how-it-works-3 .hiw3-first-step .navigation-buttons {
+        display: flex;
+        justify-content: flex-end; }
+        /* line 323, static/scss/how-it-works.scss */
+        .howitworks-section .how-it-works-2 .hiw2-second-step .navigation-buttons button,
+        .howitworks-section .how-it-works-2 .hiw3-first-step .navigation-buttons button,
+        .howitworks-section .how-it-works-3 .hiw2-second-step .navigation-buttons button,
+        .howitworks-section .how-it-works-3 .hiw3-first-step .navigation-buttons button {
+          width: 125px;
+          margin: 0 10px;
+          border: solid 1px #1168d8; }
+          /* line 327, static/scss/how-it-works.scss */
+          .howitworks-section .how-it-works-2 .hiw2-second-step .navigation-buttons button:first-of-type,
+          .howitworks-section .how-it-works-2 .hiw3-first-step .navigation-buttons button:first-of-type,
+          .howitworks-section .how-it-works-3 .hiw2-second-step .navigation-buttons button:first-of-type,
+          .howitworks-section .how-it-works-3 .hiw3-first-step .navigation-buttons button:first-of-type {
+            color: #1168d8;
+            background-color: transparent; }

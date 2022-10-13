@@ -1,0 +1,65 @@
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block js %}
+<script
+    type="text/javascript"
+    async defer
+    src="//assets.pinterest.com/js/pinit.js"
+></script>
+{% endblock %}
+
+<footer>
+    <ul class="footer-links">
+        <li><a target="_blank" rel="noopener noreferrer" href="{% url 'about-us' %}">{% trans 'About Us' %}</a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="{% url 'the-team' %}">{% trans 'The Team' %}</a></li>
+        {% if not user.is_authenticated %}
+        <li class="contact-us-log-in">
+            <a>{% trans 'Contact Us' %}</a>
+            <span>{% trans "Please log in or sign in to contact CoGoFly" %}</span>
+        </li>
+        {% else %}
+        <li><a target="_blank" rel="noopener noreferrer" href="{% url 'contact-cogofly' %}">{% trans 'Contact Us' %}</a></li>        
+        {% endif %}
+        <li><a target="_blank" rel="noopener noreferrer" href="{% url 'testimonies' %}">{% trans 'Testimonies' %}</a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="https://blog.cogofly.com/">{% trans 'Blog' %}</a></li>
+        <!--        <li><a target="_blank" rel="noopener noreferrer" href="{% url 'blog' %}">{% trans 'Blog' %}</a></li>-->
+        <li><a target="_blank" rel="noopener noreferrer" href="{% url 'terms-and-conditions' %}">{% trans 'Terms and conditions' %}</a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="{% url 'privacy-policy' %}">{% trans 'Privacy policy' %}</a></li>
+    </ul>
+    <hr>
+    <div class="footer-sm">
+        {% if not user.is_authenticated %}
+        <p>{% trans "Follow us:" %}</p>  
+        <ul>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/Cogofly-713356962151536/" title="Facebook">{% svg 'social/facebook' %}</a> </li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/cogofly/?hl=fr">{% svg 'social/instagram' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/cogofly?s=03">{% svg 'social/twitter' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/cogofly/?viewAsMember=true ">{% svg 'social/linkedin' %}</a></li>
+            <li><a class="pinterest-button" target="_blank" rel="noopener noreferrer" href="https://www.pinterest.fr/cogofly/pins/">{% svg 'social/pinterest' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://cogofly.tumblr.com/ ">{% svg 'social/tumblr' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.snapchat.com/add/cogoflyers">{% svg 'social/snapchat' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://t.me/CoGoFly">{% svg 'social/telegram' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://chat.whatsapp.com/FGPbRonOI2TE1whgkOSo6u">{% svg 'social/whatsapp' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCjixRZO9UIsYvA0cWYjuE7Q">{% svg 'social/youtube' %}</a></li>                 
+        </ul>    
+        {% else %}
+        <p>{% trans "To like is to share:" %}</p>
+        <ul>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcogofly.com%2Fen%2F&amp;src=sdkpreparse" title="Facebook">{% svg 'social/facebook' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/cogofly/?hl=fr">{% svg 'social/instagram' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet">{% svg 'social/twitter' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https://cogofly.com/">{% svg 'social/linkedin' %}</a></li>
+            <li><a class="pinterest-button" style="font-size:50px" target="_blank" rel="noopener noreferrer" href="https://www.pinterest.com/pin/create/button/?url=https://cogofly.com/" data-pin-do="buttonBookmark" data-pin-custom="true" data-pin-tall="true"><img src="{% static 'svg/social/pinterest.svg' %}" alt=""></a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://cogofly.com/">{% svg 'social/tumblr' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.snapchat.com/add/cogoflyers">{% svg 'social/snapchat' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://t.me/share/url?url=cogofly.com&text=Join%20me%20on%20CoGoFly!">{% svg 'social/telegram' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://wa.me/?text=Join%20me%20on%20CoGoFly!">{% svg 'social/whatsapp' %}</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCjixRZO9UIsYvA0cWYjuE7Q">{% svg 'social/youtube' %}</a></li>        
+        </ul>
+        {% endif %}
+    </div>
+
+    <p>{% trans '© Copyright 2021 - CoGoFly - All rights reserved' %}</p>
+</footer>

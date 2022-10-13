@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/footer-about-us.scss' %}">
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+
+<section class="introduction">
+    <h1>{% trans "About CoGoFly" %}</h1>
+    <p>{% trans "The main aim of this page is to explain the Cogofly concept.The brand Cogofly, name and logo, came to light thanks to the human values that this concept wishes to get across and maintain moving forward." %}</p>
+    <p>{% blocktrans %}This brand is the result of a worldwide issue: <strong>There are far too many people who travel alone!</strong>{% endblocktrans %}</p>    
+</section>
+
+<section class="concept">
+    <div class="concept-content">
+        <h2>{% trans "The concept" %}</h2>
+        <p>{% trans "The idea came to light after several professional and private trips I have been able to do over the years..." %}</p>
+        <p>{% trans "This social network website is a worldwide concept which will help to avoid travelling, spending a weekend, make a business trip, do some rides (cultural, sport, education, etc...), or just going on an outing, ALONE...if someone just feel ALONE, as well and for any reasons, this website is then the good one !" %}</p>
+        <p>{% trans "This situation, unfortunately, doesn't have \"borders\"...It can touch a person, a group of person, couples, families and also all socio-professional categories." %}</p>
+        <p>{% trans "Cogofly's primary goal is to help people to avoid travelling alone any more. The second one is simply to help them to no longer be alone." %}</p>
+        <p>{% trans "It also naturally deals with the following notion: 'Who has never felt like they're always well surrounded, but ended up feeling rather alone ?'" %}</p>
+    </div>
+    <div class="concept-image">
+        <img src="{% static "img/about-us-concept.jpg" %}" alt="CoGoFly concept">
+    </div>
+</section>
+
+<section class="brand">
+    <h2>{% trans "The brand: name + logo" %}</h2>
+    <div class="brand-intro">
+        <p>{% trans "It was of paramount importance to find a site name which was both catchy and easy to remember for all members, plus anyone else reading this page (verbally and visually)." %}</p>
+        <p>{% trans "It was therefore absolutely necessary to find:" %}</p>
+        <ul>
+            <li>
+                <p>{% trans "A short name, easy to pronounce and remember (Facebook, Google, Twitter, Airbnb, Viadeo, etc...)." %}</p>
+            </li>
+            <li>
+                <p>{% trans "A simple, clear and visual logo." %}</p>
+            </li>            
+        </ul>
+    </div>
+    <div class="brand-name">   
+        <div class="brand-name-content">
+            <h3>{% trans "Name" %}</h3>
+            <p>{% trans "In order for this mission to succeed, it was important to keep certain ideas and \"basic\" words in mind, such as:" %}</p>
+            <ul>
+                <li>
+                    <p>{% trans "Sharing: co-travelling, car-sharing..." %}</p>
+                </li>
+                <li>
+                    <p>{% trans "Going out / Being on the move: trips, excursions, days/nights out..." %}</p>
+                </li>
+                <li>
+                    <p>{% trans "Travelling: going away, heading off, jetting off..." %}</p>
+                </li>                                
+            </ul>
+            <p>{% trans "CO-GO-FLY: The name seemed so OBVIOUS!" %}</p>
+            <p>{% trans "And so Cogofly was born, its domain name reserved on Monday 28 September 2015 and its trademark protected with INPI!" %}</p>      
+            <p>{% trans "In 2021, with the Go-Live of COGOFLY 2, the name Cogofly becomes Co Go Fly" %}</p>      
+        </div>
+        <div class="brand-name-images">
+            <img src="{% static "img/about-us-name.jpg" %}" alt="CoGoFly Name">
+            <p>{% trans "becomes" %}</p>
+            <img src="{% static "img/cogofly_logo_v2.png" %}" alt="New CoGoFly Name">
+        </div>         
+    </div>
+    <div class="brand-logo">
+        <div class="brand-logo-content">
+            <h3>{% trans "Logo" %}</h3>
+            <p>{% trans "In order to complete this mission, it was important to highlight:" %}</p>
+            <ul>
+                <li>
+                    <p>{% trans "The \"Co\" concept, which encapsulates the site's main focus: Think \"together\", Think \"Co\" and Take Off!" %}</p>
+                </li>
+                <li>
+                    <p>{% trans "The infinity sign, ∞, which resembles Co...evoking the infinite possibilities that the site will bring with its official launch on 21/06/2016." %}</p>
+                </li>                
+                <li>
+                    <p>{% trans "The \"smile\" situated under the name, more precisely under the \"Gofly\" part, and forming a loop around \"Co\"." %}</p>
+                </li>
+                <li>
+                    <p>{% trans "A \"smile\" which also evokes the idea of an open and accessible world." %}</p>
+                </li>
+                <li>
+                    <p>{% trans "The separation between the 2 semi-circles is intentional, calling to mind the concept of Yin & Yang, and further eliciting the need to travel together..." %}</p>
+                </li>
+                <li>
+                    <p>{% trans "A slightly tilted circle in order to express the idea of movement" %}</p>
+                </li>                                                                
+            </ul>
+        </div>
+        <div class="brand-logo-image">
+            <img src="{% static "img/cogofly_logo_v2-cropped.png" %}" alt="CoGoFly Logo">
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

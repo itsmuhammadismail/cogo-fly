@@ -1,0 +1,1407 @@
+/* the popup window */
+/* line 2, static/scss/cookieconsent.scss */
+.cc-window,
+.cc-revoke {
+  position: fixed;
+  overflow: hidden;
+  box-sizing: border-box;
+  /* exclude padding when dealing with width */
+  font-family: Helvetica, Calibri, Arial, sans-serif;
+  font-size: 16px;
+  /* by setting the base font here, we can size the rest of the popup using CSS `em` */
+  line-height: 1.5em;
+  display: flex;
+  flex-wrap: nowrap;
+  /* the following are random unjustified styles - just because - should probably be removed */
+  z-index: 9998; }
+
+/* line 19, static/scss/cookieconsent.scss */
+.cc-revoke {
+  z-index: 9999; }
+
+/* line 23, static/scss/cookieconsent.scss */
+.cc-window.cc-static {
+  position: static; }
+
+/* 2 basic types of window - floating / banner */
+/* line 28, static/scss/cookieconsent.scss */
+.cc-window.cc-floating {
+  padding: 2em;
+  max-width: 24em;
+  /* 1em == 16px therefore 24em == 384px */
+  flex-direction: column; }
+
+/* line 33, static/scss/cookieconsent.scss */
+.cc-window.cc-banner {
+  padding: 1em 1.8em;
+  width: 100%;
+  flex-direction: row; }
+
+/* line 39, static/scss/cookieconsent.scss */
+.cc-revoke {
+  padding: 0.5em; }
+
+/* line 42, static/scss/cookieconsent.scss */
+.cc-revoke:hover {
+  text-decoration: underline; }
+
+/* line 46, static/scss/cookieconsent.scss */
+.cc-header {
+  font-size: 18px;
+  font-weight: bold; }
+
+/* clickable things */
+/* line 52, static/scss/cookieconsent.scss */
+.cc-btn,
+.cc-link,
+.cc-close,
+.cc-revoke {
+  cursor: pointer; }
+
+/* line 59, static/scss/cookieconsent.scss */
+.cc-link {
+  opacity: 0.8;
+  display: inline-block;
+  padding: 0.2em;
+  text-decoration: underline; }
+
+/* line 65, static/scss/cookieconsent.scss */
+.cc-link:hover {
+  opacity: 1; }
+
+/* line 68, static/scss/cookieconsent.scss */
+.cc-link:active,
+.cc-link:visited {
+  color: initial; }
+
+/* line 73, static/scss/cookieconsent.scss */
+.cc-btn {
+  display: block;
+  padding: 0.4em 0.8em;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-width: 2px;
+  border-style: solid;
+  text-align: center;
+  white-space: nowrap; }
+
+/* line 84, static/scss/cookieconsent.scss */
+.cc-highlight .cc-btn:first-child {
+  background-color: transparent;
+  border-color: transparent; }
+
+/* line 89, static/scss/cookieconsent.scss */
+.cc-highlight .cc-btn:first-child:hover,
+.cc-highlight .cc-btn:first-child:focus {
+  background-color: transparent;
+  text-decoration: underline; }
+
+/* line 95, static/scss/cookieconsent.scss */
+.cc-close {
+  display: block;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  font-size: 1.6em;
+  opacity: 0.9;
+  /* seeing as this contains text and not an image, the element taller than it is wide (because it is text) */
+  /*  - we want it to be a square, because it's acting as an icon */
+  /*  - setting the line height normalizes the height */
+  line-height: 0.75; }
+
+/* line 108, static/scss/cookieconsent.scss */
+.cc-close:hover,
+.cc-close:focus {
+  opacity: 1; }
+
+/* This file should contain styles that modifies the popup layout. */
+/* By layout, we mean the physical position of the elements on the popup window, and the margin / padding around those elements. */
+/* line 115, static/scss/cookieconsent.scss */
+.cc-revoke.cc-top {
+  top: 0;
+  left: 3em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em; }
+
+/* line 121, static/scss/cookieconsent.scss */
+.cc-revoke.cc-bottom {
+  bottom: 0;
+  left: 3em;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em; }
+
+/* line 127, static/scss/cookieconsent.scss */
+.cc-revoke.cc-left {
+  left: 3em;
+  right: unset; }
+
+/* line 131, static/scss/cookieconsent.scss */
+.cc-revoke.cc-right {
+  right: 3em;
+  left: unset; }
+
+/**************************************** FLOATING ****************************************/
+/* these classes position the floating element */
+/* line 139, static/scss/cookieconsent.scss */
+.cc-top {
+  top: 1em; }
+
+/* line 142, static/scss/cookieconsent.scss */
+.cc-left {
+  left: 1em; }
+
+/* line 145, static/scss/cookieconsent.scss */
+.cc-right {
+  right: 1em; }
+
+/* line 148, static/scss/cookieconsent.scss */
+.cc-bottom {
+  bottom: 1em; }
+
+/* links that are direct decendants should be displayed as block */
+/* line 153, static/scss/cookieconsent.scss */
+.cc-floating > .cc-link {
+  margin-bottom: 1em; }
+
+/* line 157, static/scss/cookieconsent.scss */
+.cc-floating .cc-message {
+  display: block;
+  margin-bottom: 1em; }
+
+/* line 162, static/scss/cookieconsent.scss */
+.cc-window.cc-floating .cc-compliance {
+  flex: 1 0 auto; }
+
+/**************************************** BANNER ****************************************/
+/* line 168, static/scss/cookieconsent.scss */
+.cc-window.cc-banner {
+  align-items: center; }
+
+/* line 172, static/scss/cookieconsent.scss */
+.cc-banner.cc-top {
+  left: 0;
+  right: 0;
+  top: 0; }
+
+/* line 177, static/scss/cookieconsent.scss */
+.cc-banner.cc-bottom {
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+/* line 183, static/scss/cookieconsent.scss */
+.cc-banner .cc-message {
+  display: block;
+  flex: 1 1 auto;
+  max-width: 100%;
+  margin-right: 1em; }
+
+/* COMPLIANCE BOX */
+/* line 192, static/scss/cookieconsent.scss */
+.cc-compliance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+/* line 197, static/scss/cookieconsent.scss */
+.cc-floating .cc-compliance > .cc-btn {
+  flex: 1; }
+
+/* line 201, static/scss/cookieconsent.scss */
+.cc-btn + .cc-btn {
+  margin-left: 0.5em; }
+
+/* Categories Layout */
+/* line 206, static/scss/cookieconsent.scss */
+.cc-window.cc-type-categories {
+  display: inline-flex;
+  flex-direction: column;
+  overflow: visible; }
+  /* line 210, static/scss/cookieconsent.scss */
+  .cc-window.cc-type-categories .form {
+    text-align: right; }
+  /* line 213, static/scss/cookieconsent.scss */
+  .cc-window.cc-type-categories .cc-btn {
+    margin: 0; }
+    /* line 215, static/scss/cookieconsent.scss */
+    .cc-window.cc-type-categories .cc-btn.cc-save {
+      margin: 0;
+      display: inline-block; }
+
+/* line 221, static/scss/cookieconsent.scss */
+.cc-categories {
+  display: inline-flex; }
+  /* line 223, static/scss/cookieconsent.scss */
+  .cc-categories .cc-category {
+    display: flex;
+    max-width: 100%;
+    margin: 0 2px;
+    position: relative; }
+  /* line 229, static/scss/cookieconsent.scss */
+  .cc-categories .cc-btn {
+    border-right: none;
+    outline: none;
+    text-transform: capitalize; }
+    /* line 233, static/scss/cookieconsent.scss */
+    .cc-categories .cc-btn input[type="checkbox"] {
+      float: left;
+      height: 26px;
+      width: calc(100% - 22px);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 2px;
+      cursor: pointer; }
+    /* line 243, static/scss/cookieconsent.scss */
+    .cc-categories .cc-btn:not(.cc-info):not(.cc-save) {
+      padding-left: 26px; }
+  /* line 247, static/scss/cookieconsent.scss */
+  .cc-categories .cc-info {
+    border-left: none;
+    border-right: 2px solid lightgrey;
+    padding: 4px;
+    font-variant: all-small-caps; }
+    /* line 252, static/scss/cookieconsent.scss */
+    .cc-categories .cc-info:focus + .cc-tooltip {
+      display: block; }
+  /* line 256, static/scss/cookieconsent.scss */
+  .cc-categories .cc-tooltip {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    width: 190px;
+    bottom: 46px;
+    padding: 8px;
+    border: thin solid lightgrey;
+    box-shadow: 1px 1px 4px rgba(150, 150, 150, 0.7); }
+    /* line 265, static/scss/cookieconsent.scss */
+    .cc-categories .cc-tooltip:after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg);
+      position: absolute;
+      bottom: -7px;
+      left: 10px;
+      box-shadow: 2px 1px 1px rgba(200, 200, 200, 0.5); }
+    /* line 275, static/scss/cookieconsent.scss */
+    .cc-categories .cc-tooltip p {
+      margin: 0; }
+
+/* line 280, static/scss/cookieconsent.scss */
+.cc-window {
+  opacity: 1;
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -ms-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease; }
+
+/* line 290, static/scss/cookieconsent.scss */
+.cc-window.cc-invisible {
+  opacity: 0; }
+
+/* only animate ifhas class 'cc-animate' */
+/* line 295, static/scss/cookieconsent.scss */
+.cc-animate.cc-revoke {
+  -webkit-transition: transform 1s ease;
+  -moz-transition: transform 1s ease;
+  -ms-transition: transform 1s ease;
+  -o-transition: transform 1s ease;
+  transition: transform 1s ease; }
+
+/* line 302, static/scss/cookieconsent.scss */
+.cc-animate.cc-revoke.cc-top {
+  transform: translateY(-2em); }
+
+/* line 305, static/scss/cookieconsent.scss */
+.cc-animate.cc-revoke.cc-bottom {
+  transform: translateY(2em); }
+
+/* line 308, static/scss/cookieconsent.scss */
+.cc-animate.cc-revoke.cc-active.cc-top {
+  transform: translateY(0); }
+
+/* line 311, static/scss/cookieconsent.scss */
+.cc-animate.cc-revoke.cc-active.cc-bottom {
+  transform: translateY(0); }
+
+/* line 314, static/scss/cookieconsent.scss */
+.cc-revoke:hover {
+  transform: translateY(0); }
+
+/* line 318, static/scss/cookieconsent.scss */
+.cc-grower {
+  /* Initially we don't want any height, and we want the contents to be hidden */
+  max-height: 0;
+  overflow: hidden;
+  /* Set our transitions up. */
+  -webkit-transition: max-height 1s;
+  -moz-transition: max-height 1s;
+  -ms-transition: max-height 1s;
+  -o-transition: max-height 1s;
+  transition: max-height 1s; }
+
+@media print {
+  /* line 331, static/scss/cookieconsent.scss */
+  .cc-window,
+  .cc-revoke {
+    display: none; } }
+
+@media screen and (max-width: 900px) {
+  /* line 338, static/scss/cookieconsent.scss */
+  .cc-btn {
+    white-space: normal; } }
+
+/* dimensions for 'iPhone6 Plus' and lower */
+@media screen and (max-width: 414px) and (orientation: portrait), screen and (max-width: 736px) and (orientation: landscape) {
+  /* line 347, static/scss/cookieconsent.scss */
+  .cc-window.cc-top {
+    top: 0; }
+  /* line 350, static/scss/cookieconsent.scss */
+  .cc-window.cc-bottom {
+    bottom: 0; }
+  /* line 353, static/scss/cookieconsent.scss */
+  .cc-window.cc-banner, .cc-window.cc-floating, .cc-window.cc-right, .cc-window.cc-left {
+    left: 0;
+    right: 0; }
+  /* line 361, static/scss/cookieconsent.scss */
+  .cc-window.cc-banner {
+    flex-direction: column;
+    align-items: unset; }
+    /* line 364, static/scss/cookieconsent.scss */
+    .cc-window.cc-banner .cc-compliance {
+      flex: 1 1 auto; }
+    /* line 367, static/scss/cookieconsent.scss */
+    .cc-window.cc-banner .cc-message {
+      margin-right: 0;
+      margin-bottom: 1em; }
+  /* line 372, static/scss/cookieconsent.scss */
+  .cc-window.cc-floating {
+    max-width: none; }
+  /* line 375, static/scss/cookieconsent.scss */
+  .cc-window.cc-type-categories {
+    flex-direction: column; }
+  /* line 378, static/scss/cookieconsent.scss */
+  .cc-window .cc-message {
+    margin-bottom: 1em; }
+  /* line 381, static/scss/cookieconsent.scss */
+  .cc-window .cc-categories {
+    flex-direction: column;
+    width: 100%;
+    margin-right: 8px; }
+  /* line 386, static/scss/cookieconsent.scss */
+  .cc-window .cc-category {
+    margin: 4px 0; }
+    /* line 388, static/scss/cookieconsent.scss */
+    .cc-window .cc-category .cc-btn:not(.cc-info) {
+      width: calc(100% - 16px);
+      min-width: 140px; } }
+
+@media screen and (max-width: 854px) {
+  /* line 396, static/scss/cookieconsent.scss */
+  .cc-window.cc-type-categories .cc-btn.cc-save {
+    margin: 8px 0; } }
+
+@media screen and (max-width: 790px) {
+  /* line 402, static/scss/cookieconsent.scss */
+  .cc-window.cc-type-categories .cc-categories {
+    display: flex;
+    flex-direction: column; }
+  /* line 406, static/scss/cookieconsent.scss */
+  .cc-categories .cc-category {
+    margin: 4px 0; }
+  /* line 409, static/scss/cookieconsent.scss */
+  .form {
+    width: 100%;
+    max-width: 350px; }
+  /* line 413, static/scss/cookieconsent.scss */
+  .cc-btn:not(.cc-info):not(.cc-save) {
+    width: calc(100% - 16px); } }
+
+/* line 3, static/scss/landing.scss */
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  transition: margin 0.5s; }
+  /* line 10, static/scss/landing.scss */
+  body.menu-open {
+    margin-right: 80%;
+    margin-left: -80%; }
+
+/* line 16, static/scss/landing.scss */
+button {
+  background-color: #1168d8;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  outline: transparent;
+  font-family: "Lato", sans-serif;
+  /* tailles provisoire en attendant un vrai code responsive*/ }
+  /* line 27, static/scss/landing.scss */
+  button:hover {
+    background-color: #2e76d4;
+    transition-duration: 0.4s; }
+
+/* line 33, static/scss/landing.scss */
+ul {
+  padding: 0; }
+  /* line 35, static/scss/landing.scss */
+  ul li {
+    list-style: none;
+    padding: 0; }
+
+/* line 41, static/scss/landing.scss */
+header {
+  position: fixed;
+  background-color: transparent;
+  margin: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.5s; }
+  /* line 48, static/scss/landing.scss */
+  header nav {
+    display: flex;
+    align-items: center; }
+    /* line 51, static/scss/landing.scss */
+    header nav h1 {
+      margin: 0; }
+      /* line 53, static/scss/landing.scss */
+      header nav h1 img {
+        padding: 1rem;
+        height: 8rem;
+        box-sizing: border-box;
+        filter: brightness(0) invert(1);
+        transition: 0.5s; }
+    /* line 61, static/scss/landing.scss */
+    header nav ul {
+      display: contents; }
+      /* line 63, static/scss/landing.scss */
+      header nav ul button {
+        font-size: 16px; }
+    /* line 67, static/scss/landing.scss */
+    header nav li {
+      list-style: none;
+      position: relative; }
+      /* line 70, static/scss/landing.scss */
+      header nav li:first-of-type {
+        margin-left: auto; }
+      /* line 73, static/scss/landing.scss */
+      header nav li a {
+        position: relative;
+        margin: 10px;
+        color: white;
+        border: none white 1px;
+        text-decoration: none;
+        cursor: pointer; }
+        /* line 80, static/scss/landing.scss */
+        header nav li a:hover {
+          padding-bottom: 5px;
+          border-bottom-style: solid;
+          transition: 0.4s ease; }
+          /* line 84, static/scss/landing.scss */
+          header nav li a:hover + p {
+            opacity: 1; }
+      /* line 89, static/scss/landing.scss */
+      header nav li p {
+        padding: 10px;
+        font-size: 15px;
+        position: absolute;
+        width: 120px;
+        left: 50%;
+        top: calc(100% + 10px);
+        transform: translateX(-50%);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s;
+        color: black;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 4px 4px 20px 4px rgba(0, 0, 0, 0.75); }
+        /* line 104, static/scss/landing.scss */
+        header nav li p::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: transparent transparent white transparent; }
+  /* line 117, static/scss/landing.scss */
+  header.solid {
+    background-color: #1168d8; }
+    /* line 119, static/scss/landing.scss */
+    header.solid img {
+      height: 5rem; }
+
+/* line 125, static/scss/landing.scss */
+.modal {
+  position: fixed;
+  margin-left: auto;
+  top: 150%;
+  left: 50%;
+  width: 70%;
+  padding: 40px;
+  border-radius: 5px;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  transition: top 0.3s ease, filter 0.3 ease;
+  z-index: 2;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4); }
+  /* line 138, static/scss/landing.scss */
+  .modal.open {
+    top: 50%; }
+
+/* line 143, static/scss/landing.scss */
+.is-blurred {
+  filter: blur(2px);
+  transition: filter 0.3 ease; }
+
+/* line 148, static/scss/landing.scss */
+#lang-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  /* line 153, static/scss/landing.scss */
+  #lang-modal p {
+    font-size: 40px;
+    color: black;
+    padding: 0;
+    margin: 0; }
+  /* line 159, static/scss/landing.scss */
+  #lang-modal ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    justify-content: center; }
+    /* line 164, static/scss/landing.scss */
+    #lang-modal ul li {
+      list-style: none;
+      margin-top: 20px;
+      padding: 10px; }
+      /* line 168, static/scss/landing.scss */
+      #lang-modal ul li:first-of-type {
+        margin-left: 0; }
+      /* line 171, static/scss/landing.scss */
+      #lang-modal ul li a {
+        color: black;
+        font-size: 20px; }
+  /* line 177, static/scss/landing.scss */
+  #lang-modal svg {
+    height: 30px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    vertical-align: middle; }
+  /* line 182, static/scss/landing.scss */
+  #lang-modal button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 40px; }
+  /* line 188, static/scss/landing.scss */
+  #lang-modal.open {
+    top: 50%; }
+
+/* line 193, static/scss/landing.scss */
+#scrollup {
+  position: fixed;
+  right: 20px;
+  bottom: -100px;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  transition: bottom 0.5s ease; }
+  /* line 201, static/scss/landing.scss */
+  #scrollup.visible {
+    bottom: 20px; }
+
+/* line 210, static/scss/landing.scss */
+.hamburger {
+  display: none;
+  background: none !important;
+  position: relative;
+  height: 1.2em;
+  width: 2em;
+  padding: 0;
+  margin: 1em;
+  background: none; }
+  /* line 219, static/scss/landing.scss */
+  .hamburger span {
+    top: 50%;
+    margin-top: -0.1em; }
+    /* line 222, static/scss/landing.scss */
+    .hamburger span, .hamburger span:before, .hamburger span:after {
+      display: block;
+      width: 2em;
+      height: 0.2em;
+      background-color: white;
+      border-radius: 0.1em;
+      position: absolute;
+      transition: transform 0.3s; }
+    /* line 233, static/scss/landing.scss */
+    .hamburger span:before, .hamburger span:after {
+      content: ""; }
+    /* line 237, static/scss/landing.scss */
+    .hamburger span:before {
+      top: -0.5em;
+      transition: top 0.3s 0.3s, opacity 0.3s; }
+    /* line 241, static/scss/landing.scss */
+    .hamburger span:after {
+      bottom: -0.5em;
+      transition: bottom 0.3s 0.3s, transform 0.3s; }
+  /* line 247, static/scss/landing.scss */
+  .hamburger.is_active span {
+    transform: rotate(45deg);
+    transition: transform 0.3s 0.3s; }
+    /* line 250, static/scss/landing.scss */
+    .hamburger.is_active span:before {
+      top: 0;
+      opacity: 0;
+      transition: top 0.3s, opacity 0.3s 0.3s; }
+    /* line 255, static/scss/landing.scss */
+    .hamburger.is_active span:after {
+      bottom: 0;
+      transform: rotate(-90deg);
+      transition: bottom 0.3s, transform 0.3s 0.3s; }
+
+/* line 264, static/scss/landing.scss */
+section {
+  position: relative;
+  text-align: center;
+  min-height: 65vh;
+  padding: 3em;
+  box-sizing: border-box;
+  overflow: hidden; }
+  /* line 271, static/scss/landing.scss */
+  section > * {
+    margin: 2rem; }
+  /* line 274, static/scss/landing.scss */
+  section h2 {
+    font-size: 2.5em; }
+  /* line 277, static/scss/landing.scss */
+  section > p {
+    font-size: 1.5em; }
+  /* line 282, static/scss/landing.scss */
+  section:first-of-type p,
+  section :nth-of-type(2) p {
+    margin: 20px; }
+
+/* line 288, static/scss/landing.scss */
+.main-section {
+  background-image: linear-gradient(transparent, rgba(255, 255, 255, 0.5)), url("/static/img/road.jpg?4b7f1cfde928");
+  background-size: cover;
+  text-align: center;
+  min-height: 100vh; }
+  /* line 294, static/scss/landing.scss */
+  .main-section h2 {
+    margin: 0;
+    padding: 200px 0px 25px 0px;
+    font-family: "Roboto", sans-serif;
+    font-size: 60px; }
+    /* line 295, static/scss/landing.scss */
+    .main-section h2 span {
+      display: inline-block; }
+  /* line 303, static/scss/landing.scss */
+  .main-section p {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px; }
+  /* line 308, static/scss/landing.scss */
+  .main-section form {
+    height: 150px;
+    display: grid;
+    grid-template-areas: "a a b" "c c b" "d e b";
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 50px auto;
+    padding: 1em;
+    width: 70%;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 4px 4px 30px black; }
+    /* line 322, static/scss/landing.scss */
+    .main-section form .search-destination {
+      grid-area: a;
+      display: flex;
+      align-items: center;
+      position: relative; }
+      /* line 327, static/scss/landing.scss */
+      .main-section form .search-destination label {
+        white-space: nowrap;
+        margin-right: 5px; }
+      /* line 331, static/scss/landing.scss */
+      .main-section form .search-destination select {
+        position: absolute;
+        left: 50%;
+        bottom: 0; }
+      /* line 336, static/scss/landing.scss */
+      .main-section form .search-destination > span {
+        width: 100% !important;
+        height: 100%; }
+        /* line 339, static/scss/landing.scss */
+        .main-section form .search-destination > span .select2-selection {
+          font-family: "Lato", sans-serif;
+          font-size: 16px;
+          width: 100%;
+          border: solid 1px #c8c8c8;
+          border-radius: 5px;
+          margin: 0;
+          padding: 0;
+          outline: transparent;
+          background: transparent;
+          height: 100%;
+          display: block;
+          text-align: initial; }
+          /* line 352, static/scss/landing.scss */
+          .main-section form .search-destination > span .select2-selection__rendered {
+            line-height: 50px !important; }
+          /* line 355, static/scss/landing.scss */
+          .main-section form .search-destination > span .select2-selection__arrow {
+            height: 50px !important; }
+    /* line 361, static/scss/landing.scss */
+    .main-section form .search-start,
+    .main-section form .search-end {
+      display: flex;
+      align-items: center; }
+      /* line 365, static/scss/landing.scss */
+      .main-section form .search-start label,
+      .main-section form .search-end label {
+        white-space: nowrap;
+        margin-right: 5px; }
+      /* line 369, static/scss/landing.scss */
+      .main-section form .search-start input,
+      .main-section form .search-end input {
+        font-size: 16px;
+        height: 100%; }
+    /* line 374, static/scss/landing.scss */
+    .main-section form .search-start {
+      grid-area: d;
+      margin-right: 5px; }
+    /* line 378, static/scss/landing.scss */
+    .main-section form .search-end {
+      grid-area: e;
+      margin-left: 5px; }
+    /* line 382, static/scss/landing.scss */
+    .main-section form input {
+      text-align: center;
+      font-family: "Lato", sans-serif;
+      font-size: 20px;
+      width: 100%;
+      border: solid 1px #c8c8c8;
+      border-radius: 5px;
+      margin: 0;
+      padding: 0;
+      outline: transparent;
+      background: transparent; }
+    /* line 394, static/scss/landing.scss */
+    .main-section form p {
+      grid-area: c;
+      background: transparent;
+      color: grey;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      /* line 403, static/scss/landing.scss */
+      .main-section form p:before, .main-section form p:after {
+        content: "";
+        display: inline-block;
+        position: relative;
+        height: 1px;
+        width: 50%;
+        background: lightgrey;
+        vertical-align: middle; }
+      /* line 413, static/scss/landing.scss */
+      .main-section form p:before {
+        margin-left: -50%; }
+      /* line 416, static/scss/landing.scss */
+      .main-section form p:after {
+        margin-right: -50%; }
+    /* line 420, static/scss/landing.scss */
+    .main-section form button {
+      grid-area: b;
+      border-radius: inherit;
+      margin: auto 8px;
+      padding: 13px 0;
+      width: 100%; }
+
+/* line 430, static/scss/landing.scss */
+.main-section aside {
+  margin-top: 5px;
+  font-size: 15px;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  cursor: pointer; }
+  /* line 437, static/scss/landing.scss */
+  .main-section aside p {
+    font-size: 20px;
+    margin: 5px; }
+    /* line 440, static/scss/landing.scss */
+    .main-section aside p:hover + ul {
+      opacity: 1;
+      transition: ease 0.4s; }
+  /* line 445, static/scss/landing.scss */
+  .main-section aside ul {
+    padding: 10px;
+    font-size: 10px;
+    position: absolute;
+    right: 15%;
+    bottom: 25;
+    opacity: 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 4px 4px 60px -20px rgba(0, 0, 0, 0.75); }
+    /* line 455, static/scss/landing.scss */
+    .main-section aside ul li {
+      list-style: none;
+      width: 300px; }
+
+/* line 462, static/scss/landing.scss */
+.result-section {
+  background-color: #ececec; }
+  /* line 464, static/scss/landing.scss */
+  .result-section form {
+    display: flex;
+    background-color: white;
+    padding: 1em;
+    max-width: 1200px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4); }
+    /* line 471, static/scss/landing.scss */
+    .result-section form p {
+      font-size: 15px;
+      margin: 0; }
+    /* line 475, static/scss/landing.scss */
+    .result-section form input {
+      flex: 1;
+      text-align: center;
+      font-family: "Lato", sans-serif;
+      border: none;
+      border-right: solid 1px #b9b9b9;
+      outline: transparent;
+      font-size: 15px;
+      /* &:focus {
+        border-radius: 20px;
+        border: solid 1px rgb(185, 185, 185);
+      } */ }
+      /* line 487, static/scss/landing.scss */
+      .result-section form input:last-of-type {
+        border-right: none; }
+
+/* line 494, static/scss/landing.scss */
+.carousel,
+.observations-carousel {
+  position: relative;
+  max-height: 400px;
+  max-width: 1200px;
+  margin: 0 auto 40px; }
+  /* line 500, static/scss/landing.scss */
+  .carousel .splide__arrow,
+  .observations-carousel .splide__arrow {
+    position: absolute;
+    margin: 0 10px;
+    top: 50%; }
+    /* line 504, static/scss/landing.scss */
+    .carousel .splide__arrow--prev,
+    .observations-carousel .splide__arrow--prev {
+      left: -50px; }
+    /* line 507, static/scss/landing.scss */
+    .carousel .splide__arrow--next,
+    .observations-carousel .splide__arrow--next {
+      right: -50px; }
+  /* line 511, static/scss/landing.scss */
+  .carousel .splide__pagination,
+  .observations-carousel .splide__pagination {
+    padding: 0.5em;
+    bottom: -10%; }
+  /* line 515, static/scss/landing.scss */
+  .carousel .splide__track,
+  .observations-carousel .splide__track {
+    padding: 30px 0 40px; }
+    /* line 518, static/scss/landing.scss */
+    .carousel .splide__track .splide__list li,
+    .observations-carousel .splide__track .splide__list li {
+      height: 300px;
+      background-position: top !important;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      transition: 0.4s;
+      margin-bottom: 10px; }
+      /* line 526, static/scss/landing.scss */
+      .carousel .splide__track .splide__list li:hover,
+      .observations-carousel .splide__track .splide__list li:hover {
+        cursor: pointer; }
+      /* line 529, static/scss/landing.scss */
+      .carousel .splide__track .splide__list li .slide-content,
+      .observations-carousel .splide__track .splide__list li .slide-content {
+        position: absolute;
+        border-radius: 0 0 20px 20px;
+        height: 25%;
+        width: 100%;
+        bottom: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: white;
+        overflow: hidden; }
+        /* line 539, static/scss/landing.scss */
+        .carousel .splide__track .splide__list li .slide-content p,
+        .observations-carousel .splide__track .splide__list li .slide-content p {
+          margin: 0; }
+        /* line 542, static/scss/landing.scss */
+        .carousel .splide__track .splide__list li .slide-content .name,
+        .carousel .splide__track .splide__list li .slide-content .ratings,
+        .observations-carousel .splide__track .splide__list li .slide-content .name,
+        .observations-carousel .splide__track .splide__list li .slide-content .ratings {
+          display: flex;
+          flex-direction: row;
+          justify-content: center; }
+        /* line 548, static/scss/landing.scss */
+        .carousel .splide__track .splide__list li .slide-content .name,
+        .observations-carousel .splide__track .splide__list li .slide-content .name {
+          font-weight: bold; }
+        /* line 551, static/scss/landing.scss */
+        .carousel .splide__track .splide__list li .slide-content .slide-details,
+        .observations-carousel .splide__track .splide__list li .slide-content .slide-details {
+          margin-top: 10px; }
+
+/* line 565, static/scss/landing.scss */
+.carousel .splide__track .splide__list li .slide-content .name p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+/* line 578, static/scss/landing.scss */
+.observations-carousel .splide__arrow {
+  transform: none;
+  top: 50%; }
+
+/* line 582, static/scss/landing.scss */
+.observations-carousel .splide__pagination {
+  bottom: -20%; }
+
+/* line 585, static/scss/landing.scss */
+.observations-carousel p {
+  font-weight: normal; }
+
+/* line 591, static/scss/landing.scss */
+.cotravels-carousel .splide__arrow {
+  top: 50%; }
+
+/* line 595, static/scss/landing.scss */
+.hide-carousel {
+  display: none; }
+
+/* line 601, static/scss/landing.scss */
+.concept-section ul,
+.advantages-section ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 20px 0;
+  height: 350px; }
+  /* line 607, static/scss/landing.scss */
+  .concept-section ul li,
+  .advantages-section ul li {
+    list-style: none;
+    width: 360px;
+    padding: 10px;
+    margin: 0 10px;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.4s; }
+    /* line 620, static/scss/landing.scss */
+    .concept-section ul li:nth-of-type(1),
+    .advantages-section ul li:nth-of-type(1) {
+      background: linear-gradient(transparent, rgba(43, 41, 41, 0.5)), url("/static/img/bike-road.jpg?3d3ee9222074") center center/cover no-repeat; }
+      /* line 623, static/scss/landing.scss */
+      .concept-section ul li:nth-of-type(1):hover,
+      .advantages-section ul li:nth-of-type(1):hover {
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)), url("/static/img/bike-road.jpg?3d3ee9222074") center center/cover no-repeat; }
+    /* line 628, static/scss/landing.scss */
+    .concept-section ul li:nth-of-type(2),
+    .advantages-section ul li:nth-of-type(2) {
+      background: linear-gradient(transparent, rgba(43, 41, 41, 0.5)), url("/static/img/hands.jpg?7c4a1d5983ec") center center/cover no-repeat; }
+      /* line 631, static/scss/landing.scss */
+      .concept-section ul li:nth-of-type(2):hover,
+      .advantages-section ul li:nth-of-type(2):hover {
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)), url("/static/img/hands.jpg?7c4a1d5983ec") center center/cover no-repeat; }
+    /* line 636, static/scss/landing.scss */
+    .concept-section ul li:nth-of-type(3),
+    .advantages-section ul li:nth-of-type(3) {
+      background: linear-gradient(transparent, rgba(43, 41, 41, 0.5)), url("/static/img/steelwool.jpg?494238b334f5") center center/cover no-repeat; }
+      /* line 639, static/scss/landing.scss */
+      .concept-section ul li:nth-of-type(3):hover,
+      .advantages-section ul li:nth-of-type(3):hover {
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)), url("/static/img/steelwool.jpg?494238b334f5") center center/cover no-repeat; }
+    /* line 644, static/scss/landing.scss */
+    .concept-section ul li:hover,
+    .advantages-section ul li:hover {
+      background-position: center center;
+      background-size: cover;
+      transition: 0.4s;
+      justify-content: center; }
+      /* line 650, static/scss/landing.scss */
+      .concept-section ul li:hover p:first-of-type,
+      .advantages-section ul li:hover p:first-of-type {
+        opacity: 0;
+        margin: 0; }
+      /* line 654, static/scss/landing.scss */
+      .concept-section ul li:hover p:nth-of-type(2), .concept-section ul li:hover p:nth-of-type(3), .concept-section ul li:hover p:nth-of-type(4),
+      .advantages-section ul li:hover p:nth-of-type(2),
+      .advantages-section ul li:hover p:nth-of-type(3),
+      .advantages-section ul li:hover p:nth-of-type(4) {
+        opacity: 1;
+        transition: 0.4s; }
+    /* line 662, static/scss/landing.scss */
+    .concept-section ul li p,
+    .advantages-section ul li p {
+      color: white;
+      user-select: none;
+      font-size: 20px; }
+      /* line 666, static/scss/landing.scss */
+      .concept-section ul li p:first-of-type,
+      .advantages-section ul li p:first-of-type {
+        margin-top: 40%; }
+      /* line 669, static/scss/landing.scss */
+      .concept-section ul li p:nth-of-type(2), .concept-section ul li p:nth-of-type(3), .concept-section ul li p:nth-of-type(4),
+      .advantages-section ul li p:nth-of-type(2),
+      .advantages-section ul li p:nth-of-type(3),
+      .advantages-section ul li p:nth-of-type(4) {
+        opacity: 0; }
+
+/* line 679, static/scss/landing.scss */
+.community-section {
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.5)), url("/static/img/community-sectionBg.jpg?4b7f1cfde928");
+  background-position: center center;
+  background-size: cover;
+  color: white; }
+  /* line 685, static/scss/landing.scss */
+  .community-section div {
+    display: flex;
+    flex-direction: row; }
+    /* line 688, static/scss/landing.scss */
+    .community-section div ul {
+      flex-grow: 1; }
+      /* line 690, static/scss/landing.scss */
+      .community-section div ul li {
+        list-style: none; }
+      /* line 693, static/scss/landing.scss */
+      .community-section div ul.left {
+        display: flex;
+        padding: 0;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left; }
+        /* line 699, static/scss/landing.scss */
+        .community-section div ul.left li {
+          display: flex;
+          align-items: center;
+          margin: 1em;
+          z-index: 1; }
+          /* line 704, static/scss/landing.scss */
+          .community-section div ul.left li span {
+            position: relative; }
+            /* line 706, static/scss/landing.scss */
+            .community-section div ul.left li span img {
+              margin: 10px;
+              filter: invert(1); }
+            /* line 710, static/scss/landing.scss */
+            .community-section div ul.left li span:before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              background: #1168d8;
+              border-radius: 50%;
+              height: 100%;
+              width: 100%;
+              z-index: -1; }
+          /* line 722, static/scss/landing.scss */
+          .community-section div ul.left li p {
+            margin-left: 10px; }
+      /* line 727, static/scss/landing.scss */
+      .community-section div ul.right {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-items: center;
+        padding: 0; }
+        /* line 732, static/scss/landing.scss */
+        .community-section div ul.right li {
+          display: flex; }
+          /* line 734, static/scss/landing.scss */
+          .community-section div ul.right li p {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1em;
+            margin: auto 1em;
+            width: 100px; }
+            /* line 739, static/scss/landing.scss */
+            .community-section div ul.right li p img {
+              filter: invert(1);
+              width: 48px; }
+            /* line 743, static/scss/landing.scss */
+            .community-section div ul.right li p strong {
+              display: block;
+              font-size: 22px; }
+
+/* line 754, static/scss/landing.scss */
+.cotravels {
+  background-color: #ececec; }
+  /* line 755, static/scss/landing.scss */
+  .cotravels .cotravels-toggles {
+    display: flex;
+    padding-left: 15px; }
+    /* line 758, static/scss/landing.scss */
+    .cotravels .cotravels-toggles > li {
+      list-style: none;
+      margin-right: 10px; }
+      /* line 761, static/scss/landing.scss */
+      .cotravels .cotravels-toggles > li:hover {
+        cursor: pointer; }
+      /* line 764, static/scss/landing.scss */
+      .cotravels .cotravels-toggles > li p {
+        margin: 0; }
+    /* line 768, static/scss/landing.scss */
+    .cotravels .cotravels-toggles .selected {
+      border-bottom: solid 1px black; }
+    /* line 772, static/scss/landing.scss */
+    .cotravels .cotravels-toggles #cotravels-good-to-know {
+      position: relative; }
+      /* line 774, static/scss/landing.scss */
+      .cotravels .cotravels-toggles #cotravels-good-to-know aside {
+        z-index: 100;
+        display: none;
+        padding: 10px;
+        position: absolute;
+        right: -290px;
+        width: 370px;
+        text-align: initial;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 4px 4px 60px -20px rgba(0, 0, 0, 0.75);
+        cursor: default; }
+        /* line 786, static/scss/landing.scss */
+        .cotravels .cotravels-toggles #cotravels-good-to-know aside ul {
+          padding: revert; }
+          /* line 788, static/scss/landing.scss */
+          .cotravels .cotravels-toggles #cotravels-good-to-know aside ul li {
+            list-style: revert; }
+      /* line 794, static/scss/landing.scss */
+      .cotravels .cotravels-toggles #cotravels-good-to-know:hover aside {
+        display: block; }
+
+/* line 803, static/scss/landing.scss */
+.observations-section {
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.5)), url("/static/img/observationBg.jpg?4b7f1cfde928") no-repeat;
+  background-size: cover;
+  color: white;
+  min-height: 70vh; }
+  /* line 809, static/scss/landing.scss */
+  .observations-section .observations-carousel {
+    width: 800px; }
+    /* line 811, static/scss/landing.scss */
+    .observations-section .observations-carousel .splide__track {
+      height: 450px; }
+      /* line 813, static/scss/landing.scss */
+      .observations-section .observations-carousel .splide__track li {
+        background-color: white !important;
+        height: 400px !important;
+        background-size: 100% 100% !important; }
+        /* line 817, static/scss/landing.scss */
+        .observations-section .observations-carousel .splide__track li .slide-content {
+          text-align: left;
+          height: auto; }
+          /* line 820, static/scss/landing.scss */
+          .observations-section .observations-carousel .splide__track li .slide-content p {
+            padding: 10px;
+            color: black; }
+
+/* line 830, static/scss/landing.scss */
+footer {
+  background-color: #141414;
+  padding: 20px 20px;
+  text-align: center;
+  overflow: hidden; }
+  /* line 835, static/scss/landing.scss */
+  footer hr {
+    border-color: #bababa9f; }
+  /* line 838, static/scss/landing.scss */
+  footer ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+    /* line 842, static/scss/landing.scss */
+    footer ul li {
+      margin: 5px 20px; }
+      /* line 844, static/scss/landing.scss */
+      footer ul li a {
+        color: #bababa;
+        font-size: 20px;
+        text-decoration: none; }
+        /* line 848, static/scss/landing.scss */
+        footer ul li a:hover {
+          cursor: pointer;
+          color: #d6d6d6;
+          transition: color 0.2s; }
+      /* line 854, static/scss/landing.scss */
+      footer ul li svg {
+        width: 40px;
+        height: 40px; }
+    /* line 861, static/scss/landing.scss */
+    footer ul:nth-of-type(2) li:first-of-type {
+      margin-top: 0;
+      display: flex;
+      align-items: center; }
+      /* line 865, static/scss/landing.scss */
+      footer ul:nth-of-type(2) li:first-of-type p {
+        margin: 0; }
+  /* line 872, static/scss/landing.scss */
+  footer p {
+    color: #bababa;
+    font-size: 20px; }
+
+/* line 878, static/scss/landing.scss */
+#cookie-policy {
+  z-index: 1000;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%); }
+  /* line 890, static/scss/landing.scss */
+  #cookie-policy #close-cookies {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: grey;
+    user-select: none; }
+    /* line 896, static/scss/landing.scss */
+    #cookie-policy #close-cookies:hover {
+      cursor: pointer; }
+  /* line 900, static/scss/landing.scss */
+  #cookie-policy #accept-cookies {
+    font-size: 15px;
+    width: min-content; }
+
+/* line 906, static/scss/landing.scss */
+.show-cookie-policy {
+  display: flex; }
+
+/* line 910, static/scss/landing.scss */
+.hide-cookie-policy {
+  display: none; }
+
+@media all and (max-width: 1092px) {
+  /* line 915, static/scss/landing.scss */
+  nav a,
+  nav button:nth-child(1),
+  nav > ul > button {
+    font-size: 15px; }
+  /* line 921, static/scss/landing.scss */
+  .main-section h2 {
+    font-size: 40px; }
+  /* line 925, static/scss/landing.scss */
+  .main-section form {
+    width: 90%; }
+  /* line 929, static/scss/landing.scss */
+  aside {
+    right: 5%; }
+  /* line 933, static/scss/landing.scss */
+  section:nth-child(2) > form > input {
+    width: 25%; } }
+
+@media all and (max-width: 792px) {
+  /* line 939, static/scss/landing.scss */
+  section {
+    padding: 1em; }
+  /* line 944, static/scss/landing.scss */
+  header nav h1 img {
+    height: 6rem; }
+  /* line 948, static/scss/landing.scss */
+  header nav h1.solid img {
+    height: 4rem; }
+  /* line 954, static/scss/landing.scss */
+  .main-section h2 {
+    font-size: 30px;
+    padding: 150px 10px 10px;
+    text-align: center; }
+  /* line 959, static/scss/landing.scss */
+  .main-section form {
+    grid-template-areas: "a a" "c c" "d e" "b b";
+    grid-template-rows: 2em 1.5em 2em auto; }
+    /* line 966, static/scss/landing.scss */
+    .main-section form button {
+      margin-top: 0.5em; }
+  /* line 973, static/scss/landing.scss */
+  .community-section div {
+    flex-direction: column; }
+    /* line 975, static/scss/landing.scss */
+    .community-section div ul.right li p {
+      margin: 1em auto; } }
+
+@media all and (max-width: 600px) {
+  /* line 983, static/scss/landing.scss */
+  header {
+    height: 10vh; }
+    /* line 985, static/scss/landing.scss */
+    header nav > ul {
+      display: unset;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 80%; }
+      /* line 991, static/scss/landing.scss */
+      header nav > ul li a {
+        color: black; }
+  /* line 997, static/scss/landing.scss */
+  .hamburger {
+    display: unset;
+    margin-left: auto; }
+  /* line 1002, static/scss/landing.scss */
+  .main-section h2 {
+    font-size: 20px; }
+  /* line 1008, static/scss/landing.scss */
+  .main-section form button {
+    width: 100%; }
+  /* line 1014, static/scss/landing.scss */
+  section > button {
+    margin: 0; }
+  /* line 1018, static/scss/landing.scss */
+  section:nth-child(2) > form > input {
+    width: 100%;
+    height: 25%; } }
+
+@media all and (max-height: 750px) {
+  /* line 1025, static/scss/landing.scss */
+  section > p {
+    font-size: 20px; }
+  /* line 1030, static/scss/landing.scss */
+  .main-section h2 {
+    padding: 20vh 0px 0px 0px;
+    font-size: 40px; }
+  /* line 1034, static/scss/landing.scss */
+  .main-section p {
+    font-size: 20px; }
+  /* line 1037, static/scss/landing.scss */
+  .main-section form {
+    margin: 0 auto; }
+  /* line 1040, static/scss/landing.scss */
+  .main-section aside {
+    bottom: 0%;
+    right: 0%; } }

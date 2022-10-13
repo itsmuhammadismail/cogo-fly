@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/footer-contact-us.scss' %}">
+{% endblock %}
+
+{% block body %}
+{% include "header.html" %}
+
+<section>
+    {% svg "illustrations/undraw_Chatting" %}
+    <div class="contact-content">
+    </div>
+</section>
+
+{% endblock %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}

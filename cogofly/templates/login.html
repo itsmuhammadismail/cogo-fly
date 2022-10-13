@@ -1,0 +1,51 @@
+{% extends "base_auth.html" %}
+{% load static %}
+{% load i18n %}
+{% load svg %}
+
+{% block title%}Login{% endblock %}
+
+{% block main_panel %}
+
+<div class="login">
+    <div class="signup-form">
+        <h2>Login</h2>  
+        {% if user.is_authenticated %}
+        <p>{% trans 'You are already connected as' %} {{ user.first_name }} {{ user.last_name }}.</p>
+        <p>{% trans 'This is not you?' %} <a href={% url 'logout' %}>{% trans 'Logout' %}</a></p>
+        <p>{% trans 'This is you?' %} <a href={% url 'home' %}>{% trans 'Go to homepage' %}</a></p>
+        {% else %}
+        <form method="post">
+            {% csrf_token %}                     
+            <p>{% trans 'In one click with:' %}</p>
+            <div class="social-signup">
+                <a href="{% url 'social:begin' 'facebook' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}" class="facebook-signup">{% svg 'social/facebook' %}</a>
+                <a href="{% url 'social:begin' 'google-oauth2' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}" class="google-signup">{% svg 'social/google' %}</a>                    
+                <a href="{% url 'social:begin' 'linkedin-oauth2' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}" class="linkedin-signup">{% svg 'social/linkedin' %}</a>
+                <!--<a href="{% url 'social:begin' 'instagram' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}" class="instagram-signup">{% svg 'social/instagram' %}</a>-->
+                <a href="{% url 'social:begin' 'twitter' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}" class="twitter-signup">{% svg 'social/twitter' %}</a>
+            </div>
+            <p>{% trans 'Or with your email address:' %}</p>
+            {{ form.as_p }}
+            <div class="show-password-input">
+                <label for="show-password">{% trans "Show password" %}</label>
+                <input type="checkbox" id="show-password" onclick="pass = $('#id_password');pass.attr('type', (pass.attr('type') == 'text') ? 'password' : 'text');">                  
+            </div>            
+            <button type="submit">{% trans 'Go' %}</button>
+        </form>
+        <div class="ctas">
+            <div class="signup-cta">
+                <p>{% trans 'No account yet ?' %}</p>
+                <a href="{% url 'signup' %}">{% trans 'Sign up here' %}</a>            
+            </div>
+            <div class="password-reset-cta">
+                <p>{% trans 'Forgot password ?' %}</p>
+                <a href="{% url 'password_reset' %}">{% trans 'Click here' %}</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}

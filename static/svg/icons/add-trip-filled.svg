@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Capa_1"
+   enable-background="new 0 0 512 512"
+   height="481.67032"
+   viewBox="0 0 633.8266 481.67032"
+   width="633.8266"
+   version="1.1"
+   sodipodi:docname="add-trip-filled.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs13" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1030"
+     id="namedview11"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.5039062"
+     inkscape:cx="331.34589"
+     inkscape:cy="225.875"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Capa_1"
+     inkscape:document-rotation="0" />
+  <g
+     id="g8"
+     transform="translate(0,-30.125)">
+    <path
+       id="path2"
+       d="M 0 105.375 L 0 377.875 C 0 418.61 33.141 451.75 73.875 451.75 L 434.05273 451.75 A 121.08912 129.44461 0 0 1 390.38867 352.22656 A 121.08912 129.44461 0 0 1 511.47656 222.78125 A 121.08912 129.44461 0 0 1 512 222.7832 L 512 105.375 C 512 158.492 484.80011 208.14455 435.41211 245.18555 C 402.72411 269.70055 362.82063 286.72019 319.39062 295.11719 C 315.00462 326.18219 288.257 350.16016 256 350.16016 C 223.743 350.16016 196.99537 326.18219 192.60938 295.11719 C 149.17937 286.72019 109.27589 269.70055 76.587891 245.18555 C 27.199891 208.14455 9.4739031e-15 158.492 0 105.375 z "
+       transform="translate(0,30.125)" />
+    <path
+       d="m 191.965,294.463 v -27.247 c 0,-8.284 6.716,-15 15,-15 h 98.07 c 8.284,0 15,6.716 15,15 v 27.247 C 413.562,274.162 482,210.588 482,135.5 v -15 H 361.375 V 90.692 c 0,-33.397 -27.171,-60.567 -60.567,-60.567 h -89.615 c -33.396,0 -60.567,27.17 -60.567,60.567 V 120.5 H 30 v 15 c 0,75.088 68.438,138.662 161.965,158.963 z M 180.625,90.692 c 0,-16.855 13.713,-30.567 30.567,-30.567 h 89.615 c 16.854,0 30.567,13.712 30.567,30.567 V 120.5 H 180.624 V 90.692 Z"
+       id="path4" />
+    <path
+       d="m 290.035,282.215 h -68.07 v 34.035 c 0,18.767 15.269,34.035 34.035,34.035 18.766,0 34.035,-15.268 34.035,-34.035 z"
+       id="path6" />
+  </g>
+  <g
+     id="g928"
+     transform="matrix(0.44989469,0,0,0.46320704,399.93248,232.12587)">
+    <path
+       d="m 273.13281,223.86719 v -81.39844 h -34.26562 v 81.39844 c 0,8.28515 -6.71875,15 -15,15 h -81.40235 v 34.26562 h 81.40235 c 8.28125,0 15,6.71485 15,15 v 81.40235 h 34.26562 v -81.40235 c 0,-8.28515 6.71485,-15 15,-15 h 81.40235 v -34.26562 h -81.40235 c -8.28515,0 -15,-6.71485 -15,-15 z m 0,0"
+       id="path914" />
+    <path
+       d="M 437.01953,74.980469 C 388.66797,26.628906 324.38281,0 256,0 187.62109,0 123.33203,26.628906 74.980469,74.980469 26.628906,123.33203 0,187.62109 0,256 0,324.37891 26.628906,388.66797 74.980469,437.01953 123.33203,485.37109 187.62109,512 256,512 324.37891,512 388.66797,485.37109 437.01953,437.01953 485.37109,388.66797 512,324.37891 512,256 512,187.62109 485.37109,123.33203 437.01953,74.980469 Z M 399.53516,288.13281 c 0,8.28516 -6.71875,15 -15,15 h -81.40235 v 81.39844 c 0,8.28516 -6.71484,15 -15,15 h -64.26562 c -8.28516,0 -15,-6.71484 -15,-15 v -81.39844 h -81.40235 c -8.28125,0 -15,-6.71484 -15,-15 v -64.26562 c 0,-8.28516 6.71875,-15 15,-15 h 81.40235 v -81.40235 c 0,-8.28125 6.71484,-15 15,-15 h 64.26562 c 8.28516,0 15,6.71875 15,15 v 81.40235 h 81.40235 c 8.28125,0 15,6.71484 15,15 z m 0,0"
+       id="path916" />
+  </g>
+</svg>

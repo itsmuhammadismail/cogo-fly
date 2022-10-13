@@ -1,0 +1,504 @@
+/* line 1, static/scss/base.scss */
+body {
+  background-color: #1167d80e;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 15px; }
+
+/* line 9, static/scss/base.scss */
+section {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+
+/* line 17, static/scss/base.scss */
+form {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative; }
+  /* line 18, static/scss/base.scss */
+  form * {
+    font-family: "Lato", sans-serif; }
+  /* line 27, static/scss/base.scss */
+  form *:focus {
+    outline: none; }
+  /* line 30, static/scss/base.scss */
+  form input,
+  form select,
+  form textarea,
+  form .select2 {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block; }
+  /* line 38, static/scss/base.scss */
+  form input {
+    padding-left: 8px; }
+  /* line 41, static/scss/base.scss */
+  form textarea {
+    resize: none; }
+  /* line 44, static/scss/base.scss */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea,
+  form select,
+  form .select2-container {
+    background-color: #fff !important;
+    border: 2px solid #aaa !important;
+    border-left-width: 5px !important;
+    border-radius: 4px !important;
+    width: 100%; }
+  /* line 60, static/scss/base.scss */
+  form .select2-container .select2-selection__arrow {
+    height: 32px !important; }
+  /* line 63, static/scss/base.scss */
+  form .select2-container .select2-selection--multiple {
+    height: auto !important;
+    min-height: 28px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+    /* line 71, static/scss/base.scss */
+    form .select2-container .select2-selection--multiple input {
+      height: 32px; }
+  /* line 75, static/scss/base.scss */
+  form .select2-container .select2-selection--single {
+    height: 32px !important;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    line-height: inherit;
+    border-radius: 0; }
+  /* line 83, static/scss/base.scss */
+  form .select2-container .select2-search--inline {
+    line-height: inherit; }
+    /* line 85, static/scss/base.scss */
+    form .select2-container .select2-search--inline .select2-search__field {
+      margin: 0;
+      padding: 0;
+      min-height: 0; }
+  /* line 92, static/scss/base.scss */
+  form input,
+  form select {
+    line-height: 32px;
+    height: 36px; }
+    /* line 98, static/scss/base.scss */
+    form input:required:valid, form input:required:valid + .select2-container,
+    form select:required:valid,
+    form select:required:valid + .select2-container {
+      border-left-color: limegreen !important; }
+    /* line 104, static/scss/base.scss */
+    form input:required:invalid, form input:required:invalid + .select2-container,
+    form select:required:invalid,
+    form select:required:invalid + .select2-container {
+      border-left-color: red !important; }
+  /* line 111, static/scss/base.scss */
+  form label,
+  form .errorlist,
+  form .help {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  /* line 119, static/scss/base.scss */
+  form .help {
+    float: right;
+    color: lightslategrey; }
+  /* line 123, static/scss/base.scss */
+  form img[src="/static/scss?5a74cce07561"] {
+    visibility: hidden; }
+
+/* line 128, static/scss/base.scss */
+button,
+input
+.button {
+  transition: 0.4s;
+  border: solid 1px #1168d8;
+  background-color: white;
+  color: #1168d8;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 145, static/scss/base.scss */
+  button:hover,
+  input
+.button:hover {
+    transition: 0.4s;
+    filter: brightness(1.1); }
+
+/* line 151, static/scss/base.scss */
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c80000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 2px; }
+
+/* line 166, static/scss/base.scss */
+.disabled-button {
+  cursor: not-allowed;
+  filter: grayscale(1); }
+  /* line 169, static/scss/base.scss */
+  .disabled-button:hover {
+    filter: brightness(1) grayscale(1); }
+
+/* line 1, static/scss/header.scss */
+header {
+  background-color: #1168d8;
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0; }
+  /* line 8, static/scss/header.scss */
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    /* line 12, static/scss/header.scss */
+    header nav h1 {
+      margin: 0; }
+      /* line 14, static/scss/header.scss */
+      header nav h1 img {
+        padding: 10px;
+        height: 75px;
+        box-sizing: border-box; }
+    /* line 20, static/scss/header.scss */
+    header nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      height: 75px; }
+      /* line 25, static/scss/header.scss */
+      header nav ul a {
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center; }
+      /* line 36, static/scss/header.scss */
+      header nav ul .profile-toggle {
+        color: white; }
+        /* line 39, static/scss/header.scss */
+        header nav ul .profile-toggle > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          /* line 43, static/scss/header.scss */
+          header nav ul .profile-toggle > div:hover {
+            cursor: pointer; }
+      /* line 48, static/scss/header.scss */
+      header nav ul li {
+        list-style: none;
+        margin: 0 5px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px; }
+      /* line 58, static/scss/header.scss */
+      header nav ul p {
+        margin: 0 5px; }
+      /* line 61, static/scss/header.scss */
+      header nav ul svg {
+        width: 25px;
+        height: 25px;
+        filter: invert(1); }
+      /* line 67, static/scss/header.scss */
+      header nav ul .logout .logout-modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        /* line 77, static/scss/header.scss */
+        header nav ul .logout .logout-modal > div {
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          padding: 0 20px;
+          border-radius: 5px; }
+          /* line 83, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > p {
+            margin: 20 0 10; }
+          /* line 86, static/scss/header.scss */
+          header nav ul .logout .logout-modal > div > a {
+            margin: 10 0 20; }
+            /* line 88, static/scss/header.scss */
+            header nav ul .logout .logout-modal > div > a > button {
+              margin: 0; }
+
+/* line 99, static/scss/header.scss */
+.sub-header {
+  position: fixed;
+  z-index: 100;
+  top: 125px;
+  right: 0px;
+  padding: 0;
+  border-radius: 5px 5px 0 5px; }
+
+/* line 108, static/scss/header.scss */
+.profile-dropdown {
+  padding: 0;
+  width: 300px;
+  text-align: center;
+  position: absolute;
+  right: -1000px;
+  top: 80px;
+  opacity: 0;
+  /*transition: right 0.4s;*/
+  color: black; }
+  /* line 118, static/scss/header.scss */
+  .profile-dropdown .banner {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 40px; }
+  /* line 125, static/scss/header.scss */
+  .profile-dropdown .profile-pic-bg {
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    top: 40px;
+    left: 100px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+    /* line 135, static/scss/header.scss */
+    .profile-dropdown .profile-pic-bg .profile-picture {
+      object-fit: cover;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: auto;
+      display: block; }
+  /* line 144, static/scss/header.scss */
+  .profile-dropdown p {
+    margin: 5px 0;
+    padding-bottom: 5px;
+    /*border-bottom: solid 1px rgba(192, 191, 191, 0.5);*/ }
+  /* line 149, static/scss/header.scss */
+  .profile-dropdown ul {
+    padding: 0 20px;
+    margin: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto; }
+    /* line 155, static/scss/header.scss */
+    .profile-dropdown ul a {
+      text-decoration: none;
+      color: black;
+      flex-direction: row; }
+    /* line 160, static/scss/header.scss */
+    .profile-dropdown ul li {
+      margin: 5px 0; }
+      /* line 162, static/scss/header.scss */
+      .profile-dropdown ul li svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        filter: invert(0); }
+
+/* line 172, static/scss/header.scss */
+.show-profile-dropdown {
+  opacity: 1;
+  right: -30px;
+  /*transition: right 0.4s;*/ }
+
+/* line 178, static/scss/header.scss */
+.pusher {
+  height: 100px; }
+
+@media all and (max-height: 600px) {
+  /* line 185, static/scss/header.scss */
+  header nav ul {
+    margin: 0 10px; } }
+
+/* line 4, static/scss/account.scss */
+.edit-content {
+  width: 75%;
+  margin: auto auto 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+/* line 12, static/scss/account.scss */
+h2 {
+  margin-bottom: 0;
+  font-size: 30px; }
+
+/* line 17, static/scss/account.scss */
+.toggles {
+  width: 100%; }
+  /* line 19, static/scss/account.scss */
+  .toggles ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 0; }
+    /* line 24, static/scss/account.scss */
+    .toggles ul li {
+      list-style: none;
+      margin: 5px 20px 0;
+      padding-bottom: 10px;
+      transition: 0.4s; }
+      /* line 29, static/scss/account.scss */
+      .toggles ul li:hover {
+        cursor: pointer;
+        color: #1168d8;
+        transition: 0.4s; }
+      /* line 34, static/scss/account.scss */
+      .toggles ul li:first-of-type {
+        color: #1168d8;
+        border-bottom: solid 2px #1168d8; }
+
+/* line 42, static/scss/account.scss */
+hr {
+  border: solid 1px rgba(221, 221, 221, 0.8);
+  margin: 0; }
+
+/* line 47, static/scss/account.scss */
+.change-mail {
+  display: block; }
+
+/* line 51, static/scss/account.scss */
+.change-password {
+  display: none; }
+  /* line 53, static/scss/account.scss */
+  .change-password form {
+    height: initial; }
+    /* line 55, static/scss/account.scss */
+    .change-password form input {
+      width: 100%; }
+      /* line 57, static/scss/account.scss */
+      .change-password form input:nth-of-type(3) {
+        margin-bottom: 0; }
+    /* line 62, static/scss/account.scss */
+    .change-password form .helptext ul {
+      margin-top: 0; }
+
+/* line 69, static/scss/account.scss */
+.social-login {
+  width: 80%;
+  display: none; }
+  /* line 72, static/scss/account.scss */
+  .social-login .facebook-login,
+  .social-login .linkedin-login,
+  .social-login .google-login {
+    margin: 5px 20px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    /* line 80, static/scss/account.scss */
+    .social-login .facebook-login h4,
+    .social-login .linkedin-login h4,
+    .social-login .google-login h4 {
+      text-align: center;
+      position: relative; }
+      /* line 83, static/scss/account.scss */
+      .social-login .facebook-login h4 svg,
+      .social-login .linkedin-login h4 svg,
+      .social-login .google-login h4 svg {
+        height: 50px;
+        width: 50px; }
+    /* line 88, static/scss/account.scss */
+    .social-login .facebook-login a,
+    .social-login .linkedin-login a,
+    .social-login .google-login a {
+      text-decoration: none;
+      color: #1168d8;
+      text-align: center; }
+  /* line 95, static/scss/account.scss */
+  .social-login .facebook-login button {
+    color: #3b5998;
+    border: solid 1px #3b5998;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.4s; }
+    /* line 101, static/scss/account.scss */
+    .social-login .facebook-login button:hover {
+      cursor: pointer;
+      color: white;
+      background-color: #3b5998;
+      transition: 0.4s; }
+  /* line 110, static/scss/account.scss */
+  .social-login .linkedin-login button {
+    color: #0077b5;
+    border: solid 1px #0077b5;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.4s; }
+    /* line 116, static/scss/account.scss */
+    .social-login .linkedin-login button:hover {
+      cursor: pointer;
+      color: white;
+      background-color: #0077b5;
+      transition: 0.4s; }
+  /* line 125, static/scss/account.scss */
+  .social-login .google-login button {
+    color: #d14747;
+    border: solid 1px #d14747;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.4s; }
+    /* line 131, static/scss/account.scss */
+    .social-login .google-login button:hover {
+      cursor: pointer;
+      color: white;
+      background-color: #d14747;
+      transition: 0.4s; }
+
+/* line 141, static/scss/account.scss */
+.manage-notifications {
+  display: none; }
+
+/* line 145, static/scss/account.scss */
+.parameters {
+  display: none; }
+
+@media all and (max-width: 1300px) {
+  /* line 150, static/scss/account.scss */
+  body,
+  input,
+  select {
+    font-size: 0.8em; }
+  /* line 156, static/scss/account.scss */
+  .edit-content {
+    margin: 25px auto;
+    padding: 15px; }
+  /* line 161, static/scss/account.scss */
+  form {
+    margin: 0; }
+  /* line 165, static/scss/account.scss */
+  h2 {
+    margin: 0; } }

@@ -1,0 +1,35 @@
+{% load i18n %}
+
+<div class="picture-widget">
+    <div style="position: relative; display: inline-block">
+        <input 
+            style="visibility: hidden; position: absolute" 
+            onchange="
+                const input = $(this)
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        input.next().attr('src', e.target.result).next().val('false').next().show()
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                }
+                "
+            type="{{ widget.type }}" 
+            name="{{ widget.name }}"
+            {% if widget.value != None %} value="{{ widget.value|stringformat:'s' }}" {% endif %}
+            {% include "django/forms/widgets/attrs.html" %}
+        >
+        <div class="container" style= "display: inline-block; position: relative;">
+            <div class="container">
+                <img style="height: 100px; width: 100px; object-fit: cover;" onclick="$(this).prev().click()" src="{{ widget.value.url }}">
+                <input type="hidden" name="{{ widget.checkbox_name }}">
+                <button
+                    type="button"
+                    style="position: absolute;z-index: 1; position: absolute; text-align: center; transform: translate(50%, -50%){% if not widget.value %}; display:none{% endif %}"
+                    onclick="$(this).hide().prev().val('true').prev().attr('src', null).prev().val('')"
+                >X</button>
+            </div>
+        </div>
+    </div>
+    <button type="button" style="position: absolute;z-index: 1; position: absolute; text-align: center; margin-top: 20%;" onclick="$(this).prev().find('input').click()">{% trans 'Change photo' %}</button>
+</div>

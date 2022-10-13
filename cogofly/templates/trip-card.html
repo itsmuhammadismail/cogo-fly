@@ -1,0 +1,140 @@
+{% load static %}
+{% load i18n %}
+{% load svg %}
+{% load compress %}
+
+{% compress css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/trip-card.scss' %}">
+{% endcompress %}
+{% block js %}
+{% endblock %}
+<script type="text/javascript" src="{% static 'js/html2canvas.js' %}"></script>
+<li class="card">
+    <div class="card-left">
+        <div class="card-top">
+            <img src="{% static 'img/logo-CoGoFly-blanc.png' %}" alt="CoGoFly">
+            {% if trip.id %}
+            <span title="{% trans "Click on more to see all travelers who will participate to that trip" %}">{{ trip.members.count }}{% svg 'icons/person-base' %}</span>
+            <a href="{% url 'trip' trip.id %}">{% trans "More" %}</a>
+            {% endif %}
+        </div>
+        <ul class="trip-info">
+            <li>
+                <p><strong>{% trans 'Your destination' %}</strong></p>
+                <p title="{{ trip.destination }}">{{ trip.destination }}</p>
+            </li>
+            <li>
+                <div class="start-date">
+                    <p><strong>{% trans 'Start date' %}</strong></p>
+                    <p title="{{ trip.start }}">{{ trip.start }}</p>                
+                </div>
+                <div class="end-date">
+                    <p><strong>{% trans 'End date' %}</strong></p>
+                    <p title="{{ trip.end }}">{{ trip.end }}</p>                
+                </div>
+            </li>                           
+        </ul>
+        <ul class="trip-photos">
+            <li>
+                <img src="{{ trip.pictures.all.0.picture.url }}" draggable="false" onerror="
+                this.onerror=null;
+                this.src='{% static "img/cogofly_logo_v2.png" %}';
+                this.style.width='100%';
+                this.style.height='auto';">
+            </li>
+            <li>
+                <img src="{{ trip.pictures.all.1.picture.url }}" draggable="false" onerror="
+                this.onerror=null;
+                this.src='{% static "img/cogofly_logo_v2.png" %}';
+                this.style.width='100%';
+                this.style.height='auto';">
+            </li>
+            <li>
+                <img src="{{ trip.pictures.all.2.picture.url }}" draggable="false" onerror="
+                this.onerror=null;
+                this.src='{% static "img/cogofly_logo_v2.png" %}';
+                this.style.width='100%';
+                this.style.height='auto';">
+            </li>
+        </ul> 
+        <div class="comment">
+            <p><strong>{% trans "Comment" %}</strong></p>
+            <div class="comment-text">
+                <P>{{ trip.comment }}</p>              
+            </div>
+        </div>                                 
+    </div>
+    <div class="card-right">
+        <p>{% trans "Trip Card" %}</p>
+        <hr>
+        <div class="card-buttons">
+            {% if user.is_authenticated %}
+            <form method="POST" action="{% url 'trip' trip.id %}">
+            {% csrf_token %}
+                <div class="like">
+                    {% if trip.is_liked or is_liked %}
+                    <button title="{% trans 'Unlike' %}" type="submit" name="unlike">{% svg 'icons/like' %}</button>
+                    {% else %}
+                    <button title="{% trans 'Like' %}" type="submit" name="like">{% svg 'icons/like-white' %}</button>
+                    {% endif %}
+                </div>               
+                <div class="favorite">
+                    {% if trip.is_favorite or is_favorite %}
+                    <button title="{% trans 'Remove from favorites' %}" type="submit" name="unfav">{% svg 'icons/star' %}</button>
+                    {% else %}
+                    <button title="{% trans 'Add to favorites' %}" type="submit" name="fav">{% svg 'icons/star-white' %}</button>
+                    {% endif %}
+                </div>
+            </form>        
+            {% endif %}
+            <div class="share">
+                <button type="button" title="{% trans "Share" %}" onclick="$(this).next().toggleClass('share-popup-open')">
+                    {% svg 'icons/next' %}
+                </button>
+                <ul class="share-popup">
+                    {% if user.is_authenticated %}
+                    <li title="Share to seed-feed">
+                        {% include 'popup.html' with icon='icons/timeline' action='share' form=shareform text=_('Share trip') url=trip.get_absolute_url %}               
+                    </li> 
+                    <li title="Share by mail">
+                        {% include 'popup.html' with icon='icons/mail' action='email-share' form=emailshareform text=_('Share via email') url=trip.get_absolute_url %}
+                    </li>
+                    {% endif %}
+                    <li onclick="
+                    FB.ui({
+                        display: 'popup',
+                        method: 'share',
+                        href: 'https://cogofly.com/',
+                        quote: &quot;{% blocktrans with destination=trip.destination start=trip.start end=trip.end %}Dear Members, For people who love travelling, and don’t like to do it alone, I'm going to {{ destination }} from {{ start }} to {{ end }} via CoGoFly. Don’t hesitate and register for free at www.cogofly.com{% endblocktrans %}&quot;,
+                    }, function(response){});
+                    "
+                    title="Share to Facebook">
+                        {% svg "social/facebook" %}
+                        <!--{% trans "Share to Facebook" %}-->
+                    </li>
+                    <li title="Share to Twitter">
+                        <a target="_blank" rel="noopener noreferrer" href="http://twitter.com/intent/tweet?text=Dear%20Members,%20For%20people%20who%20love%20travelling,%20and%20don't%20like%20to%20do%20it%20alone,%20I'm%20going%20to%20{{ trip.destination }}%20from%20{{ trip.start }}%20to%20{{ trip.end }}%20via%20www.cogofly.com{{trip.get_absolute_url}}"%>
+                            {% svg "social/twitter" %}                    
+                            <!--{% trans "Share to Twitter" %}-->
+                        </a>                      
+                    </li>
+                </ul>
+            </div>      
+        </div>
+        {% if trip.id %}
+            <p class="creator-info">
+            {% if request.user == trip.user %}
+            {% trans "You are the creator" %}
+            {% elif request.user in trip.members.all %}
+            {% trans "You are a member" %}
+            {% elif trip.is_requested %}
+            {% trans "Request sent" %}
+            {% else %}
+            {% trans "No request sent" %}
+            {% endif %}
+            </p>
+        {% else %}
+            <span></span>
+        {% endif %}                                
+    </div>              
+</li>  
