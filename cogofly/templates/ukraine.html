@@ -4,69 +4,35 @@
 {% load svg %}
 {% load humanize %}
 
-{% block js %}
-<script>
-add_form = function() {
-    var form_idx = $('#id_cogofly-picture-content_type-object_id-TOTAL_FORMS').val();
-    $('#form-set').append($('#empty_form').html().replace(/__prefix__/g, form_idx));
-    $('#id_cogofly-picture-content_type-object_id-TOTAL_FORMS').val(parseInt(form_idx) + 1);
-};
-</script>
-<script defer type="text/javascript" src="{% static 'js/seed-feed.js' %}"></script>
-<script type="text/javascript" src={% static 'js/splide.min.js' %}></script>
-<script>
-    window.onload = function() {
-        var elms = document.getElementsByClassName( 'carousel' );
-        for ( var i = 0, len = elms.length; i < len; i++ ) {
-            new Splide(elms[i], {               
-            'cover': true,    
-            perPage: 1,
-            'arrowPath': 'm15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z',   
-            }).mount();
-        }
-    }
-</script>
-<script>
-window.fbAsyncInit = function() {
-    FB.init({
-    appId            : '600914307472316',
-    autoLogAppEvents : true,
-    xfbml            : true,
-    version          : 'v9.0'
-    });
-};
-</script>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>   
-
-{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/seed-feed.scss' %}">
-    <link rel="stylesheet" href="{% static 'css/splide.min.css' %}">
+    <!-- <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/seed-feed.scss' %}">
+    <link rel="stylesheet" href="{% static 'css/splide.min.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/ukraine.css' %}"> 
 {% endblock %}
 {% block body %}
-{% include 'header-simples.html' %}
-    <div class="content">
-        <h1 style="text-align: center;">CoGoFly & Ukraine</h1>
-        <div style="text-align: center;" >
+{% include 'header.html' %}
+    <div class="ukraine-bg">
+       <div class="relative z-10 text-white max-w-[80rem] mx-auto flex flex-col gap-4">
+        <h1 class="font-bold text-4xl">CoGoFly & Ukraine</h1>
+   
             <p>CoGoFly wishes to express its solidarity with the Ukrainian people in their fight against the invasion.</p>
             <p>CoGoFly also thanks, and in advance, all the host families who came to the aid of this people forced, willingly or by force, to leave their beautiful country.</p>
             <p>CoGoFly, and its entire team, is therefore looking for a way to help these families and the Ukrainian people in general.</p>
             <p>Nothing has been more obvious to our international co-traveller platform than to help all Ukrainians who have arrived in their host countries to:</p>
-        </div>
-        <div class="container" style="margin-left: 30%; margin-right: auto;">  
-            <ul>
-                <li>Find people with the same interests.</li>
-                <li>Nothing like this to facilitate integration in a new country...</li>
-                <li>Practice various types of activities, sports and / or cultural, with city dwellers and possible neighbors.</li>
-                <li>Learn the language of the host country by finding people who want to teach it to them.</li>
-                <li>Leverage your skills, experiences, and love of your language.</li>
-                <li>To travel together to discover the city, the region or even the host country.</li>
-            </ul>
-        </div>   
-        <p align="center">As you have understood, CoGoFly wanted and bet that all the peoples of the world will want to help and share the suffering of the Ukrainian people by trying to make you "forget", even for a moment, this painful period.</p>
-        <p align="center">CoGoFly is ready to help you for the duration of this war and even after... a true international community of travelers with the same common denominator: "Sharing" is there for you.</p>
-        <p align="center">Do not hesitate, do not wait any longer, and register for free on <a href ="{% url 'signup' %}">www.cogofly.com</a></p>
+       
+        
+                <p>Find people with the same interests.</p>
+                <p>Nothing like this to facilitate integration in a new country...</p>
+                <p>Practice various types of activities, sports and / or cultural, with city dwellers and possible neighbors.</p>
+                <p>Learn the language of the host country by finding people who want to teach it to them.</p>
+                <p>Leverage your skills, experiences, and love of your language.</p>
+                <p>To travel together to discover the city, the region or even the host country.</p>
+       
+        <p>As you have understood, CoGoFly wanted and bet that all the peoples of the world will want to help and share the suffering of the Ukrainian people by trying to make you "forget", even for a moment, this painful period.</p>
+        <p>CoGoFly is ready to help you for the duration of this war and even after... a true international community of travelers with the same common denominator: "Sharing" is there for you.</p>
+        <p>Do not hesitate, do not wait any longer, and register for free on <a href ="{% url 'signup' %}">www.cogofly.com</a></p>
+       </div>
     </div>
 </body>
 {% endblock %}

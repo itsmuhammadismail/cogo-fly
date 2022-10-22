@@ -1,0 +1,21 @@
+body {
+  overflow-x: hidden;
+}
+.ukraine-bg {
+  background-image: url('../img/ukraine-bg.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+}
+.ukraine-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
