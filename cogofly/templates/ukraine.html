@@ -12,9 +12,10 @@
 {% endblock %}
 {% block body %}
 {% include 'header.html' %}
-    <div class="ukraine-bg">
-       <div class="relative z-10 text-white max-w-[80rem] mx-auto flex flex-col gap-4">
-        <h1 class="font-bold text-4xl">CoGoFly & Ukraine</h1>
+    <div class="bg-[#f3f8fe] pt-[7rem] pb-[3rem] w-screen px-[2rem]">
+       <div class="flex items-center justify-between max-w-[80rem] mx-auto  md:flex-row sm:flex-col flex-col ">
+        <div class="text-[#555555] max-w-[43rem] flex flex-col gap-4 bg-[#f3f8fe] xl:text-[1.2rem] lg:text-[1rem] md:text-[.8rem]"> 
+            <h1 class="font-bold sm:text-5xl text-[black] sm:leading-[5rem] leading-3rem text-4xl">CoGoFly & Ukraine</h1>
    
             <p>CoGoFly wishes to express its solidarity with the Ukrainian people in their fight against the invasion.</p>
             <p>CoGoFly also thanks, and in advance, all the host families who came to the aid of this people forced, willingly or by force, to leave their beautiful country.</p>
@@ -31,9 +32,19 @@
        
         <p>As you have understood, CoGoFly wanted and bet that all the peoples of the world will want to help and share the suffering of the Ukrainian people by trying to make you "forget", even for a moment, this painful period.</p>
         <p>CoGoFly is ready to help you for the duration of this war and even after... a true international community of travelers with the same common denominator: "Sharing" is there for you.</p>
-        <p>Do not hesitate, do not wait any longer, and register for free on <a href ="{% url 'signup' %}">www.cogofly.com</a></p>
+        <p>Do not hesitate, do not wait any longer, and register for free on <a href ="{% url 'signup' %}" class="text-blue-600 underline decoration-solid" >www.cogofly.com</a></p>
        </div>
+       <div class=" flex items-center justify-center flex-col gap-y-[3rem] pt-[1rem]">
+        <img src="{% static 'img/ukraine_handshake.png' %}" class="xl:w-[30rem] lg:w-[25rem] md:w-[35rem]"/>
+        <img src="{% static 'img/ukraine_plane.png' %}" class="xl:w-[30rem] lg:w-[25rem] md:w-[35rem]"/>
+       </div>
+       </div>
+       
     </div>
+    <!-- <div class="w-screen h-max mt-[2rem]">
+     <h1>haseeb</h1>
+    <p>ismail</p>
+    </div> -->
 </body>
 {% endblock %}
 {% block footer %}{% include 'footer.html' %}{% endblock %}
